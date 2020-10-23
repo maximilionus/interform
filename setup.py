@@ -1,7 +1,4 @@
-try:
-    from setuptools import setup
-except ImportError:
-    from distutils.core import setup
+from setuptools import setup
 
 
 def get_package_version() -> str:
@@ -15,6 +12,7 @@ def get_package_version() -> str:
 
 package_name = 'configerz'
 package_version = get_package_version()
+extras_require = {}
 
 with open('README.md', 'r') as f:
     readme_text = f.read()
@@ -27,8 +25,10 @@ setup(
     description="Powerful and easy to use tool for working with various configuration files",
     long_description=readme_text,
     long_description_content_type="text/markdown",
-    url="https://github.com/maximilionus/configerz",
     packages=[package_name],
+    extras_require=extras_require,
+    license="MIT",
+    url="https://github.com/maximilionus/configerz",
     classifiers=[
         "Development Status :: 1 - Planning",
         "Programming Language :: Python :: 3",

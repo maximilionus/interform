@@ -8,3 +8,6 @@ dist/
 
 # Ignore virtual env dir
 .venv/
+
+# Ignore VSCode cache
+.vscode/
