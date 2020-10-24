@@ -10,11 +10,16 @@ class Namespace:
         self.__dict__.update({**kwargs})
 
 
-class BaseConfigurationFile:
+class BaseConfiguration:
     """ Basic implementation of config file interaction layer """
     def __init__(self, file_path: str, default_config: dict, create_if_not_found=True):
         self.configuration_file_path = file_path
         self.default_configuration = default_config
+
+        # On commit() method scan this vars will be ignored
+        # By default it contains class-related variables
+        self.__commit_exclude_vars = []
+        self.__commit_exclude_vars.extend(list(self.__dict__))
 
         if create_if_not_found:
             create_directories(self.configuration_file_path)
@@ -24,46 +29,17 @@ class BaseConfigurationFile:
 
     def refresh(self) -> bool:
         """ Refresh configuration file values from json """
-        # ! Try to use `vars()` builtin function do read all variables
         self.__dict__.update(**self.read_file_as_namespace().__dict__)
 
         return True
 
     def commit(self) -> bool:
         """ Commit all changes from object to json configuration file """
-        def recursive_commit(dict_obj: dict, dict_file: dict) -> bool:
-            """ Recursively commit all changes from object dict to configuration file
+        object_dict = namespace_to_dict(self, exclude_list=self.__commit_exclude_vars)
+        self.write_to_file(object_dict)
+        logger.debug("Successfully applied all object changes to local configuration file")
 
-            Args:
-                dict_obj (dict)
-                dict_file (dict)
-
-            Returns:
-                bool: Was anything commited to `dict_file`
-            """
-            was_commited = False
-
-            for key_file, value_file in dict_file.items():
-                # TODO: Add support for detection new keys and removal existing
-                if type(value_file) == dict:
-                    was_commited ^= recursive_commit(dict_obj[key_file], dict_file[key_file])
-
-                elif value_file != dict_obj[key_file]:
-                    dict_file[key_file] = dict_obj[key_file]
-                    was_commited = True
-                    logger.debug(f"Commited {key_file}:{value_file} to configuration file")
-
-            return was_commited
-
-        config_file_dict = self.read_file_as_dict()
-        object_dict = namespace_to_dict(self)
-
-        commit_result = recursive_commit(object_dict, config_file_dict)
-        if commit_result:
-            self.write_to_file(config_file_dict)
-            logger.debug("Successfully applied all object changes to local configuration file")
-
-        return commit_result
+        return True
 
     def is_exist(self) -> bool:
         """ Check configuration file existence.
@@ -124,11 +100,13 @@ class BaseConfigurationFile:
         pass
 
 
-def namespace_to_dict(namespace_from: Namespace, dict_to={}) -> dict:
+def namespace_to_dict(namespace_from: Namespace, dict_to={}, exclude_list=[]) -> dict:
     for k, v in namespace_from.__dict__.items():
         if type(v) == Namespace:
             dict_to[k] = {}
-            namespace_to_dict(v, dict_to[k])
+            namespace_to_dict(v, dict_to[k], exclude_list)
+        elif k in exclude_list:
+            continue
         else:
             dict_to.update({k: v})
 

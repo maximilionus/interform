@@ -2,13 +2,13 @@ import json
 from logging import getLogger
 from configparser import ConfigParser
 
-from .core import BaseConfigurationFile, Namespace
+from .core import BaseConfiguration, Namespace
 
 
 logger = getLogger(__name__)
 
 
-class JSON_ConfigurationFile(BaseConfigurationFile):
+class JSON_Configuration(BaseConfiguration):
     def write_to_file(self, config: dict):
         with open(self.configuration_file_path, 'wt') as f:
             json.dump(config, f, indent=4)
@@ -27,7 +27,7 @@ class JSON_ConfigurationFile(BaseConfigurationFile):
         return namespace
 
 
-class INI_ConfigurationFile(BaseConfigurationFile):
+class INI_Configuration(BaseConfiguration):
     def write_to_file(self, config: dict):
         pass
 
