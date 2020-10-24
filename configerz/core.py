@@ -24,6 +24,7 @@ class BaseConfigurationFile:
 
     def refresh(self) -> bool:
         """ Refresh configuration file values from json """
+        # ! Try to use `vars()` builtin function do read all variables
         self.__dict__.update(**self.read_file_as_namespace().__dict__)
 
         return True
