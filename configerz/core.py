@@ -12,9 +12,15 @@ class Namespace:
 
 class BaseConfiguration:
     """ Basic implementation of config file interaction layer """
-    def __init__(self, file_path: str, default_config: dict, create_if_not_found=True):
+    def __init__(self, file_path: str, default_config: {}, create_if_not_found=True):
         self.configuration_file_path = file_path
-        self.default_configuration = default_config
+
+        if type(default_config) == dict:
+            self.default_configuration = default_config
+        elif path.isfile(default_config):
+            self.default_configuration = self.read_custom_file_as_dict(default_config)
+        else:
+            raise TypeError(f"'default_config' argument type should be a dictionary or an existing path to file. Passed argument type is: {type(default_config)}")
 
         # On commit() method scan this vars will be ignored
         # By default it contains class-related variables
@@ -99,6 +105,17 @@ class BaseConfiguration:
         """
         pass
 
+    @staticmethod
+    def read_custom_file_as_dict(file_path: str) -> dict:
+        """ Template for reading custom configuration files from path as dictionary
+
+        :param file_path: path to configuration file
+        :type file_path: str
+        :return: parsed configuration file dictionary
+        :rtype: dict
+        """
+        pass
+
 
 def namespace_to_dict(namespace_from: Namespace, dict_to={}, exclude_list=[]) -> dict:
     for k, v in namespace_from.__dict__.items():
@@ -114,6 +131,13 @@ def namespace_to_dict(namespace_from: Namespace, dict_to={}, exclude_list=[]) ->
 
 
 def create_directories(path_to_use: str, path_is_dir=False):
+    """ Create all directories from path
+
+    :param path_to_use: the path to be created
+    :type path_to_use: str
+    :param path_is_dir: is `path_to_use` ends with directory, defaults to False
+    :type path_is_dir: bool, optional
+    """
     path_to_use = path_to_use if path_is_dir else path.dirname(path_to_use)
 
     if not path.exists(path_to_use):

@@ -1,11 +1,19 @@
 import unittest
 
-from ..fixtures import create_json_config_object, remove_temp_dir
+from configerz import JSON_Configuration
+
+from ..fixtures import configuration_file_path,\
+    default_configuration, default_configuration_file_path,\
+    remove_temp_dir
 
 
-class TestJSONConfiguration(unittest.TestCase):
+class Test_DefaultFromDict(unittest.TestCase):
     def setUp(self):
-        self.config_obj = create_json_config_object()
+        self.config_obj = JSON_Configuration(
+            configuration_file_path,
+            default_configuration,
+            True
+        )
 
     def tearDown(self):
         remove_temp_dir()
@@ -29,4 +37,13 @@ class TestJSONConfiguration(unittest.TestCase):
         self.assertEqual(
             file_dict["Person_1"]["name"],
             person_name
+        )
+
+
+class Test_DefaultFromFile(Test_DefaultFromDict):
+    def setUp(self):
+        self.config_obj = JSON_Configuration(
+            configuration_file_path,
+            default_configuration_file_path,
+            True
         )

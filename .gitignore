@@ -11,3 +11,6 @@ dist/
 
 # Ignore VSCode cache
 .vscode/
+
+# Ignore all temporary directories
+temp/

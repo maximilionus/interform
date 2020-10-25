@@ -15,16 +15,20 @@ class JSON_Configuration(BaseConfiguration):
         logger.debug("Successful write to file action")
 
     def read_file_as_dict(self) -> dict:
-        with open(self.configuration_file_path, 'rt') as f:
-            config = json.load(f)
-
-        return config
+        return self.read_custom_file_as_dict(self.configuration_file_path)
 
     def read_file_as_namespace(self) -> Namespace:
         with open(self.configuration_file_path, 'rt') as f:
             namespace = json.load(f, object_hook=lambda d: Namespace(**d))
 
         return namespace
+
+    @staticmethod
+    def read_custom_file_as_dict(file_path: str) -> dict:
+        with open(file_path, 'rt') as f:
+            config_dict = json.load(f)
+
+        return config_dict
 
 
 class INI_Configuration(BaseConfiguration):
