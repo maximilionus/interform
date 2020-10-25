@@ -1,5 +1,6 @@
-from os import path, makedirs, remove
+from typing import Union
 from logging import getLogger
+from os import path, makedirs, remove
 
 
 logger = getLogger(__name__)
@@ -12,15 +13,13 @@ class Namespace:
 
 class BaseConfiguration:
     """ Basic implementation of config file interaction layer """
-    def __init__(self, file_path: str, default_config: {}, create_if_not_found=True):
+    def __init__(self, file_path: str, default_config: Union[str, dict], create_if_not_found=True):
         self.configuration_file_path = file_path
 
         if type(default_config) == dict:
             self.default_configuration = default_config
         elif path.isfile(default_config):
             self.default_configuration = self.read_custom_file_as_dict(default_config)
-        else:
-            raise TypeError(f"'default_config' argument type should be a dictionary or an existing path to file. Passed argument type is: {type(default_config)}")
 
         # On commit() method scan this vars will be ignored
         # By default it contains class-related variables
@@ -39,7 +38,7 @@ class BaseConfiguration:
 
         return True
 
-    def commit(self) -> bool:
+    def commit(self, safe=True) -> bool:
         """ Commit all changes from object to json configuration file """
         object_dict = namespace_to_dict(self, exclude_list=self.__commit_exclude_vars)
         self.write_to_file(object_dict)
