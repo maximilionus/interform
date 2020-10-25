@@ -32,7 +32,7 @@ class Test_DefaultFromDict(unittest.TestCase):
         self.config_obj.Person_1.name = person_name
         self.config_obj.commit()
 
-        file_dict = self.config_obj.read_file_as_dict()
+        file_dict = self.config_obj.fread_dict()
 
         self.assertEqual(
             file_dict["Person_1"]["name"],

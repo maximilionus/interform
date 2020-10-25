@@ -9,38 +9,29 @@ logger = getLogger(__name__)
 
 
 class JSON_Configuration(BaseConfiguration):
-    def write_to_file(self, config: dict):
-        with open(self.configuration_file_path, 'wt') as f:
-            json.dump(config, f, indent=4)
-        logger.debug("Successful write to file action")
-
-    def read_file_as_dict(self) -> dict:
-        return self.read_custom_file_as_dict(self.configuration_file_path)
-
-    def read_file_as_namespace(self) -> Namespace:
-        with open(self.configuration_file_path, 'rt') as f:
-            namespace = json.load(f, object_hook=lambda d: Namespace(**d))
-
-        return namespace
-
     @staticmethod
-    def read_custom_file_as_dict(file_path: str) -> dict:
+    def _read_file_to_dict(file_path: str) -> dict:
         with open(file_path, 'rt') as f:
             config_dict = json.load(f)
 
         return config_dict
 
+    @staticmethod
+    def _read_file_to_namespace(file_path: str) -> Namespace:
+        with open(file_path, 'rt') as f:
+            namespace = json.load(f, object_hook=lambda d: Namespace(**d))
+
+        return namespace
+
+    @staticmethod
+    def _write_dict_to_file(file_path: str, dictionary: dict):
+        with open(file_path, 'wt') as f:
+            json.dump(dictionary, f, indent=4)
+        logger.debug("Successful write to file action")
+
 
 class INI_Configuration(BaseConfiguration):
-    def write_to_file(self, config: dict):
-        pass
-
-    def read_file_as_dict(self) -> dict:
-        pass
-
-    def read_file_as_namespace(self) -> dict:
-        pass
-
+    # TODO
     def __dict_from_ini(self, config_parser) -> dict:
         # TODO: Needs to be tested
         parser = ConfigParser()

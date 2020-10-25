@@ -19,7 +19,7 @@ class BaseConfiguration:
         if type(default_config) == dict:
             self.default_configuration = default_config
         elif path.isfile(default_config):
-            self.default_configuration = self.read_custom_file_as_dict(default_config)
+            self.default_configuration = self._read_file_to_dict(default_config)
 
         # On commit() method scan this vars will be ignored
         # By default it contains class-related variables
@@ -34,14 +34,15 @@ class BaseConfiguration:
 
     def refresh(self) -> bool:
         """ Refresh configuration file values from json """
-        self.__dict__.update(**self.read_file_as_namespace().__dict__)
+        self.__dict__.update(**self.fread_namespace().__dict__)
 
         return True
 
     def commit(self, safe=True) -> bool:
         """ Commit all changes from object to json configuration file """
+        # TODO: Object scan and fix should be here
         object_dict = namespace_to_dict(self, exclude_list=self.__commit_exclude_vars)
-        self.write_to_file(object_dict)
+        self.fwrite_dict(object_dict)
         logger.debug("Successfully applied all object changes to local configuration file")
 
         return True
@@ -56,7 +57,7 @@ class BaseConfiguration:
 
     def create_file(self) -> bool:
         """ Create new configuration file from default dictionary """
-        self.write_to_file(self.default_configuration)
+        self.fwrite_dict(self.default_configuration)
         logger.info("Successfuly generated new configuration file")
 
         return True
@@ -80,39 +81,46 @@ class BaseConfiguration:
         Returns:
             bool: True on successful file reset
         """
-        self.write_to_file(self.default_configuration)
+        self.fwrite_dict(self.default_configuration)
 
         return True
 
-    def write_to_file(self, config: dict):
-        """ Template for write to config file method """
-        pass
+    def fwrite_dict(self, dictionary: dict):
+        """Write dict from `dictionary` argument to configuration file bound to this object
 
-    def read_file_as_dict(self) -> dict:
-        """ Template for reading configuration file as dictionary
-
-        Returns:
-            dict: Parsed configuration
+        :param config: configuration dictionary
+        :type config: dict
         """
-        pass
+        self._write_dict_to_file(self.configuration_file_path, dictionary)
 
-    def read_file_as_namespace(self) -> Namespace:
-        """ Template for reading configuration file as Namespace object
+    def fread_dict(self) -> dict:
+        return self._read_file_to_dict(self.configuration_file_path)
 
-        Returns:
-            Namespace: Parsed configuration
+    def fread_namespace(self) -> Namespace:
+        """Read the configuration file bound to this object to Namespace
+
+        :return: namespace object with parsed configuration file
+        :rtype: Namespace
         """
-        pass
+        return self._read_file_to_namespace(self.configuration_file_path)
 
     @staticmethod
-    def read_custom_file_as_dict(file_path: str) -> dict:
-        """ Template for reading custom configuration files from path as dictionary
+    def _read_file_to_dict(file_path: str) -> dict:
+        """Template for reading custom configuration files from path as dictionary
 
         :param file_path: path to configuration file
         :type file_path: str
         :return: parsed configuration file dictionary
         :rtype: dict
         """
+        pass
+
+    @staticmethod
+    def _read_file_to_namespace(file_path: str) -> Namespace:
+        pass
+
+    @staticmethod
+    def _write_dict_to_file(file_path: str, dictionary: dict):
         pass
 
 
