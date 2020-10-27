@@ -20,11 +20,13 @@ with open('README.md', 'r') as f:
 setup(
     name=package_name,
     version=package_version,
+    python_requires="~=3.5",
     author="maximilionus",
     author_email="maximilionuss@gmail.com",
     description="Powerful and easy to use tool for working with various configuration files",
     long_description=readme_text,
     long_description_content_type="text/markdown",
+    keywords="configuration configs files",
     packages=[package_name],
     extras_require=extras_require,
     license="MIT",
