@@ -20,6 +20,8 @@ class BaseConfiguration:
             self.default_configuration = default_config
         elif path.isfile(default_config):
             self.default_configuration = self._read_file_to_dict(default_config)
+        else:
+            raise ValueError(f"'default_config' argument should be a dictionary or a path to file string. Provided value is {type(default_config)}")
 
         # On commit() method scan this vars will be ignored
         # By default it contains class-related variables
