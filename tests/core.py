@@ -1,13 +1,12 @@
 from shutil import rmtree
 from os import path, chdir
-from unittest import TestCase
 
 
 temp_dir_path = './temp/'
 
 configuration_file_path = path.join(temp_dir_path, 'test_config.txt')
 
-__default_config_pattern = "./fixtures/files/default_configuration"
+__default_config_pattern = "./data/default_configuration"
 default_cfg_json_path = __default_config_pattern + '.json'
 
 default_configuration_dict = {
@@ -33,27 +32,25 @@ def remove_temp_dir():
 
 def change_path_to_testsdir():
     """ Change working directory to `/tests/` """
-    chdir(path.dirname(path.dirname(__file__)))
+    chdir(path.dirname(__file__))
+    print(f"I am here: {path.abspath('.')}")
 
 
-class BaseConfigTest(TestCase):
+class BaseConfigTest():
     """
     Base class for all configuration file tests.
-    `setUp()` method should be overwritten with valid config object initialization.
+    `setup_method()` method should be overwritten with valid config object initialization.
     """
-    def setUp(self):
+    def setup(self):
         self.config_obj = None  # Should be changed in real test
-
-    def tearDown(self):
-        remove_temp_dir()
 
     def test_delete_file(self):
         result = self.config_obj.delete_file()
-        self.assertEqual(result, True)
+        assert result
 
     def test_create_file(self):
         result = self.config_obj.create_file()
-        self.assertEqual(result, True)
+        assert result
 
     def test_modify_commit_read(self):
         person_name = "Jeff"
@@ -63,7 +60,4 @@ class BaseConfigTest(TestCase):
 
         file_dict = self.config_obj.fread_dict()
 
-        self.assertEqual(
-            file_dict["Person_1"]["name"],
-            person_name
-        )
+        assert file_dict["Person_1"]["name"] == person_name
