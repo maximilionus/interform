@@ -33,7 +33,6 @@ def remove_temp_dir():
 def change_path_to_testsdir():
     """ Change working directory to `/tests/` """
     chdir(path.dirname(__file__))
-    print(f"I am here: {path.abspath('.')}")
 
 
 class BaseConfigTest():
