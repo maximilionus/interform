@@ -4,10 +4,13 @@ from unittest import TestCase
 
 
 temp_dir_path = './temp/'
-configuration_file_path = path.join(temp_dir_path, 'test_config.txt')
-default_configuration_file_path = "./fixtures/files/default_configuration.txt"
 
-default_configuration = {
+configuration_file_path = path.join(temp_dir_path, 'test_config.txt')
+
+__default_config_pattern = "./fixtures/files/default_configuration"
+default_cfg_json_path = __default_config_pattern + '.json'
+
+default_configuration_dict = {
     "Person_1": {
         "name": "X",
         "age": 256
