@@ -4,6 +4,10 @@ from configparser import ConfigParser
 
 from .core import BaseConfiguration, Namespace
 
+try:
+    import yaml
+except ImportError:
+    yaml = None
 
 logger = getLogger(__name__)
 
@@ -38,3 +42,9 @@ class INI_Configuration(BaseConfiguration):
         parser.read(self.configuration_file_path)
 
         return {section: dict(parser.items(section)) for section in parser.sections()}
+
+
+if yaml is not None:
+
+    class YAML_Configuration(BaseConfiguration):
+        pass

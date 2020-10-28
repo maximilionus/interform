@@ -12,7 +12,15 @@ def get_package_version() -> str:
 
 package_name = 'configerz'
 package_version = get_package_version()
-extras_require = {}
+
+# Form extras
+extras_require = {
+    "yaml": ["pyyaml>=5.*, <=5.3.1"]
+}
+
+extras_require.update({
+    "full": [dep for v in extras_require.values() for dep in v]
+})
 
 with open('README.md', 'r') as f:
     readme_text = f.read()
