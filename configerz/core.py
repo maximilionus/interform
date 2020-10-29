@@ -205,5 +205,5 @@ def create_directories(path_to_use: str, path_is_dir=False):
     """
     path_to_use = path_to_use if path_is_dir else path.dirname(path_to_use)
 
-    if not path.exists(path_to_use):
+    if not path.exists(path_to_use) and len(path_to_use) > 0:
         makedirs(path_to_use)
