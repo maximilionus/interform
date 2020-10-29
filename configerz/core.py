@@ -14,6 +14,20 @@ class Namespace:
 class BaseConfiguration:
     """ Basic implementation of config file interaction layer """
     def __init__(self, file_path: str, default_config: Union[str, dict], create_if_not_found=True):
+        """Object initialization
+
+        :param file_path: path to preferred configuration file destination.
+        If the file does not exist at the specified path, it will be created
+        :type file_path: str
+        :param default_config: default configuration file path `str` or dictionary
+        that will be used by `create_file()` and `reset_file()` methods
+        :type default_config: Union[str, dict]
+        :param create_if_not_found: create all non-existent directories from provided
+        in `file_path` path, defaults to True
+        :type create_if_not_found: bool, optional
+        :raises ValueError: If provided data type in argument `default_config` is not
+        the path `str` or `dict`, this exception will be raised
+        """
         self.configuration_file_path = file_path
 
         if type(default_config) == dict:
@@ -36,7 +50,11 @@ class BaseConfiguration:
         self.refresh()
 
     def refresh(self) -> bool:
-        """ Refresh configuration file values from json """
+        """Refresh configuration file values from json
+
+        :return: refresh action status
+        :rtype: bool
+        """
         self.__dict__.update(**self.fread_namespace().__dict__)
 
         return True
@@ -51,25 +69,29 @@ class BaseConfiguration:
         return True
 
     def is_exist(self) -> bool:
-        """ Check configuration file existence.
+        """Check configuration file existence
 
-        Returns:
-            bool: Does the file exist
+        :return: does the file exist
+        :rtype: bool
         """
         return True if path.isfile(self.configuration_file_path) else False
 
     def create_file(self) -> bool:
-        """ Create new configuration file from default dictionary """
+        """Create new configuration file from default dictionary
+
+        :return: was the file created successfully
+        :rtype: bool
+        """
         self.fwrite_dict(self.default_configuration)
         logger.info("Successfuly generated new configuration file")
 
         return True
 
     def delete_file(self) -> bool:
-        """ Delete configuration file
+        """Delete configuration file
 
-        Returns:
-            bool: True on successful file removal
+        :return: was the file removed successfully
+        :rtype: bool
         """
         remove(self.configuration_file_path)
 
@@ -81,8 +103,8 @@ class BaseConfiguration:
         Please note that object will not be reset after executing this method. To reset object -
         use `.refresh()` method.
 
-        Returns:
-            bool: True on successful file reset
+        :return: was the file reset successfully
+        :rtype: bool
         """
         self.fwrite_dict(self.default_configuration)
 
@@ -97,10 +119,15 @@ class BaseConfiguration:
         self._write_dict_to_file(self.configuration_file_path, dictionary)
 
     def fread_dict(self) -> dict:
+        """Read configuration file bound to this object as dictionary
+
+        :return: parsed configuration file
+        :rtype: dict
+        """
         return self._read_file_to_dict(self.configuration_file_path)
 
     def fread_namespace(self) -> Namespace:
-        """Read the configuration file bound to this object to Namespace
+        """Read the configuration file bound to this object as Namespace
 
         :return: namespace object with parsed configuration file
         :rtype: Namespace
@@ -109,7 +136,7 @@ class BaseConfiguration:
 
     @staticmethod
     def _read_file_to_dict(file_path: str) -> dict:
-        """Template for reading custom configuration files from path as dictionary
+        """Template for reading custom configuration files from path `str` as dictionary
 
         :param file_path: path to configuration file
         :type file_path: str
@@ -120,14 +147,42 @@ class BaseConfiguration:
 
     @staticmethod
     def _read_file_to_namespace(file_path: str) -> Namespace:
+        """Template for reading custom configuration files from path `str` as Namespace
+
+        :param file_path: path to configuration file
+        :type file_path: str
+        :return: namespace object with parsed configuration file
+        :rtype: Namespace
+        """
         pass
 
     @staticmethod
     def _write_dict_to_file(file_path: str, dictionary: dict):
+        """Template for writing dictionaries into custom configuration path `str`
+
+        :param file_path: path to configuration file
+        :type file_path: str
+        :param dictionary: dictionary which will be written in `file_path`
+        :type dictionary: dict
+        """
         pass
 
 
 def namespace_to_dict(namespace_from: Namespace, dict_to={}, exclude_list=[]) -> dict:
+    """Recursively convert `Namespace` object to dictionary
+
+    :param namespace_from: namespace object that will be converted
+    :type namespace_from: Namespace
+    :param dict_to: final dictionary variable, that will be used for
+    recursive scan. No need to specify it, defaults to {}
+    :type dict_to: dict, optional
+    :param exclude_list: contains `str`'s with names of attributes, that will be excluded
+    from `dict_to` on scan. This argument is used to exclude private and public
+    class-related attributes and leave only configuration file related attributes in `dict_to`, defaults to []
+    :type exclude_list: list, optional
+    :return: dictionary with all keys and values from `namespace_from` object
+    :rtype: dict
+    """
     for k, v in namespace_from.__dict__.items():
         if type(v) == Namespace:
             dict_to[k] = {}

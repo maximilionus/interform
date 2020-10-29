@@ -4,7 +4,7 @@ from setuptools import setup
 def get_package_version() -> str:
     nspace = {}
 
-    with open("./configerz/info.py", 'r') as f:
+    with open("./configerz/meta.py", 'r') as f:
         exec(f.read(), nspace)
 
     return nspace["__version__"]
