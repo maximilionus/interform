@@ -50,12 +50,28 @@ class BaseConfiguration:
         self.refresh()
 
     def refresh(self) -> bool:
-        """Refresh configuration file values from json
+        """
+        Refresh configuration file values from json.
+        Note that user-added attributes will stay in object after refresh
 
         :return: refresh action status
         :rtype: bool
         """
         self.__dict__.update(**self.fread_namespace().__dict__)
+
+        return True
+
+    def reset(self) -> bool:
+        """Reset object's attributes to values from bound configuration file
+
+        :return: status of reset action
+        :rtype: bool
+        """
+        for k in list(self.__dict__):
+            if k not in self.__commit_exclude_vars:
+                del(self.__dict__[k])
+
+        self.refresh()
 
         return True
 
@@ -101,7 +117,7 @@ class BaseConfiguration:
         """
         Reset configuration file to default values from `self.default_configuration` var.
         Please note that object will not be reset after executing this method. To reset object -
-        use `.refresh()` method.
+        use `.reset()` method.
 
         :return: was the file reset successfully
         :rtype: bool
