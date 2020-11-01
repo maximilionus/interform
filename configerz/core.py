@@ -12,10 +12,19 @@ class Namespace:
 
 
 class BaseConfiguration:
-    """ Basic implementation of config file interaction layer """
-    def __init__(self, file_path: str, default_config: Union[str, dict], create_if_not_found=True):
-        """Object initialization
+    """ Basic config file storage """
+    def __setattr__(self, name, value):
+        # if isinstance(value, dict):
+        #     TODO: Convert dicts to Namespace
+        return super().__setattr__(name, value)
 
+
+class BaseController:
+    def __init__(self, confuration_object: object, file_path: str, default_config: Union[str, dict], create_if_not_found=True):
+        """Controller initialization
+
+        :param confuration_object: [TODO]
+        :type confuration_object: object
         :param file_path: path to preferred configuration file destination.
         If the file does not exist at the specified path, it will be created
         :type file_path: str
@@ -28,20 +37,16 @@ class BaseConfiguration:
         :raises ValueError: If provided data type in argument `default_config` is not
         the path `str` or `dict`, this exception will be raised
         """
+        self.__confuration_object = confuration_object
         self.configuration_file_path = file_path
 
         if type(default_config) == dict:
-            self.default_configuration = default_config
+            self.__default_configuration = default_config
         elif path.isfile(default_config):
-            self.default_configuration = self._read_file_to_dict(default_config)
+            self.__default_configuration = self._read_file_to_dict(default_config)
         else:
             raise ValueError("'default_config' argument should be a dictionary or a path to file string. Provided value is {0}"
                              .format(type(default_config)))
-
-        # On commit() method scan this vars will be ignored
-        # By default it contains class-related variables
-        self.__commit_exclude_vars = []
-        self.__commit_exclude_vars.extend(list(self.__dict__))
 
         if create_if_not_found:
             create_directories(self.configuration_file_path)
@@ -57,7 +62,18 @@ class BaseConfiguration:
         :return: refresh action status
         :rtype: bool
         """
-        self.__dict__.update(**self.fread_namespace().__dict__)
+        self.__confuration_object.__dict__.update(**self.fread_namespace().__dict__)
+
+        return True
+
+    def clear(self) -> bool:
+        """Remove all attributes from configuration object
+
+        :return: [description]
+        :rtype: bool
+        """
+        for k in list(self.__confuration_object.__dict__.items()).items:
+            del(self.__confuration_object.__dict__[k])
 
         return True
 
@@ -67,10 +83,7 @@ class BaseConfiguration:
         :return: status of reset action
         :rtype: bool
         """
-        for k in list(self.__dict__):
-            if k not in self.__commit_exclude_vars:
-                del(self.__dict__[k])
-
+        self.clear()
         self.refresh()
 
         return True
@@ -78,7 +91,7 @@ class BaseConfiguration:
     def commit(self, safe=True) -> bool:
         """ Commit all changes from object to json configuration file """
         # TODO: Object scan and fix should be here
-        object_dict = namespace_to_dict(self, exclude_list=self.__commit_exclude_vars)
+        object_dict = namespace_to_dict(self.__confuration_object)
         self.fwrite_dict(object_dict)
         logger.debug("Successfully applied all object changes to local configuration file")
 
@@ -98,7 +111,7 @@ class BaseConfiguration:
         :return: was the file created successfully
         :rtype: bool
         """
-        self.fwrite_dict(self.default_configuration)
+        self.fwrite_dict(self.__default_configuration)
         logger.info("Successfuly generated new configuration file")
 
         return True
@@ -115,14 +128,14 @@ class BaseConfiguration:
 
     def reset_file(self) -> bool:
         """
-        Reset configuration file to default values from `self.default_configuration` var.
+        Reset configuration file to default values from `self.__default_configuration` var.
         Please note that object will not be reset after executing this method. To reset object -
         use `.reset()` method.
 
         :return: was the file reset successfully
         :rtype: bool
         """
-        self.fwrite_dict(self.default_configuration)
+        self.fwrite_dict(self.__default_configuration)
 
         return True
 
@@ -209,6 +222,11 @@ def namespace_to_dict(namespace_from: Namespace, dict_to={}, exclude_list=[]) ->
             dict_to.update({k: v})
 
     return dict_to
+
+
+def dict_to_namespace(dict_from, namespace_to=Namespace()) -> Namespace:
+    # TODO
+    pass
 
 
 def create_directories(path_to_use: str, path_is_dir=False):

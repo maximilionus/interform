@@ -41,21 +41,20 @@ class BaseConfigTest():
     `setup_method()` method should be overwritten with valid config object initialization.
     """
     def setup(self):
-        self.config_obj = None  # Should be changed in real test
+        self.config = None
+        self.controller = None
 
     def test_delete_file(self):
-        result = self.config_obj.delete_file()
-        assert result
+        assert self.controller.delete_file()
 
     def test_create_file(self):
-        result = self.config_obj.create_file()
-        assert result
+        assert self.controller.create_file()
 
     def test_modify(self):
         person_name = "Jeff"
-        self.config_obj.Person_1.name = person_name
-        self.config_obj.commit()
+        self.config.Person_1.name = person_name
+        self.controller.commit()
 
-        read_dict = self.config_obj.fread_dict()
+        read_dict = self.controller.fread_dict()
 
         assert read_dict["Person_1"]["name"] == person_name

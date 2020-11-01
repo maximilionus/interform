@@ -2,7 +2,7 @@ import json
 from logging import getLogger
 from configparser import ConfigParser
 
-from .core import BaseConfiguration, Namespace
+from .core import BaseConfiguration, BaseController, Namespace
 
 try:
     import yaml
@@ -12,7 +12,12 @@ except ImportError:
 logger = getLogger(__name__)
 
 
-class JSON_Configuration(BaseConfiguration):
+class Configuration(BaseConfiguration):
+    """ Configuration main object """
+    pass
+
+
+class JSON_Controller(BaseController):
     @staticmethod
     def _read_file_to_dict(file_path: str) -> dict:
         """Read custom configuration files from path `str` as json dictionary
@@ -55,7 +60,7 @@ class JSON_Configuration(BaseConfiguration):
         logger.debug("Successful write to file action")
 
 
-class INI_Configuration(BaseConfiguration):
+class INI_Controller(BaseController):
     # TODO
     def __dict_from_ini(self, config_parser) -> dict:
         # TODO: Needs to be tested
@@ -67,5 +72,5 @@ class INI_Configuration(BaseConfiguration):
 
 if yaml is not None:
 
-    class YAML_Configuration(BaseConfiguration):
+    class YAML_Controller(BaseController):
         pass

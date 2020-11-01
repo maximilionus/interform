@@ -1,6 +1,9 @@
 # Ignore python cache dirs
 __pycache__/
 
+# Ignore PyTest module cache
+.pytest_cache/
+
 # Ignore build dirs
 build/
 dist/
