@@ -5,9 +5,7 @@ from os import path, chdir
 temp_dir_path = './temp/'
 
 configuration_file_path = path.join(temp_dir_path, 'test_config.txt')
-
-__default_config_pattern = "./data/default_configuration"
-default_cfg_json_path = __default_config_pattern + '.json'
+default_cfg_json_path = path.join(temp_dir_path, 'default_config.json')
 
 default_configuration_dict = {
     "Person_1": {
@@ -50,7 +48,9 @@ class BaseConfigTest():
     def test_create_file(self):
         assert self.controller.create_file()
 
-    def test_modify(self):
+    # TODO: read_file and write_file
+
+    def test_modify_file(self):
         person_name = "Jeff"
         self.config.Person_1.name = person_name
         self.controller.commit()
@@ -58,3 +58,56 @@ class BaseConfigTest():
         read_dict = self.controller.fread_dict()
 
         assert read_dict["Person_1"]["name"] == person_name
+
+    def test_reset_file(self):
+        self.controller.reset_file()
+
+        assert self.controller.fread_dict()["Person_1"]["name"] == default_configuration_dict["Person_1"]["name"]
+
+    def test_clear_object(self):
+        self.controller.clear()
+
+        assert len(vars(self.config)) == 0
+
+    def test_refresh_object(self):
+        self.controller.refresh()
+
+        assert len(vars(self.config)) > 0
+
+    def test_add_one_key(self):
+        key_name = "Masvingo"
+
+        self.config.city = key_name
+        self.controller.commit()
+
+        assert self.config.city == self.controller.fread_dict()["city"]
+
+    def test_add_nested_dicts(self):
+        dct = {
+            "sugar": {
+                "carbon": 12,
+            }
+        }
+
+        self.config.items = dct
+        self.controller.commit()
+
+        assert self.config.items.sugar.carbon == self.controller.fread_dict()["items"]["sugar"]["carbon"]
+
+    def test_add_multiple_dicts(self):
+        dct = {
+            "jerre_1829": {
+                "status": 1
+            },
+            "wolfrm4882": {
+                "status": 2
+            }
+        }
+
+        self.config.users = dct
+        self.controller.commit()
+
+        file_dict = self.controller.fread_dict()["users"]
+
+        assert self.config.users.jerre_1829.status == file_dict["jerre_1829"]["status"] and \
+               self.config.users.wolfrm4882.status == file_dict["wolfrm4882"]["status"]

@@ -1,5 +1,19 @@
 # Configerz Changelog
 
+## Dev
+
+### Added
+
+- Feature to extend the current configuration object with dictionaries
+
+### Changed
+
+- Enhanced unit tests coverage
+
+### Fixed
+
+- `.core.BaseController.clear()` implementation fixed
+
 ## 0.0.2-dev1 : 2020.11.01
 
 ### Added

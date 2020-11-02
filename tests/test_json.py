@@ -1,7 +1,14 @@
+import json
+
 from configerz import JSON_Controller, Configuration
 
 from .core import BaseConfigTest, configuration_file_path,\
     default_configuration_dict, default_cfg_json_path, remove_temp_dir
+
+
+with open(default_cfg_json_path, 'w') as f:
+    # Write default configuration to temp json file
+    json.dump(default_configuration_dict, f)
 
 
 def teardown_module():

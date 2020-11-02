@@ -47,7 +47,7 @@ class BaseController:
             self.__default_configuration = self._read_file_to_dict(default_config)
         else:
             raise ValueError("'default_config' argument should be a dictionary or a path to file string. Provided value is {0}"
-                             .format(type(default_config)))
+                             .format(default_config))
 
         if create_if_not_found:
             create_directories(self.configuration_file_path)
@@ -73,7 +73,7 @@ class BaseController:
         :return: Status of clear action
         :rtype: bool
         """
-        for k in list(self.__confuration_object.__dict__.items()).items:
+        for k in list(self.__confuration_object.__dict__.keys()):
             del(self.__confuration_object.__dict__[k])
 
         return True
