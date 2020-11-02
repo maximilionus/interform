@@ -10,15 +10,12 @@ class Namespace:
     def __init__(self, **kwargs):
         self.__dict__.update({**kwargs})
 
-
-class BaseConfiguration:
-    """ Basic config file storage """
     def __setattr__(self, name, value):
-        #if isinstance(value, dict):
-        #    # TODO: Convert dicts to Namespace
-        #    pass
-        #else:
-        return super().__setattr__(name, value)
+        if isinstance(value, dict):
+            # Convert dict to namespace
+            vars(self)[name] = dict_to_namespace(value)
+        else:
+            return super().__setattr__(name, value)
 
 
 class BaseController:

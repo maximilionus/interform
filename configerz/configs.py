@@ -2,7 +2,7 @@ import json
 from logging import getLogger
 from configparser import ConfigParser
 
-from .core import BaseConfiguration, BaseController, Namespace
+from .core import BaseController, Namespace
 
 try:
     import yaml
@@ -12,7 +12,7 @@ except ImportError:
 logger = getLogger(__name__)
 
 
-class Configuration(BaseConfiguration):
+class Configuration(Namespace):
     """ Configuration main object """
     pass
 
