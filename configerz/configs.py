@@ -22,9 +22,9 @@ class JSON_Controller(BaseController):
     def _read_file_to_dict(file_path: str) -> dict:
         """Read custom configuration files from path `str` as json dictionary
 
-        :param file_path: path to configuration file
+        :param file_path: Path to configuration file
         :type file_path: str
-        :return: parsed configuration file dictionary
+        :return: Parsed configuration file dictionary
         :rtype: dict
         """
         with open(file_path, 'rt') as f:
@@ -36,9 +36,9 @@ class JSON_Controller(BaseController):
     def _read_file_to_namespace(file_path: str) -> Namespace:
         """Read custom configuration files from path `str` as Namespace
 
-        :param file_path: path to configuration file
+        :param file_path: Path to configuration file
         :type file_path: str
-        :return: namespace object with parsed configuration file
+        :return: Namespace object with parsed configuration file
         :rtype: Namespace
         """
         with open(file_path, 'rt') as f:
@@ -50,9 +50,9 @@ class JSON_Controller(BaseController):
     def _write_dict_to_file(file_path: str, dictionary: dict):
         """Write dictionaries into custom configuration path `str`
 
-        :param file_path: path to configuration file
+        :param file_path: Path to configuration file
         :type file_path: str
-        :param dictionary: dictionary which will be written in `file_path`
+        :param dictionary: Dictionary which will be written in `file_path`
         :type dictionary: dict
         """
         with open(file_path, 'wt') as f:
