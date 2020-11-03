@@ -5,6 +5,14 @@
 
 ### Added
 - Feature to extend the current configuration object with dictionaries
+- Create nested attributes in object without any dicts usage
+  - Example:
+    ```python
+    >>> cfg = Configuration()
+    >>> cfg.test.nested.d = "yes"
+    >>> cfg.test.nested.d
+    'yes'
+    ```
 
 ### Changed
 - Enhanced unit tests coverage
@@ -13,6 +21,7 @@
 
 ### Fixed
 - `.core.BaseController.clear()` implementation fixed
+- `.core.Namespace.__getitem__()` behaviour fixed
 
 
 ## 0.0.2-dev1 : 2020.11.01

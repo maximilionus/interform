@@ -1,6 +1,8 @@
 from shutil import rmtree
 from os import path, chdir
 
+import pytest
+
 from configerz.configs import Configuration
 from configerz.core import BaseController
 
@@ -57,10 +59,12 @@ class BaseConfigTest():
         assert self.controller.create_file()
 
     def test_file_read(self):
-        pass
+        # TODO
+        pytest.skip("Not finished")
 
     def test_file_write(self):
-        pass
+        # TODO
+        pytest.skip("Not finished")
 
     def test_modify_file(self):
         """
@@ -112,7 +116,8 @@ class BaseConfigTest():
         self.config["dash-split"]["second-dashed"] = 515
         self.controller.commit()
 
-        assert self.config["dash-split"]["second-dashed"] == self.controller.read_file_as_dict()["dash-split"]["second-dashed"]
+        assert self.config["dash-split"]["second-dashed"] == \
+               self.controller.read_file_as_dict()["dash-split"]["second-dashed"]
 
     def test_add_one_attribute(self):
         """
@@ -141,6 +146,13 @@ class BaseConfigTest():
         self.controller.commit()
 
         assert self.config.items.sugar.carbon == self.controller.read_file_as_dict()["items"]["sugar"]["carbon"]
+
+    def test_add_nested_objects(self):
+        self.config.lalilulelo.text = 'hello'
+        self.controller.commit()
+
+        assert self.config.lalilulelo.text == \
+               self.controller.read_file_as_dict()['lalilulelo']['text']
 
     def test_add_multiple_dicts(self):
         """

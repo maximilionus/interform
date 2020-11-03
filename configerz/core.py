@@ -13,16 +13,22 @@ class Namespace:
     def __setattr__(self, name, value):
         if isinstance(value, dict):
             # Convert dict to namespace
-            vars(self)[name] = dict_to_namespace(value)
-        else:
-            return super().__setattr__(name, value)
+            value = dict_to_namespace(value)
+
+        super().__setattr__(name, value)
+
+    def __getattr__(self, key):
+        if key not in vars(self):
+            # Create nested attributes
+            setattr(self, key, {})
+
+        return super().__getattribute__(key)
 
     def __getitem__(self, key):
-        requested_attribute = getattr(self, key)
-        if isinstance(requested_attribute, Namespace):
-            return vars(requested_attribute)
-        else:
-            return requested_attribute
+        return getattr(self, key)
+
+    def __setitem__(self, key, value):
+        setattr(self, key, value)
 
 
 class BaseController:
