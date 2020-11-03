@@ -22,7 +22,10 @@ default_configuration_dict = {
                        "The light of the monitor illuminated the whole sad sight. "
                        "He was just trying to write unit tests."
     },
-    "TestKey": "Yes"
+    "TestKey": "Yes",
+    "dash-split": {
+        "wow-man": "yeah, cool"
+    }
 }
 
 
@@ -101,6 +104,15 @@ class BaseConfigTest():
             return True
         else:
             return False
+
+    def test_access_dashed_attribute_like_dict(self):
+        assert self.config["dash-split"]["wow-man"] == default_configuration_dict["dash-split"]["wow-man"]
+
+    def test_add_dashed_attribute_like_dict(self):
+        self.config["dash-split"]["second-dashed"] = 515
+        self.controller.commit()
+
+        assert self.config["dash-split"]["second-dashed"] == self.controller.read_file_as_dict()["dash-split"]["second-dashed"]
 
     def test_add_one_attribute(self):
         """

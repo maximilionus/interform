@@ -17,6 +17,13 @@ class Namespace:
         else:
             return super().__setattr__(name, value)
 
+    def __getitem__(self, key):
+        requested_attribute = getattr(self, key)
+        if isinstance(requested_attribute, Namespace):
+            return vars(requested_attribute)
+        else:
+            return requested_attribute
+
 
 class BaseController:
     def __init__(self, confuration_object: object, file_path: str, default_config: Union[str, dict], create_if_not_found=True):
