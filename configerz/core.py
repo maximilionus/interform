@@ -41,7 +41,7 @@ class BaseController:
         self.__confuration_object = confuration_object
         self.configuration_file_path = file_path
 
-        if type(default_config) == dict:
+        if isinstance(default_config, dict):
             self.__default_configuration = default_config
         elif path.isfile(default_config):
             self.__default_configuration = self._core__read_file_to_dict(default_config)
