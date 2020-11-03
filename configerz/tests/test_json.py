@@ -3,16 +3,7 @@ import json
 from configerz import JSON_Controller, Configuration
 
 from .core import BaseConfigTest, configuration_file_path,\
-    default_configuration_dict, default_cfg_json_path, remove_temp_dir
-
-
-with open(default_cfg_json_path, 'w') as f:
-    # Write default configuration to temp json file
-    json.dump(default_configuration_dict, f)
-
-
-def teardown_module():
-    remove_temp_dir()
+    default_configuration_dict, default_cfg_json_path
 
 
 class Test_Create_DefDict(BaseConfigTest):
@@ -35,6 +26,9 @@ class Test_Create_DefPath(BaseConfigTest):
     and get default config values from file on `default_cfg_json_path`
     """
     def setup(self):
+        with open(default_cfg_json_path, 'w') as f:
+            json.dump(default_configuration_dict, f)
+
         self.config = Configuration()
         self.controller = JSON_Controller(
             self.config,
