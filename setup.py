@@ -1,4 +1,4 @@
-from setuptools import setup
+from setuptools import setup, find_packages
 
 
 def get_package_version() -> str:
@@ -15,7 +15,8 @@ package_version = get_package_version()
 
 # Form extras
 extras_require = {
-    "yaml": ["pyyaml>=5.*, <=5.3.1"]
+    "yaml": ["pyyaml>=5.*, <=5.3.1"],
+    "test": ["pytest<7"]
 }
 
 extras_require.update({
@@ -35,7 +36,7 @@ setup(
     long_description=readme_text,
     long_description_content_type="text/markdown",
     keywords="configuration configs files",
-    packages=[package_name],
+    packages=find_packages(),
     extras_require=extras_require,
     license="MIT",
     url="https://github.com/maximilionus/configerz",
