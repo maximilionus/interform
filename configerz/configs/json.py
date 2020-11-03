@@ -1,20 +1,10 @@
 import json
 from logging import getLogger
-from configparser import ConfigParser
 
-from .core import BaseController, Namespace
+from ..core import BaseController, Namespace
 
-try:
-    import yaml
-except ImportError:
-    yaml = None
 
 logger = getLogger(__name__)
-
-
-class Configuration(Namespace):
-    """ Configuration main object """
-    pass
 
 
 class JSON_Controller(BaseController):
@@ -58,19 +48,3 @@ class JSON_Controller(BaseController):
         with open(file_path, 'wt') as f:
             json.dump(dictionary, f, indent=4)
         logger.debug("Successful write to file action")
-
-
-class INI_Controller(BaseController):
-    # TODO
-    def __dict_from_ini(self, config_parser) -> dict:
-        # TODO: Needs to be tested
-        parser = ConfigParser()
-        parser.read(self.configuration_file_path)
-
-        return {section: dict(parser.items(section)) for section in parser.sections()}
-
-
-if yaml is not None:
-
-    class YAML_Controller(BaseController):
-        pass

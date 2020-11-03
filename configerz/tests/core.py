@@ -3,7 +3,7 @@ from os import path, chdir
 
 import pytest
 
-from configerz.configs import Configuration
+from configerz.core import Configuration
 from configerz.core import BaseController
 
 

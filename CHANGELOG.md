@@ -15,6 +15,7 @@
     ```
 
 ### Changed
+- Split configuration files controllers by type in submodule `.configs`
 - Enhanced unit tests coverage
 - Moved unit tests to project directory
 - Renamed some methods to more friendly variants

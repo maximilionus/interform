@@ -31,6 +31,11 @@ class Namespace:
         setattr(self, key, value)
 
 
+class Configuration(Namespace):
+    """ Configuration main object """
+    pass
+
+
 class BaseController:
     def __init__(self, confuration_object: object, file_path: str, default_config: Union[str, dict], create_if_not_found=True):
         """Controller class. Controllers contains realisation of all methods that are
