@@ -44,7 +44,7 @@ class BaseController:
         if type(default_config) == dict:
             self.__default_configuration = default_config
         elif path.isfile(default_config):
-            self.__default_configuration = self._read_file_to_dict(default_config)
+            self.__default_configuration = self._core__read_file_to_dict(default_config)
         else:
             raise ValueError("'default_config' argument should be a dictionary or a path to file string. Provided value is {0}"
                              .format(default_config))
@@ -63,7 +63,7 @@ class BaseController:
         :return: Refresh action status
         :rtype: bool
         """
-        self.__confuration_object.__dict__.update(**self.fread_namespace().__dict__)
+        self.__confuration_object.__dict__.update(**self.read_file_as_namespace().__dict__)
 
         return True
 
@@ -78,7 +78,7 @@ class BaseController:
 
         return True
 
-    def reset(self) -> bool:
+    def reset_to_file(self) -> bool:
         """Reset object's attributes to values from bound `confuration_object`
 
         :return: Status of reset action
@@ -89,6 +89,10 @@ class BaseController:
 
         return True
 
+    def reset_to_defaults(self) -> bool:
+        # TODO
+        pass
+
     def commit(self) -> bool:
         """Commit all changes from object to json configuration file
 
@@ -96,7 +100,7 @@ class BaseController:
         :rtype: bool
         """
         object_dict = namespace_to_dict(self.__confuration_object)
-        self.fwrite_dict(object_dict)
+        self.write_dict_to_file(object_dict)
         logger.debug("Successfully applied all object changes to local configuration file")
 
         return True
@@ -115,7 +119,7 @@ class BaseController:
         :return: Was the file created successfully
         :rtype: bool
         """
-        self.fwrite_dict(self.__default_configuration)
+        self.write_dict_to_file(self.__default_configuration)
         logger.info("Successfuly generated new configuration file")
 
         return True
@@ -130,7 +134,7 @@ class BaseController:
 
         return True
 
-    def reset_file(self) -> bool:
+    def reset_file_to_defaults(self) -> bool:
         """
         Reset configuration file to default values from `self.__default_configuration` var.
         Please note that object will not be reset after executing this method. To reset object -
@@ -139,36 +143,36 @@ class BaseController:
         :return: Was the file reset successfully
         :rtype: bool
         """
-        self.fwrite_dict(self.__default_configuration)
+        self.write_dict_to_file(self.__default_configuration)
 
         return True
 
-    def fwrite_dict(self, dictionary: dict):
+    def write_dict_to_file(self, dictionary: dict):
         """Write dict from `dictionary` argument to configuration file bound to this object
 
         :param config: Configuration dictionary
         :type config: dict
         """
-        self._write_dict_to_file(self.configuration_file_path, dictionary)
+        self._core__write_dict_to_file(self.configuration_file_path, dictionary)
 
-    def fread_dict(self) -> dict:
+    def read_file_as_dict(self) -> dict:
         """Read configuration file bound to this object as dictionary
 
         :return: Parsed configuration file
         :rtype: dict
         """
-        return self._read_file_to_dict(self.configuration_file_path)
+        return self._core__read_file_to_dict(self.configuration_file_path)
 
-    def fread_namespace(self) -> Namespace:
+    def read_file_as_namespace(self) -> Namespace:
         """Read the configuration file bound to this object as Namespace
 
         :return: Namespace object with parsed configuration file
         :rtype: Namespace
         """
-        return self._read_file_to_namespace(self.configuration_file_path)
+        return self._core__read_file_to_namespace(self.configuration_file_path)
 
     @staticmethod
-    def _read_file_to_dict(file_path: str) -> dict:
+    def _core__read_file_to_dict(file_path: str) -> dict:
         """Template for reading custom configuration files from path `str` as dictionary
 
         :param file_path: Path to configuration file
@@ -179,7 +183,7 @@ class BaseController:
         pass
 
     @staticmethod
-    def _read_file_to_namespace(file_path: str) -> Namespace:
+    def _core__read_file_to_namespace(file_path: str) -> Namespace:
         """Template for reading custom configuration files from path `str` as Namespace
 
         :param file_path: Path to configuration file
@@ -190,7 +194,7 @@ class BaseController:
         pass
 
     @staticmethod
-    def _write_dict_to_file(file_path: str, dictionary: dict):
+    def _core__write_dict_to_file(file_path: str, dictionary: dict):
         """Template for writing dictionaries into custom configuration path `str`
 
         :param file_path: Path to configuration file

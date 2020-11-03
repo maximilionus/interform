@@ -19,7 +19,7 @@ class Configuration(Namespace):
 
 class JSON_Controller(BaseController):
     @staticmethod
-    def _read_file_to_dict(file_path: str) -> dict:
+    def _core__read_file_to_dict(file_path: str) -> dict:
         """Read custom configuration files from path `str` as json dictionary
 
         :param file_path: Path to configuration file
@@ -33,7 +33,7 @@ class JSON_Controller(BaseController):
         return config_dict
 
     @staticmethod
-    def _read_file_to_namespace(file_path: str) -> Namespace:
+    def _core__read_file_to_namespace(file_path: str) -> Namespace:
         """Read custom configuration files from path `str` as Namespace
 
         :param file_path: Path to configuration file
@@ -47,7 +47,7 @@ class JSON_Controller(BaseController):
         return namespace
 
     @staticmethod
-    def _write_dict_to_file(file_path: str, dictionary: dict):
+    def _core__write_dict_to_file(file_path: str, dictionary: dict):
         """Write dictionaries into custom configuration path `str`
 
         :param file_path: Path to configuration file
