@@ -1,5 +1,5 @@
 from .meta import *
-from .core import Configuration
+from .core import Configuration, getkey
 from .configs.json import JSON_Controller
 from .configs.ini import INI_Controller
 

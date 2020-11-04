@@ -269,7 +269,7 @@ def dict_to_namespace(dict_from: dict, namespace_to=Namespace()) -> Namespace:
 
 
 def create_directories(path_to_use: str, path_is_dir=False):
-    """ Create all directories from path
+    """Create all directories from path
 
     :param path_to_use: The path to be created
     :type path_to_use: str
@@ -280,3 +280,20 @@ def create_directories(path_to_use: str, path_is_dir=False):
 
     if not path.exists(path_to_use) and len(path_to_use) > 0:
         makedirs(path_to_use)
+
+
+def getkey(configuration_object: Configuration, key_name: str, default=None) -> Union[str, Namespace]:
+    """Safely extract key from configuration object
+
+    :param configuration_object: `Configuration` class object to read values from
+    :type configuration_object: Configuration
+    :param key_name: Name of the key that function will search for in `configuration_object`
+    :type key_name: str
+    :param default: If key doesn't exist in `configuration_object` - return value will be replaced
+        with this argument, defaults to None
+    :type default: Any, optional
+    :return: Return the value of `key_name` in `configuration_object` or `default` if `key_name` was
+        not found in `configuration_object`
+    :rtype: Union[str, Namespace]
+    """
+    return vars(configuration_object).get(key_name, default)
