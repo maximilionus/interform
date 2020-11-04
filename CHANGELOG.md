@@ -1,7 +1,8 @@
 # Configerz Changelog
 
 
-## Dev
+## 0.0.2-dev2 : 2020.11.05
+> This version was the last attempt to create object model configuration files. I decided to give up this idea, because the realisation of this feature was awful.
 
 ### Added
 - Feature to extend the current configuration object with dictionaries
