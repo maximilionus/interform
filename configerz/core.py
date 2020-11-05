@@ -36,14 +36,10 @@ class Configuration(Namespace):
     pass
 
 
-class BaseController:
-    def __init__(self, confuration_object: object, file_path: str, default_config: Union[str, dict], create_if_not_found=True):
-        """Controller class. Controllers contains realisation of all methods that are
-        used to work with configuration objects: apply changes, refresh, reset, create, eg.
+class BaseConfiguration:
+    def __init__(self, file_path: str, default_config: Union[str, dict], create_if_not_found=True):
+        """Configuration object
 
-        :param confuration_object: `Configuration` class object, that this controller
-        will use for further actions
-        :type confuration_object: object
         :param file_path: path to preferred configuration file destination
         If the file does not exist at the specified path, it will be created
         :type file_path: str
@@ -56,7 +52,8 @@ class BaseController:
         :raises ValueError: If provided data type in argument `default_config` is not
         the path `str` or `dict`, this exception will be raised
         """
-        self.__confuration_object = confuration_object
+        self.__configuration_dict = {}
+
         self.configuration_file_path = file_path
 
         if isinstance(default_config, dict):
@@ -73,6 +70,22 @@ class BaseController:
 
         self.refresh()
 
+    def __getitem__(self, key):
+        return self.__configuration_dict[key]
+
+    def __setitem__(self, key, value):
+        self.__configuration_dict[key] = value
+
+    def __delitem__(self, key):
+        self.__configuration_dict.__delitem__(key)
+
+    def __len__(self):
+        return self.__configuration_dict.__len__()
+
+    @property
+    def dictionary(self) -> dict:
+        return self.__configuration_dict
+
     def refresh(self) -> bool:
         """
         Refresh configuration file values from json.
@@ -81,7 +94,7 @@ class BaseController:
         :return: Refresh action status
         :rtype: bool
         """
-        self.__confuration_object.__dict__.update(**self.read_file_as_namespace().__dict__)
+        self.__configuration_dict.update(self.read_file_as_dict())
 
         return True
 
@@ -91,8 +104,8 @@ class BaseController:
         :return: Status of clear action
         :rtype: bool
         """
-        for k in list(self.__confuration_object.__dict__.keys()):
-            del(self.__confuration_object.__dict__[k])
+        for k in list(self.__configuration_dict.keys()):
+            del(self.__configuration_dict.__dict__[k])
 
         return True
 
@@ -117,8 +130,7 @@ class BaseController:
         :return: Was the changes committed
         :rtype: bool
         """
-        object_dict = namespace_to_dict(self.__confuration_object)
-        self.write_dict_to_file(object_dict)
+        self.write_dict_to_file(self.__configuration_dict)
         logger.debug("Successfully applied all object changes to local configuration file")
 
         return True
@@ -181,14 +193,6 @@ class BaseController:
         """
         return self._core__read_file_to_dict(self.configuration_file_path)
 
-    def read_file_as_namespace(self) -> Namespace:
-        """Read the configuration file bound to this object as Namespace
-
-        :return: Namespace object with parsed configuration file
-        :rtype: Namespace
-        """
-        return self._core__read_file_to_namespace(self.configuration_file_path)
-
     @staticmethod
     def _core__read_file_to_dict(file_path: str) -> dict:
         """Template for reading custom configuration files from path `str` as dictionary
@@ -197,17 +201,6 @@ class BaseController:
         :type file_path: str
         :return: Parsed configuration file dictionary
         :rtype: dict
-        """
-        pass
-
-    @staticmethod
-    def _core__read_file_to_namespace(file_path: str) -> Namespace:
-        """Template for reading custom configuration files from path `str` as Namespace
-
-        :param file_path: Path to configuration file
-        :type file_path: str
-        :return: Namespace object with parsed configuration file
-        :rtype: Namespace
         """
         pass
 
@@ -223,51 +216,6 @@ class BaseController:
         pass
 
 
-def namespace_to_dict(namespace_from: Namespace, dict_to={}) -> dict:
-    """Recursively convert `Namespace` object to dictionary
-
-    :param namespace_from: `Namespace` object that will be converted
-    :type namespace_from: Namespace
-    :param dict_to: Final dictionary variable, that will be used for
-        recursive scan. No need to specify it, defaults to {}
-    :type dict_to: dict, optional
-    :return: Dictionary with all keys and values from `namespace_from` object
-    :rtype: dict
-    """
-    for k, v in vars(namespace_from).items():
-        if isinstance(v, Namespace):
-            dict_to[k] = {}
-            namespace_to_dict(v, dict_to[k])
-        else:
-            dict_to.update({k: v})
-
-    return dict_to
-
-
-def dict_to_namespace(dict_from: dict, namespace_to=Namespace()) -> Namespace:
-    """Recursively convert any dictionary to `Namespace` object
-
-    :param dict_from: Dictionary, that needs to be converted
-    :type dict_from: dict
-    :param namespace_to: Optional argument, used by this function recursive calls to itself.
-        No need to specify it, defaults to Namespace()
-    :type namespace_to: Namespace, optional
-    :return: `Namespace` object with all dict_from values,
-        accessible as object's attributes
-    :rtype: Namespace
-    """
-    namespace_to_dict = vars(namespace_to) if isinstance(namespace_to, Namespace) else namespace_to
-
-    for k, v in dict_from.items():
-        if isinstance(v, dict):
-            namespace_to_dict[k] = Namespace()
-            dict_to_namespace(v, namespace_to_dict[k])
-        else:
-            namespace_to_dict.update({k: v})
-
-    return namespace_to
-
-
 def create_directories(path_to_use: str, path_is_dir=False):
     """Create all directories from path
 
@@ -280,20 +228,3 @@ def create_directories(path_to_use: str, path_is_dir=False):
 
     if not path.exists(path_to_use) and len(path_to_use) > 0:
         makedirs(path_to_use)
-
-
-def getkey(configuration_object: Configuration, key_name: str, default=None) -> Union[str, Namespace]:
-    """Safely extract key from configuration object
-
-    :param configuration_object: `Configuration` class object to read values from
-    :type configuration_object: Configuration
-    :param key_name: Name of the key that function will search for in `configuration_object`
-    :type key_name: str
-    :param default: If key doesn't exist in `configuration_object` - return value will be replaced
-        with this argument, defaults to None
-    :type default: Any, optional
-    :return: Return the value of `key_name` in `configuration_object` or `default` if `key_name` was
-        not found in `configuration_object`
-    :rtype: Union[str, Namespace]
-    """
-    return vars(configuration_object).get(key_name, default)

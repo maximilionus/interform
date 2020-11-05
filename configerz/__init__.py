@@ -1,11 +1,10 @@
 from .meta import *
-from .core import Configuration, getkey
-from .configs.json import JSON_Controller
-from .configs.ini import INI_Controller
+from .configs.json import JSON_Configuration
+from .configs.ini import INI_Configuration
 
 try:
     import yaml
 except ImportError:
     pass
 else:
-    from .configs.yaml import YAML_Controller
+    from .configs.yaml import YAML_Configuration

@@ -1,13 +1,13 @@
 from logging import getLogger
 from configparser import ConfigParser
 
-from ..core import BaseController
+from ..core import BaseConfiguration
 
 
 logger = getLogger(__name__)
 
 
-class INI_Controller(BaseController):
+class INI_Configuration(BaseConfiguration):
     # TODO
     def __dict_from_ini(self, config_parser) -> dict:
         # TODO: Needs to be tested

@@ -2,11 +2,11 @@ from logging import getLogger
 
 import yaml
 
-from ..core import BaseController
+from ..core import BaseConfiguration
 
 
 logger = getLogger(__name__)
 
 
-class YAML_Controller(BaseController):
+class YAML_Configuration(BaseConfiguration):
     pass
