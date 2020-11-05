@@ -3,8 +3,7 @@ from os import path, chdir
 
 import pytest
 
-from configerz.core import Configuration
-from configerz.core import BaseController
+from configerz.core import BaseConfiguration
 
 
 temp_dir_path = './temp/'
@@ -47,16 +46,15 @@ class BaseConfigTest():
     `setup_method()` method should be overwritten with valid config object initialization.
     """
     def setup(self):
-        self.config = Configuration()
-        self.controller = BaseController()
+        self.config = BaseConfiguration()
 
     def test_delete_file(self):
         """ Delete local configuration file """
-        assert self.controller.delete_file()
+        self.config.delete_file()
 
     def test_create_file(self):
         """ Create local configuration file """
-        assert self.controller.create_file()
+        self.config.create_file()
 
     def test_file_read(self):
         # TODO
@@ -72,52 +70,47 @@ class BaseConfigTest():
         Then check if the content of file is equal to the content of modified attribute.
         """
         person_name = "Jeff"
-        self.config.Person_1.name = person_name
-        self.controller.commit()
+        self.config['Person_1']['name'] = person_name
+        self.config.commit()
 
-        read_dict = self.controller.read_file_as_dict()
+        read_dict = self.config.read_file_as_dict()
 
         assert read_dict["Person_1"]["name"] == person_name
 
     def test_reset_file_to_defaults(self):
         """ Reset local file to values from bound default configuration """
-        self.controller.reset_file_to_defaults()
+        self.config.reset_file_to_defaults()
 
-        assert self.controller.read_file_as_dict()["Person_1"]["name"] == default_configuration_dict["Person_1"]["name"]
+        assert self.config.read_file_as_dict()["Person_1"]["name"] == default_configuration_dict["Person_1"]["name"]
 
     def test_clear_object(self):
         """ Clear all object's attributes """
-        self.controller.clear()
+        self.config.clear()
 
-        assert len(vars(self.config)) == 0
+        assert len(self.config) == 0
 
     def test_refresh_object(self):
         """ Read all attributes from local file """
-        self.controller.refresh()
+        self.config.refresh()
 
         assert len(vars(self.config)) > 0
 
     def test_reset_object_to_file(self):
         """ Reset all object's attributes to values from bound configuration file """
-        self.config.tobereset = True
-        self.controller.reset_to_file()
+        self.config['tobereset'] = False
+        self.config.reset_to_file()
 
-        try:
-            self.config.tobereset
-        except AttributeError:
-            return True
-        else:
-            return False
+        assert self.config.get('tobereset', True)
 
     def test_access_dashed_attribute_like_dict(self):
         assert self.config["dash-split"]["wow-man"] == default_configuration_dict["dash-split"]["wow-man"]
 
     def test_add_dashed_attribute_like_dict(self):
         self.config["dash-split"]["second-dashed"] = 515
-        self.controller.commit()
+        self.config.commit()
 
         assert self.config["dash-split"]["second-dashed"] == \
-               self.controller.read_file_as_dict()["dash-split"]["second-dashed"]
+               self.config.read_file_as_dict()["dash-split"]["second-dashed"]
 
     def test_add_one_attribute(self):
         """
@@ -126,10 +119,10 @@ class BaseConfigTest():
         """
         key_name = "Masvingo"
 
-        self.config.city = key_name
-        self.controller.commit()
+        self.config['city'] = key_name
+        self.config.commit()
 
-        assert self.config.city == self.controller.read_file_as_dict()["city"]
+        assert self.config['city'] == self.config.read_file_as_dict()["city"]
 
     def test_add_nested_dicts(self):
         """
@@ -142,19 +135,12 @@ class BaseConfigTest():
             }
         }
 
-        self.config.items = dct
-        self.controller.commit()
+        self.config['items'] = dct
+        self.config.commit()
 
-        assert self.config.items.sugar.carbon == self.controller.read_file_as_dict()["items"]["sugar"]["carbon"]
+        assert self.config['items']['sugar']['carbon'] == self.config.read_file_as_dict()["items"]["sugar"]["carbon"]
 
-    def test_add_nested_objects(self):
-        self.config.lalilulelo.text = 'hello'
-        self.controller.commit()
-
-        assert self.config.lalilulelo.text == \
-               self.controller.read_file_as_dict()['lalilulelo']['text']
-
-    def test_add_multiple_dicts(self):
+    def test_add_multiple_dicts_with_update(self):
         """
         Add multiple dicts to object, commit changes
         and assert the result with local file
@@ -168,10 +154,10 @@ class BaseConfigTest():
             }
         }
 
-        self.config.users = dct
-        self.controller.commit()
+        self.config['users'] = dct
+        self.config.commit()
 
-        file_dict = self.controller.read_file_as_dict()["users"]
+        file_dict = self.config.read_file_as_dict()["users"]
 
-        assert self.config.users.jerre_1829.status == file_dict["jerre_1829"]["status"] and \
-               self.config.users.wolfrm4882.status == file_dict["wolfrm4882"]["status"]
+        assert self.config['users']['jerre_1829']['status'] == file_dict["jerre_1829"]["status"] and \
+               self.config['users']['wolfrm4882']['status'] == file_dict["wolfrm4882"]["status"]

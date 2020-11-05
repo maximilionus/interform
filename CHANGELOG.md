@@ -2,11 +2,18 @@
 
 ## 0.0.3-dev1 : wip
 
+### Added
+- Dictionary methods to `.core.BaseConfiguration`
+
 ### Fixed
 - Existing files will no longer be overwritten with values from the default dictionary on object initialization
 
+### Changed
+- Unit tests suite modified to current changes
+
 ### Removed
 - Got rid of the object model access and switched to dict support
+- Property `.core.BaseConfiguration.dictionary` removed
 
 
 ## 0.0.2-dev2 : 2020.11.05

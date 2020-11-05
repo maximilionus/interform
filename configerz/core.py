@@ -51,60 +51,60 @@ class BaseConfiguration:
         self.__configuration_dict.__delitem__(key)
 
     def __len__(self):
-        return self.__configuration_dict.__len__()
+        return len(self.__configuration_dict)
 
-    @property
-    def dictionary(self) -> dict:
-        return self.__configuration_dict
+    def __repr__(self):
+        return self.__configuration_dict.__repr__()
 
-    def refresh(self) -> bool:
+    def clear(self):
+        self.__configuration_dict.clear()
+
+    def copy(self):
+        return self.__configuration_dict.copy()
+
+    def fromkeys(self, type, iterable, value):
+        self.__configuration_dict.fromkeys(type, iterable, value)
+
+    def get(self, key, default):
+        return self.__configuration_dict.get(key, default)
+
+    def items(self):
+        return self.__configuration_dict.items()
+
+    def keys(self):
+        return self.__configuration_dict.keys()
+
+    def values(self):
+        return self.__default_configuration.values()
+
+    def pop(self, k, d=None):
+        self.__configuration_dict.pop(k, d)
+
+    def popitem(self, k, d=None):
+        self.__configuration_dict.popitem(k, d)
+
+    def setdefault(self, key, default):
+        self.__configuration_dict.setdefault(key, default)
+
+    def update(self, d: dict):
+        self.__configuration_dict.update(d)
+
+    def refresh(self):
         """
         Refresh configuration file values from json.
         Note that user-added attributes will stay in object after refresh
-
-        :return: Refresh action status
-        :rtype: bool
         """
         self.__configuration_dict.update(self.read_file_as_dict())
 
-        return True
-
-    def clear(self) -> bool:
-        """Remove all attributes from bound `confuration_object`
-
-        :return: Status of clear action
-        :rtype: bool
-        """
-        for k in list(self.__configuration_dict.keys()):
-            del(self.__configuration_dict.__dict__[k])
-
-        return True
-
-    def reset_to_file(self) -> bool:
-        """Reset object's attributes to values from bound `confuration_object`
-
-        :return: Status of reset action
-        :rtype: bool
-        """
+    def reset_to_file(self):
+        """Reset object's attributes to values from bound `confuration_object`"""
         self.clear()
         self.refresh()
 
-        return True
-
-    def reset_to_defaults(self) -> bool:
-        # TODO
-        pass
-
-    def commit(self) -> bool:
-        """Commit all changes from object to json configuration file
-
-        :return: Was the changes committed
-        :rtype: bool
-        """
+    def commit(self):
+        """Commit all changes from object to json configuration file"""
         self.write_dict_to_file(self.__configuration_dict)
         logger.debug("Successfully applied all object changes to local configuration file")
-
-        return True
 
     def is_exist(self) -> bool:
         """Check configuration file existence
@@ -125,28 +125,17 @@ class BaseConfiguration:
 
         return True
 
-    def delete_file(self) -> bool:
-        """Delete configuration file
-
-        :return: Was the file removed successfully
-        :rtype: bool
-        """
+    def delete_file(self):
+        """Delete configuration file"""
         remove(self.configuration_file_path)
 
-        return True
-
-    def reset_file_to_defaults(self) -> bool:
+    def reset_file_to_defaults(self):
         """
         Reset configuration file to default values from `self.__default_configuration` var.
-        Please note that object will not be reset after executing this method. To reset object -
-        use `.reset()` method.
-
-        :return: Was the file reset successfully
-        :rtype: bool
+        Please note that object will not be reset after executing this method. To reset object dict -
+        use `.reset_to_file()` method.
         """
         self.write_dict_to_file(self.__default_configuration)
-
-        return True
 
     def write_dict_to_file(self, dictionary: dict):
         """Write dict from `dictionary` argument to configuration file bound to this object
