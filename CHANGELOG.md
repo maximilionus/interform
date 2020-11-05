@@ -1,5 +1,13 @@
 # Configerz Changelog
 
+## 0.0.3-dev1 : wip
+
+### Fixed
+- Existing files will no longer be overwritten with values from the default dictionary on object initialization
+
+### Removed
+- Got rid of the object model access and switched to dict support
+
 
 ## 0.0.2-dev2 : 2020.11.05
 > This version was the last attempt to create object model configuration files. I decided to give up this idea, because the realisation of this feature was awful.

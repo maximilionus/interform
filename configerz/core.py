@@ -6,36 +6,6 @@ from os import path, makedirs, remove
 logger = getLogger(__name__)
 
 
-class Namespace:
-    def __init__(self, **kwargs):
-        self.__dict__.update({**kwargs})
-
-    def __setattr__(self, name, value):
-        if isinstance(value, dict):
-            # Convert dict to namespace
-            value = dict_to_namespace(value)
-
-        super().__setattr__(name, value)
-
-    def __getattr__(self, key):
-        if key not in vars(self):
-            # Create nested attributes
-            setattr(self, key, {})
-
-        return super().__getattribute__(key)
-
-    def __getitem__(self, key):
-        return getattr(self, key)
-
-    def __setitem__(self, key, value):
-        setattr(self, key, value)
-
-
-class Configuration(Namespace):
-    """ Configuration main object """
-    pass
-
-
 class BaseConfiguration:
     def __init__(self, file_path: str, default_config: Union[str, dict], create_if_not_found=True):
         """Configuration object
@@ -65,8 +35,9 @@ class BaseConfiguration:
                              .format(default_config))
 
         if create_if_not_found:
-            create_directories(self.configuration_file_path)
-            self.create_file()
+            if not path.exists(file_path):
+                create_directories(self.configuration_file_path)
+                self.create_file()
 
         self.refresh()
 
