@@ -1,6 +1,6 @@
 import json
 
-from configerz import JSON_Configuration
+from configurio import JSON_Configuration
 
 from .core import BaseConfigTest, configuration_file_path,\
     default_configuration_dict, default_cfg_json_path

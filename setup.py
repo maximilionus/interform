@@ -4,13 +4,13 @@ from setuptools import setup, find_packages
 def get_package_version() -> str:
     nspace = {}
 
-    with open("./configerz/meta.py", 'r') as f:
+    with open("./configurio/meta.py", 'r') as f:
         exec(f.read(), nspace)
 
     return nspace["__version__"]
 
 
-package_name = 'configerz'
+package_name = 'configurio'
 package_version = get_package_version()
 
 # Form extras
@@ -39,7 +39,7 @@ setup(
     packages=find_packages(),
     extras_require=extras_require,
     license="MIT",
-    url="https://github.com/maximilionus/configerz",
+    url="https://github.com/maximilionus/configurio",
     classifiers=[
         "Development Status :: 1 - Planning",
         "Programming Language :: Python :: 3",

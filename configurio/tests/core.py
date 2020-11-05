@@ -3,7 +3,7 @@ from os import path, chdir
 
 import pytest
 
-from configerz.core import BaseConfiguration
+from configurio.core import BaseConfiguration
 
 
 temp_dir_path = './temp/'

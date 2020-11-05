@@ -1,6 +1,6 @@
 import pytest
 
-from configerz.core import create_directories
+from configurio.core import create_directories
 
 from . import core
 
