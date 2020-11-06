@@ -3,7 +3,7 @@ from .configs.json import JSON_Configuration
 from .configs.ini import INI_Configuration
 
 try:
-    import yaml
+    from ruamel.yaml import YAML
 except ImportError:
     pass
 else:

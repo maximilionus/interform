@@ -23,7 +23,7 @@ class JSON_Configuration(BaseConfiguration):
 
     @staticmethod
     def _core__write_dict_to_file(file_path: str, dictionary: dict):
-        """Write dictionaries into custom configuration path `str`
+        """Write dictionary into custom configuration path `str`
 
         :param file_path: Path to configuration file
         :type file_path: str

@@ -3,15 +3,21 @@
 ## 0.0.3-dev1 : wip
 
 ### Added
+- `Yaml` support *(<=1.2)* with [`ruamel.yaml`](https://pypi.org/project/ruamel.yaml/) module. `PyYaml` support dropped. Tests added.
 - `.core.BaseConfiguration` additions:
   - `dict` methods to work with `__configuration_dict`
   - Added getters and setters for `__configuration_dict` and `__default_configuration_dict`
+- Custom markers `yaml` and `json` to PyTest configuration
+- `test` bundle to `setup.py`'s `extras_require` with all necessary for testing packages
 
 ### Fixed
 - Existing files will no longer be overwritten with values from the default dictionary on object initialization
 
 ### Changed
 - Unit tests suite modified to current changes and enhanced
+- `.core.BaseConfiguration.__init__()`:
+  - `default_config` argument is now optional
+  - `create_if_not_found` argument removed
 
 ### Removed
 - Got rid of the object model access and switched to dict support
@@ -19,6 +25,7 @@
 - Removed logging module support
 - `.core.BaseConfiguration` removals:
   - `reset_file_to_defaults()` method
+  - `__repr__()` method
 
 
 ## 0.0.2-dev2 : 2020.11.05

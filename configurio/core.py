@@ -1,22 +1,20 @@
-from typing import Union
 from os import path, makedirs, remove
 
 
 class BaseConfiguration:
-    def __init__(self, file_path: str, default_config: Union[str, dict], create_if_not_found=True):
+    def __init__(self, file_path: str, default_config: {}, force_overwrite_file=False):
         """Configuration object
 
-        :param file_path: path to preferred configuration file destination
-        If the file does not exist at the specified path, it will be created
+        :param file_path: Path to preferred configuration file destination
+            If the file does not exist at the specified path, it will be created
         :type file_path: str
-        :param default_config: default configuration file path `str` or dictionary
-        that will be used by `create_file()` and `reset_file()` methods
+        :param default_config: Default configuration file path `str` or dictionary
+            that will be used by `create_file()` and `reset_file()` methods, defaults to {}
         :type default_config: Union[str, dict]
-        :param create_if_not_found: create all non-existent directories from provided
-        in `file_path` path, defaults to True
-        :type create_if_not_found: bool, optional
+        :param force_overwrite_file: Should a file be overwritten if it already exists, defaults to False
+        :type force_overwrite_file: bool, optional
         :raises ValueError: If provided data type in argument `default_config` is not
-        the path `str` or `dict`, this exception will be raised
+            the path `str` or `dict`, this exception will be raised
         """
         self.__configuration_dict = {}
 
@@ -30,10 +28,9 @@ class BaseConfiguration:
             raise ValueError("'default_config' argument should be a dictionary or a path to file string. Provided value is {0}"
                              .format(default_config))
 
-        if create_if_not_found:
-            if not self.is_file_exist():
-                create_directories(self.configuration_file_path)
-                self.create_file()
+        if not self.is_file_exist() or force_overwrite_file:
+            create_directories(self.configuration_file_path)
+            self.create_file()
 
         self.refresh()
 
@@ -48,9 +45,6 @@ class BaseConfiguration:
 
     def __len__(self):
         return len(self.__configuration_dict)
-
-    def __repr__(self):
-        return self.__configuration_dict.__repr__()
 
     def clear(self):
         self.__configuration_dict.clear()

@@ -13,8 +13,8 @@ pytest<7
 ujson
 
 # Yaml parser
-pyyaml
+ruamel.yaml
 
 # Documentation
 Sphinx~=3.3
-sphinx-rtd-theme==0.5.0
+sphinx-rtd-theme~=0.5

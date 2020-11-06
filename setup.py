@@ -15,14 +15,19 @@ package_version = get_package_version()
 
 # Form extras
 extras_require = {
-    "yaml": ["pyyaml"],
+    "yaml": ["ruamel.yaml"],
     "ujson": ["ujson"],
-    "test": ["pytest<7"]
 }
 
+all_base_requirements = [dep for v in extras_require.values() for dep in v]
+
+#  Installation with all parsers
 extras_require.update({
-    "full": [dep for v in extras_require.values() for dep in v]
+    "full": all_base_requirements
 })
+
+#  Installation for testing
+extras_require.setdefault("test", all_base_requirements.copy()).append("pytest<7")
 
 with open('README.md', 'r') as f:
     readme_text = f.read()
