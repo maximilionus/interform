@@ -15,7 +15,8 @@ package_version = get_package_version()
 
 # Form extras
 extras_require = {
-    "yaml": ["pyyaml>=5.*, <=5.3.1"],
+    "yaml": ["pyyaml"],
+    "ujson": ["ujson"],
     "test": ["pytest<7"]
 }
 

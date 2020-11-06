@@ -9,8 +9,11 @@ pytest<7
 # Project
 -e .
 
+# JSON custom parser
+ujson
+
 # Yaml parser
-pyyaml>=5.*, <=5.3.1
+pyyaml
 
 # Documentation
 Sphinx~=3.3

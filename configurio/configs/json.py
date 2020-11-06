@@ -1,10 +1,9 @@
-import json
-from logging import getLogger
-
 from ..core import BaseConfiguration
 
-
-logger = getLogger(__name__)
+try:
+    import ujson as json
+except ImportError:
+    import json
 
 
 class JSON_Configuration(BaseConfiguration):
@@ -33,4 +32,3 @@ class JSON_Configuration(BaseConfiguration):
         """
         with open(file_path, 'wt') as f:
             json.dump(dictionary, f, indent=4)
-        logger.debug("Successful write to file action")

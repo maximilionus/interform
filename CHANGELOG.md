@@ -3,17 +3,22 @@
 ## 0.0.3-dev1 : wip
 
 ### Added
-- Dictionary methods to `.core.BaseConfiguration`
+- `.core.BaseConfiguration` additions:
+  - `dict` methods to work with `__configuration_dict`
+  - Added getters and setters for `__configuration_dict` and `__default_configuration_dict`
 
 ### Fixed
 - Existing files will no longer be overwritten with values from the default dictionary on object initialization
 
 ### Changed
-- Unit tests suite modified to current changes
+- Unit tests suite modified to current changes and enhanced
 
 ### Removed
 - Got rid of the object model access and switched to dict support
-- Property `.core.BaseConfiguration.dictionary` removed
+- Useless version range lock from `requirements-dev.txt` and `setup.py`
+- Removed logging module support
+- `.core.BaseConfiguration` removals:
+  - `reset_file_to_defaults()` method
 
 
 ## 0.0.2-dev2 : 2020.11.05

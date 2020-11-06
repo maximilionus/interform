@@ -1,9 +1,5 @@
 from typing import Union
-from logging import getLogger
 from os import path, makedirs, remove
-
-
-logger = getLogger(__name__)
 
 
 class BaseConfiguration:
@@ -27,15 +23,15 @@ class BaseConfiguration:
         self.configuration_file_path = file_path
 
         if isinstance(default_config, dict):
-            self.__default_configuration = default_config
+            self.__default_configuration_dict = default_config
         elif path.isfile(default_config):
-            self.__default_configuration = self._core__read_file_to_dict(default_config)
+            self.__default_configuration_dict = self._core__read_file_to_dict(default_config)
         else:
             raise ValueError("'default_config' argument should be a dictionary or a path to file string. Provided value is {0}"
                              .format(default_config))
 
         if create_if_not_found:
-            if not path.exists(file_path):
+            if not self.is_file_exist():
                 create_directories(self.configuration_file_path)
                 self.create_file()
 
@@ -75,7 +71,7 @@ class BaseConfiguration:
         return self.__configuration_dict.keys()
 
     def values(self):
-        return self.__default_configuration.values()
+        return self.__default_configuration_dict.values()
 
     def pop(self, k, d=None):
         self.__configuration_dict.pop(k, d)
@@ -89,30 +85,44 @@ class BaseConfiguration:
     def update(self, d: dict):
         self.__configuration_dict.update(d)
 
+    @property
+    def dictionary(self) -> dict:
+        return self.__configuration_dict
+
+    @dictionary.setter
+    def dictionary(self, dictionary: dict):
+        self.__configuration_dict = dictionary
+
+    @property
+    def dictionary_default(self) -> dict:
+        return self.__default_configuration_dict
+
+    @dictionary_default.setter
+    def dictionary_default(self, dictionary: dict):
+        self.__default_configuration_dict = dictionary
+
+    def commit(self):
+        """Commit all changes from `dictionary` to json configuration file"""
+        self.write_dict_to_file(self.__configuration_dict)
+
     def refresh(self):
         """
-        Refresh configuration file values from json.
-        Note that user-added attributes will stay in object after refresh
+        Refresh `dictionary` values from json.
+        Note that user-added keys will stay in `dictionary` after refresh
         """
         self.__configuration_dict.update(self.read_file_as_dict())
 
     def reset_to_file(self):
-        """Reset object's attributes to values from bound `confuration_object`"""
+        """Reset the `dictionary` attribute to values from bound `confuration_object`"""
         self.clear()
         self.refresh()
 
-    def commit(self):
-        """Commit all changes from object to json configuration file"""
-        self.write_dict_to_file(self.__configuration_dict)
-        logger.debug("Successfully applied all object changes to local configuration file")
-
-    def is_exist(self) -> bool:
-        """Check configuration file existence
-
-        :return: Does the file exist
-        :rtype: bool
+    def reset_to_defaults(self):
         """
-        return True if path.isfile(self.configuration_file_path) else False
+        Reset the `dictionary` attribute to values from `dictionary_default` attribute.
+        Note that local configuration file will stay untouched.
+        """
+        self.__configuration_dict = self.__default_configuration_dict.copy()
 
     def create_file(self) -> bool:
         """Create new configuration file from default dictionary
@@ -120,22 +130,30 @@ class BaseConfiguration:
         :return: Was the file created successfully
         :rtype: bool
         """
-        self.write_dict_to_file(self.__default_configuration)
-        logger.info("Successfuly generated new configuration file")
+        self.write_dict_to_file(self.__default_configuration_dict)
 
         return True
 
-    def delete_file(self):
-        """Delete configuration file"""
-        remove(self.configuration_file_path)
+    def delete_file(self) -> bool:
+        """Delete local configuration file
 
-    def reset_file_to_defaults(self):
+        :return: Was the file removed.
+            False will be returned only if the configuration file does not exist at the time of deletion.
+        :rtype: bool
         """
-        Reset configuration file to default values from `self.__default_configuration` var.
-        Please note that object will not be reset after executing this method. To reset object dict -
-        use `.reset_to_file()` method.
+        if self.is_file_exist():
+            remove(self.configuration_file_path)
+            return True
+        else:
+            return False
+
+    def is_file_exist(self) -> bool:
+        """Check configuration file existence
+
+        :return: Does the file exist
+        :rtype: bool
         """
-        self.write_dict_to_file(self.__default_configuration)
+        return True if path.isfile(self.configuration_file_path) else False
 
     def write_dict_to_file(self, dictionary: dict):
         """Write dict from `dictionary` argument to configuration file bound to this object

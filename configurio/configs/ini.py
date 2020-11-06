@@ -1,10 +1,6 @@
-from logging import getLogger
 from configparser import ConfigParser
 
 from ..core import BaseConfiguration
-
-
-logger = getLogger(__name__)
 
 
 class INI_Configuration(BaseConfiguration):
