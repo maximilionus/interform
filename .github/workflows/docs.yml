@@ -20,10 +20,12 @@ jobs:
     steps:
       - uses: actions/checkout@v2
 
-      - name: Configure git
+      - name: Prepare docs git repository
         run: |
-          git config --global user.name 'Github Actions'
-          git config --global user.email 'maximilionuss@gmail.com'
+          git clone --single-branch --branch docs https://${{ secrets.GH_PAT }}@github.com/maximilionus/configurio.git temp_repo
+          cd temp_repo
+          git config user.name 'Github Actions'
+          git config user.email 'action@github.com'
 
       - name: Set up Python ${{ matrix.python-version }}
         uses: actions/setup-python@v2
@@ -39,11 +41,12 @@ jobs:
         run: |
           cd docs
           make html
+          mv _build/html ../temp_repo/docs_build
+
 
       - name: Push changes to remote
         run: |
-          mv _build/html/* ../docs_build
-          git checkout docs
+          cd temp_repo
           git add --all
           git commit -m"Documentation build"
           git push
