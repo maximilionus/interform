@@ -1,0 +1,49 @@
+name: Build documentation
+
+on:
+  push:
+    branches:
+      - 'master'
+    paths:
+      - '.github/workflows/docs.yml'
+      - 'docs/**'
+
+
+jobs:
+  build:
+    runs-on: 'ubuntu-latest'
+    continue-on-error: false
+    strategy:
+      matrix:
+        python-version: [3.9]
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Configure git
+        run: |
+          git config --global user.name 'Github Actions'
+          git config --global user.email 'maximilionuss@gmail.com'
+
+      - name: Set up Python ${{ matrix.python-version }}
+        uses: actions/setup-python@v2
+        with:
+          python-version: ${{ matrix.python-version }}
+
+      - name: Install dependencies and project
+        run: |
+          python -m pip install -U pip
+          pip install -r requirements-dev.txt
+
+      - name: Build documentation
+        run: |
+          cd docs
+          make html
+
+      - name: Push changes to remote
+        run: |
+          mv _build/html/* ../docs_build
+          git checkout docs
+          git add --all
+          git commit -m"Documentation build"
+          git push

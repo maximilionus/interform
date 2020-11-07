@@ -17,3 +17,6 @@ dist/
 
 # Ignore all temporary directories
 temp/
+
+# Built documentation
+docs/_build
