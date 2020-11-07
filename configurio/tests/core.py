@@ -1,8 +1,6 @@
 from shutil import rmtree
 from os import path, chdir
 
-import pytest
-
 from configurio.core import BaseConfiguration
 
 
@@ -65,14 +63,9 @@ class BaseConfigTest():
         assert self.config.is_file_exist()
 
     def test_file_read(self):
-        # TODO
-        pytest.skip("Not finished")
+        assert self.config.read_file_as_dict()["Person_1"]["name"] == default_configuration_dict["Person_1"]["name"]
 
-    def test_file_write(self):
-        # TODO
-        pytest.skip("Not finished")
-
-    def test_modify_file(self):
+    def test_commit_changes(self):
         person_name = "Jeff"
         self.config['Person_1']['name'] = person_name
         self.config.commit()
