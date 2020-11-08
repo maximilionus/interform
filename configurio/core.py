@@ -234,7 +234,7 @@ class BaseConfiguration:
         :return: Does the file exist
         :rtype: bool
         """
-        return True if path.isfile(self.configuration_file_path) else False
+        return path.isfile(self.configuration_file_path)
 
     def write_dict_to_file(self, dictionary: dict):
         """Write dict from ``dictionary`` argument to configuration file bound to this object
