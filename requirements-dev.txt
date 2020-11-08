@@ -10,10 +10,10 @@ pytest<7
 -e .
 
 # JSON custom parser
-ujson
+ujson<=4.0.1
 
 # Yaml parser
-ruamel.yaml
+ruamel.yaml<=0.16.12
 
 # Documentation
 Sphinx~=3.3

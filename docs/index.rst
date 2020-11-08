@@ -10,6 +10,8 @@ Welcome to configurio's documentation!
    :maxdepth: 2
    :caption: Contents:
 
+   general
+
 
 
 Indices and tables
