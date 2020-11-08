@@ -10,20 +10,23 @@ About
 
 Supported Languages
 --------------------------------------
-List of currently supported languages. Languages, listed in **Native Support** are supported by python without any external packages, while **External Support** requires external packages to be installed. For more information go here: :doc:`guide_installation`
+List of currently supported languages.
 
 - Native Support:
     - ``JSON``
 - External Support
     - ``YAML`` <= 1.2
 
+.. note::
+    Languages, listed in **Native Support** are supported by python without any external packages, while **External Support** requires external packages to be installed. For more information go here: :doc:`guide_installation`
+
 Module Hierarchy
 --------------------------------
 - ``configurio`` - Contains main language parsers and module meta information imports for easy access.
     - ``core`` - Realisation of basic features, that will be inherited and used in other modules.
     - ``meta`` - Meta information, like version, author, etc.
-    - ``configs`` - Submodule with realisation of main features for different languages
+    - ``configs`` - Subpackage with realisation of main features for different languages
         - ``json``
         - ``yaml``
         - ``ini``
-    - ``tests`` - PyTest unit testing suite
+    - ``tests`` - PyTest unit testing suite subpackage

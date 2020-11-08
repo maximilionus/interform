@@ -24,6 +24,7 @@ configurio.tests.test\_json module
 ----------------------------------
 
 .. automodule:: configurio.tests.test_json
+   :inherited-members:
    :members:
    :undoc-members:
    :show-inheritance:
@@ -32,6 +33,7 @@ configurio.tests.test\_yaml module
 ----------------------------------
 
 .. automodule:: configurio.tests.test_yaml
+   :inherited-members:
    :members:
    :undoc-members:
    :show-inheritance:

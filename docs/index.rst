@@ -8,6 +8,7 @@ Welcome to configurio documentation!
    general
    guide_installation
    guide_basic_usage
+   guide_advanced_features
    configurio
 
 
