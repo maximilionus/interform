@@ -1,9 +1,4 @@
-.. configurio documentation master file, created by
-   sphinx-quickstart on Sat Nov  7 23:22:53 2020.
-   You can adapt this file completely to your liking, but it should at least
-   contain the root `toctree` directive.
-
-Welcome to configurio's documentation!
+Welcome to configurio documentation!
 ======================================
 
 .. toctree::
@@ -11,6 +6,9 @@ Welcome to configurio's documentation!
    :caption: Contents:
 
    general
+   guide_installation
+   guide_basic_usage
+   configurio
 
 
 
