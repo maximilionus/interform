@@ -8,6 +8,8 @@ on:
       - 'LICENSE'
       - 'README.md'
       - 'CHANGELOG.md'
+      - 'docs/**'
+      - '.github/workflows/docs.yml'
   pull_request:
     branches:
       - '**'
