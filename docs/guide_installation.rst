@@ -12,7 +12,7 @@ About Structure
 
     pip install configurio[mode]
 
-Where ``mode`` is one of the listed down options:
+Where ``mode`` is one of the listed in `Installation Modes`_ options:
 
 Installation Modes
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
