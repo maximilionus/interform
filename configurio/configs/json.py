@@ -20,7 +20,8 @@ class JSON_Configuration(BaseConfiguration):
     :raises ValueError: If provided data type in argument ``default_config`` is not
         the path ``str`` or ``dict``, this exception will be raised
 
-    :note: Methods ``.clear()``, ``.copy()``, ``.fromkeys()``, ``.get()``, ``.items()``, ``.keys()``, ``values()``,
+    .. note::
+        Methods ``.clear()``, ``.copy()``, ``.fromkeys()``, ``.get()``, ``.items()``, ``.keys()``, ``values()``,
         ``pop()``, ``popitem()``, ``setdefault()``, ``update()`` are bound to the attribute ``dictionary``,
         so executing:
 

@@ -53,7 +53,7 @@ How to install ``configurio`` from source files:
 
         pip install .
 
-:Note:
+.. note::
     If you want to install ``configurio`` with support for any external package(-s), you can also specify it like this:
 
     .. code-block:: bash

@@ -16,7 +16,8 @@ class BaseConfiguration:
     :raises ValueError: If provided data type in argument ``default_config`` is not
         the path ``str`` or ``dict``, this exception will be raised
 
-    :note: Methods ``.clear()``, ``.copy()``, ``.fromkeys()``, ``.get()``, ``.items()``, ``.keys()``, ``values()``,
+    .. note::
+        Methods ``.clear()``, ``.copy()``, ``.fromkeys()``, ``.get()``, ``.items()``, ``.keys()``, ``values()``,
         ``pop()``, ``popitem()``, ``setdefault()``, ``update()`` are bound to the attribute ``dictionary``,
         so executing:
 
@@ -193,11 +194,12 @@ class BaseConfiguration:
         """
         Refresh ``dictionary`` values from local file.
         Note that this method does not remove user-added keys,
-            it will only add non existent keys and modify the already existing keys.
+        it will only add non existent keys and modify the already existing keys.
 
-        :note: This method uses the recursive checks, so it's much slower than
-            ``.reload()`` method. So if you don't need to save the already existing
-            in object values - you better use ``.reload()``
+        .. note::
+            This method uses the recursive checks, so it's much slower than
+            ``.reload()`` method. So if you don't need to keep the uncommitted changes
+            in object, you better use the ``reload()`` method.
         """
         self.__configuration_dict = recursive_dicts_merge(self.read_file_as_dict(), self.__configuration_dict)
 
@@ -301,7 +303,7 @@ def recursive_dicts_merge(merge_from: dict, merge_to: dict) -> dict:
     """
     This function will recursively merge ``merge_from`` dictionary to ``merge_to``.
     Merging with this function, instead of the ``dict.update()`` method prevents from
-        keys removal of nested dictionaries.
+    keys removal of nested dictionaries.
 
     :param merge_from: Dictionary to merge keys from
     :type merge_from: dict
@@ -310,7 +312,8 @@ def recursive_dicts_merge(merge_from: dict, merge_to: dict) -> dict:
     :return: Dictionary with all ``merge_from`` keys merged into ``merge_to``
     :rtype: dict
 
-    :note: ``merge_from`` and ``merge_to`` dictionaries will not be modified in process of execution.
+    .. note::
+        ``merge_from`` and ``merge_to`` dictionaries will not be modified in process of execution.
         Function will get their copies and work with them.
     """
     def __merge(merge_from: dict, merge_to: dict):
