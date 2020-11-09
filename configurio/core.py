@@ -10,7 +10,7 @@ class BaseConfiguration:
     :type file_path: str
     :param default_config: Default configuration file path ``str`` or dictionary
         that will be used by ``create_file()`` and ``reset_file()`` methods, defaults to {}
-    :type default_config: Union[str, dict]
+    :type default_config: Union[str, dict], optional
     :param force_overwrite_file: Should a file be overwritten if it already exists, defaults to False
     :type force_overwrite_file: bool, optional
     :raises ValueError: If provided data type in argument ``default_config`` is not
@@ -26,7 +26,7 @@ class BaseConfiguration:
 
         >>> this_object.configuration.update({"check": True})
     """
-    def __init__(self, file_path: str, default_config: {}, force_overwrite_file=False):
+    def __init__(self, file_path: str, default_config={}, force_overwrite_file=False):
         self.__configuration_dict = {}
 
         self.configuration_file_path = file_path
@@ -56,6 +56,9 @@ class BaseConfiguration:
 
     def __len__(self):
         return len(self.__configuration_dict)
+
+    def __iter__(self):
+        return self.__configuration_dict.__iter__()
 
     def clear(self):
         """ Clear the ``configuration`` dictionary """
@@ -117,7 +120,7 @@ class BaseConfiguration:
             if key wasn't found, defaults to None.
         :rtype: Any
         """
-        self.__configuration_dict.pop(key, default)
+        return self.__configuration_dict.pop(key, default)
 
     def popitem(self) -> Any:
         """Pop item from ``configuration`` dictionary in LIFO order.
@@ -130,7 +133,7 @@ class BaseConfiguration:
             if key wasn't found, defaults to None.
         :rtype: Any
         """
-        self.__configuration_dict.popitem()
+        return self.__configuration_dict.popitem()
 
     def setdefault(self, key: Any, default=None) -> Any:
         """
@@ -145,7 +148,7 @@ class BaseConfiguration:
             returns ``defalut``
         :rtype: Any
         """
-        self.__configuration_dict.setdefault(key, default)
+        return self.__configuration_dict.setdefault(key, default)
 
     def update(self, dictionary: dict):
         """Update ``configuration`` dictionary with another dictionary

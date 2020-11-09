@@ -2,6 +2,21 @@
 
 ## 0.0.3-dev1 : wip
 
+----------
+2020.11.09
+
+### Added
+- Basic documentation *(WIP)*
+- Added iterator support for `.core.BaseConfiguration`
+- Created simple example usage of this package as a CLI tool
+
+### Fixed
+- Optional argument `default_config` in `.core.BaseConfiguration` is now really optional. Yeah.
+- Methods `pop()` and `popitem()` in `.core.BaseConfiguration` now will return values as expected.
+
+----------
+2020.11.04
+
 ### Added
 - `Yaml` support *(<=1.2)* with [`ruamel.yaml`](https://pypi.org/project/ruamel.yaml/) module. `PyYaml` support dropped. Tests added.
 - `.core.BaseConfiguration` additions:
