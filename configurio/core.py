@@ -8,8 +8,8 @@ class BaseConfiguration:
     :param file_path: Path to preferred configuration file destination
         If the file does not exist at the specified path, it will be created
     :type file_path: str
-    :param default_config: Default configuration file path ``str`` or dictionary
-        that will be used by ``create_file()`` and ``reset_file()`` methods, defaults to {}
+    :param default_config: Default configuration file path ``str`` or ``dict``
+        that will be used for local file start values and , defaults to {}
     :type default_config: Union[str, dict], optional
     :param force_overwrite_file: Should a file be overwritten if it already exists, defaults to False
     :type force_overwrite_file: bool, optional
@@ -43,7 +43,7 @@ class BaseConfiguration:
             create_directories(self.configuration_file_path)
             self.create_file()
 
-        self.refresh()
+        self.reload()
 
     def __getitem__(self, key):
         return self.__configuration_dict[key]
@@ -186,24 +186,29 @@ class BaseConfiguration:
         self.__default_configuration_dict = dictionary
 
     def commit(self):
-        """Commit all changes from ``dictionary`` to json configuration file"""
+        """Commit all changes from ``dictionary`` to local configuration file"""
         self.write_dict_to_file(self.__configuration_dict)
 
     def refresh(self):
         """
-        Refresh ``dictionary`` values from json.
-        Note that user-added keys will stay in ``dictionary`` after refresh
-        """
-        self.__configuration_dict.update(self.read_file_as_dict())
+        Refresh ``dictionary`` values from local file.
+        Note that this method does not remove user-added keys,
+            it will only add non existent keys and modify the already existing keys.
 
-    def reset_to_file(self):
-        """Reset the ``dictionary`` attribute to values from bound ``confuration_object``"""
+        :note: This method uses the recursive checks, so it's much slower than
+            ``.reload()`` method. So if you don't need to save the already existing
+            in object values - you better use ``.reload()``
+        """
+        self.__configuration_dict = recursive_dicts_merge(self.read_file_as_dict(), self.__configuration_dict)
+
+    def reload(self):
+        """Reset the ``dictionary`` attribute to values from local file"""
         self.clear()
-        self.refresh()
+        self.__configuration_dict.update(self.read_file_as_dict())
 
     def reset_to_defaults(self):
         """
-        Reset the `dictionary` attribute to values from ``dictionary_default`` attribute.
+        Reset the ``dictionary`` attribute to values from ``dictionary_default`` attribute.
         Note that local configuration file will stay untouched.
         """
         self.__configuration_dict = self.__default_configuration_dict.copy()
@@ -290,3 +295,36 @@ def create_directories(path_to_use: str, path_is_dir=False):
 
     if not path.exists(path_to_use) and len(path_to_use) > 0:
         makedirs(path_to_use)
+
+
+def recursive_dicts_merge(merge_from: dict, merge_to: dict) -> dict:
+    """
+    This function will recursively merge ``merge_from`` dictionary to ``merge_to``.
+    Merging with this function, instead of the ``dict.update()`` method prevents from
+        keys removal of nested dictionaries.
+
+    :param merge_from: Dictionary to merge keys from
+    :type merge_from: dict
+    :param merge_to: Dictionary to merge keys to
+    :type merge_to: dict
+    :return: Dictionary with all ``merge_from`` keys merged into ``merge_to``
+    :rtype: dict
+
+    :note: ``merge_from`` and ``merge_to`` dictionaries will not be modified in process of execution.
+        Function will get their copies and work with them.
+    """
+    def __merge(merge_from: dict, merge_to: dict):
+        for k, v in merge_from.items():
+            if isinstance(v, dict):
+                if merge_to.get(k, None) is None:
+                    merge_to[k] = {}
+                __merge(v, merge_to[k])
+            else:
+                merge_to[k] = v
+
+    merge_from = merge_from.copy()
+    result_dict = merge_to.copy()
+
+    __merge(merge_from, merge_to)
+
+    return result_dict

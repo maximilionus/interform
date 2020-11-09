@@ -7,12 +7,18 @@
 
 ### Added
 - Basic documentation *(WIP)*
-- Added iterator support for `.core.BaseConfiguration`
+- `.core.BaseConfiguration`
+  - Added iterator support
 - Created simple example usage of this package as a CLI tool
 
 ### Fixed
 - Optional argument `default_config` in `.core.BaseConfiguration` is now really optional. Yeah.
 - Methods `pop()` and `popitem()` in `.core.BaseConfiguration` now will return values as expected.
+
+### Changed
+- `.core.BaseConfiguration`
+  - `refresh()` now will merge all changes to config dictionary without overwriting the nested dicts
+  - Renamed `reset_to_file()` method to `reload()`
 
 ----------
 2020.11.04

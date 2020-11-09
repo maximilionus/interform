@@ -81,15 +81,19 @@ class BaseConfigTest():
         assert len(self.config) == 0
 
     def test_refresh_dict(self):
-        """ Refresh `dictionary` from local file """
+        """
+        Refresh `dictionary` from local file and check for
+        nested dictionary existance inside.
+        """
+        self.config['should_not_be_removed'] = True
         self.config.refresh()
 
-        assert len(vars(self.config)) > 0
+        assert self.config.get('should_not_be_removed', False)
 
-    def test_reset_dict_to_file(self):
+    def test_reload_dict(self):
         """ Reset `dictionary` to values from bound configuration file """
         self.config['tobereset'] = False
-        self.config.reset_to_file()
+        self.config.reload()
 
         assert self.config.get('tobereset', True)
 
