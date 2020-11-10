@@ -1,6 +1,9 @@
 Welcome to configurio documentation!
 ======================================
 
+| Documentation for version: |release|
+| Documentation Revision *(Y/M/D H\:M\:S)*: |docs_build_time|
+
 .. toctree::
    :maxdepth: 2
    :caption: Contents:

@@ -16,15 +16,21 @@ Where ``mode`` is one of the listed in `Installation Modes`_ options:
 
 Installation Modes
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-:ujson:
-    Replace the built-in ``json`` parser with `ujson module <https://pypi.org/project/ujson/>`_
+:``ujson``:
+    Replace the built-in ``json`` parser with `ujson package <https://pypi.org/project/ujson/>`_
 
-:yaml:
-    Support for the ``YAML`` language *(version <= 1.2)* with `ruamel.yaml module <https://pypi.org/project/ruamel.yaml/>`_
+:``yaml``:
+    Support for the ``YAML`` language *(version <= 1.2)* with `ruamel.yaml package <https://pypi.org/project/ruamel.yaml/>`_
+
+:``full``:
+    Install ``configurio`` with support for all external parsers listed above
+
+:``test``:
+    Full installation with unit testing support (via `pytest <https://pypi.org/project/pytest/>`_ package)
 
 Example
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-For example, I will install the ``configurio`` with ``ujson`` parser:
+For example, to install the ``configurio`` with ``ujson`` parser:
 
 .. code-block:: bash
 

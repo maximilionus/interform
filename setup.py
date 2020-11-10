@@ -46,6 +46,10 @@ setup(
     extras_require=extras_require,
     license="MIT",
     url="https://github.com/maximilionus/configurio",
+    project_urls={
+        "Documentation": "https://maximilionus.github.io/configurio",
+        "Tracker": "https://github.com/maximilionus/configurio/issues"
+    },
     classifiers=[
         "Development Status :: 1 - Planning",
         "Programming Language :: Python :: 3",

@@ -1,3 +1,8 @@
+from datetime import datetime
+
+from configurio.meta import __version__ as configurio_version
+
+
 # Configuration file for the Sphinx documentation builder.
 #
 # This file only contains a selection of the most common options. For a full
@@ -22,8 +27,16 @@ copyright = '2020, maximilionus'
 author = 'maximilionus'
 
 # The full version, including alpha/beta/rc tags
-release = '0.0.3'
+release = configurio_version
 
+# Time of docs build
+docs_build_time = datetime.utcnow().strftime("%Y/%m/%d %H:%M:%S UTC+0000")
+
+rst_epilog = """
+.. |docs_build_time| replace:: {}
+""".format(
+    docs_build_time
+)
 
 # -- General configuration ---------------------------------------------------
 

@@ -1,6 +1,19 @@
 # Configerz Changelog
 
-## 0.0.3-dev1 : wip
+
+--------------------------
+## Early Stage Development
+
+----------
+2020.11.10
+
+## Added
+- Links to *docs* and *bug tracker* to `setup.py` script
+- What version of `configurio` is docs for and revision time in index page
+
+## Changed
+- Project version to `1.0.0` (Preparing for the release)
+- Enhanced *installation guide* section in docs
 
 ----------
 2020.11.09
