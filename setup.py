@@ -29,7 +29,7 @@ extras_require.update({
 #  Installation for testing
 extras_require.setdefault("test", all_base_requirements.copy()).append("pytest<7")
 
-with open('README.md', 'r') as f:
+with open('README.rst', 'r') as f:
     readme_text = f.read()
 
 setup(
@@ -39,8 +39,8 @@ setup(
     author="maximilionus",
     author_email="maximilionuss@gmail.com",
     description="Powerful and easy to use tool for working with various configuration files",
+    long_description_content_type='text/x-rst',
     long_description=readme_text,
-    long_description_content_type="text/markdown",
     keywords="configuration configs files",
     packages=find_packages(),
     extras_require=extras_require,
