@@ -12,10 +12,10 @@ class JSON_Configuration(BaseConfiguration):
     :param file_path: Path to preferred configuration file destination
         If the file does not exist at the specified path, it will be created
     :type file_path: str
-    :param default_config: Default configuration file path ``str`` or dictionary
-        that will be used by ``create_file()`` and ``reset_file()`` methods, defaults to {}
-    :type default_config: Union[str, dict]
-    :param force_overwrite_file: Should a file be overwritten if it already exists, defaults to False
+    :param default_config: Default configuration file path ``str`` or ``dict``
+        that will be used for local file start values and , defaults to {}
+    :type default_config: Union[str, dict], optional
+    :param force_overwrite_file: Whether the file needs to be overwritten if it already exists, defaults to False
     :type force_overwrite_file: bool, optional
     :raises ValueError: If provided data type in argument ``default_config`` is not
         the path ``str`` or ``dict``, this exception will be raised

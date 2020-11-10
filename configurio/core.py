@@ -11,7 +11,7 @@ class BaseConfiguration:
     :param default_config: Default configuration file path ``str`` or ``dict``
         that will be used for local file start values and , defaults to {}
     :type default_config: Union[str, dict], optional
-    :param force_overwrite_file: Should a file be overwritten if it already exists, defaults to False
+    :param force_overwrite_file: Whether the file needs to be overwritten if it already exists, defaults to False
     :type force_overwrite_file: bool, optional
     :raises ValueError: If provided data type in argument ``default_config`` is not
         the path ``str`` or ``dict``, this exception will be raised
@@ -190,23 +190,28 @@ class BaseConfiguration:
         """Commit all changes from ``dictionary`` to local configuration file"""
         self.write_dict_to_file(self.__configuration_dict)
 
-    def refresh(self):
+    def refresh(self, safe_mode=True):
         """
         Refresh ``dictionary`` values from local file.
         Note that this method does not remove user-added keys,
         it will only add non existent keys and modify the already existing keys.
 
-        .. note::
-            This method uses the recursive checks, so it's much slower than
-            ``.reload()`` method. So if you don't need to keep the uncommitted changes
-            in object, you better use the ``reload()`` method.
+        :param safe_mode: Provides the recursive merge of dictionary from local
+            configuration file to object's ``dictionary``. This option prevents
+            object's nested dictionaries to be overwritten by local files, but
+            is much slower than simple ``dict.update()`` method call. So if you
+            don't care about nested dictionaries be overwritten, you can disable
+            this feature to boost the execution speed
+        :type safe_mode: bool, optional
         """
-        self.__configuration_dict = recursive_dicts_merge(self.read_file_as_dict(), self.__configuration_dict)
+        if safe_mode:
+            self.__configuration_dict = recursive_dicts_merge(self.read_file_as_dict(), self.__configuration_dict)
+        else:
+            self.__configuration_dict.update(self.read_file_as_dict())
 
     def reload(self):
         """Reset the ``dictionary`` attribute to values from local file"""
-        self.clear()
-        self.__configuration_dict.update(self.read_file_as_dict())
+        self.__configuration_dict = self.read_file_as_dict()
 
     def reset_to_defaults(self):
         """

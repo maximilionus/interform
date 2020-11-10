@@ -80,15 +80,27 @@ class BaseConfigTest():
 
         assert len(self.config) == 0
 
-    def test_refresh_dict(self):
+    def test_refresh_safe(self):
         """
-        Refresh `dictionary` from local file and check for
-        nested dictionary existance inside.
+        Refresh `dictionary` from local file in safe mode
+        and check for nested dictionary existance inside.
         """
-        self.config['should_not_be_removed'] = True
+        self.config['nested_dict_refresh_test'] = {"will_stay": "cia"}
+        self.config.commit()
+        self.config['nested_dict_refresh_test']["will_stay_too"] = "wait..."
         self.config.refresh()
 
-        assert self.config.get('should_not_be_removed', False)
+        assert self.config['nested_dict_refresh_test'].get("will_stay", None) is not None and \
+               self.config['nested_dict_refresh_test'].get("will_stay_too", None) is not None
+
+    def test_refresh_unsafe(self):
+        self.config['nested_dict_refresh_test'] = {"will_stay": "cia"}
+        self.config.commit()
+        self.config['nested_dict_refresh_test']["will_be_lost"] = "what!?"
+        self.config.refresh(safe_mode=False)
+
+        assert self.config['nested_dict_refresh_test'].get("will_be_lost", None) is None and \
+               self.config['nested_dict_refresh_test'].get("will_stay", None) is not None
 
     def test_reload_dict(self):
         """ Reset `dictionary` to values from bound configuration file """
@@ -101,7 +113,7 @@ class BaseConfigTest():
         assert self.config["dash-split"]["wow-man"] == default_configuration_dict["dash-split"]["wow-man"]
 
     def test_add_dashed_attribute(self):
-        self.config["dash-split"]["second-dashed"] = 515
+        self.config["dash-split"]["second-dashed"] = "ok guys, bye"
         self.config.commit()
 
         assert self.config["dash-split"]["second-dashed"] == \

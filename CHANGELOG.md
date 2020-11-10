@@ -8,6 +8,7 @@
 2020.11.10
 
 ## Added
+- New `safe_mode` feature to `.core.BaseConfiguration.refresh()` with tesing suite modifications
 - Links to *docs* and *bug tracker* to `setup.py` script
 - What version of `configurio` is docs for and revision time in index page
 
