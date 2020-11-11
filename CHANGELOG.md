@@ -5,6 +5,17 @@
 ## Early Stage Development
 
 ----------
+2020.11.12
+
+## Added
+- Support for `XML` language with unit testing suite
+
+## Changed
+- Renamed some variables in tests core
+- Added information about `XML` language to `README.rst` and docs
+- Adjusted `setup.py` to support new `XML` language feature
+
+----------
 2020.11.10
 
 ## Added

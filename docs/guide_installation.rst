@@ -22,6 +22,9 @@ Installation Modes
 :``yaml``:
     Support for the ``YAML`` language *(version <= 1.2)* with `ruamel.yaml package <https://pypi.org/project/ruamel.yaml/>`_
 
+:``xml``:
+    Support for the ``XML`` language with built-in python modules and `xmltodict package <https://github.com/martinblech/xmltodict>`_
+
 :``full``:
     Install ``configurio`` with support for all external parsers listed above
 

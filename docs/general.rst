@@ -16,6 +16,7 @@ List of currently supported languages.
     - ``JSON``
 - External Support
     - ``YAML`` <= 1.2
+    - ``XML``
 
 .. note::
     Languages, listed in **Native Support** are supported by python without any external packages, while **External Support** requires external packages to be installed. For more information go here: :doc:`guide_installation`

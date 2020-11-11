@@ -7,23 +7,25 @@ from configurio.core import BaseConfiguration
 temp_dir_path = './temp/'
 
 configuration_file_path = path.join(temp_dir_path, 'test_config.txt')
-default_cfg_json_path = path.join(temp_dir_path, 'default_config.json')
+default_cfg_path = path.join(temp_dir_path, 'default_config.json')
 
 default_configuration_dict = {
-    "Person_1": {
-        "name": "X",
-        "age": 256
-    },
-    "case_415": {
-        "path": "~/xxx/xxx/xxx",
-        "utime": 1603645369,
-        "description": "He was lying on the floor in tears with a keyboard in his hand. "
-                       "The light of the monitor illuminated the whole sad sight. "
-                       "He was just trying to write unit tests."
-    },
-    "TestKey": "Yes",
-    "dash-split": {
-        "wow-man": "yeah, cool"
+    "root": {
+        "Person_1": {
+            "name": "X",
+            "age": 256
+        },
+        "case_415": {
+            "path": "~/xxx/xxx/xxx",
+            "utime": 1603645369,
+            "description": "He was lying on the floor in tears with a keyboard in his hand. "
+                           "The light of the monitor illuminated the whole sad sight. "
+                           "He was just trying to write unit tests."
+        },
+        "TestKey": "Yes",
+        "dash-split": {
+            "wow-man": "yeah, cool"
+        }
     }
 }
 
@@ -63,16 +65,16 @@ class BaseConfigTest():
         assert self.config.is_file_exist()
 
     def test_file_read(self):
-        assert self.config.read_file_as_dict()["Person_1"]["name"] == default_configuration_dict["Person_1"]["name"]
+        assert self.config.read_file_as_dict()["root"]["Person_1"]["name"] == default_configuration_dict["root"]["Person_1"]["name"]
 
     def test_commit_changes(self):
         person_name = "Jeff"
-        self.config['Person_1']['name'] = person_name
+        self.config["root"]['Person_1']['name'] = person_name
         self.config.commit()
 
         read_dict = self.config.read_file_as_dict()
 
-        assert read_dict["Person_1"]["name"] == person_name
+        assert read_dict["root"]["Person_1"]["name"] == person_name
 
     def test_clear_dict(self):
         """ Clear the `dictionary` attribute """
@@ -85,39 +87,39 @@ class BaseConfigTest():
         Refresh `dictionary` from local file in safe mode
         and check for nested dictionary existance inside.
         """
-        self.config['nested_dict_refresh_test'] = {"will_stay": "cia"}
+        self.config["root"]['nested_dict_refresh_test'] = {"will_stay": "cia"}
         self.config.commit()
-        self.config['nested_dict_refresh_test']["will_stay_too"] = "wait..."
+        self.config["root"]['nested_dict_refresh_test']["will_stay_too"] = "wait..."
         self.config.refresh()
 
-        assert self.config['nested_dict_refresh_test'].get("will_stay", None) is not None and \
-               self.config['nested_dict_refresh_test'].get("will_stay_too", None) is not None
+        assert self.config["root"]['nested_dict_refresh_test'].get("will_stay", None) is not None and \
+               self.config["root"]['nested_dict_refresh_test'].get("will_stay_too", None) is not None
 
     def test_refresh_unsafe(self):
-        self.config['nested_dict_refresh_test'] = {"will_stay": "cia"}
+        self.config["root"]['nested_dict_refresh_test'] = {"will_stay": "cia"}
         self.config.commit()
-        self.config['nested_dict_refresh_test']["will_be_lost"] = "what!?"
+        self.config["root"]['nested_dict_refresh_test']["will_be_lost"] = "what!?"
         self.config.refresh(safe_mode=False)
 
-        assert self.config['nested_dict_refresh_test'].get("will_be_lost", None) is None and \
-               self.config['nested_dict_refresh_test'].get("will_stay", None) is not None
+        assert self.config["root"]['nested_dict_refresh_test'].get("will_be_lost", None) is None and \
+               self.config["root"]['nested_dict_refresh_test'].get("will_stay", None) is not None
 
     def test_reload_dict(self):
         """ Reset `dictionary` to values from bound configuration file """
-        self.config['tobereset'] = False
+        self.config["root"]['tobereset'] = False
         self.config.reload()
 
         assert self.config.get('tobereset', True)
 
     def test_access_dashed_attribute(self):
-        assert self.config["dash-split"]["wow-man"] == default_configuration_dict["dash-split"]["wow-man"]
+        assert self.config["root"]["dash-split"]["wow-man"] == default_configuration_dict["root"]["dash-split"]["wow-man"]
 
     def test_add_dashed_attribute(self):
-        self.config["dash-split"]["second-dashed"] = "ok guys, bye"
+        self.config["root"]["dash-split"]["second-dashed"] = "ok guys, bye"
         self.config.commit()
 
-        assert self.config["dash-split"]["second-dashed"] == \
-               self.config.read_file_as_dict()["dash-split"]["second-dashed"]
+        assert self.config["root"]["dash-split"]["second-dashed"] == \
+               self.config.read_file_as_dict()["root"]["dash-split"]["second-dashed"]
 
     def test_add_one_attribute(self):
         """
@@ -126,10 +128,10 @@ class BaseConfigTest():
         """
         key_name = "Masvingo"
 
-        self.config['city'] = key_name
+        self.config["root"]['city'] = key_name
         self.config.commit()
 
-        assert self.config['city'] == self.config.read_file_as_dict()["city"]
+        assert self.config["root"]['city'] == self.config.read_file_as_dict()["root"]["city"]
 
     def test_add_nested_dicts(self):
         """
@@ -142,10 +144,10 @@ class BaseConfigTest():
             }
         }
 
-        self.config['items'] = dct
+        self.config["root"]['items'] = dct
         self.config.commit()
 
-        assert self.config['items']['sugar']['carbon'] == self.config.read_file_as_dict()["items"]["sugar"]["carbon"]
+        assert int(self.config["root"]['items']['sugar']['carbon']) == int(self.config.read_file_as_dict()["root"]["items"]["sugar"]["carbon"])
 
     def test_add_multiple_dicts_with_update(self):
         """
@@ -161,17 +163,20 @@ class BaseConfigTest():
             }
         }
 
-        self.config['users'] = dct
+        self.config["root"]['users'] = dct
         self.config.commit()
 
-        file_dict = self.config.read_file_as_dict()["users"]
+        file_dict = self.config.read_file_as_dict()["root"]["users"]
 
-        assert self.config['users']['jerre_1829']['status'] == file_dict["jerre_1829"]["status"] and \
-               self.config['users']['wolfrm4882']['status'] == file_dict["wolfrm4882"]["status"]
+        print(file_dict["jerre_1829"]["status"])
+        print(self.config["root"]['users']['jerre_1829']['status'])
+
+        assert int(self.config["root"]['users']['jerre_1829']['status']) == int(file_dict["jerre_1829"]["status"]) and \
+               int(self.config["root"]['users']['wolfrm4882']['status']) == int(file_dict["wolfrm4882"]["status"])
 
     def test_modify_default_dict(self):
         """Modify the default dictionary, reset `dictionary` to defaults and assert values"""
-        self.config.dictionary_default.update({"new_values": [256, 45, 154]})
+        self.config.dictionary_default["root"].update({"new_values": [256, 45, 154]})
         self.config.reset_to_defaults()
 
-        assert self.config.get('new_values', None) == self.config.dictionary_default['new_values']
+        assert self.config["root"].get('new_values', None) == self.config.dictionary_default["root"]['new_values']

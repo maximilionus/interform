@@ -11,7 +11,8 @@ core.change_path_to_testsdir()
 def pytest_configure(config):
     custom_markers = (
         "json: run only json tests",
-        "yaml: run only yaml tests"
+        "yaml: run only yaml tests",
+        "xml: run only xml tests"
     )
 
     for marker in custom_markers:
