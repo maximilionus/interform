@@ -3,6 +3,12 @@ from argparse import ArgumentParser, Namespace
 from interform import JSON_Format
 
 
+# Default dictionary, that will be used later
+prog_default_dict = {
+    "version": "2020.11"
+}
+
+
 def parse_input_args() -> Namespace:
     """Parse script input arguments with argparse module"""
     arg_parser = ArgumentParser(description="Simple CLI example with interform package")
@@ -27,7 +33,11 @@ def parse_input_args() -> Namespace:
 if __name__ == "__main__":
     args = parse_input_args()  # Parse input arguments
 
-    cfg = JSON_Format('settings.json')  # Prepare the configuration object
+    # Prepare the configuration object
+    cfg = JSON_Format(
+        'settings.json',   # Path to where local file will be located
+        prog_default_dict  # Default dictionary, that will be used to
+    )                      # fill the file on first creation
 
     if args.command == 'get':
         # Get value from configuration file with `.get` method.
