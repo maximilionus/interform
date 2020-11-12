@@ -26,7 +26,7 @@ Module Hierarchy
 - ``interform`` - Contains main language parsers and module meta information imports for easy access.
     - ``core`` - Realisation of basic features, that will be inherited and used in other modules.
     - ``meta`` - Meta information, like version, author, etc.
-    - ``configs`` - Subpackage with realisation of main features for different languages
+    - ``langs`` - Subpackage with realisation of main features for different DIF languages
         - ``json``
         - ``yaml``
         - ``ini``

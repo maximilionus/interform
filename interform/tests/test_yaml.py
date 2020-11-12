@@ -3,7 +3,7 @@ from ruamel.yaml import YAML
 
 from interform import YAML_Format
 
-from .core import BaseConfigTest, local_file_path,\
+from .core import BaseLangTest, local_file_path,\
     default_local_file_dict, default_cfg_path
 
 
@@ -11,20 +11,20 @@ yaml = YAML()
 
 
 @pytest.mark.yaml
-class Test_Create_DefDict(BaseConfigTest):
+class Test_Create_DefDict(BaseLangTest):
     """
     Create local file on `local_file_path`
     and get default config values from `default_local_file_dict`
     """
     def setup(self):
-        self.config = YAML_Format(
+        self.language_object = YAML_Format(
             local_file_path,
             default_local_file_dict
         )
 
 
 @pytest.mark.yaml
-class Test_Create_DefPath(BaseConfigTest):
+class Test_Create_DefPath(BaseLangTest):
     """
     Read existing file on `local_file_path`
     and get default config values from file on `default_cfg_path`
@@ -33,7 +33,7 @@ class Test_Create_DefPath(BaseConfigTest):
         with open(default_cfg_path, 'w') as f:
             yaml.dump(default_local_file_dict, f)
 
-        self.config = YAML_Format(
+        self.language_object = YAML_Format(
             local_file_path,
             default_cfg_path
         )

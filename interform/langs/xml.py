@@ -1,9 +1,10 @@
+""" ``XML`` language support """
 from xmltodict import parse, unparse
 
-from ..core import BaseInterchange
+from ..core import BaseLang
 
 
-class XML_Format(BaseInterchange):
+class XML_Format(BaseLang):
     """XML Data Interchange Format (DIF) realisation
 
     :param file_path: Path to preferred local file destination

@@ -1,40 +1,40 @@
-interform.configs package
+interform.langs package
 ==========================
 
 Submodules
 ----------
 
-interform.configs.json module
+interform.langs.json module
 ------------------------------
 
-.. automodule:: interform.configs.json
+.. automodule:: interform.langs.json
    :members:
    :inherited-members:
    :undoc-members:
    :show-inheritance:
 
-interform.configs.yaml module
+interform.langs.yaml module
 ------------------------------
 
-.. automodule:: interform.configs.yaml
+.. automodule:: interform.langs.yaml
    :members:
    :inherited-members:
    :undoc-members:
    :show-inheritance:
 
-interform.configs.xml module
+interform.langs.xml module
 ------------------------------
 
-.. automodule:: interform.configs.xml
+.. automodule:: interform.langs.xml
    :members:
    :inherited-members:
    :undoc-members:
    :show-inheritance:
 
-interform.configs.ini module
+interform.langs.ini module
 -----------------------------
 
-.. automodule:: interform.configs.ini
+.. automodule:: interform.langs.ini
    :members:
    :inherited-members:
    :undoc-members:
@@ -43,7 +43,7 @@ interform.configs.ini module
 Module contents
 ---------------
 
-.. automodule:: interform.configs
+.. automodule:: interform.langs
    :members:
    :inherited-members:
    :undoc-members:

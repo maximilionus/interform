@@ -1,8 +1,22 @@
-# Configerz Changelog
+# Interform Changelog
 
 
 --------------------------
 ## Early Stage Development
+
+----------
+2020.11.13
+
+# Added
+- Docstrings at the beginning of each `.langs` module, describing its purpose.
+
+## Changed
+- Renamed the `.configs` subpackage to `.langs`
+- Renamed `.core.BaseInterchange` to `.core.BaseLang`
+- Renamed `.tests.BaseConfigTest` to `.tests.BaseLangTest`
+- Renamed the variable `.tests.*::self.config` to `.tests.*::self.language_object`
+- Modified `.core.BaseLang` docstrings
+
 
 ----------
 2020.11.12
@@ -15,6 +29,7 @@
 - Added information about `XML` language to `README.rst` and docs
 - Adjusted `setup.py` to support new `XML` language feature
 
+
 ----------
 2020.11.10
 
@@ -26,6 +41,7 @@
 ## Changed
 - Project version to `1.0.0` (Preparing for the release)
 - Enhanced *installation guide* section in docs
+
 
 ----------
 2020.11.09
@@ -44,6 +60,7 @@
 - `.core.BaseConfiguration`
   - `refresh()` now will merge all changes to config dictionary without overwriting the nested dicts
   - Renamed `reset_to_file()` method to `reload()`
+
 
 ----------
 2020.11.04

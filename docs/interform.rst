@@ -7,7 +7,7 @@ Subpackages
 .. toctree::
    :maxdepth: 4
 
-   interform.configs
+   interform.langs
    interform.tests
 
 Submodules

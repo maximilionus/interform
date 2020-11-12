@@ -2,8 +2,13 @@ from typing import Any
 from os import path, makedirs, remove
 
 
-class BaseInterchange:
-    """Base Data Interchange Format (DIF) realisation
+class BaseLang:
+    """
+    Base Data Interchange Format (DIF) realisation.
+
+    This class is not intended to be used directly. Instead, it should be inherited by a class, that provides the support
+    for DIF language. Inherited class must overwrite the ``_core__read_file_to_dict()`` and ``_core__write_dict_to_file()``
+    static methods with real implementation of their functionality that described in the docstring of each method.
 
     :param file_path: Path to preferred local file destination
         If the file does not exist at the specified path, it will be created
@@ -77,10 +82,10 @@ class BaseInterchange:
 
         :param key: Key name
         :type key: str
-        :param default: Default value, if key was not found
+        :param default: Default value, if key was not found, defaults to None
         :type default: Any
         :return: Value of requested ``key``, or ``default`` value
-            if key wasn't found, defaults to None.
+            if key wasn't found.
         :rtype: Any
         """
         return self.__parsed_dict.get(key, default)
@@ -256,8 +261,8 @@ class BaseInterchange:
     def write_dict_to_file(self, dictionary: dict):
         """Write dict from ``dictionary`` argument to local file bound to this object
 
-        :param config: Dictionary that should be written to file
-        :type config: dict
+        :param dictionary: Dictionary that should be written to file
+        :type dictionary: dict
         """
         self._core__write_dict_to_file(self.local_file_path, dictionary)
 

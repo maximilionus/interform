@@ -1,13 +1,14 @@
-from ruamel.yaml import YAML
+""" ``JSON`` language support """
+from ..core import BaseLang
 
-from ..core import BaseInterchange
+try:
+    import ujson as json
+except ImportError:
+    import json
 
 
-yaml = YAML()
-
-
-class YAML_Format(BaseInterchange):
-    """YAML Data Interchange Format (DIF) realisation
+class JSON_Format(BaseLang):
+    """JSON Data Interchange Format (DIF) realisation
 
     :param file_path: Path to preferred local file destination
         If the file does not exist at the specified path, it will be created
@@ -35,13 +36,13 @@ class YAML_Format(BaseInterchange):
     def _core__read_file_to_dict(file_path: str) -> dict:
         """Method for reading custom local files from path ``str`` as dictionary
 
-        :param file_path: Path to local file in ``yaml`` format
+        :param file_path: Path to local file in ``json`` format
         :type file_path: str
         :return: Parsed local file dictionary
         :rtype: dict
         """
         with open(file_path, 'rt') as f:
-            config_dict = yaml.load(f)
+            config_dict = json.load(f)
 
         return config_dict
 
@@ -49,10 +50,10 @@ class YAML_Format(BaseInterchange):
     def _core__write_dict_to_file(file_path: str, dictionary: dict):
         """Method to write dictionaries into custom local path ``str``
 
-        :param file_path: Path to local file in ``yaml`` format
+        :param file_path: Path to local file in ``json`` format
         :type file_path: str
         :param dictionary: Dictionary which will be written in ``file_path``
         :type dictionary: dict
         """
         with open(file_path, 'wt') as f:
-            yaml.dump(dictionary, f)
+            json.dump(dictionary, f, indent=4)
