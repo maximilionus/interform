@@ -1,7 +1,7 @@
 # CLI Example
 
 ## About
-Example of the `configurio` package usage in simple command line interface tool, built with help of the python built-in module `argparse` and using the `JSON` format configuration file.
+Example of the `interform` package usage in simple command line interface tool that can store the data in local file `settings.json`, built with help of the python built-in module `argparse` and using the `JSON_Format` configuration file.
 
 ## Commands
 | Command            | Description                               |

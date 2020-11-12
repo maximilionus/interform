@@ -1,4 +1,4 @@
-configurio
+interform
 =======================================
 
 .. contents:: Table of Contents
@@ -6,7 +6,7 @@ configurio
 
 About
 --------------------------------------
-``configurio`` is a powerful and easy to use tool for working with various configuration files. It provides a friendly, high-level interaction layer with configuration files, relieving the developer of the task of manually reading, writing, modifying and verifying files.
+``interform`` is a powerful and easy to use tool for working with various data interchange formats (json, yaml, etc.). It provides a friendly, high-level interaction layer, relieving the developer of the task of manually reading, writing, modifying and verifying files.
 
 Supported Languages
 --------------------------------------
@@ -23,4 +23,4 @@ List of currently supported languages.
 
 Installation
 --------------------------------------
-You can read about installing this package in `this Intallation Guide <https://maximilionus.github.io/configurio/guide_installation.html>`_
+You can read about installing this package in `this Intallation Guide <https://maximilionus.github.io/interform/guide_installation.html>`_

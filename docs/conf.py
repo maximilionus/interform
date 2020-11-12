@@ -1,6 +1,6 @@
 from datetime import datetime
 
-from configurio.meta import __version__ as configurio_version
+from interform.meta import __version__ as interform_version
 
 
 # Configuration file for the Sphinx documentation builder.
@@ -22,12 +22,12 @@ sys.path.insert(0, os.path.abspath('..'))
 
 # -- Project information -----------------------------------------------------
 
-project = 'configurio'
+project = 'interform'
 copyright = '2020, maximilionus'
 author = 'maximilionus'
 
 # The full version, including alpha/beta/rc tags
-release = configurio_version
+release = interform_version
 
 # Time of docs build
 docs_build_time = datetime.utcnow().strftime("%Y/%m/%d %H:%M:%S UTC+0000")

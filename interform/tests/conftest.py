@@ -1,6 +1,6 @@
 import pytest
 
-from configurio.core import create_directories
+from interform.core import create_directories
 
 from . import core
 

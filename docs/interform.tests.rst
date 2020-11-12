@@ -1,38 +1,38 @@
-configurio.tests package
+interform.tests package
 ========================
 
 Submodules
 ----------
 
-configurio.tests.conftest module
+interform.tests.conftest module
 --------------------------------
 
-.. automodule:: configurio.tests.conftest
+.. automodule:: interform.tests.conftest
    :members:
    :undoc-members:
    :show-inheritance:
 
-configurio.tests.core module
+interform.tests.core module
 ----------------------------
 
-.. automodule:: configurio.tests.core
+.. automodule:: interform.tests.core
    :members:
    :undoc-members:
    :show-inheritance:
 
-configurio.tests.test\_json module
+interform.tests.test\_json module
 ----------------------------------
 
-.. automodule:: configurio.tests.test_json
+.. automodule:: interform.tests.test_json
    :inherited-members:
    :members:
    :undoc-members:
    :show-inheritance:
 
-configurio.tests.test\_yaml module
+interform.tests.test\_yaml module
 ----------------------------------
 
-.. automodule:: configurio.tests.test_yaml
+.. automodule:: interform.tests.test_yaml
    :inherited-members:
    :members:
    :undoc-members:
@@ -41,7 +41,7 @@ configurio.tests.test\_yaml module
 Module contents
 ---------------
 
-.. automodule:: configurio.tests
+.. automodule:: interform.tests
    :members:
    :undoc-members:
    :show-inheritance:

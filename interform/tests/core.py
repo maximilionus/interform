@@ -1,15 +1,15 @@
 from shutil import rmtree
 from os import path, chdir
 
-from configurio.core import BaseConfiguration
+from interform.core import BaseInterchange
 
 
 temp_dir_path = './temp/'
 
-configuration_file_path = path.join(temp_dir_path, 'test_config.txt')
+local_file_path = path.join(temp_dir_path, 'test_config.txt')
 default_cfg_path = path.join(temp_dir_path, 'default_config.json')
 
-default_configuration_dict = {
+default_local_file_dict = {
     "root": {
         "Person_1": {
             "name": "X",
@@ -42,15 +42,15 @@ def change_path_to_testsdir():
 
 class BaseConfigTest():
     """
-    Base class for all configuration file tests.
+    Base class for all tests.
     `setup_method()` method should be overwritten with valid config object initialization.
     """
     def setup(self):
-        self.config = BaseConfiguration()
+        self.config = BaseInterchange()
 
     def test_delete_file(self):
         """
-        Delete local configuration file and check
+        Delete local file and check
         is the functions output works correctly
         """
         expect_success = self.config.delete_file()
@@ -59,13 +59,13 @@ class BaseConfigTest():
         assert expect_success and expect_fail
 
     def test_create_file(self):
-        """ Create local configuration file """
+        """ Create local file """
         self.config.create_file()
 
         assert self.config.is_file_exist()
 
     def test_file_read(self):
-        assert self.config.read_file_as_dict()["root"]["Person_1"]["name"] == default_configuration_dict["root"]["Person_1"]["name"]
+        assert self.config.read_file_as_dict()["root"]["Person_1"]["name"] == default_local_file_dict["root"]["Person_1"]["name"]
 
     def test_commit_changes(self):
         person_name = "Jeff"
@@ -105,14 +105,14 @@ class BaseConfigTest():
                self.config["root"]['nested_dict_refresh_test'].get("will_stay", None) is not None
 
     def test_reload_dict(self):
-        """ Reset `dictionary` to values from bound configuration file """
+        """ Reset `dictionary` to values from bound local file """
         self.config["root"]['tobereset'] = False
         self.config.reload()
 
         assert self.config.get('tobereset', True)
 
     def test_access_dashed_attribute(self):
-        assert self.config["root"]["dash-split"]["wow-man"] == default_configuration_dict["root"]["dash-split"]["wow-man"]
+        assert self.config["root"]["dash-split"]["wow-man"] == default_local_file_dict["root"]["dash-split"]["wow-man"]
 
     def test_add_dashed_attribute(self):
         self.config["root"]["dash-split"]["second-dashed"] = "ok guys, bye"

@@ -52,7 +52,7 @@
 - `Yaml` support *(<=1.2)* with [`ruamel.yaml`](https://pypi.org/project/ruamel.yaml/) module. `PyYaml` support dropped. Tests added.
 - `.core.BaseConfiguration` additions:
   - `dict` methods to work with `__configuration_dict`
-  - Added getters and setters for `__configuration_dict` and `__default_configuration_dict`
+  - Added getters and setters for `__configuration_dict` and `__default_local_file_dict`
 - Custom markers `yaml` and `json` to PyTest configuration
 - `test` bundle to `setup.py`'s `extras_require` with all necessary for testing packages
 

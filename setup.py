@@ -4,13 +4,13 @@ from setuptools import setup, find_packages
 def get_package_version() -> str:
     nspace = {}
 
-    with open("./configurio/meta.py", 'r') as f:
+    with open("./interform/meta.py", 'r') as f:
         exec(f.read(), nspace)
 
     return nspace["__version__"]
 
 
-package_name = 'configurio'
+package_name = 'interform'
 package_version = get_package_version()
 
 # Form extras
@@ -39,17 +39,17 @@ setup(
     python_requires="~=3.5",
     author="maximilionus",
     author_email="maximilionuss@gmail.com",
-    description="Powerful and easy to use tool for working with various configuration files",
+    description="Powerful and easy to use tool for working with various data interchange formats (json, yaml, etc.)",
     long_description_content_type='text/x-rst',
     long_description=readme_text,
-    keywords="configuration configs files",
+    keywords="data interchange format files dif json yaml xml",
     packages=find_packages(),
     extras_require=extras_require,
     license="MIT",
-    url="https://github.com/maximilionus/configurio",
+    url="https://github.com/maximilionus/interform",
     project_urls={
-        "Documentation": "https://maximilionus.github.io/configurio",
-        "Tracker": "https://github.com/maximilionus/configurio/issues"
+        "Documentation": "https://maximilionus.github.io/interform",
+        "Tracker": "https://github.com/maximilionus/interform/issues"
     },
     classifiers=[
         "Development Status :: 1 - Planning",

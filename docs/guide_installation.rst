@@ -6,11 +6,11 @@ Before Installation
 
 About Structure
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-``configurio`` module comes with support for various languages parsers. Yet, not all of this parsers are natively available in python. By default, ``configurio`` will not install any external packages, so if your language is not in :ref:`general-supported-langs` -> **Native Support**, you will have to specify the installation mode for ``configurio`` with this command:
+``interform`` module comes with support for various languages parsers. Yet, not all of this parsers are natively available in python. By default, ``interform`` will not install any external packages, so if your language is not in :ref:`general-supported-langs` -> **Native Support**, you will have to specify the installation mode for ``interform`` with this command:
 
 .. code-block:: bash
 
-    pip install configurio[mode]
+    pip install interform[mode]
 
 Where ``mode`` is one of the listed in `Installation Modes`_ options:
 
@@ -26,29 +26,29 @@ Installation Modes
     Support for the ``XML`` language with built-in python modules and `xmltodict package <https://github.com/martinblech/xmltodict>`_
 
 :``full``:
-    Install ``configurio`` with support for all external parsers listed above
+    Install ``interform`` with support for all external parsers listed above
 
 :``test``:
     Full installation with unit testing support (via `pytest <https://pypi.org/project/pytest/>`_ package)
 
 Example
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-For example, to install the ``configurio`` with ``ujson`` parser:
+For example, to install the ``interform`` with ``ujson`` parser:
 
 .. code-block:: bash
 
-    pip install configurio[ujson]
+    pip install interform[ujson]
 
 Install with pip
 --------------------------------------
 
-How to install the ``configurio`` from **PyPI**:
+How to install the ``interform`` from **PyPI**:
 
 #. Run
 
     .. code-block:: bash
 
-        pip install configurio
+        pip install interform
 
 Install from Github
 --------------------------------------
@@ -58,19 +58,19 @@ To do this, run:
 
 .. code-block:: bash
 
-    pip install git+https://github.com/maximilionus/configurio.git
+    pip install git+https://github.com/maximilionus/interform.git
 
 .. note::
 
-    Installing via this link will download and install the latest available version of ``configurio`` package. To install the specific version of package you should add ``@vX.X.X`` to the end of git repo link. So, for example, you can install version *1.0.0* like this:
+    Installing via this link will download and install the latest available version of ``interform`` package. To install the specific version of package you should add ``@vX.X.X`` to the end of git repo link. So, for example, you can install version *1.0.0* like this:
 
     .. code-block:: bash
 
-        pip install git+https://github.com/maximilionus/configurio.git@v1.0.0
+        pip install git+https://github.com/maximilionus/interform.git@v1.0.0
 
 Install from source
 --------------------------------------
-How to install ``configurio`` from source files:
+How to install ``interform`` from source files:
 
 .. warning::
     Due to how the ``setup.py`` deals with external dependencies, you can't install this package properly by running setup directly from file:
@@ -79,7 +79,7 @@ How to install ``configurio`` from source files:
 
         python setup.py install
 
-#. Download source files from `github releases <https://github.com/maximilionus/configurio/releases>`_
+#. Download source files from `github releases <https://github.com/maximilionus/interform/releases>`_
 #. Inside of the downloaded directory, run:
 
     .. code-block:: bash
@@ -87,7 +87,7 @@ How to install ``configurio`` from source files:
         pip install .
 
 .. note::
-    If you want to install ``configurio`` with support for any external package(-s), you can also specify it like this:
+    If you want to install ``interform`` with support for any external package(-s), you can also specify it like this:
 
     .. code-block:: bash
 

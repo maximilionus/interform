@@ -1,8 +1,8 @@
-Welcome to configurio documentation!
+Welcome to interform documentation!
 ======================================
 
-| Documentation for version: |release|
-| Documentation Revision *(Y/M/D H\:M\:S)*: |docs_build_time|
+| For version: |release|
+| Revision Time: |docs_build_time|
 
 .. toctree::
    :maxdepth: 2
@@ -12,7 +12,7 @@ Welcome to configurio documentation!
    guide_installation
    guide_basic_usage
    guide_advanced_features
-   configurio
+   interform
 
 
 

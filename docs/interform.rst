@@ -1,4 +1,4 @@
-configurio
+interform
 ==================
 
 Subpackages
@@ -7,24 +7,24 @@ Subpackages
 .. toctree::
    :maxdepth: 4
 
-   configurio.configs
-   configurio.tests
+   interform.configs
+   interform.tests
 
 Submodules
 ----------
 
-configurio.core module
+interform.core module
 ----------------------
 
-.. automodule:: configurio.core
+.. automodule:: interform.core
    :members:
    :undoc-members:
    :show-inheritance:
 
-configurio.meta module
+interform.meta module
 ----------------------
 
-.. automodule:: configurio.meta
+.. automodule:: interform.meta
    :members:
    :undoc-members:
    :show-inheritance:
@@ -32,7 +32,7 @@ configurio.meta module
 Module contents
 ---------------
 
-.. automodule:: configurio
+.. automodule:: interform
    :members:
    :undoc-members:
    :show-inheritance:

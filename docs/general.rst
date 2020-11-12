@@ -3,7 +3,7 @@ General Information
 
 About
 ----------
-``configurio`` is a powerful and easy to use tool for working with various configuration files. It provides a friendly, high-level interaction layer with configuration files, relieving the developer of the task of manually reading, writing, modifying and verifying files.
+``interform`` is a powerful and easy to use tool for working with various data interchange formats (json, yaml, etc.). It provides a friendly, high-level interaction layer, relieving the developer of the task of manually reading, writing, modifying and verifying files.
 
 
 .. _general-supported-langs:
@@ -23,7 +23,7 @@ List of currently supported languages.
 
 Module Hierarchy
 --------------------------------
-- ``configurio`` - Contains main language parsers and module meta information imports for easy access.
+- ``interform`` - Contains main language parsers and module meta information imports for easy access.
     - ``core`` - Realisation of basic features, that will be inherited and used in other modules.
     - ``meta`` - Meta information, like version, author, etc.
     - ``configs`` - Subpackage with realisation of main features for different languages

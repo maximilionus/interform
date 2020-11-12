@@ -1,11 +1,11 @@
 from argparse import ArgumentParser, Namespace
 
-from configurio import JSON_Configuration
+from interform import JSON_Format
 
 
 def parse_input_args() -> Namespace:
     """Parse script input arguments with argparse module"""
-    arg_parser = ArgumentParser(description="Simple CLI example with configurio package")
+    arg_parser = ArgumentParser(description="Simple CLI example with interform package")
 
     subparsers = arg_parser.add_subparsers(dest='command')
 
@@ -27,7 +27,7 @@ def parse_input_args() -> Namespace:
 if __name__ == "__main__":
     args = parse_input_args()  # Parse input arguments
 
-    cfg = JSON_Configuration('settings.json')  # Prepare the configuration object
+    cfg = JSON_Format('settings.json')  # Prepare the configuration object
 
     if args.command == 'get':
         # Get value from configuration file with `.get` method.

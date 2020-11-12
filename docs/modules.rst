@@ -1,7 +1,7 @@
-configurio
+interform
 ==========
 
 .. toctree::
    :maxdepth: 4
 
-   configurio
+   interform

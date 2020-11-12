@@ -2,18 +2,18 @@ from typing import Any
 from os import path, makedirs, remove
 
 
-class BaseConfiguration:
-    """Configuration object
+class BaseInterchange:
+    """Base Data Interchange Format (DIF) realisation
 
-    :param file_path: Path to preferred configuration file destination
+    :param file_path: Path to preferred local file destination
         If the file does not exist at the specified path, it will be created
     :type file_path: str
-    :param default_config: Default configuration file path ``str`` or ``dict``
+    :param default_dictionary: Default local file path ``str`` or ``dict``
         that will be used for local file start values and , defaults to {}
-    :type default_config: Union[str, dict], optional
+    :type default_dictionary: Union[str, dict], optional
     :param force_overwrite_file: Whether the file needs to be overwritten if it already exists, defaults to False
     :type force_overwrite_file: bool, optional
-    :raises ValueError: If provided data type in argument ``default_config`` is not
+    :raises ValueError: If provided data type in argument ``default_dictionary`` is not
         the path ``str`` or ``dict``, this exception will be raised
 
     .. note::
@@ -25,56 +25,55 @@ class BaseConfiguration:
 
         Is equal to:
 
-        >>> this_object.configuration.update({"check": True})
+        >>> this_object.dictionary.update({"check": True})
     """
-    def __init__(self, file_path: str, default_config={}, force_overwrite_file=False):
-        self.__configuration_dict = {}
+    def __init__(self, file_path: str, default_dictionary={}, force_overwrite_file=False):
+        self.__parsed_dict = {}
+        self.local_file_path = file_path
 
-        self.configuration_file_path = file_path
-
-        if isinstance(default_config, dict):
-            self.__default_configuration_dict = default_config
-        elif path.isfile(default_config):
-            self.__default_configuration_dict = self._core__read_file_to_dict(default_config)
+        if isinstance(default_dictionary, dict):
+            self.__default_dict = default_dictionary
+        elif path.isfile(default_dictionary):
+            self.__default_dict = self._core__read_file_to_dict(default_dictionary)
         else:
-            raise ValueError("'default_config' argument should be a dictionary or a path to file string. Provided value is {0}"
-                             .format(default_config))
+            raise ValueError("'default_dictionary' argument should be a dictionary or a path to file string. Provided value is {0}"
+                             .format(default_dictionary))
 
         if not self.is_file_exist() or force_overwrite_file:
-            create_directories(self.configuration_file_path)
+            create_directories(self.local_file_path)
             self.create_file()
 
         self.reload()
 
     def __getitem__(self, key):
-        return self.__configuration_dict[key]
+        return self.__parsed_dict[key]
 
     def __setitem__(self, key, value):
-        self.__configuration_dict[key] = value
+        self.__parsed_dict[key] = value
 
     def __delitem__(self, key):
-        self.__configuration_dict.__delitem__(key)
+        self.__parsed_dict.__delitem__(key)
 
     def __len__(self):
-        return len(self.__configuration_dict)
+        return len(self.__parsed_dict)
 
     def __iter__(self):
-        return self.__configuration_dict.__iter__()
+        return self.__parsed_dict.__iter__()
 
     def clear(self):
-        """ Clear the ``configuration`` dictionary """
-        self.__configuration_dict.clear()
+        """ Clear the ``dictionary`` """
+        self.__parsed_dict.clear()
 
     def copy(self) -> dict:
-        """Get the copy of ``configuration`` dictionary
+        """Get the copy of ``dictionary``
 
-        :return: ``configuration`` dictionary copy
+        :return: ``dictionary`` copy
         :rtype: dict
         """
-        return self.__configuration_dict.copy()
+        return self.__parsed_dict.copy()
 
     def get(self, key, default=None) -> Any:
-        """Get key from ``configuration`` dictionary
+        """Get key from ``dictionary``
 
         :param key: Key name
         :type key: str
@@ -84,34 +83,34 @@ class BaseConfiguration:
             if key wasn't found, defaults to None.
         :rtype: Any
         """
-        return self.__configuration_dict.get(key, default)
+        return self.__parsed_dict.get(key, default)
 
     def items(self) -> list:
-        """Get items of the ``configuration`` dictionary
+        """Get items of the ``dictionary``
 
-        :return: Items of the ``configuration`` dictionary ((key, value) pairs)
+        :return: Items of the ``dictionary`` ((key, value) pairs)
         :rtype: list
         """
-        return self.__configuration_dict.items()
+        return self.__parsed_dict.items()
 
     def keys(self) -> list:
-        """Get keys of the ``configuration`` dictionary
+        """Get keys of the ``dictionary``
 
-        :return: Keys of the ``configuration`` dictionary (, key)
+        :return: Keys of the ``dictionary`` (, key)
         :rtype: list
         """
-        return self.__configuration_dict.keys()
+        return self.__parsed_dict.keys()
 
     def values(self) -> list:
-        """Get values of the ``configuration`` dictionary
+        """Get values of the ``dictionary``
 
-        :return: Values of the ``configuration`` dictionary (, value)
+        :return: Values of the ``dictionary`` (, value)
         :rtype: list
         """
-        return self.__default_configuration_dict.values()
+        return self.__default_dict.values()
 
     def pop(self, key: Any, default=None) -> Any:
-        """Pop key from ``configuration`` dictionary
+        """Pop key from ``dictionary``
 
         :param key: Key name
         :type key: Any
@@ -121,10 +120,10 @@ class BaseConfiguration:
             if key wasn't found, defaults to None.
         :rtype: Any
         """
-        return self.__configuration_dict.pop(key, default)
+        return self.__parsed_dict.pop(key, default)
 
     def popitem(self) -> Any:
-        """Pop item from ``configuration`` dictionary in LIFO order.
+        """Pop item from ``dictionary`` in LIFO order.
 
         :param key: Key name
         :type key: Any
@@ -134,11 +133,11 @@ class BaseConfiguration:
             if key wasn't found, defaults to None.
         :rtype: Any
         """
-        return self.__configuration_dict.popitem()
+        return self.__parsed_dict.popitem()
 
     def setdefault(self, key: Any, default=None) -> Any:
         """
-        If key is in the ``configuration`` dictionary, return its value.
+        If key is in the ``dictionary``, return its value.
         If not, insert key with a value of ``default`` and return ``default``
 
         :param key: Name of the key
@@ -149,46 +148,49 @@ class BaseConfiguration:
             returns ``defalut``
         :rtype: Any
         """
-        return self.__configuration_dict.setdefault(key, default)
+        return self.__parsed_dict.setdefault(key, default)
 
     def update(self, dictionary: dict):
-        """Update ``configuration`` dictionary with another dictionary
+        """Update ``dictionary`` with another dictionary
 
         :param dictionary: Dictionary, that will be merged to
-            ``configuration`` dictionary
+            ``dictionary``
         :type dictionary: dict
         """
-        self.__configuration_dict.update(dictionary)
+        self.__parsed_dict.update(dictionary)
 
     @property
     def dictionary(self) -> dict:
-        """Full access to the configuration dictionary
+        """Full access to the dictionary attribute.
+        Contains local file data parsed to dictionary
 
-        :return: Configuration dictionary
+        :return: ``dictionary`` attribute
         :rtype: dict
         """
-        return self.__configuration_dict
+        return self.__parsed_dict
 
     @dictionary.setter
     def dictionary(self, dictionary: dict):
-        self.__configuration_dict = dictionary
+        self.__parsed_dict = dictionary
 
     @property
     def dictionary_default(self) -> dict:
-        """Full access to the default configuration dictionary
+        """Full access to the default dictionary.
+        Contains dictionary with default keys that was
+        specified in ``default_dictionary`` argument.
 
-        :return: Configuration dictionary
+        :return: default dictionary
         :rtype: dict
         """
-        return self.__default_configuration_dict
+        return self.__default_dict
 
     @dictionary_default.setter
     def dictionary_default(self, dictionary: dict):
-        self.__default_configuration_dict = dictionary
+        self.__default_dict = dictionary
 
     def commit(self):
-        """Commit all changes from ``dictionary`` to local configuration file"""
-        self.write_dict_to_file(self.__configuration_dict)
+        """Commit all changes from ``dictionary`` to local file"""
+        self.write_dict_to_file(self.__parsed_dict)
 
     def refresh(self, safe_mode=True):
         """
@@ -197,92 +199,92 @@ class BaseConfiguration:
         it will only add non existent keys and modify the already existing keys.
 
         :param safe_mode: Provides the recursive merge of dictionary from local
-            configuration file to object's ``dictionary``. This option prevents
-            object's nested dictionaries to be overwritten by local files, but
-            is much slower than simple ``dict.update()`` method call. So if you
-            don't care about nested dictionaries be overwritten, you can disable
-            this feature to boost the execution speed
+            file to object's ``dictionary``. This option prevents object's nested
+            dictionaries to be overwritten by local files, but is much slower than
+            simple ``dict.update()`` method call. So if you don't care about nested
+            dictionaries be overwritten, you can disable this feature to boost the
+            execution speed
         :type safe_mode: bool, optional
         """
         if safe_mode:
-            self.__configuration_dict = recursive_dicts_merge(self.read_file_as_dict(), self.__configuration_dict)
+            self.__parsed_dict = recursive_dicts_merge(self.read_file_as_dict(), self.__parsed_dict)
         else:
-            self.__configuration_dict.update(self.read_file_as_dict())
+            self.__parsed_dict.update(self.read_file_as_dict())
 
     def reload(self):
         """Reset the ``dictionary`` attribute to values from local file"""
-        self.__configuration_dict = self.read_file_as_dict()
+        self.__parsed_dict = self.read_file_as_dict()
 
     def reset_to_defaults(self):
         """
         Reset the ``dictionary`` attribute to values from ``dictionary_default`` attribute.
-        Note that local configuration file will stay untouched.
+        Note that local file will stay untouched.
         """
-        self.__configuration_dict = self.__default_configuration_dict.copy()
+        self.__parsed_dict = self.__default_dict.copy()
 
     def create_file(self) -> bool:
-        """Create new configuration file from default dictionary
+        """Create new local file from default dictionary
 
         :return: Was the file created successfully
         :rtype: bool
         """
-        self.write_dict_to_file(self.__default_configuration_dict)
+        self.write_dict_to_file(self.__default_dict)
 
         return True
 
     def delete_file(self) -> bool:
-        """Delete local configuration file
+        """Delete local file
 
         :return: Was the file removed.
-            False will be returned only if the configuration file does not exist at the time of deletion.
+            False will be returned only if the local file does not exist at the time of deletion.
         :rtype: bool
         """
         if self.is_file_exist():
-            remove(self.configuration_file_path)
+            remove(self.local_file_path)
             return True
         else:
             return False
 
     def is_file_exist(self) -> bool:
-        """Check configuration file existence
+        """Check local file existence
 
         :return: Does the file exist
         :rtype: bool
         """
-        return path.isfile(self.configuration_file_path)
+        return path.isfile(self.local_file_path)
 
     def write_dict_to_file(self, dictionary: dict):
-        """Write dict from ``dictionary`` argument to configuration file bound to this object
+        """Write dict from ``dictionary`` argument to local file bound to this object
 
-        :param config: Configuration dictionary
+        :param config: Dictionary that should be written to file
         :type config: dict
         """
-        self._core__write_dict_to_file(self.configuration_file_path, dictionary)
+        self._core__write_dict_to_file(self.local_file_path, dictionary)
 
     def read_file_as_dict(self) -> dict:
-        """Read configuration file bound to this object as dictionary
+        """Read local file bound to this object as dictionary
 
-        :return: Parsed configuration file
+        :return: Parsed to dictionary local file
         :rtype: dict
         """
-        return self._core__read_file_to_dict(self.configuration_file_path)
+        return self._core__read_file_to_dict(self.local_file_path)
 
     @staticmethod
     def _core__read_file_to_dict(file_path: str) -> dict:
-        """Template for reading custom configuration files from path ``str`` as dictionary
+        """Template for reading custom local files from path ``str`` as dictionary
 
-        :param file_path: Path to configuration file
+        :param file_path: Path to local file
         :type file_path: str
-        :return: Parsed configuration file dictionary
+        :return: Parsed local file dictionary
         :rtype: dict
         """
         pass
 
     @staticmethod
     def _core__write_dict_to_file(file_path: str, dictionary: dict):
-        """Template for writing dictionaries into custom configuration path ``str``
+        """Template for writing dictionaries into custom local path ``str``
 
-        :param file_path: Path to configuration file
+        :param file_path: Path to local file
         :type file_path: str
         :param dictionary: Dictionary which will be written in ``file_path``
         :type dictionary: dict
