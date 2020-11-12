@@ -1,1 +1,1 @@
-""" Subpackage with realisation of main features for different DIF languages """
+""" Subpackage with realisation of main features for various DIF languages """

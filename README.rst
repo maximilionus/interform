@@ -6,20 +6,22 @@ interform
 
 About
 --------------------------------------
-``interform`` is a powerful and easy to use tool for working with various data interchange formats (json, yaml, etc.). It provides a friendly, high-level interaction layer, relieving the developer of the task of manually reading, writing, modifying and verifying files.
+``interform`` is a powerful and easy-to-use tool that provides a unified interaction layer for various data interchange formats *(DIF)* like ``json``, ``yaml``, etc. Due to the how this tool designed, all the supported languages share the identical base between each other, meaning that process of working with those languages will be absolutely the same. Tool can also be extended for your purposes or even your own DIF language parser support.
 
 Supported Languages
 --------------------------------------
 List of currently supported languages.
 
 - Native Support
-    - ``JSON``
+    - ``json``
 - External Support
-    - ``YAML`` <= 1.2
-    - ``XML``
+    - ``ujson`` - replacement for python built-in ``json`` parser
+    - ``yaml`` <= 1.2
+    - ``xml``
 
-.. note::
-    Languages, listed in **Native Support** are supported by python without any external packages, while **External Support** requires external packages to be installed. For more information go here: `Intallation Guide <https://maximilionus.github.io/sphinx-docs-test/guide_installation.html>`_
+..
+
+    Languages, listed in **Native Support** are supported by python without any external packages, while **External Support** requires external packages to be installed. For more detailed information go here: `Intallation Guide <https://maximilionus.github.io/sphinx-docs-test/guide_installation.html>`_
 
 Installation
 --------------------------------------

@@ -17,10 +17,10 @@ Where ``mode`` is one of the listed in `Installation Modes`_ options:
 Installation Modes
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 :``ujson``:
-    Replace the built-in ``json`` parser with `ujson package <https://pypi.org/project/ujson/>`_
+    Will automatically replace the built-in ``json`` parser with `ujson parser <https://pypi.org/project/ujson/>`_
 
 :``yaml``:
-    Support for the ``YAML`` language *(version <= 1.2)* with `ruamel.yaml package <https://pypi.org/project/ruamel.yaml/>`_
+    Support for the ``YAML`` language *(version <= 1.2)* with `ruamel.yaml parser <https://pypi.org/project/ruamel.yaml/>`_
 
 :``xml``:
     Support for the ``XML`` language with built-in python modules and `xmltodict package <https://github.com/martinblech/xmltodict>`_

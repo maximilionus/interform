@@ -1,50 +1,51 @@
 # Interform Changelog
 
 
---------------------------
-## Early Stage Development
 
-----------
-2020.11.13
+<details>
+<summary>Pre-Release Development</summary>
 
-# Added
+> In this part of changelog you can track the progress of development before the public `1.0.0` version release.
+
+
+## 2020.11.13
+
+### Added
 - Docstrings at the beginning of each `.langs` module, describing its purpose.
 
-## Changed
+### Changed
 - Renamed the `.configs` subpackage to `.langs`
 - Renamed `.core.BaseInterchange` to `.core.BaseLang`
 - Renamed `.tests.BaseConfigTest` to `.tests.BaseLangTest`
 - Renamed the variable `.tests.*::self.config` to `.tests.*::self.language_object`
 - Modified `.core.BaseLang` docstrings
+- Enhanced the 'about' description in README and docs
 
 
-----------
-2020.11.12
+## 2020.11.12
 
-## Added
+### Added
 - Support for `XML` language with unit testing suite
 
-## Changed
+### Changed
 - Renamed some variables in tests core
 - Added information about `XML` language to `README.rst` and docs
 - Adjusted `setup.py` to support new `XML` language feature
 
 
-----------
-2020.11.10
+## 2020.11.10
 
-## Added
+### Added
 - New `safe_mode` feature to `.core.BaseConfiguration.refresh()` with tesing suite modifications
 - Links to *docs* and *bug tracker* to `setup.py` script
 - What version of `configurio` is docs for and revision time in index page
 
-## Changed
+### Changed
 - Project version to `1.0.0` (Preparing for the release)
 - Enhanced *installation guide* section in docs
 
 
-----------
-2020.11.09
+## 2020.11.09
 
 ### Added
 - Basic documentation *(WIP)*
@@ -62,8 +63,7 @@
   - Renamed `reset_to_file()` method to `reload()`
 
 
-----------
-2020.11.04
+## 2020.11.04
 
 ### Added
 - `Yaml` support *(<=1.2)* with [`ruamel.yaml`](https://pypi.org/project/ruamel.yaml/) module. `PyYaml` support dropped. Tests added.
@@ -128,3 +128,5 @@
   - Values now will be stored in `Configuration` class
   - All methods now located in `*Controller` classes
 - Updated unit tests to new code
+
+</details>
