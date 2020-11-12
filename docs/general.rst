@@ -12,7 +12,7 @@ Supported Languages
 --------------------------------------
 List of currently supported languages.
 
-- Native Support:
+- Native Support
     - ``JSON``
 - External Support
     - ``YAML`` <= 1.2
