@@ -8,6 +8,13 @@
 > In this part of changelog you can track the progress of development before the public `1.0.0` version release.
 
 
+# 2020.11.14
+
+## Changed
+- Enhanced main package `__init__`
+- README and docs 'Supported Languages' changed
+
+
 ## 2020.11.13
 
 ### Added

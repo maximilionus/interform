@@ -15,8 +15,8 @@ List of currently supported languages.
 - Native Support
     - ``json``
 - External Support
-    - ``ujson`` - replacement for python built-in ``json`` parser
-    - ``yaml`` <= 1.2
+    - ``ujson`` *(replacement for python built-in json parser)*
+    - ``yaml`` *(version <= 1.2)*
     - ``xml``
 
 ..
