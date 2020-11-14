@@ -7,7 +7,7 @@ from interform.core import BaseLang
 temp_dir_path = './temp/'
 
 local_file_path = path.join(temp_dir_path, 'test_config.txt')
-default_cfg_path = path.join(temp_dir_path, 'default_config.json')
+default_cfg_path = path.join(temp_dir_path, 'default_config.txt')
 
 default_local_file_dict = {
     "root": {
@@ -147,7 +147,7 @@ class BaseLangTest():
         self.language_object["root"]['items'] = dct
         self.language_object.commit()
 
-        assert int(self.language_object["root"]['items']['sugar']['carbon']) == int(self.language_object.read_file_as_dict()["root"]["items"]["sugar"]["carbon"])
+        assert self.language_object["root"]['items']['sugar']['carbon'] == self.language_object.read_file_as_dict()["root"]["items"]["sugar"]["carbon"]
 
     def test_add_multiple_dicts_with_update(self):
         """
@@ -171,8 +171,8 @@ class BaseLangTest():
         print(file_dict["jerre_1829"]["status"])
         print(self.language_object["root"]['users']['jerre_1829']['status'])
 
-        assert int(self.language_object["root"]['users']['jerre_1829']['status']) == int(file_dict["jerre_1829"]["status"]) and \
-               int(self.language_object["root"]['users']['wolfrm4882']['status']) == int(file_dict["wolfrm4882"]["status"])
+        assert self.language_object["root"]['users']['jerre_1829']['status'] == file_dict["jerre_1829"]["status"] and \
+               self.language_object["root"]['users']['wolfrm4882']['status'] == file_dict["wolfrm4882"]["status"]
 
     def test_modify_default_dict(self):
         """Modify the default dictionary, reset `dictionary` to defaults and assert values"""

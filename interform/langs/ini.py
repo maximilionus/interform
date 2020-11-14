@@ -1,19 +1,59 @@
-"""
-``INI`` language support.
-
-Work in progress.
-"""
+""" ``INI`` language support """
 from configparser import ConfigParser
 
 from ..core import BaseLang
 
 
 class INI_Format(BaseLang):
-    # TODO
+    """INI Data Interchange Format (DIF) realisation
 
-    def __dict_from_ini(self, ini_obj) -> dict:
-        # TODO: Needs to be tested
-        parser = ConfigParser()
-        parser.read(self.__parsed_file)
+    :param file_path: Path to preferred local file destination
+        If the file does not exist at the specified path, it will be created
+    :type file_path: str
+    :param default_dictionary: Default local file path ``str`` or ``dict``
+        that will be used for local file start values and , defaults to {}
+    :type default_dictionary: Union[str, dict], optional
+    :param force_overwrite_file: Whether the file needs to be overwritten if it already exists, defaults to False
+    :type force_overwrite_file: bool, optional
+    :raises ValueError: If provided data type in argument ``default_dictionary`` is not
+        the path ``str`` or ``dict``, this exception will be raised
 
-        return {section: dict(parser.items(section)) for section in parser.sections()}
+    .. note::
+        Methods ``.clear()``, ``.copy()``, ``.fromkeys()``, ``.get()``, ``.items()``, ``.keys()``, ``values()``,
+        ``pop()``, ``popitem()``, ``setdefault()``, ``update()`` are bound to the attribute ``dictionary``,
+        so executing:
+
+        >>> this_object.update({"check": True})
+
+        Is equal to:
+
+        >>> this_object.dictionary.update({"check": True})
+    """
+    @staticmethod
+    def _core__read_file_to_dict(file_path: str) -> dict:
+        """Method for reading custom local files from path ``str`` as dictionary
+
+        :param file_path: Path to local file in ``ini`` format
+        :type file_path: str
+        :return: Parsed local file dictionary
+        :rtype: dict
+        """
+        ini_parser = ConfigParser()
+        ini_parser.read(file_path)
+
+        return {section: dict(ini_parser.items(section)) for section in ini_parser.sections()}
+
+    @staticmethod
+    def _core__write_dict_to_file(file_path: str, dictionary: dict):
+        """Method to write dictionaries into custom local path ``str``
+
+        :param file_path: Path to local file in ``ini`` format
+        :type file_path: str
+        :param dictionary: Dictionary which will be written in ``file_path``
+        :type dictionary: dict
+        """
+        ini_parser = ConfigParser()
+        ini_parser.read_dict(dictionary)
+
+        with open(file_path, 'w') as f:
+            ini_parser.write(f)

@@ -8,11 +8,18 @@
 > In this part of changelog you can track the progress of development before the public `1.0.0` version release.
 
 
-# 2020.11.14
+## 2020.11.14
 
-## Changed
+### Added
+- Started implementation of `INI` dif language support with full tests support
+- Created and almost finished function `.core.parse_dict_values()`
+
+### Changed
 - Enhanced main package `__init__`
 - README and docs 'Supported Languages' changed
+
+## Removed
+- Variable converting in `.tests.core` due to `.core.parse_dict_values()` is almost ready to implement
 
 
 ## 2020.11.13
