@@ -17,6 +17,7 @@
 ### Changed
 - Enhanced main package `__init__`
 - README and docs 'Supported Languages' changed
+- Changed 'about' info in README and docs
 
 ## Removed
 - Variable converting in `.tests.core` due to `.core.parse_dict_values()` is almost ready to implement
