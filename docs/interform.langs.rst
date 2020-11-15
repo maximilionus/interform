@@ -22,24 +22,6 @@ interform.langs.yaml module
    :undoc-members:
    :show-inheritance:
 
-interform.langs.xml module
-------------------------------
-
-.. automodule:: interform.langs.xml
-   :members:
-   :inherited-members:
-   :undoc-members:
-   :show-inheritance:
-
-interform.langs.ini module
------------------------------
-
-.. automodule:: interform.langs.ini
-   :members:
-   :inherited-members:
-   :undoc-members:
-   :show-inheritance:
-
 Module contents
 ---------------
 

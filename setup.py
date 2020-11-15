@@ -16,8 +16,7 @@ package_version = get_package_version()
 # Form extras
 extras_require = {
     "ujson": ["ujson<=4.0.1"],
-    "yaml": ["ruamel.yaml<=0.16.12"],
-    "xml": ["xmltodict<=0.12.0"]
+    "yaml": ["ruamel.yaml<=0.16.12"]
 }
 
 all_base_requirements = [dep for v in extras_require.values() for dep in v]
@@ -42,7 +41,7 @@ setup(
     description="Powerful and easy to use tool for working with various data interchange formats (json, yaml, etc.)",
     long_description_content_type='text/x-rst',
     long_description=readme_text,
-    keywords="data interchange format files dif json yaml xml",
+    keywords="data interchange format files dif json yaml",
     packages=find_packages(),
     extras_require=extras_require,
     license="MIT",
@@ -52,9 +51,9 @@ setup(
         "Tracker": "https://github.com/maximilionus/interform/issues"
     },
     classifiers=[
-        "Development Status :: 1 - Planning",
-        "Programming Language :: Python :: 3",
+        "Development Status :: 5 - Production/Stable",
         "Programming Language :: Python :: 3 :: Only",
+        "Programming Language :: Python :: 3",
         "Programming Language :: Python :: 3.5",
         "Programming Language :: Python :: 3.6",
         "Programming Language :: Python :: 3.7",

@@ -13,6 +13,12 @@
 ### Added
 - Project root makefile containing options to build the package and documentation
 
+### Changed
+- Project classifiers `Development Status` to `5 - Production/Stable`
+
+### Removed
+- `XML` and `INI` support cutted due to unfinished state. Realisation code moved to repo branch `dev/lang_support`
+
 
 ## 2020.11.14
 

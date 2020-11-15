@@ -17,7 +17,6 @@ List of currently supported languages.
 - External Support
     - ``ujson`` *(replacement for python built-in json parser)*
     - ``yaml`` *(version <= 1.2)*
-    - ``xml``
 
 .. note::
     Languages, listed in **Native Support** are supported by python without any external packages, while **External Support** requires external packages to be installed. For more detailed information go here: :doc:`guide_installation`
@@ -30,5 +29,4 @@ Module Hierarchy
     - ``langs`` - Subpackage with realisation of main features for various DIF languages
         - ``json``
         - ``yaml``
-        - ``ini``
     - ``tests`` - PyTest unit testing suite subpackage
