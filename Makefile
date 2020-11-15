@@ -25,5 +25,5 @@ help:
 		build_dist - build project source distribution\n\
 		build_wheel - build project wheel distribution\n\
 		docs - build Sphinx documentation in html format\n\
-		help - display this help message\
+		help - display this help message\n\
 	"
