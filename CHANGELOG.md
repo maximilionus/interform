@@ -8,6 +8,12 @@
 > In this part of changelog you can track the progress of development before the public `1.0.0` version release.
 
 
+## 2020.11.15
+
+### Added
+- Project root makefile containing options to build the package and documentation
+
+
 ## 2020.11.14
 
 ### Added
