@@ -13,6 +13,9 @@
 ### Added
 - README to `./examples/` dir
 
+### Changed
+- Enhanced docs
+
 
 ## 2020.11.15
 
