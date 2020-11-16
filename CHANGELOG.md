@@ -8,6 +8,12 @@
 > In this part of changelog you can track the progress of development before the public `1.0.0` version release.
 
 
+## 2020.11.16
+
+### Added
+- README to `./examples/` dir
+
+
 ## 2020.11.15
 
 ### Added
