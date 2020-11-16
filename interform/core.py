@@ -339,7 +339,7 @@ def recursive_dicts_merge(merge_from: dict, merge_to: dict) -> dict:
     merge_from = merge_from.copy()
     result_dict = merge_to.copy()
 
-    __merge(merge_from, merge_to)
+    __merge(merge_from, result_dict)
 
     return result_dict
 

@@ -13,6 +13,9 @@
 ### Added
 - README to `./examples/` dir
 
+### Fixed
+- `.core.recursive_dicts_merge()` was not merging anything
+
 ### Changed
 - Docs version postfix = `_predocs`. Will be removed on release.
 - Enhanced docs
