@@ -6,7 +6,7 @@ Before Installation
 
 About Structure
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-``interform`` module comes with support for various languages parsers. Yet, not all of this parsers are natively available in python. By default, ``interform`` will not install any external packages, so if your language is not in :ref:`general-supported-langs` -> **Native Support**, you will have to specify the installation mode for ``interform`` with this command:
+``interform`` module comes with support for various languages parsers. Yet, not all of this parsers are natively available in python. By default, ``interform`` will not install any external packages, so if your language is not in `Supported Languages <general.html#supported-languages>`__ -> **Native Support**, you will have to specify the installation mode for ``interform`` with this command:
 
 .. code-block:: bash
 

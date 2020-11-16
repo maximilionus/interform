@@ -18,6 +18,9 @@
 - Enhanced docs
 - Docs makefile now will create `_static` dir on run, if it doesn't exist
 
+### Removed
+- `:ref:` from docs. Replaced with html links.
+
 
 ## 2020.11.15
 
