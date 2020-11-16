@@ -14,7 +14,9 @@
 - README to `./examples/` dir
 
 ### Changed
+- Docs version postfix = `_predocs`. Will be removed on release.
 - Enhanced docs
+- Docs makefile now will create `_static` dir on run, if it doesn't exist
 
 
 ## 2020.11.15

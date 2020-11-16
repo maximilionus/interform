@@ -16,15 +16,24 @@ Guide
 
     >>> from interform import JSON_Format
 
-2. Next step we will define the default dictionary, that will be used in next step.
+2. Next step we will define the default dictionary, that will be used later.
 
 .. code:: python
 
-    >>> def_cfg = {
-        "version": 5,
-        "rand_key": "da"
-    }
+    >>> def_dict = {
+    ...     "version": 5,
+    ...     "app_name": "Test"
+    ... }
 
 
 .. note::
-    Specifying the default dictionary is an optional step and not required in your code if you don't need it, but this will allow us to specify the values, that will be written in local file on creation
+    Specifying the default dictionary **is an optional step** and not required in your code, but this will allow us to specify the values, that will be written in local file on creation and may be used for "factory reset" feature.
+
+3. Now we're moving to the main part - creation of the object that will be used for further interaction with local file.
+
+.. code:: python
+
+    >>> config = JSON_Format(
+    ...     'settings.json',  # Path to preferred local file location.
+    ...     def_dict          # Default configuration dictionary that will be parsed into the local file on creation
+    ... )

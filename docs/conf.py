@@ -27,9 +27,9 @@ copyright = '2020, maximilionus'
 author = 'maximilionus'
 
 # The full version, including alpha/beta/rc tags
-release = interform_version
+release = interform_version + '_predocs'
 
-# Time of docs build
+# Prepare rst variables
 docs_build_time = datetime.utcnow().strftime("%Y/%m/%d %H:%M:%S UTC+0000")
 
 rst_epilog = """
@@ -58,4 +58,3 @@ exclude_patterns = ['_build', 'Thumbs.db', '.DS_Store']
 
 
 html_theme = 'sphinx_rtd_theme'
-html_logo = ''  # TODO
