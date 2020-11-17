@@ -1,4 +1,5 @@
 from typing import Any
+from copy import deepcopy
 from ast import literal_eval
 from os import path, makedirs, remove
 
@@ -70,13 +71,23 @@ class BaseLang:
         """ Clear the ``dictionary`` """
         self.__parsed_dict.clear()
 
-    def copy(self) -> dict:
-        """Get the copy of ``dictionary``
+    def copy(self, deep_mode=True) -> dict:
+        """Get the copy of ``dictionary``.
+        This method uses the recursive copy function that will remove
+        all references to original dictionary.
 
+        :param deep_mode: Use the recursive copy function to remove
+            all references to original dictionary. Disabling this will lead
+            to saving the references of the nested dictionary to original,
+            defaults to True.
+        :type deep_mode: bool
         :return: ``dictionary`` copy
         :rtype: dict
         """
-        return self.__parsed_dict.copy()
+        if deep_mode:
+            return deepcopy(self.__parsed_dict)
+        else:
+            return self.__parsed_dict.copy()
 
     def get(self, key, default=None) -> Any:
         """Get key from ``dictionary``
@@ -226,7 +237,7 @@ class BaseLang:
         Reset the ``dictionary`` attribute to values from ``dictionary_default`` attribute.
         Note that local file will stay untouched.
         """
-        self.__parsed_dict = self.__default_dict.copy()
+        self.__parsed_dict = deepcopy(self.__default_dict)
 
     def create_file(self) -> bool:
         """Create new local file from default dictionary
@@ -336,8 +347,8 @@ def recursive_dicts_merge(merge_from: dict, merge_to: dict) -> dict:
             else:
                 merge_to[k] = v
 
-    merge_from = merge_from.copy()
-    result_dict = merge_to.copy()
+    merge_from = deepcopy(merge_from)
+    result_dict = deepcopy(merge_to)
 
     __merge(merge_from, result_dict)
 

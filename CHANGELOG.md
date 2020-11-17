@@ -8,6 +8,13 @@
 > In this part of changelog you can track the progress of development before the public `1.0.0` version release.
 
 
+## 2020.11.17
+
+### Fixed
+- `.core.*`
+  - `BaseLang.copy()` and `recursive_dicts_merge()` copy was fixed with `copy.deepcopy()` module to remove all references to original dictionary
+
+
 ## 2020.11.16
 
 ### Added
