@@ -10,18 +10,18 @@ core.change_path_to_testsdir()
 
 def pytest_configure(config):
     custom_markers = (
-        "json: run only json tests",
-        "yaml: run only yaml tests",
+        'json: run only json tests',
+        'yaml: run only yaml tests',
     )
 
     for marker in custom_markers:
         config.addinivalue_line(
-            "markers", marker
+            'markers', marker
         )
 
 
-@pytest.fixture(scope="class", autouse=True)
+@pytest.fixture(scope='class', autouse=True)
 def dir_control():
     create_directories(core.temp_dir_path)
-    yield "class"
+    yield 'class'
     core.remove_temp_dir()

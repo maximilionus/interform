@@ -30,7 +30,7 @@ author = 'maximilionus'
 release = interform_version + '_predocs'
 
 # Prepare rst variables
-docs_build_time = datetime.utcnow().strftime("%Y/%m/%d %H:%M:%S UTC+0000")
+docs_build_time = datetime.utcnow().strftime('%Y/%m/%d %H:%M:%S UTC+0000')
 
 rst_epilog = """
 .. |docs_build_time| replace:: {}

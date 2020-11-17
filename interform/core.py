@@ -28,11 +28,11 @@ class BaseLang:
         ``pop()``, ``popitem()``, ``setdefault()``, ``update()`` are bound to the attribute ``dictionary``,
         so executing:
 
-        >>> this_object.update({"check": True})
+        >>> this_object.update({'check': True})
 
         Is equal to:
 
-        >>> this_object.dictionary.update({"check": True})
+        >>> this_object.dictionary.update({'check': True})
     """
     def __init__(self, file_path: str, default_dictionary={}, force_overwrite_file=False):
         self.__parsed_dict = {}
@@ -43,7 +43,7 @@ class BaseLang:
         elif path.isfile(default_dictionary):
             self.__default_dict = self._core__read_file_to_dict(default_dictionary)
         else:
-            raise ValueError("'default_dictionary' argument should be a dictionary or a path to file string. Provided value is {0}"
+            raise ValueError('"default_dictionary" argument should be a dictionary or a path to file string. Provided value is {0}'
                              .format(default_dictionary))
 
         if not self.is_file_exist() or force_overwrite_file:

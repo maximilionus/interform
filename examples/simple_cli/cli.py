@@ -5,13 +5,13 @@ from interform import JSON_Format
 
 # Default dictionary, that will be used later
 prog_default_dict = {
-    "version": "2020.11"
+    'version': '2020.11'
 }
 
 
 def parse_input_args() -> Namespace:
     """Parse script input arguments with argparse module"""
-    arg_parser = ArgumentParser(description="Simple CLI example with interform package")
+    arg_parser = ArgumentParser(description='Simple CLI example with interform package')
 
     subparsers = arg_parser.add_subparsers(dest='command')
 
@@ -30,7 +30,7 @@ def parse_input_args() -> Namespace:
     return arg_parser.parse_args()
 
 
-if __name__ == "__main__":
+if __name__ == '__main__':
     args = parse_input_args()  # Parse input arguments
 
     # Prepare the configuration object
@@ -52,7 +52,7 @@ if __name__ == "__main__":
         # Commit the changes to local file
         cfg.commit()
 
-        print("successfully added the new value")
+        print('successfully added the new value')
 
     elif args.command == 'remove':
         # Pop the option from configuration dictionary.
@@ -64,12 +64,12 @@ if __name__ == "__main__":
         if result is not None:
             # If key exists in configuration dictionary -> commit the changes to local file
             cfg.commit()
-            print("successfully removed option '{}' from configuration file".format(args.option))
+            print('successfully removed option '{}' from configuration file'.format(args.option))
         else:
-            print("no such option in configuration file!")
+            print('no such option in configuration file!')
 
     elif args.command == 'clear':
         # Clear the object configuration and commit changes to file
         cfg.clear()
         cfg.commit()
-        print("successfully removed everything from configuration file")
+        print('successfully removed everything from configuration file')

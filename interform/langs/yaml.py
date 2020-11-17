@@ -26,11 +26,11 @@ class YAML_Format(BaseLang):
         ``pop()``, ``popitem()``, ``setdefault()``, ``update()`` are bound to the attribute ``dictionary``,
         so executing:
 
-        >>> this_object.update({"check": True})
+        >>> this_object.update({'check': True})
 
         Is equal to:
 
-        >>> this_object.dictionary.update({"check": True})
+        >>> this_object.dictionary.update({'check': True})
     """
     @staticmethod
     def _core__read_file_to_dict(file_path: str) -> dict:
