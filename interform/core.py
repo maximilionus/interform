@@ -209,7 +209,7 @@ class BaseLang:
         """Commit all changes from ``dictionary`` to local file"""
         self.write_dict_to_file(self.__parsed_dict)
 
-    def refresh(self, safe_mode=True):
+    def refresh(self, safe_mode=True) -> bool:
         """
         Refresh ``dictionary`` values from local file.
         Note that this method does not remove user-added keys,
@@ -222,15 +222,32 @@ class BaseLang:
             dictionaries be overwritten, you can disable this feature to boost the
             execution speed
         :type safe_mode: bool, optional
+        :return: Status of local file read action. If file does not exist -
+            ``False`` will be returned.
+        :rtype: bool
         """
+        if not self.is_file_exist():
+            return False
+
         if safe_mode:
             self.__parsed_dict = recursive_dicts_merge(self.read_file_as_dict(), self.__parsed_dict)
         else:
             self.__parsed_dict.update(self.read_file_as_dict())
 
-    def reload(self):
-        """Reset the ``dictionary`` attribute to values from local file"""
-        self.__parsed_dict = self.read_file_as_dict()
+        return True
+
+    def reload(self) -> bool:
+        """Reset the ``dictionary`` attribute to values from local file
+
+        :return: Status of local file read action. If file does not exist -
+            ``False`` will be returned.
+        :rtype: bool
+        """
+        if self.is_file_exist():
+            self.__parsed_dict = self.read_file_as_dict()
+            return False
+        else:
+            return True
 
     def reset_to_defaults(self):
         """

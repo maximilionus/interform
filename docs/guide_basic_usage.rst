@@ -144,5 +144,39 @@ To get this key inside of our ``config`` object we'll have to refresh it with sp
     # This method will refresh object's dictionary with dictionary parsed from the local file.
     config.refresh()
 
-    # After refreshing, "custom_key" key will be added to object and can be accessed now
+    # After refreshing, "custom_key" key will be added to object and can be accessed
     print(config["custom_key"])  # Output: 'hello?'
+
+9. Now lets try to remove one key from dictionary. To remove any key you can use the python's `del() <https://docs.python.org/3/tutorial/datastructures.html#the-del-statement>`__
+
+.. code-block:: python
+    :linenos:
+    :lineno-start: 33
+
+    # Let's delete the "text" key from our nested dictionary "our_new_key"
+    del(config["our_new_key"]["text"])
+
+
+    # Key was successfully removed from dictionary and now the only thing is left
+    # is to commit this change to local file with .commit() method
+    config.commit()
+
+After commiting the changes, ``settings.json`` will look like this
+
+.. code:: json
+
+    {
+        "version": 5,
+        "app_name": "Super Secret Tool",
+        "our_new_key": {
+            "type": "msg",
+            "id": 34724889325
+        },
+        "custom_key": "hello?"
+    }
+
+
+Conclusion
+---------------------
+
+That's it, now you're ready for basic usage of ``interform``. This package is fully documented with `docstrings <https://www.python.org/dev/peps/pep-0257/>`__, so you can get detailed inforamtion about any method, function, class, module and subpackage `here <interform.html>`__

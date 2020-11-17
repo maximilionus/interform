@@ -1,6 +1,12 @@
 interform.langs package
 ==========================
 
+Module contents
+---------------
+
+.. automodule:: interform.langs
+
+
 Submodules
 ----------
 
@@ -26,11 +32,3 @@ interform.langs.yaml module
    :undoc-members:
    :show-inheritance:
 
-Module contents
----------------
-
-.. automodule:: interform.langs
-   :members:
-   :inherited-members:
-   :undoc-members:
-   :show-inheritance:

@@ -10,12 +10,18 @@
 
 ## 2020.11.17
 
+### Added
+- `.core.BaseLang`
+  - `refresh()` and `reload()` now will return `bool` value
+
 ### Fixed
 - `.core.*`
   - `BaseLang.copy()` and `recursive_dicts_merge()` copy was fixed with `copy.deepcopy()` module to remove all references to original dictionary
 
 ### Changed
 - Replaced all `"` quotation marks with `'`
+- Enhanced the docstrings for `.core`
+- Enhanced docs structure
 
 
 ## 2020.11.16

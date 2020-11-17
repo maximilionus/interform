@@ -1,6 +1,11 @@
 interform.tests package
 ========================
 
+Module contents
+---------------
+
+.. automodule:: interform.tests
+
 Submodules
 ----------
 
@@ -34,14 +39,6 @@ interform.tests.test\_yaml module
 
 .. automodule:: interform.tests.test_yaml
    :inherited-members:
-   :members:
-   :undoc-members:
-   :show-inheritance:
-
-Module contents
----------------
-
-.. automodule:: interform.tests
    :members:
    :undoc-members:
    :show-inheritance:
