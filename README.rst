@@ -23,6 +23,6 @@ List of currently supported languages.
 
     Languages, listed in **Native Support** are supported by python without any external packages, while **External Support** requires external packages to be installed. For more detailed information go here: `Intallation Guide <https://maximilionus.github.io/sphinx-docs-test/guide_installation.html>`_
 
-Installation
+Documentation
 --------------------------------------
-You can read about installing this package in `this Intallation Guide <https://maximilionus.github.io/interform/guide_installation.html>`_
+All information about this module installation and usage is located in documentation `on this link <https://maximilionus.github.io/interform/index.html>`__
