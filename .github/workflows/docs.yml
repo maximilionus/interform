@@ -22,7 +22,7 @@ jobs:
 
       - name: Prepare docs git repository
         run: |
-          git clone --single-branch --branch docs https://${{ secrets.GH_PAT }}@github.com/maximilionus/interform.git temp_repo
+          git clone --single-branch --branch docs https://${{ secrets.GH_PAT }}@github.com/${{ env.GITHUB_REPOSITORY }}.git temp_repo
           cd temp_repo
           rm -rf docs_build
           git config user.name 'Github Actions'
@@ -40,9 +40,8 @@ jobs:
 
       - name: Build documentation
         run: |
-          cd docs
-          make html
-          mv _build/html ../temp_repo/docs_build
+          make docs
+          mv docs/_build/html ./temp_repo/docs_build
 
 
       - name: Push changes to remote

@@ -13,6 +13,9 @@ build_wheel:
 	@echo "Building project wheel distribution"
 	@$(PYTHON) setup.py build bdist_wheel
 
+publish:
+	twine upload dist/*
+
 docs:
 	@echo "Building the documentation html with Sphinx"
 	@make -C ./docs html

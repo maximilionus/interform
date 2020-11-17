@@ -5,7 +5,7 @@ on:
     types: [created]
 
 jobs:
-  deploy:
+  publish_release:
     runs-on: ubuntu-latest
     continue-on-error: false
 
@@ -22,7 +22,7 @@ jobs:
           pip install -r requirements-dev.txt
 
       - name: Build project
-        run: python setup.py sdist bdist_wheel
+        run: make build
 
       - name: Run unit tests
         run: python -m pytest -v
@@ -32,4 +32,4 @@ jobs:
           TWINE_REPOSITORY_URL: ${{ secrets.PUBLISH_REPO_URL }}
           TWINE_USERNAME: ${{ secrets.PUBLISH_REPO_USERNAME }}
           TWINE_PASSWORD: ${{ secrets.PUBLISH_REPO_PASSWD }}
-        run: twine upload dist/*
+        run: make publish

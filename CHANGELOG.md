@@ -13,15 +13,18 @@
 ### Added
 - `.core.BaseLang`
   - `refresh()` and `reload()` now will return `bool` value
+- Root makefile target to publish the package
 
 ### Fixed
 - `.core.*`
   - `BaseLang.copy()` and `recursive_dicts_merge()` copy was fixed with `copy.deepcopy()` module to remove all references to original dictionary
 
 ### Changed
+- Version changed to `1.0.0dev1` for test release purpose
 - Replaced all `"` quotation marks with `'`
 - Enhanced the docstrings for `.core`
 - Enhanced docs structure
+- Makefile usage added to `release.yml` workflow
 
 
 ## 2020.11.16
