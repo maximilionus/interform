@@ -8,5 +8,9 @@ from importlib.util import find_spec as __find_spec
 from .meta import *
 from .langs.json import JSON_Format
 
-if __find_spec('ruamel.yaml') is not None:
+try:
+    __find_spec('ruamel.yaml')
+except Exception:
+    pass
+else:
     from .langs.yaml import YAML_Format

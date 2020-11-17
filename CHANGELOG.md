@@ -18,9 +18,11 @@
 ### Fixed
 - `.core.*`
   - `BaseLang.copy()` and `recursive_dicts_merge()` copy was fixed with `copy.deepcopy()` module to remove all references to original dictionary
+- `ModuleNotFoundError` exception on importing `interform` without external package installed
 
 ### Changed
 - Version changed to `1.0.0dev1` for test release purpose
+  - Changed to `1.0.0dev2`
 - Replaced all `"` quotation marks with `'`
 - Enhanced the docstrings for `.core`
 - Enhanced docs structure

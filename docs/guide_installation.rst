@@ -69,6 +69,11 @@ Install from source
 --------------------------------------
 How to install ``interform`` from source files:
 
+#. Download source files from `github releases <https://github.com/maximilionus/interform/releases>`__
+
+For usage
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
 .. warning::
     Due to how the ``setup.py`` deals with external dependencies, you can't install this package properly by running setup directly from file:
 
@@ -76,8 +81,7 @@ How to install ``interform`` from source files:
 
         python setup.py install
 
-#. Download source files from `github releases <https://github.com/maximilionus/interform/releases>`_
-#. Inside of the downloaded directory, run:
+2. Inside of the downloaded directory, run:
 
     .. code-block:: bash
 
@@ -89,3 +93,14 @@ How to install ``interform`` from source files:
     .. code-block:: bash
 
         pip install .[mode]
+
+For development
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+2. *(Optional)* Inside of the project folder prepare the virtual environment and activate it
+3. Install all dev dependencies with this command
+
+    .. code-block:: bash
+
+        pip install -r requirements-dev.txt
+4. You're ready to go. Good luck 👍
