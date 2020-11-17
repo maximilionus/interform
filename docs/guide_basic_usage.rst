@@ -42,9 +42,9 @@ Quickstart
     :lineno-start: 6
 
     config = JSON_Format(
-        'settings.json',  # Path to preferred local file location
+        'settings.json',  # Path to preferred local file location.
         def_dict          # Default configuration dictionary that will
-                          # be parsed into the local file on creation
+                          # be parsed into the local file on creation.
     )
 
 4. If no exceptions were raised then everything is ready. Now, if you check the file on the path, that we specified in line ``3`` of step ``2``, you can see there's a json format values parsed from our ``def_dict``.
@@ -86,7 +86,7 @@ Quickstart
     }
 
 .. note::
-    As you may noticed, the way of interacting with ``interform`` objects is quite same to dictionaries. That's right, ``interform`` provides quick access to the contained dictionary keys and methods. This dictionary contains the parsed from local file keys and values and can be directly accessed through ``.dictionary`` object property:
+    As you may already noticed, the way of interacting with ``interform`` objects is quite same to dictionaries. That's right, ``interform`` provides quick access to the bound dictionary keys and methods. This dictionary contains the parsed from local file keys and values and can be directly accessed through ``.dictionary`` object property:
 
     .. code:: python
 
@@ -176,7 +176,20 @@ After commiting the changes, ``settings.json`` will look like this
     }
 
 
+10. If you are not happy with all the changes made and want to return everything to the default state, here is a special method ``.reset_to_defaults()``` specially for you. This method will reset bound dictionary to values from ``def_dict`` variable that we specified at the beginning of this guide.
+
+.. code-block:: python
+    :linenos:
+    :lineno-start: 40
+
+    # Reset to bound dictionary to defaults
+    config.reset_to_defaults()
+
+    # And again, don't forget to commit the changes to local file
+    config.commit()
+
+
 Conclusion
 ---------------------
 
-That's it, now you're ready for basic usage of ``interform``. This package is fully documented with `docstrings <https://www.python.org/dev/peps/pep-0257/>`__, so you can get detailed inforamtion about any method, function, class, module and subpackage `here <interform.html>`__
+That's it, now you're ready for basic usage of ``interform``. This package is fully documented with `docstrings <https://www.python.org/dev/peps/pep-0257/>`__, so you can get detailed information about any method, function, class, module or subpackage `here <interform.html>`__
