@@ -27,7 +27,7 @@ copyright = '2020, maximilionus'
 author = 'maximilionus'
 
 # The full version, including alpha/beta/rc tags
-release = interform_version + '_predocs'
+release = interform_version
 
 # Prepare rst variables
 docs_build_time = datetime.utcnow().strftime('%Y/%m/%d %H:%M:%S UTC+0000')

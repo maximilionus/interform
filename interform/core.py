@@ -53,16 +53,16 @@ class BaseLang:
         self.reload()
 
     def __getitem__(self, key):
-        return self.__parsed_dict[key]
+        return self.__parsed_dict.__getitem__(key)
 
     def __setitem__(self, key, value):
-        self.__parsed_dict[key] = value
+        self.__parsed_dict.__setattr__(key, value)
 
     def __delitem__(self, key):
         self.__parsed_dict.__delitem__(key)
 
     def __len__(self):
-        return len(self.__parsed_dict)
+        return self.__parsed_dict.__len__()
 
     def __iter__(self):
         return self.__parsed_dict.__iter__()

@@ -1,11 +1,32 @@
 # Interform Changelog
 
 
+## **1.0.0** : 2020.11.18
+
+> First public release of this package
+
+
+---------
 
 <details>
-<summary>Pre-Release Development</summary>
+<summary>Pre-Release Development Changelog</summary>
 
 > In this part of changelog you can track the progress of development before the public `1.0.0` version release.
+
+
+## 2020.11.18
+
+### Changed
+- Changed version to `1.0.0`
+- `.core.BaseLang` methods inheritance modified a bit
+- Github workflows prepared for release state
+
+### Fixed
+- Documentation folder name for github page build
+- Link to documentation page in main `README.rst`
+
+### Removed
+- Posfix for documentation display version
 
 
 ## 2020.11.17

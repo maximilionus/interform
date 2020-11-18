@@ -29,7 +29,6 @@ jobs:
 
       - name: Upload to PyPi
         env:
-          TWINE_REPOSITORY_URL: ${{ secrets.PUBLISH_REPO_URL }}
           TWINE_USERNAME: ${{ secrets.PUBLISH_REPO_USERNAME }}
           TWINE_PASSWORD: ${{ secrets.PUBLISH_REPO_PASSWD }}
         run: make publish
