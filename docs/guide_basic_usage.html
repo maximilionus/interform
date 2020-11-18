@@ -1,0 +1,423 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Basic Usage &mdash; interform 1.0.0 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+
+  
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Advanced Features" href="guide_advanced_features.html" />
+    <link rel="prev" title="Installation Guide" href="guide_installation.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home" alt="Documentation Home"> interform
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="general.html">General Information</a></li>
+<li class="toctree-l1"><a class="reference internal" href="guide_installation.html">Installation Guide</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Basic Usage</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#about">About</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#quickstart">Quickstart</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#conclusion">Conclusion</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="guide_advanced_features.html">Advanced Features</a></li>
+<li class="toctree-l1"><a class="reference internal" href="interform.html">interform</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">interform</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li>Basic Usage</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/guide_basic_usage.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="basic-usage">
+<h1>Basic Usage<a class="headerlink" href="#basic-usage" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="about">
+<h2>About<a class="headerlink" href="#about" title="Permalink to this headline">¶</a></h2>
+<p>In this section you can find a quickstart guide to <code class="docutils literal notranslate"><span class="pre">interform</span></code> package, that will show you the basics of how this tool can be used. For more code examples you can see <a class="reference external" href="https://github.com/maximilionus/interform/tree/master/examples">the examples directory on Github</a>.</p>
+</div>
+<div class="section" id="quickstart">
+<h2>Quickstart<a class="headerlink" href="#quickstart" title="Permalink to this headline">¶</a></h2>
+<p><code class="docutils literal notranslate"><span class="pre">interform</span></code> supports various data interchange languages (<a class="reference external" href="general.html#supported-languages">full list</a>). This quickstart guide will be based on <code class="docutils literal notranslate"><span class="pre">json</span></code> language.</p>
+<ol class="arabic simple">
+<li><p>Let’s import the json language class from <code class="docutils literal notranslate"><span class="pre">interform</span></code> package</p></li>
+</ol>
+<div class="highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">interform</span> <span class="kn">import</span> <span class="n">JSON_Format</span>
+</pre></div>
+</td></tr></table></div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Detailed <code class="docutils literal notranslate"><span class="pre">JSON_Format</span></code> documentation <a class="reference external" href="interform.langs.html#module-interform.langs.json">can be found here</a></p>
+</div>
+<ol class="arabic simple" start="2">
+<li><p>Next step we will define the default dictionary, that will be used later. Keys and values in it are absolutely random and meaningless 🙂.</p></li>
+</ol>
+<div class="highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>2
+3
+4
+5</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="n">def_dict</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s2">&quot;version&quot;</span><span class="p">:</span> <span class="mi">5</span><span class="p">,</span>
+    <span class="s2">&quot;app_name&quot;</span><span class="p">:</span> <span class="s2">&quot;Test&quot;</span>
+<span class="p">}</span>
+</pre></div>
+</td></tr></table></div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Specifying the default dictionary <strong>is an optional step</strong> and not required in your code, but this will allow us to specify the values, that will be written in local file on creation and may be used for “factory reset” feature.</p>
+</div>
+<ol class="arabic simple" start="3">
+<li><p>Now we’re moving to the main part - creation of the object that will be used for further interaction with local file.</p></li>
+</ol>
+<div class="highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 6
+ 7
+ 8
+ 9
+10</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="n">config</span> <span class="o">=</span> <span class="n">JSON_Format</span><span class="p">(</span>
+    <span class="s1">&#39;settings.json&#39;</span><span class="p">,</span>  <span class="c1"># Path to preferred local file location.</span>
+    <span class="n">def_dict</span>          <span class="c1"># Default configuration dictionary that will</span>
+                      <span class="c1"># be parsed into the local file on creation.</span>
+<span class="p">)</span>
+</pre></div>
+</td></tr></table></div>
+<ol class="arabic simple" start="4">
+<li><p>If no exceptions were raised then everything is ready. Now, if you check the file on the path, that we specified in line <code class="docutils literal notranslate"><span class="pre">3</span></code> of step <code class="docutils literal notranslate"><span class="pre">2</span></code>, you can see there’s a json format values parsed from our <code class="docutils literal notranslate"><span class="pre">def_dict</span></code>.</p></li>
+</ol>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+    <span class="nt">&quot;version&quot;</span><span class="p">:</span> <span class="mi">5</span><span class="p">,</span>
+    <span class="nt">&quot;app_name&quot;</span><span class="p">:</span> <span class="s2">&quot;Test&quot;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<ol class="arabic simple" start="5">
+<li><p>The local file and object are ready. Now we can access any value from this file. Let’s try this out:</p></li>
+</ol>
+<div class="highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>11
+12
+13
+14
+15
+16</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="c1"># Lets print the value of the key &quot;version&quot;.</span>
+<span class="c1"># All keys can be directly accessed right from the object</span>
+
+<span class="n">app_version</span> <span class="o">=</span> <span class="n">config</span><span class="p">[</span><span class="s2">&quot;version&quot;</span><span class="p">]</span>                       <span class="c1"># Getting the key &#39;version&#39; from dictionary</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Application version: </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">app_version</span><span class="p">))</span>  <span class="c1"># Output should be:</span>
+                                                      <span class="c1"># &#39;Application version: 5&#39;</span>
+</pre></div>
+</td></tr></table></div>
+<ol class="arabic simple" start="6">
+<li><p>Accessing the values is a good thing, but we’re here not only for this, right? Next step we’ll modify the value of one exising key and add the new key to object.</p></li>
+</ol>
+<div class="highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>17
+18
+19
+20
+21
+22
+23
+24
+25</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="c1"># Let&#39;s change the value of the key &quot;app_name&quot; to something new</span>
+<span class="n">config</span><span class="p">[</span><span class="s2">&quot;app_name&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;Super Secret Tool&quot;</span>
+
+<span class="c1"># And we&#39;ll also add the new key with dictionary value</span>
+<span class="n">config</span><span class="p">[</span><span class="s2">&quot;our_new_key&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;msg&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;id&quot;</span><span class="p">:</span> <span class="mi">34724889325</span><span class="p">,</span>
+    <span class="s2">&quot;text&quot;</span><span class="p">:</span> <span class="s2">&quot;wassup?&quot;</span>
+<span class="p">}</span>
+</pre></div>
+</td></tr></table></div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>As you may already noticed, the way of interacting with <code class="docutils literal notranslate"><span class="pre">interform</span></code> objects is quite same to dictionaries. That’s right, <code class="docutils literal notranslate"><span class="pre">interform</span></code> provides quick access to the bound dictionary keys and methods. This dictionary contains the parsed from local file keys and values and can be directly accessed through <code class="docutils literal notranslate"><span class="pre">.dictionary</span></code> object property:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">config</span><span class="o">.</span><span class="n">dictionary</span>
+<span class="go">{&#39;version&#39;: 5,</span>
+<span class="go"> &#39;app_name&#39;: &#39;Super Secret Tool&#39;,</span>
+<span class="go"> &#39;our_new_key&#39;: {&#39;type&#39;: &#39;msg&#39;, &#39;id&#39;: 34724889325, &#39;text&#39;: &#39;wassup?&#39;}}</span>
+</pre></div>
+</div>
+</div>
+<ol class="arabic simple" start="7">
+<li><p>New key added, existing changed… but the local file still contains only the default values. This is not a bug, this is a feature. <code class="docutils literal notranslate"><span class="pre">interform</span></code> will never automatically save any user-made changes to a local file without a direct command to do so. So let’s do it.</p></li>
+</ol>
+<div class="highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>26
+27</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="c1"># This method will commit all changes from object to local file</span>
+<span class="n">config</span><span class="o">.</span><span class="n">commit</span><span class="p">()</span>
+</pre></div>
+</td></tr></table></div>
+<p>Now our <code class="docutils literal notranslate"><span class="pre">settings.json</span></code> file will look like this:</p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+    <span class="nt">&quot;version&quot;</span><span class="p">:</span> <span class="mi">5</span><span class="p">,</span>
+    <span class="nt">&quot;app_name&quot;</span><span class="p">:</span> <span class="s2">&quot;Super Secret Tool&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;our_new_key&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;msg&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="mi">34724889325</span><span class="p">,</span>
+        <span class="nt">&quot;text&quot;</span><span class="p">:</span> <span class="s2">&quot;wassup?&quot;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<ol class="arabic simple" start="8">
+<li><p>Now let’s consider the situation that our local file (<code class="docutils literal notranslate"><span class="pre">settings.json</span></code>) was modified by some other programm. <code class="docutils literal notranslate"><span class="pre">interform</span></code> will never automatically refresh values of object, so you have to do it yourself.</p></li>
+</ol>
+<p>Let’s modify the <code class="docutils literal notranslate"><span class="pre">settings.json</span></code> file with any text editor and add the new key <code class="docutils literal notranslate"><span class="pre">&quot;custom_key&quot;</span></code> with value <code class="docutils literal notranslate"><span class="pre">&quot;hello?&quot;</span></code>. Now our local file will look like this:</p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+    <span class="nt">&quot;version&quot;</span><span class="p">:</span> <span class="mi">5</span><span class="p">,</span>
+    <span class="nt">&quot;app_name&quot;</span><span class="p">:</span> <span class="s2">&quot;Super Secret Tool&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;our_new_key&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;msg&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="mi">34724889325</span><span class="p">,</span>
+        <span class="nt">&quot;text&quot;</span><span class="p">:</span> <span class="s2">&quot;wassup?&quot;</span>
+    <span class="p">},</span>
+    <span class="nt">&quot;custom_key&quot;</span><span class="p">:</span> <span class="s2">&quot;hello?&quot;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>To get this key inside of our <code class="docutils literal notranslate"><span class="pre">config</span></code> object we’ll have to refresh it with special method:</p>
+<div class="highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>28
+29
+30
+31
+32</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="c1"># This method will refresh object&#39;s dictionary with dictionary parsed from the local file.</span>
+<span class="n">config</span><span class="o">.</span><span class="n">refresh</span><span class="p">()</span>
+
+<span class="c1"># After refreshing, &quot;custom_key&quot; key will be added to object and can be accessed</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">config</span><span class="p">[</span><span class="s2">&quot;custom_key&quot;</span><span class="p">])</span>  <span class="c1"># Output: &#39;hello?&#39;</span>
+</pre></div>
+</td></tr></table></div>
+<ol class="arabic simple" start="9">
+<li><p>Now lets try to remove one key from dictionary. To remove any key you can use the python’s <a class="reference external" href="https://docs.python.org/3/tutorial/datastructures.html#the-del-statement">del()</a></p></li>
+</ol>
+<div class="highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>33
+34
+35
+36
+37
+38
+39</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="c1"># Let&#39;s delete the &quot;text&quot; key from our nested dictionary &quot;our_new_key&quot;</span>
+<span class="k">del</span><span class="p">(</span><span class="n">config</span><span class="p">[</span><span class="s2">&quot;our_new_key&quot;</span><span class="p">][</span><span class="s2">&quot;text&quot;</span><span class="p">])</span>
+
+
+<span class="c1"># Key was successfully removed from dictionary and now the only thing is left</span>
+<span class="c1"># is to commit this change to local file with .commit() method</span>
+<span class="n">config</span><span class="o">.</span><span class="n">commit</span><span class="p">()</span>
+</pre></div>
+</td></tr></table></div>
+<p>After commiting the changes, <code class="docutils literal notranslate"><span class="pre">settings.json</span></code> will look like this</p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+    <span class="nt">&quot;version&quot;</span><span class="p">:</span> <span class="mi">5</span><span class="p">,</span>
+    <span class="nt">&quot;app_name&quot;</span><span class="p">:</span> <span class="s2">&quot;Super Secret Tool&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;our_new_key&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;msg&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="mi">34724889325</span>
+    <span class="p">},</span>
+    <span class="nt">&quot;custom_key&quot;</span><span class="p">:</span> <span class="s2">&quot;hello?&quot;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<ol class="arabic simple" start="10">
+<li><p>If you are not happy with all the changes made and want to return everything to the default state, here is a special method <code class="docutils literal notranslate"><span class="pre">.reset_to_defaults()`</span></code> specially for you. This method will reset bound dictionary to values from <code class="docutils literal notranslate"><span class="pre">def_dict</span></code> variable that we specified at the beginning of this guide.</p></li>
+</ol>
+<div class="highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>40
+41
+42
+43
+44</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="c1"># Reset to bound dictionary to defaults</span>
+<span class="n">config</span><span class="o">.</span><span class="n">reset_to_defaults</span><span class="p">()</span>
+
+<span class="c1"># And again, don&#39;t forget to commit the changes to local file</span>
+<span class="n">config</span><span class="o">.</span><span class="n">commit</span><span class="p">()</span>
+</pre></div>
+</td></tr></table></div>
+</div>
+<div class="section" id="conclusion">
+<h2>Conclusion<a class="headerlink" href="#conclusion" title="Permalink to this headline">¶</a></h2>
+<p>That’s it, now you’re ready for basic usage of <code class="docutils literal notranslate"><span class="pre">interform</span></code>. This package is fully documented with <a class="reference external" href="https://www.python.org/dev/peps/pep-0257/">docstrings</a>, so you can get detailed information about any method, function, class, module or subpackage <a class="reference external" href="interform.html">here</a></p>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="guide_advanced_features.html" class="btn btn-neutral float-right" title="Advanced Features" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="guide_installation.html" class="btn btn-neutral float-left" title="Installation Guide" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; Copyright 2020, maximilionus
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

@@ -1,0 +1,780 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>interform.tests package &mdash; interform 1.0.0 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+
+  
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="interform.langs package" href="interform.langs.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home" alt="Documentation Home"> interform
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="general.html">General Information</a></li>
+<li class="toctree-l1"><a class="reference internal" href="guide_installation.html">Installation Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="guide_basic_usage.html">Basic Usage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="guide_advanced_features.html">Advanced Features</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="interform.html">interform</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="interform.html#subpackages">Subpackages</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="interform.langs.html">interform.langs package</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">interform.tests package</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#module-interform.tests">Module contents</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#submodules">Submodules</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#module-interform.tests.conftest">interform.tests.conftest module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#module-interform.tests.core">interform.tests.core module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#module-interform.tests.test_json">interform.tests.test_json module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#module-interform.tests.test_yaml">interform.tests.test_yaml module</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="interform.html#submodules">Submodules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="interform.html#module-interform.__init__">interform.__init__</a></li>
+<li class="toctree-l2"><a class="reference internal" href="interform.html#module-interform.core">interform.core module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="interform.html#module-interform.meta">interform.meta module</a></li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">interform</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="interform.html">interform</a> &raquo;</li>
+        
+      <li>interform.tests package</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/interform.tests.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="interform-tests-package">
+<h1>interform.tests package<a class="headerlink" href="#interform-tests-package" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="module-interform.tests">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-interform.tests" title="Permalink to this headline">¶</a></h2>
+<p>Unit tests for <code class="docutils literal notranslate"><span class="pre">interform</span></code> package with usage of PyTest package</p>
+</div>
+<div class="section" id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="module-interform.tests.conftest">
+<span id="interform-tests-conftest-module"></span><h2>interform.tests.conftest module<a class="headerlink" href="#module-interform.tests.conftest" title="Permalink to this headline">¶</a></h2>
+<dl class="py function">
+<dt id="interform.tests.conftest.dir_control">
+<code class="sig-prename descclassname">interform.tests.conftest.</code><code class="sig-name descname">dir_control</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#interform.tests.conftest.dir_control" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt id="interform.tests.conftest.pytest_configure">
+<code class="sig-prename descclassname">interform.tests.conftest.</code><code class="sig-name descname">pytest_configure</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">config</span></em><span class="sig-paren">)</span><a class="headerlink" href="#interform.tests.conftest.pytest_configure" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="module-interform.tests.core">
+<span id="interform-tests-core-module"></span><h2>interform.tests.core module<a class="headerlink" href="#module-interform.tests.core" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt id="interform.tests.core.BaseLangTest">
+<em class="property">class </em><code class="sig-prename descclassname">interform.tests.core.</code><code class="sig-name descname">BaseLangTest</code><a class="headerlink" href="#interform.tests.core.BaseLangTest" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Base class for all tests.
+<cite>setup_method()</cite> method should be overwritten with valid object initialization.</p>
+<dl class="py method">
+<dt id="interform.tests.core.BaseLangTest.setup">
+<code class="sig-name descname">setup</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#interform.tests.core.BaseLangTest.setup" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="interform.tests.core.BaseLangTest.test_access_dashed_attribute">
+<code class="sig-name descname">test_access_dashed_attribute</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#interform.tests.core.BaseLangTest.test_access_dashed_attribute" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="interform.tests.core.BaseLangTest.test_add_dashed_attribute">
+<code class="sig-name descname">test_add_dashed_attribute</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#interform.tests.core.BaseLangTest.test_add_dashed_attribute" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="interform.tests.core.BaseLangTest.test_add_multiple_dicts_with_update">
+<code class="sig-name descname">test_add_multiple_dicts_with_update</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#interform.tests.core.BaseLangTest.test_add_multiple_dicts_with_update" title="Permalink to this definition">¶</a></dt>
+<dd><p>Add multiple dicts to <cite>dictionary</cite>, commit changes
+and assert the result with local file</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="interform.tests.core.BaseLangTest.test_add_nested_dicts">
+<code class="sig-name descname">test_add_nested_dicts</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#interform.tests.core.BaseLangTest.test_add_nested_dicts" title="Permalink to this definition">¶</a></dt>
+<dd><p>Add nested dictionary to <cite>dictionary</cite>, commit changes and assert
+local file values to <cite>dictionary</cite></p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="interform.tests.core.BaseLangTest.test_add_one_attribute">
+<code class="sig-name descname">test_add_one_attribute</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#interform.tests.core.BaseLangTest.test_add_one_attribute" title="Permalink to this definition">¶</a></dt>
+<dd><p>Add one new attribute to <cite>dictionary</cite>, commit changes
+and assert the local file to <cite>dictionary</cite></p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="interform.tests.core.BaseLangTest.test_clear_dict">
+<code class="sig-name descname">test_clear_dict</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#interform.tests.core.BaseLangTest.test_clear_dict" title="Permalink to this definition">¶</a></dt>
+<dd><p>Clear the <cite>dictionary</cite> attribute</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="interform.tests.core.BaseLangTest.test_commit_changes">
+<code class="sig-name descname">test_commit_changes</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#interform.tests.core.BaseLangTest.test_commit_changes" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="interform.tests.core.BaseLangTest.test_create_file">
+<code class="sig-name descname">test_create_file</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#interform.tests.core.BaseLangTest.test_create_file" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create local file</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="interform.tests.core.BaseLangTest.test_delete_file">
+<code class="sig-name descname">test_delete_file</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#interform.tests.core.BaseLangTest.test_delete_file" title="Permalink to this definition">¶</a></dt>
+<dd><p>Delete local file and check
+is the functions output works correctly</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="interform.tests.core.BaseLangTest.test_file_read">
+<code class="sig-name descname">test_file_read</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#interform.tests.core.BaseLangTest.test_file_read" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="interform.tests.core.BaseLangTest.test_modify_default_dict">
+<code class="sig-name descname">test_modify_default_dict</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#interform.tests.core.BaseLangTest.test_modify_default_dict" title="Permalink to this definition">¶</a></dt>
+<dd><p>Modify the default dictionary, reset <cite>dictionary</cite> to defaults and assert values</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="interform.tests.core.BaseLangTest.test_refresh_safe">
+<code class="sig-name descname">test_refresh_safe</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#interform.tests.core.BaseLangTest.test_refresh_safe" title="Permalink to this definition">¶</a></dt>
+<dd><p>Refresh <cite>dictionary</cite> from local file in safe mode
+and check for nested dictionary existance inside.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="interform.tests.core.BaseLangTest.test_refresh_unsafe">
+<code class="sig-name descname">test_refresh_unsafe</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#interform.tests.core.BaseLangTest.test_refresh_unsafe" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="interform.tests.core.BaseLangTest.test_reload_dict">
+<code class="sig-name descname">test_reload_dict</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#interform.tests.core.BaseLangTest.test_reload_dict" title="Permalink to this definition">¶</a></dt>
+<dd><p>Reset <cite>dictionary</cite> to values from bound local file</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py function">
+<dt id="interform.tests.core.change_path_to_testsdir">
+<code class="sig-prename descclassname">interform.tests.core.</code><code class="sig-name descname">change_path_to_testsdir</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#interform.tests.core.change_path_to_testsdir" title="Permalink to this definition">¶</a></dt>
+<dd><p>Change working directory to <cite>/tests/</cite></p>
+</dd></dl>
+
+<dl class="py function">
+<dt id="interform.tests.core.remove_temp_dir">
+<code class="sig-prename descclassname">interform.tests.core.</code><code class="sig-name descname">remove_temp_dir</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#interform.tests.core.remove_temp_dir" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="module-interform.tests.test_json">
+<span id="interform-tests-test-json-module"></span><h2>interform.tests.test_json module<a class="headerlink" href="#module-interform.tests.test_json" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt id="interform.tests.test_json.Test_Create_DefDict">
+<em class="property">class </em><code class="sig-prename descclassname">interform.tests.test_json.</code><code class="sig-name descname">Test_Create_DefDict</code><a class="headerlink" href="#interform.tests.test_json.Test_Create_DefDict" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#interform.tests.core.BaseLangTest" title="interform.tests.core.BaseLangTest"><code class="xref py py-class docutils literal notranslate"><span class="pre">interform.tests.core.BaseLangTest</span></code></a></p>
+<p>Create local file on <cite>local_file_path</cite>
+and get default config values from <cite>default_local_file_dict</cite></p>
+<dl class="py attribute">
+<dt id="interform.tests.test_json.Test_Create_DefDict.pytestmark">
+<code class="sig-name descname">pytestmark</code><em class="property"> = [Mark(name='json', args=(), kwargs={})]</em><a class="headerlink" href="#interform.tests.test_json.Test_Create_DefDict.pytestmark" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="interform.tests.test_json.Test_Create_DefDict.setup">
+<code class="sig-name descname">setup</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#interform.tests.test_json.Test_Create_DefDict.setup" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="interform.tests.test_json.Test_Create_DefDict.test_access_dashed_attribute">
+<code class="sig-name descname">test_access_dashed_attribute</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#interform.tests.test_json.Test_Create_DefDict.test_access_dashed_attribute" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="interform.tests.test_json.Test_Create_DefDict.test_add_dashed_attribute">
+<code class="sig-name descname">test_add_dashed_attribute</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#interform.tests.test_json.Test_Create_DefDict.test_add_dashed_attribute" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="interform.tests.test_json.Test_Create_DefDict.test_add_multiple_dicts_with_update">
+<code class="sig-name descname">test_add_multiple_dicts_with_update</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#interform.tests.test_json.Test_Create_DefDict.test_add_multiple_dicts_with_update" title="Permalink to this definition">¶</a></dt>
+<dd><p>Add multiple dicts to <cite>dictionary</cite>, commit changes
+and assert the result with local file</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="interform.tests.test_json.Test_Create_DefDict.test_add_nested_dicts">
+<code class="sig-name descname">test_add_nested_dicts</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#interform.tests.test_json.Test_Create_DefDict.test_add_nested_dicts" title="Permalink to this definition">¶</a></dt>
+<dd><p>Add nested dictionary to <cite>dictionary</cite>, commit changes and assert
+local file values to <cite>dictionary</cite></p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="interform.tests.test_json.Test_Create_DefDict.test_add_one_attribute">
+<code class="sig-name descname">test_add_one_attribute</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#interform.tests.test_json.Test_Create_DefDict.test_add_one_attribute" title="Permalink to this definition">¶</a></dt>
+<dd><p>Add one new attribute to <cite>dictionary</cite>, commit changes
+and assert the local file to <cite>dictionary</cite></p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="interform.tests.test_json.Test_Create_DefDict.test_clear_dict">
+<code class="sig-name descname">test_clear_dict</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#interform.tests.test_json.Test_Create_DefDict.test_clear_dict" title="Permalink to this definition">¶</a></dt>
+<dd><p>Clear the <cite>dictionary</cite> attribute</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="interform.tests.test_json.Test_Create_DefDict.test_commit_changes">
+<code class="sig-name descname">test_commit_changes</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#interform.tests.test_json.Test_Create_DefDict.test_commit_changes" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="interform.tests.test_json.Test_Create_DefDict.test_create_file">
+<code class="sig-name descname">test_create_file</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#interform.tests.test_json.Test_Create_DefDict.test_create_file" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create local file</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="interform.tests.test_json.Test_Create_DefDict.test_delete_file">
+<code class="sig-name descname">test_delete_file</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#interform.tests.test_json.Test_Create_DefDict.test_delete_file" title="Permalink to this definition">¶</a></dt>
+<dd><p>Delete local file and check
+is the functions output works correctly</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="interform.tests.test_json.Test_Create_DefDict.test_file_read">
+<code class="sig-name descname">test_file_read</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#interform.tests.test_json.Test_Create_DefDict.test_file_read" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="interform.tests.test_json.Test_Create_DefDict.test_modify_default_dict">
+<code class="sig-name descname">test_modify_default_dict</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#interform.tests.test_json.Test_Create_DefDict.test_modify_default_dict" title="Permalink to this definition">¶</a></dt>
+<dd><p>Modify the default dictionary, reset <cite>dictionary</cite> to defaults and assert values</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="interform.tests.test_json.Test_Create_DefDict.test_refresh_safe">
+<code class="sig-name descname">test_refresh_safe</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#interform.tests.test_json.Test_Create_DefDict.test_refresh_safe" title="Permalink to this definition">¶</a></dt>
+<dd><p>Refresh <cite>dictionary</cite> from local file in safe mode
+and check for nested dictionary existance inside.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="interform.tests.test_json.Test_Create_DefDict.test_refresh_unsafe">
+<code class="sig-name descname">test_refresh_unsafe</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#interform.tests.test_json.Test_Create_DefDict.test_refresh_unsafe" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="interform.tests.test_json.Test_Create_DefDict.test_reload_dict">
+<code class="sig-name descname">test_reload_dict</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#interform.tests.test_json.Test_Create_DefDict.test_reload_dict" title="Permalink to this definition">¶</a></dt>
+<dd><p>Reset <cite>dictionary</cite> to values from bound local file</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="interform.tests.test_json.Test_Create_DefPath">
+<em class="property">class </em><code class="sig-prename descclassname">interform.tests.test_json.</code><code class="sig-name descname">Test_Create_DefPath</code><a class="headerlink" href="#interform.tests.test_json.Test_Create_DefPath" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#interform.tests.core.BaseLangTest" title="interform.tests.core.BaseLangTest"><code class="xref py py-class docutils literal notranslate"><span class="pre">interform.tests.core.BaseLangTest</span></code></a></p>
+<p>Read existing file on <cite>local_file_path</cite>
+and get default config values from file on <cite>default_cfg_path</cite></p>
+<dl class="py attribute">
+<dt id="interform.tests.test_json.Test_Create_DefPath.pytestmark">
+<code class="sig-name descname">pytestmark</code><em class="property"> = [Mark(name='json', args=(), kwargs={})]</em><a class="headerlink" href="#interform.tests.test_json.Test_Create_DefPath.pytestmark" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="interform.tests.test_json.Test_Create_DefPath.setup">
+<code class="sig-name descname">setup</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#interform.tests.test_json.Test_Create_DefPath.setup" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="interform.tests.test_json.Test_Create_DefPath.test_access_dashed_attribute">
+<code class="sig-name descname">test_access_dashed_attribute</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#interform.tests.test_json.Test_Create_DefPath.test_access_dashed_attribute" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="interform.tests.test_json.Test_Create_DefPath.test_add_dashed_attribute">
+<code class="sig-name descname">test_add_dashed_attribute</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#interform.tests.test_json.Test_Create_DefPath.test_add_dashed_attribute" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="interform.tests.test_json.Test_Create_DefPath.test_add_multiple_dicts_with_update">
+<code class="sig-name descname">test_add_multiple_dicts_with_update</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#interform.tests.test_json.Test_Create_DefPath.test_add_multiple_dicts_with_update" title="Permalink to this definition">¶</a></dt>
+<dd><p>Add multiple dicts to <cite>dictionary</cite>, commit changes
+and assert the result with local file</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="interform.tests.test_json.Test_Create_DefPath.test_add_nested_dicts">
+<code class="sig-name descname">test_add_nested_dicts</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#interform.tests.test_json.Test_Create_DefPath.test_add_nested_dicts" title="Permalink to this definition">¶</a></dt>
+<dd><p>Add nested dictionary to <cite>dictionary</cite>, commit changes and assert
+local file values to <cite>dictionary</cite></p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="interform.tests.test_json.Test_Create_DefPath.test_add_one_attribute">
+<code class="sig-name descname">test_add_one_attribute</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#interform.tests.test_json.Test_Create_DefPath.test_add_one_attribute" title="Permalink to this definition">¶</a></dt>
+<dd><p>Add one new attribute to <cite>dictionary</cite>, commit changes
+and assert the local file to <cite>dictionary</cite></p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="interform.tests.test_json.Test_Create_DefPath.test_clear_dict">
+<code class="sig-name descname">test_clear_dict</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#interform.tests.test_json.Test_Create_DefPath.test_clear_dict" title="Permalink to this definition">¶</a></dt>
+<dd><p>Clear the <cite>dictionary</cite> attribute</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="interform.tests.test_json.Test_Create_DefPath.test_commit_changes">
+<code class="sig-name descname">test_commit_changes</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#interform.tests.test_json.Test_Create_DefPath.test_commit_changes" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="interform.tests.test_json.Test_Create_DefPath.test_create_file">
+<code class="sig-name descname">test_create_file</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#interform.tests.test_json.Test_Create_DefPath.test_create_file" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create local file</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="interform.tests.test_json.Test_Create_DefPath.test_delete_file">
+<code class="sig-name descname">test_delete_file</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#interform.tests.test_json.Test_Create_DefPath.test_delete_file" title="Permalink to this definition">¶</a></dt>
+<dd><p>Delete local file and check
+is the functions output works correctly</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="interform.tests.test_json.Test_Create_DefPath.test_file_read">
+<code class="sig-name descname">test_file_read</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#interform.tests.test_json.Test_Create_DefPath.test_file_read" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="interform.tests.test_json.Test_Create_DefPath.test_modify_default_dict">
+<code class="sig-name descname">test_modify_default_dict</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#interform.tests.test_json.Test_Create_DefPath.test_modify_default_dict" title="Permalink to this definition">¶</a></dt>
+<dd><p>Modify the default dictionary, reset <cite>dictionary</cite> to defaults and assert values</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="interform.tests.test_json.Test_Create_DefPath.test_refresh_safe">
+<code class="sig-name descname">test_refresh_safe</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#interform.tests.test_json.Test_Create_DefPath.test_refresh_safe" title="Permalink to this definition">¶</a></dt>
+<dd><p>Refresh <cite>dictionary</cite> from local file in safe mode
+and check for nested dictionary existance inside.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="interform.tests.test_json.Test_Create_DefPath.test_refresh_unsafe">
+<code class="sig-name descname">test_refresh_unsafe</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#interform.tests.test_json.Test_Create_DefPath.test_refresh_unsafe" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="interform.tests.test_json.Test_Create_DefPath.test_reload_dict">
+<code class="sig-name descname">test_reload_dict</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#interform.tests.test_json.Test_Create_DefPath.test_reload_dict" title="Permalink to this definition">¶</a></dt>
+<dd><p>Reset <cite>dictionary</cite> to values from bound local file</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-interform.tests.test_yaml">
+<span id="interform-tests-test-yaml-module"></span><h2>interform.tests.test_yaml module<a class="headerlink" href="#module-interform.tests.test_yaml" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt id="interform.tests.test_yaml.Test_Create_DefDict">
+<em class="property">class </em><code class="sig-prename descclassname">interform.tests.test_yaml.</code><code class="sig-name descname">Test_Create_DefDict</code><a class="headerlink" href="#interform.tests.test_yaml.Test_Create_DefDict" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#interform.tests.core.BaseLangTest" title="interform.tests.core.BaseLangTest"><code class="xref py py-class docutils literal notranslate"><span class="pre">interform.tests.core.BaseLangTest</span></code></a></p>
+<p>Create local file on <cite>local_file_path</cite>
+and get default config values from <cite>default_local_file_dict</cite></p>
+<dl class="py attribute">
+<dt id="interform.tests.test_yaml.Test_Create_DefDict.pytestmark">
+<code class="sig-name descname">pytestmark</code><em class="property"> = [Mark(name='yaml', args=(), kwargs={})]</em><a class="headerlink" href="#interform.tests.test_yaml.Test_Create_DefDict.pytestmark" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="interform.tests.test_yaml.Test_Create_DefDict.setup">
+<code class="sig-name descname">setup</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#interform.tests.test_yaml.Test_Create_DefDict.setup" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="interform.tests.test_yaml.Test_Create_DefDict.test_access_dashed_attribute">
+<code class="sig-name descname">test_access_dashed_attribute</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#interform.tests.test_yaml.Test_Create_DefDict.test_access_dashed_attribute" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="interform.tests.test_yaml.Test_Create_DefDict.test_add_dashed_attribute">
+<code class="sig-name descname">test_add_dashed_attribute</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#interform.tests.test_yaml.Test_Create_DefDict.test_add_dashed_attribute" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="interform.tests.test_yaml.Test_Create_DefDict.test_add_multiple_dicts_with_update">
+<code class="sig-name descname">test_add_multiple_dicts_with_update</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#interform.tests.test_yaml.Test_Create_DefDict.test_add_multiple_dicts_with_update" title="Permalink to this definition">¶</a></dt>
+<dd><p>Add multiple dicts to <cite>dictionary</cite>, commit changes
+and assert the result with local file</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="interform.tests.test_yaml.Test_Create_DefDict.test_add_nested_dicts">
+<code class="sig-name descname">test_add_nested_dicts</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#interform.tests.test_yaml.Test_Create_DefDict.test_add_nested_dicts" title="Permalink to this definition">¶</a></dt>
+<dd><p>Add nested dictionary to <cite>dictionary</cite>, commit changes and assert
+local file values to <cite>dictionary</cite></p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="interform.tests.test_yaml.Test_Create_DefDict.test_add_one_attribute">
+<code class="sig-name descname">test_add_one_attribute</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#interform.tests.test_yaml.Test_Create_DefDict.test_add_one_attribute" title="Permalink to this definition">¶</a></dt>
+<dd><p>Add one new attribute to <cite>dictionary</cite>, commit changes
+and assert the local file to <cite>dictionary</cite></p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="interform.tests.test_yaml.Test_Create_DefDict.test_clear_dict">
+<code class="sig-name descname">test_clear_dict</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#interform.tests.test_yaml.Test_Create_DefDict.test_clear_dict" title="Permalink to this definition">¶</a></dt>
+<dd><p>Clear the <cite>dictionary</cite> attribute</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="interform.tests.test_yaml.Test_Create_DefDict.test_commit_changes">
+<code class="sig-name descname">test_commit_changes</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#interform.tests.test_yaml.Test_Create_DefDict.test_commit_changes" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="interform.tests.test_yaml.Test_Create_DefDict.test_create_file">
+<code class="sig-name descname">test_create_file</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#interform.tests.test_yaml.Test_Create_DefDict.test_create_file" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create local file</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="interform.tests.test_yaml.Test_Create_DefDict.test_delete_file">
+<code class="sig-name descname">test_delete_file</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#interform.tests.test_yaml.Test_Create_DefDict.test_delete_file" title="Permalink to this definition">¶</a></dt>
+<dd><p>Delete local file and check
+is the functions output works correctly</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="interform.tests.test_yaml.Test_Create_DefDict.test_file_read">
+<code class="sig-name descname">test_file_read</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#interform.tests.test_yaml.Test_Create_DefDict.test_file_read" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="interform.tests.test_yaml.Test_Create_DefDict.test_modify_default_dict">
+<code class="sig-name descname">test_modify_default_dict</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#interform.tests.test_yaml.Test_Create_DefDict.test_modify_default_dict" title="Permalink to this definition">¶</a></dt>
+<dd><p>Modify the default dictionary, reset <cite>dictionary</cite> to defaults and assert values</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="interform.tests.test_yaml.Test_Create_DefDict.test_refresh_safe">
+<code class="sig-name descname">test_refresh_safe</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#interform.tests.test_yaml.Test_Create_DefDict.test_refresh_safe" title="Permalink to this definition">¶</a></dt>
+<dd><p>Refresh <cite>dictionary</cite> from local file in safe mode
+and check for nested dictionary existance inside.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="interform.tests.test_yaml.Test_Create_DefDict.test_refresh_unsafe">
+<code class="sig-name descname">test_refresh_unsafe</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#interform.tests.test_yaml.Test_Create_DefDict.test_refresh_unsafe" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="interform.tests.test_yaml.Test_Create_DefDict.test_reload_dict">
+<code class="sig-name descname">test_reload_dict</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#interform.tests.test_yaml.Test_Create_DefDict.test_reload_dict" title="Permalink to this definition">¶</a></dt>
+<dd><p>Reset <cite>dictionary</cite> to values from bound local file</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="interform.tests.test_yaml.Test_Create_DefPath">
+<em class="property">class </em><code class="sig-prename descclassname">interform.tests.test_yaml.</code><code class="sig-name descname">Test_Create_DefPath</code><a class="headerlink" href="#interform.tests.test_yaml.Test_Create_DefPath" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#interform.tests.core.BaseLangTest" title="interform.tests.core.BaseLangTest"><code class="xref py py-class docutils literal notranslate"><span class="pre">interform.tests.core.BaseLangTest</span></code></a></p>
+<p>Read existing file on <cite>local_file_path</cite>
+and get default config values from file on <cite>default_cfg_path</cite></p>
+<dl class="py attribute">
+<dt id="interform.tests.test_yaml.Test_Create_DefPath.pytestmark">
+<code class="sig-name descname">pytestmark</code><em class="property"> = [Mark(name='yaml', args=(), kwargs={})]</em><a class="headerlink" href="#interform.tests.test_yaml.Test_Create_DefPath.pytestmark" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="interform.tests.test_yaml.Test_Create_DefPath.setup">
+<code class="sig-name descname">setup</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#interform.tests.test_yaml.Test_Create_DefPath.setup" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="interform.tests.test_yaml.Test_Create_DefPath.test_access_dashed_attribute">
+<code class="sig-name descname">test_access_dashed_attribute</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#interform.tests.test_yaml.Test_Create_DefPath.test_access_dashed_attribute" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="interform.tests.test_yaml.Test_Create_DefPath.test_add_dashed_attribute">
+<code class="sig-name descname">test_add_dashed_attribute</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#interform.tests.test_yaml.Test_Create_DefPath.test_add_dashed_attribute" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="interform.tests.test_yaml.Test_Create_DefPath.test_add_multiple_dicts_with_update">
+<code class="sig-name descname">test_add_multiple_dicts_with_update</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#interform.tests.test_yaml.Test_Create_DefPath.test_add_multiple_dicts_with_update" title="Permalink to this definition">¶</a></dt>
+<dd><p>Add multiple dicts to <cite>dictionary</cite>, commit changes
+and assert the result with local file</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="interform.tests.test_yaml.Test_Create_DefPath.test_add_nested_dicts">
+<code class="sig-name descname">test_add_nested_dicts</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#interform.tests.test_yaml.Test_Create_DefPath.test_add_nested_dicts" title="Permalink to this definition">¶</a></dt>
+<dd><p>Add nested dictionary to <cite>dictionary</cite>, commit changes and assert
+local file values to <cite>dictionary</cite></p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="interform.tests.test_yaml.Test_Create_DefPath.test_add_one_attribute">
+<code class="sig-name descname">test_add_one_attribute</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#interform.tests.test_yaml.Test_Create_DefPath.test_add_one_attribute" title="Permalink to this definition">¶</a></dt>
+<dd><p>Add one new attribute to <cite>dictionary</cite>, commit changes
+and assert the local file to <cite>dictionary</cite></p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="interform.tests.test_yaml.Test_Create_DefPath.test_clear_dict">
+<code class="sig-name descname">test_clear_dict</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#interform.tests.test_yaml.Test_Create_DefPath.test_clear_dict" title="Permalink to this definition">¶</a></dt>
+<dd><p>Clear the <cite>dictionary</cite> attribute</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="interform.tests.test_yaml.Test_Create_DefPath.test_commit_changes">
+<code class="sig-name descname">test_commit_changes</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#interform.tests.test_yaml.Test_Create_DefPath.test_commit_changes" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="interform.tests.test_yaml.Test_Create_DefPath.test_create_file">
+<code class="sig-name descname">test_create_file</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#interform.tests.test_yaml.Test_Create_DefPath.test_create_file" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create local file</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="interform.tests.test_yaml.Test_Create_DefPath.test_delete_file">
+<code class="sig-name descname">test_delete_file</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#interform.tests.test_yaml.Test_Create_DefPath.test_delete_file" title="Permalink to this definition">¶</a></dt>
+<dd><p>Delete local file and check
+is the functions output works correctly</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="interform.tests.test_yaml.Test_Create_DefPath.test_file_read">
+<code class="sig-name descname">test_file_read</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#interform.tests.test_yaml.Test_Create_DefPath.test_file_read" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="interform.tests.test_yaml.Test_Create_DefPath.test_modify_default_dict">
+<code class="sig-name descname">test_modify_default_dict</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#interform.tests.test_yaml.Test_Create_DefPath.test_modify_default_dict" title="Permalink to this definition">¶</a></dt>
+<dd><p>Modify the default dictionary, reset <cite>dictionary</cite> to defaults and assert values</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="interform.tests.test_yaml.Test_Create_DefPath.test_refresh_safe">
+<code class="sig-name descname">test_refresh_safe</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#interform.tests.test_yaml.Test_Create_DefPath.test_refresh_safe" title="Permalink to this definition">¶</a></dt>
+<dd><p>Refresh <cite>dictionary</cite> from local file in safe mode
+and check for nested dictionary existance inside.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="interform.tests.test_yaml.Test_Create_DefPath.test_refresh_unsafe">
+<code class="sig-name descname">test_refresh_unsafe</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#interform.tests.test_yaml.Test_Create_DefPath.test_refresh_unsafe" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="interform.tests.test_yaml.Test_Create_DefPath.test_reload_dict">
+<code class="sig-name descname">test_reload_dict</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#interform.tests.test_yaml.Test_Create_DefPath.test_reload_dict" title="Permalink to this definition">¶</a></dt>
+<dd><p>Reset <cite>dictionary</cite> to values from bound local file</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+      
+        <a href="interform.langs.html" class="btn btn-neutral float-left" title="interform.langs package" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; Copyright 2020, maximilionus
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>
