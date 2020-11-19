@@ -68,7 +68,7 @@ class BaseLang:
         return self.__parsed_dict.__iter__()
 
     def clear(self):
-        """ Clear the ``dictionary`` """
+        """ Clear the bound ``dictionary`` """
         self.__parsed_dict.clear()
 
     def copy(self, deep_mode=True) -> dict:
@@ -78,9 +78,9 @@ class BaseLang:
 
         :param deep_mode: Use the recursive copy function to remove
             all references to original dictionary. Disabling this will lead
-            to saving the references of the nested dictionary to original,
+            to saving the references of the nested dictionaries to the copy object,
             defaults to True.
-        :type deep_mode: bool
+        :type deep_mode: bool, optional
         :return: ``dictionary`` copy
         :rtype: dict
         """
