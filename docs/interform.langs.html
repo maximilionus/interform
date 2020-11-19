@@ -221,7 +221,7 @@ so executing:</p>
 <dl class="py method">
 <dt id="interform.langs.json.JSON_Format.clear">
 <code class="sig-name descname">clear</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#interform.langs.json.JSON_Format.clear" title="Permalink to this definition">¶</a></dt>
-<dd><p>Clear the <code class="docutils literal notranslate"><span class="pre">dictionary</span></code></p>
+<dd><p>Clear the bound <code class="docutils literal notranslate"><span class="pre">dictionary</span></code></p>
 </dd></dl>
 
 <dl class="py method">
@@ -238,9 +238,9 @@ This method uses the recursive copy function that will remove
 all references to original dictionary.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>deep_mode</strong> (<em>bool</em>) – Use the recursive copy function to remove
+<dd class="field-odd"><p><strong>deep_mode</strong> (<em>bool</em><em>, </em><em>optional</em>) – Use the recursive copy function to remove
 all references to original dictionary. Disabling this will lead
-to saving the references of the nested dictionary to original,
+to saving the references of the nested dictionaries to the copy object,
 defaults to True.</p>
 </dd>
 <dt class="field-even">Returns</dt>
@@ -579,7 +579,7 @@ so executing:</p>
 <dl class="py method">
 <dt id="interform.langs.yaml.YAML_Format.clear">
 <code class="sig-name descname">clear</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#interform.langs.yaml.YAML_Format.clear" title="Permalink to this definition">¶</a></dt>
-<dd><p>Clear the <code class="docutils literal notranslate"><span class="pre">dictionary</span></code></p>
+<dd><p>Clear the bound <code class="docutils literal notranslate"><span class="pre">dictionary</span></code></p>
 </dd></dl>
 
 <dl class="py method">
@@ -596,9 +596,9 @@ This method uses the recursive copy function that will remove
 all references to original dictionary.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>deep_mode</strong> (<em>bool</em>) – Use the recursive copy function to remove
+<dd class="field-odd"><p><strong>deep_mode</strong> (<em>bool</em><em>, </em><em>optional</em>) – Use the recursive copy function to remove
 all references to original dictionary. Disabling this will lead
-to saving the references of the nested dictionary to original,
+to saving the references of the nested dictionaries to the copy object,
 defaults to True.</p>
 </dd>
 <dt class="field-even">Returns</dt>
