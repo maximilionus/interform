@@ -11,6 +11,16 @@
 ## Development Releases
 
 
+### **1.1.0a2** : wip
+
+#### Added
+- Feature to pass custom arguments to parser on read and write actions with `parser_write_kwargs` and `parser_read_kwargs`
+
+#### Changed
+- `_core__write_dict_to_file` and `_core__read_file_to_dict` are no more static methods in `.core.BaseLang` and inherited classes
+- Enhanced documentation
+
+
 ### **1.1.0a1** : 2020.11.22
 
 #### Added

@@ -37,6 +37,9 @@ List of classes for supported DIF languages, that can be used:
 :``YAML_Format``:
     Support for YAML language
 
+:``TOML_Format``:
+    Support for TOML language
+
 
 All ``interform``'s supported languages are easy to access and can be imported straight from main package without stating any subpackage or submodule:
 
@@ -55,5 +58,6 @@ Module Hierarchy
     - ``meta`` - Meta information, like version, author, etc.
     - ``langs`` - Subpackage with realisation of main features for various DIF languages
         - ``json``
+        - ``toml``
         - ``yaml``
     - ``tests`` - PyTest unit testing suite subpackage

@@ -35,19 +35,32 @@ Quickstart
 .. note::
     Specifying the default dictionary **is an optional step** and not required in your code, but this will allow us to specify the values, that will be written in local file on creation and may be used for "factory reset" feature.
 
-3. Now we're moving to the main part - creation of the object that will be used for further interaction with local file.
+3. Let's also prepare some options for parser
+
+.. code-block:: python
+    :linenos:
+    :lineno-start: 6
+
+    parser_write_kwargs = {
+        "indent": 4
+    }
+
+``parser_write_kwargs`` variable is dictionary with keyword arguments that will be further passed to arguments of ``JSON_Format`` object to specify the additional params for DIF language parser on write action. At this moment we will only specify the `indent <parser_write_kwargs>`__ argument for ``json`` parser, that will enable the pretty printing.
+
+4. Now we're moving to the main part - creation of the object that will be used for further interaction with local file.
 
 .. code-block:: python
     :linenos:
     :lineno-start: 6
 
     config = JSON_Format(
-        'settings.json',  # Path to preferred local file location.
-        def_dict          # Default configuration dictionary that will
-                          # be parsed into the local file on creation.
+        'settings.json',                          # Path to preferred local file location.
+        def_dict,                                 # Default configuration dictionary that will
+                                                  # be parsed into the local file on creation.
+        parser_write_kwargs = parser_write_kwargs # Arguments, that will be passed to parser on write action
     )
 
-4. If no exceptions were raised then everything is ready. Now, if you check the file on the path, that we specified in line ``3`` of step ``2``, you can see there's a json format values parsed from our ``def_dict``.
+5. If no exceptions were raised then everything is ready. Now, if you check the file on the path, that we specified in line ``3`` of step ``2``, you can see there's a json format values parsed from our ``def_dict``.
 
 .. code:: json
 
@@ -56,7 +69,7 @@ Quickstart
         "app_name": "Test"
     }
 
-5. The local file and object are ready. Now we can access any value from this file. Let's try this out:
+6. The local file and object are ready. Now we can access any value from this file. Let's try this out:
 
 .. code-block:: python
     :linenos:
@@ -69,7 +82,7 @@ Quickstart
     print("Application version: {}".format(app_version))  # Output should be:
                                                           # 'Application version: 5'
 
-6. Accessing the values is a good thing, but we're here not only for this, right? Next step we'll modify the value of one exising key and add the new key to object.
+7. Accessing the values is a good thing, but we're here not only for this, right? Next step we'll modify the value of one exising key and add the new key to object.
 
 .. code-block:: python
     :linenos:
@@ -95,7 +108,7 @@ Quickstart
          'app_name': 'Super Secret Tool',
          'our_new_key': {'type': 'msg', 'id': 34724889325, 'text': 'wassup?'}}
 
-7. New key added, existing changed... but the local file still contains only the default values. This is not a bug, this is a feature. ``interform`` will never automatically save any user-made changes to a local file without a direct command to do so. So let's do it.
+8. New key added, existing changed... but the local file still contains only the default values. This is not a bug, this is a feature. ``interform`` will never automatically save any user-made changes to a local file without a direct command to do so. So let's do it.
 
 .. code-block:: python
     :linenos:
@@ -118,7 +131,7 @@ Now our ``settings.json`` file will look like this:
         }
     }
 
-8. Now let's consider the situation that our local file (``settings.json``) was modified by some other programm. ``interform`` will never automatically refresh values of object, so you have to do it yourself.
+9. Now let's consider the situation that our local file (``settings.json``) was modified by some other programm. ``interform`` will never automatically refresh values of object, so you have to do it yourself.
 
 Let's modify the ``settings.json`` file with any text editor and add the new key ``"custom_key"`` with value ``"hello?"``. Now our local file will look like this:
 
@@ -147,7 +160,7 @@ To get this key inside of our ``config`` object we'll have to refresh it with sp
     # After refreshing, "custom_key" key will be added to object and can be accessed
     print(config["custom_key"])  # Output: 'hello?'
 
-9. Now lets try to remove one key from dictionary. To remove any key you can use the python's `del() <https://docs.python.org/3/tutorial/datastructures.html#the-del-statement>`__
+10. Now lets try to remove one key from dictionary. To remove any key you can use the python's `del() <https://docs.python.org/3/tutorial/datastructures.html#the-del-statement>`__
 
 .. code-block:: python
     :linenos:
@@ -176,7 +189,7 @@ After commiting the changes, ``settings.json`` will look like this
     }
 
 
-10. If you are not happy with all the changes made and want to return everything to the default state, here is a special method ``.reset_to_defaults()``` specially for you. This method will reset bound dictionary to values from ``def_dict`` variable that we specified at the beginning of this guide.
+11. If you are not happy with all the changes made and want to return everything to the default state, here is a special method ``.reset_to_defaults()``` specially for you. This method will reset bound dictionary to values from ``def_dict`` variable that we specified at the beginning of this guide.
 
 .. code-block:: python
     :linenos:

@@ -20,6 +20,10 @@ class BaseLang:
     :type default_dictionary: Union[str, dict], optional
     :param force_overwrite_file: Whether the file needs to be overwritten if it already exists, defaults to False
     :type force_overwrite_file: bool, optional
+    :param parser_write_kwargs: Pass custom arguments to parser's write to local file action, defaults to {}
+    :type parser_write_kwargs: dict, optional
+    :param parser_read_kwargs: Pass custom arguments to parser's read from local file action, defaults to {}
+    :type parser_read_kwargs: dict, optional
     :raises ValueError: If provided data type in argument ``default_dictionary`` is not
         the path ``str`` or ``dict``, this exception will be raised
 
@@ -34,9 +38,11 @@ class BaseLang:
 
         >>> this_object.dictionary.update({'check': True})
     """
-    def __init__(self, file_path: str, default_dictionary={}, force_overwrite_file=False):
+    def __init__(self, file_path: str, default_dictionary={}, force_overwrite_file=False, parser_write_kwargs={}, parser_read_kwargs={}):
         self.__parsed_dict = {}
         self.local_file_path = file_path
+        self.parser_write_kwargs = parser_write_kwargs
+        self.parser_read_kwargs = parser_read_kwargs
 
         if isinstance(default_dictionary, dict):
             self.__default_dict = default_dictionary
@@ -303,8 +309,7 @@ class BaseLang:
         """
         return self._core__read_file_to_dict(self.local_file_path)
 
-    @staticmethod
-    def _core__read_file_to_dict(file_path: str) -> dict:
+    def _core__read_file_to_dict(self, file_path: str) -> dict:
         """Template for reading custom local files from path ``str`` as dictionary
 
         :param file_path: Path to local file
@@ -314,14 +319,14 @@ class BaseLang:
         """
         pass
 
-    @staticmethod
-    def _core__write_dict_to_file(file_path: str, dictionary: dict):
+    def _core__write_dict_to_file(self, file_path: str, dictionary: dict):
         """Template for writing dictionaries into custom local path ``str``
 
         :param file_path: Path to local file
         :type file_path: str
         :param dictionary: Dictionary which will be written in ``file_path``
         :type dictionary: dict
+        :param kwargs: Any additional keyword arguments that can be used to pass advanced options to parser
         """
         pass
 

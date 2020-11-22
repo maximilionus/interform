@@ -32,8 +32,7 @@ class YAML_Format(BaseLang):
 
         >>> this_object.dictionary.update({'check': True})
     """
-    @staticmethod
-    def _core__read_file_to_dict(file_path: str) -> dict:
+    def _core__read_file_to_dict(self, file_path: str) -> dict:
         """Method for reading custom local files from path ``str`` as dictionary
 
         :param file_path: Path to local file in ``yaml`` format
@@ -42,12 +41,11 @@ class YAML_Format(BaseLang):
         :rtype: dict
         """
         with open(file_path, 'rt') as f:
-            config_dict = yaml.load(f)
+            config_dict = yaml.load(f, **self.parser_read_kwargs)
 
         return config_dict
 
-    @staticmethod
-    def _core__write_dict_to_file(file_path: str, dictionary: dict):
+    def _core__write_dict_to_file(self, file_path: str, dictionary: dict):
         """Method to write dictionaries into custom local path ``str``
 
         :param file_path: Path to local file in ``yaml`` format
@@ -56,4 +54,4 @@ class YAML_Format(BaseLang):
         :type dictionary: dict
         """
         with open(file_path, 'wt') as f:
-            yaml.dump(dictionary, f)
+            yaml.dump(dictionary, f, **self.parser_write_kwargs)
