@@ -32,3 +32,11 @@ interform.langs.yaml module
    :undoc-members:
    :show-inheritance:
 
+interform.langs.toml module
+------------------------------
+
+.. automodule:: interform.langs.toml
+   :members:
+   :inherited-members:
+   :undoc-members:
+   :show-inheritance:

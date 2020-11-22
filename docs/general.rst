@@ -22,6 +22,7 @@ List of currently supported languages.
 - External Support
     - ``ujson`` *(replacement for python built-in json parser)*
     - ``yaml`` *(version <= 1.2)*
+    - ``toml``
 
 .. note::
     Languages, listed in **Native Support** are supported by python without any external packages, while **External Support** requires external packages to be installed. For more detailed information go here: :doc:`guide_installation`

@@ -24,9 +24,10 @@ help:
 	@printf "\
 	Main project makefile\n\n\
 	Commands:\n\
-		build - build project source distribution and wheel\n\
-		build_dist - build project source distribution\n\
+		build       - build project source distribution and wheel\n\
+		build_dist  - build project source distribution\n\
 		build_wheel - build project wheel distribution\n\
-		docs - build Sphinx documentation in html format\n\
-		help - display this help message\n\
+		publish     - upload build package from dist/* to PyPI\n\
+		docs        - build Sphinx documentation in html format\n\
+		help        - display this help message\n\
 	"

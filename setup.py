@@ -42,7 +42,7 @@ setup(
     description='Powerful and easy to use tool for working with various data interchange formats (json, yaml, etc.)',
     long_description_content_type='text/x-rst',
     long_description=readme_text,
-    keywords='data interchange format files dif json yaml',
+    keywords='data interchange format files dif json yaml toml',
     packages=find_packages(),
     extras_require=extras_require,
     license='MIT',
