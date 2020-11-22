@@ -12,6 +12,7 @@ def pytest_configure(config):
     custom_markers = (
         'json: run only json tests',
         'yaml: run only yaml tests',
+        'toml: run only toml tests',
     )
 
     for marker in custom_markers:

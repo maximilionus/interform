@@ -15,6 +15,9 @@ ujson<=4.0.1
 # Yaml parser
 ruamel.yaml<=0.16.12
 
+# TOML parser
+toml<=0.10.2
+
 # Documentation
 Sphinx~=3.3
 sphinx-rtd-theme~=0.5

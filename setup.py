@@ -16,7 +16,8 @@ package_version = get_package_version()
 # Form extras
 extras_require = {
     'ujson': ['ujson<=4.0.1'],
-    'yaml': ['ruamel.yaml<=0.16.12']
+    'yaml': ['ruamel.yaml<=0.16.12'],
+    'toml': ['toml<=0.10.2']
 }
 
 all_base_requirements = [dep for v in extras_require.values() for dep in v]

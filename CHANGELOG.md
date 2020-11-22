@@ -1,9 +1,26 @@
 # Interform Changelog
 
+## Stable Releases
 
-## **1.0.0** : 2020.11.18
+
+### **1.0.0** : 2020.11.18
 
 > First public release of this package
+
+
+## Development Releases
+
+
+### **1.1.0a1** : 2020.11.22
+
+#### Added
+- Support for `TOML` language
+
+#### Fixed
+- Fixed new key creation from main object issue
+
+#### Changed
+- Method of handling import requests in init script
 
 
 ---------
