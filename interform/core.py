@@ -28,7 +28,7 @@ class BaseLang:
         the path ``str`` or ``dict``, this exception will be raised
 
     .. note::
-        Methods ``.clear()``, ``.copy()``, ``.fromkeys()``, ``.get()``, ``.items()``, ``.keys()``, ``values()``,
+        Methods ``.clear()``, ``.fromkeys()``, ``.get()``, ``.items()``, ``.keys()``, ``values()``,
         ``pop()``, ``popitem()``, ``setdefault()``, ``update()`` are bound to the attribute ``dictionary``,
         so executing:
 
@@ -38,7 +38,7 @@ class BaseLang:
 
         >>> this_object.dictionary.update({'check': True})
     """
-    def __init__(self, file_path: str, default_dictionary={}, force_overwrite_file=False, parser_write_kwargs={}, parser_read_kwargs={}):
+    def __init__(self, file_path: str, default_dictionary={}, auto_file_creation=True, force_overwrite_file=False, parser_write_kwargs={}, parser_read_kwargs={}):
         self.__parsed_dict = {}
         self.local_file_path = file_path
         self.parser_write_kwargs = parser_write_kwargs
@@ -52,11 +52,12 @@ class BaseLang:
             raise ValueError('"default_dictionary" argument should be a dictionary or a path to file string. Provided value is {0}'
                              .format(default_dictionary))
 
-        if not self.is_file_exist() or force_overwrite_file:
-            create_directories(self.local_file_path)
-            self.create_file()
+        if auto_file_creation:
+            if not self.is_file_exist() or force_overwrite_file:
+                create_directories(self.local_file_path)
+                self.create_file()
 
-        self.reload()
+            self.reload()
 
     def __getitem__(self, key):
         return self.__parsed_dict[key]
