@@ -29,10 +29,13 @@
 ## Development Releases
 
 
-### **1.1.1a1** : unreleased
+### **1.2.0a1** : unreleased
+
+#### Added
+- Argument `auto_file_creation` to all `*_Format` classes
 
 #### Fixed
-- `.core.reload()` method return now works properly
+- `.reload()` method return in `*_Format` classes now works properly
 
 
 ### **1.1.0a2** : unreleased
