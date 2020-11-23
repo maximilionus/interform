@@ -251,9 +251,9 @@ class BaseLang:
         """
         if self.is_file_exist():
             self.__parsed_dict = self.read_file_as_dict()
-            return False
-        else:
             return True
+        else:
+            return False
 
     def reset_to_defaults(self):
         """

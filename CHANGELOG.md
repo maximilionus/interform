@@ -29,6 +29,12 @@
 ## Development Releases
 
 
+### **1.1.1a1** : unreleased
+
+#### Fixed
+- `.core.reload()` method return now works properly
+
+
 ### **1.1.0a2** : unreleased
 
 #### Added
