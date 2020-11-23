@@ -17,10 +17,13 @@ Where ``mode`` is one of the listed in `Installation Modes`_ options:
 Installation Modes
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 :``ujson``:
-    Will automatically replace the built-in ``json`` parser with `ujson parser <https://pypi.org/project/ujson/>`_
+    Will automatically replace the built-in ``json`` parser with `ujson parser <https://pypi.org/project/ujson/>`__
 
 :``yaml``:
-    Support for the ``YAML`` language *(version <= 1.2)* with `ruamel.yaml parser <https://pypi.org/project/ruamel.yaml/>`_
+    Support for ``YAML`` language *(version <= 1.2)* with `ruamel.yaml parser <https://pypi.org/project/ruamel.yaml/>`__
+
+:``toml``:
+    Support for ``TOML`` language with `toml parser <https://pypi.org/project/toml/>`__
 
 :``full``:
     Install ``interform`` with support for all external parsers listed above

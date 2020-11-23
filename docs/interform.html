@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>interform &mdash; interform 1.0.0 documentation</title>
+  <title>interform &mdash; interform 1.1.0 documentation</title>
   
 
   
@@ -176,6 +176,7 @@
 <li class="toctree-l2"><a class="reference internal" href="interform.langs.html#submodules">Submodules</a></li>
 <li class="toctree-l2"><a class="reference internal" href="interform.langs.html#module-interform.langs.json">interform.langs.json module</a></li>
 <li class="toctree-l2"><a class="reference internal" href="interform.langs.html#module-interform.langs.yaml">interform.langs.yaml module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="interform.langs.html#module-interform.langs.toml">interform.langs.toml module</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="interform.tests.html">interform.tests package</a><ul>
@@ -203,7 +204,7 @@ other submodules and subpackages</p>
 <span id="interform-core-module"></span><h2>interform.core module<a class="headerlink" href="#module-interform.core" title="Permalink to this headline">¶</a></h2>
 <dl class="py class">
 <dt id="interform.core.BaseLang">
-<em class="property">class </em><code class="sig-prename descclassname">interform.core.</code><code class="sig-name descname">BaseLang</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">file_path</span><span class="p">:</span> <span class="n">str</span></em>, <em class="sig-param"><span class="n">default_dictionary</span><span class="o">=</span><span class="default_value">{}</span></em>, <em class="sig-param"><span class="n">force_overwrite_file</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="headerlink" href="#interform.core.BaseLang" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="sig-prename descclassname">interform.core.</code><code class="sig-name descname">BaseLang</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">file_path</span><span class="p">:</span> <span class="n">str</span></em>, <em class="sig-param"><span class="n">default_dictionary</span><span class="o">=</span><span class="default_value">{}</span></em>, <em class="sig-param"><span class="n">force_overwrite_file</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">parser_write_kwargs</span><span class="o">=</span><span class="default_value">{}</span></em>, <em class="sig-param"><span class="n">parser_read_kwargs</span><span class="o">=</span><span class="default_value">{}</span></em><span class="sig-paren">)</span><a class="headerlink" href="#interform.core.BaseLang" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
 <p>Base Data Interchange Format (DIF) realisation.</p>
 <p>This class is not intended to be used directly. Instead, it should be inherited by a class, that provides the support
@@ -217,6 +218,8 @@ If the file does not exist at the specified path, it will be created</p></li>
 <li><p><strong>default_dictionary</strong> (<em>Union</em><em>[</em><em>str</em><em>, </em><em>dict</em><em>]</em><em>, </em><em>optional</em>) – Default local file path <code class="docutils literal notranslate"><span class="pre">str</span></code> or <code class="docutils literal notranslate"><span class="pre">dict</span></code>
 that will be used for local file start values and , defaults to {}</p></li>
 <li><p><strong>force_overwrite_file</strong> (<em>bool</em><em>, </em><em>optional</em>) – Whether the file needs to be overwritten if it already exists, defaults to False</p></li>
+<li><p><strong>parser_write_kwargs</strong> (<em>dict</em><em>, </em><em>optional</em>) – Pass custom arguments to parser’s write to local file action, defaults to {}</p></li>
+<li><p><strong>parser_read_kwargs</strong> (<em>dict</em><em>, </em><em>optional</em>) – Pass custom arguments to parser’s read from local file action, defaults to {}</p></li>
 </ul>
 </dd>
 <dt class="field-even">Raises</dt>
@@ -239,7 +242,7 @@ so executing:</p>
 </div>
 <dl class="py method">
 <dt id="interform.core.BaseLang._core__read_file_to_dict">
-<em class="property">static </em><code class="sig-name descname">_core__read_file_to_dict</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">file_path</span><span class="p">:</span> <span class="n">str</span></em><span class="sig-paren">)</span> &#x2192; dict<a class="headerlink" href="#interform.core.BaseLang._core__read_file_to_dict" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">_core__read_file_to_dict</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">file_path</span><span class="p">:</span> <span class="n">str</span></em><span class="sig-paren">)</span> &#x2192; dict<a class="headerlink" href="#interform.core.BaseLang._core__read_file_to_dict" title="Permalink to this definition">¶</a></dt>
 <dd><p>Template for reading custom local files from path <code class="docutils literal notranslate"><span class="pre">str</span></code> as dictionary</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -256,13 +259,14 @@ so executing:</p>
 
 <dl class="py method">
 <dt id="interform.core.BaseLang._core__write_dict_to_file">
-<em class="property">static </em><code class="sig-name descname">_core__write_dict_to_file</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">file_path</span><span class="p">:</span> <span class="n">str</span></em>, <em class="sig-param"><span class="n">dictionary</span><span class="p">:</span> <span class="n">dict</span></em><span class="sig-paren">)</span><a class="headerlink" href="#interform.core.BaseLang._core__write_dict_to_file" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">_core__write_dict_to_file</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">file_path</span><span class="p">:</span> <span class="n">str</span></em>, <em class="sig-param"><span class="n">dictionary</span><span class="p">:</span> <span class="n">dict</span></em><span class="sig-paren">)</span><a class="headerlink" href="#interform.core.BaseLang._core__write_dict_to_file" title="Permalink to this definition">¶</a></dt>
 <dd><p>Template for writing dictionaries into custom local path <code class="docutils literal notranslate"><span class="pre">str</span></code></p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>file_path</strong> (<em>str</em>) – Path to local file</p></li>
 <li><p><strong>dictionary</strong> (<em>dict</em>) – Dictionary which will be written in <code class="docutils literal notranslate"><span class="pre">file_path</span></code></p></li>
+<li><p><strong>kwargs</strong> – Any additional keyword arguments that can be used to pass advanced options to parser</p></li>
 </ul>
 </dd>
 </dl>

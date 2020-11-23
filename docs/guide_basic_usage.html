@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Basic Usage &mdash; interform 1.0.0 documentation</title>
+  <title>Basic Usage &mdash; interform 1.1.0 documentation</title>
   
 
   
@@ -195,20 +195,36 @@
 <p>Specifying the default dictionary <strong>is an optional step</strong> and not required in your code, but this will allow us to specify the values, that will be written in local file on creation and may be used for “factory reset” feature.</p>
 </div>
 <ol class="arabic simple" start="3">
+<li><p>Let’s also prepare some options for parser</p></li>
+</ol>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 1.1.0.</span></p>
+</div>
+<div class="highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>6
+7
+8</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="n">parser_write_kwargs</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s2">&quot;indent&quot;</span><span class="p">:</span> <span class="mi">4</span>
+<span class="p">}</span>
+</pre></div>
+</td></tr></table></div>
+<p><code class="docutils literal notranslate"><span class="pre">parser_write_kwargs</span></code> variable is dictionary with keyword arguments that will be further passed to arguments of <code class="docutils literal notranslate"><span class="pre">JSON_Format</span></code> object to specify the additional params for DIF language parser on write action. At this moment we will only specify the <a class="reference external" href="parser_write_kwargs">indent</a> argument for <code class="docutils literal notranslate"><span class="pre">json</span></code> parser, that will enable the pretty printing.</p>
+<ol class="arabic simple" start="4">
 <li><p>Now we’re moving to the main part - creation of the object that will be used for further interaction with local file.</p></li>
 </ol>
 <div class="highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 6
  7
  8
  9
-10</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="n">config</span> <span class="o">=</span> <span class="n">JSON_Format</span><span class="p">(</span>
-    <span class="s1">&#39;settings.json&#39;</span><span class="p">,</span>  <span class="c1"># Path to preferred local file location.</span>
-    <span class="n">def_dict</span>          <span class="c1"># Default configuration dictionary that will</span>
-                      <span class="c1"># be parsed into the local file on creation.</span>
+10
+11</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="n">config</span> <span class="o">=</span> <span class="n">JSON_Format</span><span class="p">(</span>
+    <span class="s1">&#39;settings.json&#39;</span><span class="p">,</span>                          <span class="c1"># Path to preferred local file location.</span>
+    <span class="n">def_dict</span><span class="p">,</span>                                 <span class="c1"># Default configuration dictionary that will</span>
+                                              <span class="c1"># be parsed into the local file on creation.</span>
+    <span class="n">parser_write_kwargs</span> <span class="o">=</span> <span class="n">parser_write_kwargs</span> <span class="c1"># Arguments, that will be passed to parser on write action</span>
 <span class="p">)</span>
 </pre></div>
 </td></tr></table></div>
-<ol class="arabic simple" start="4">
+<ol class="arabic simple" start="5">
 <li><p>If no exceptions were raised then everything is ready. Now, if you check the file on the path, that we specified in line <code class="docutils literal notranslate"><span class="pre">3</span></code> of step <code class="docutils literal notranslate"><span class="pre">2</span></code>, you can see there’s a json format values parsed from our <code class="docutils literal notranslate"><span class="pre">def_dict</span></code>.</p></li>
 </ol>
 <div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
@@ -217,7 +233,7 @@
 <span class="p">}</span>
 </pre></div>
 </div>
-<ol class="arabic simple" start="5">
+<ol class="arabic simple" start="6">
 <li><p>The local file and object are ready. Now we can access any value from this file. Let’s try this out:</p></li>
 </ol>
 <div class="highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>11
@@ -233,7 +249,7 @@
                                                       <span class="c1"># &#39;Application version: 5&#39;</span>
 </pre></div>
 </td></tr></table></div>
-<ol class="arabic simple" start="6">
+<ol class="arabic simple" start="7">
 <li><p>Accessing the values is a good thing, but we’re here not only for this, right? Next step we’ll modify the value of one exising key and add the new key to object.</p></li>
 </ol>
 <div class="highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>17
@@ -265,7 +281,7 @@
 </pre></div>
 </div>
 </div>
-<ol class="arabic simple" start="7">
+<ol class="arabic simple" start="8">
 <li><p>New key added, existing changed… but the local file still contains only the default values. This is not a bug, this is a feature. <code class="docutils literal notranslate"><span class="pre">interform</span></code> will never automatically save any user-made changes to a local file without a direct command to do so. So let’s do it.</p></li>
 </ol>
 <div class="highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>26
@@ -285,7 +301,7 @@
 <span class="p">}</span>
 </pre></div>
 </div>
-<ol class="arabic simple" start="8">
+<ol class="arabic simple" start="9">
 <li><p>Now let’s consider the situation that our local file (<code class="docutils literal notranslate"><span class="pre">settings.json</span></code>) was modified by some other programm. <code class="docutils literal notranslate"><span class="pre">interform</span></code> will never automatically refresh values of object, so you have to do it yourself.</p></li>
 </ol>
 <p>Let’s modify the <code class="docutils literal notranslate"><span class="pre">settings.json</span></code> file with any text editor and add the new key <code class="docutils literal notranslate"><span class="pre">&quot;custom_key&quot;</span></code> with value <code class="docutils literal notranslate"><span class="pre">&quot;hello?&quot;</span></code>. Now our local file will look like this:</p>
@@ -313,7 +329,7 @@
 <span class="nb">print</span><span class="p">(</span><span class="n">config</span><span class="p">[</span><span class="s2">&quot;custom_key&quot;</span><span class="p">])</span>  <span class="c1"># Output: &#39;hello?&#39;</span>
 </pre></div>
 </td></tr></table></div>
-<ol class="arabic simple" start="9">
+<ol class="arabic simple" start="10">
 <li><p>Now lets try to remove one key from dictionary. To remove any key you can use the python’s <a class="reference external" href="https://docs.python.org/3/tutorial/datastructures.html#the-del-statement">del()</a></p></li>
 </ol>
 <div class="highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>33
@@ -343,7 +359,7 @@
 <span class="p">}</span>
 </pre></div>
 </div>
-<ol class="arabic simple" start="10">
+<ol class="arabic simple" start="11">
 <li><p>If you are not happy with all the changes made and want to return everything to the default state, here is a special method <code class="docutils literal notranslate"><span class="pre">.reset_to_defaults()`</span></code> specially for you. This method will reset bound dictionary to values from <code class="docutils literal notranslate"><span class="pre">def_dict</span></code> variable that we specified at the beginning of this guide.</p></li>
 </ol>
 <div class="highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>40
