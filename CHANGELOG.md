@@ -3,6 +3,12 @@
 ## Stable Releases
 
 
+### **1.1.1** : 2020.11.24
+
+#### Fixed
+- `.reload()` method return now works properly in all `*_Format` classes
+
+
 ### **1.1.0** : 2020.11.23
 
 #### Added
@@ -27,15 +33,6 @@
 
 
 ## Development Releases
-
-
-### **1.2.0a1** : unreleased
-
-#### Added
-- Argument `auto_file_creation` to all `*_Format` classes
-
-#### Fixed
-- `.reload()` method return in `*_Format` classes now works properly
 
 
 ### **1.1.0a2** : unreleased
