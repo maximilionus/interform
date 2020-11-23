@@ -45,6 +45,11 @@ setup(
     keywords='data interchange format files dif json yaml toml',
     packages=find_packages(),
     extras_require=extras_require,
+    entry_points={
+        'console_scripts': [
+            'interformcli = interform.cli:start'
+        ]
+    },
     license='MIT',
     url='https://github.com/maximilionus/interform',
     project_urls={
