@@ -16,6 +16,8 @@ class YAML_Format(BaseLang):
     :param default_dictionary: Default local file path ``str`` or ``dict``
         that will be used for local file start values and , defaults to {}
     :type default_dictionary: Union[str, dict], optional
+    :param auto_file_creation: Automatic local file creation on object initialization, defaults to True
+    :type auto_file_creation: bool, optional
     :param force_overwrite_file: Whether the file needs to be overwritten if it already exists, defaults to False
     :type force_overwrite_file: bool, optional
     :param parser_write_kwargs: Pass custom arguments to parser's write to local file action, defaults to {}
@@ -26,7 +28,7 @@ class YAML_Format(BaseLang):
         the path ``str`` or ``dict``, this exception will be raised
 
     .. note::
-        Methods ``.clear()``, ``.copy()``, ``.fromkeys()``, ``.get()``, ``.items()``, ``.keys()``, ``values()``,
+        Methods ``.clear()``, ``.fromkeys()``, ``.get()``, ``.items()``, ``.keys()``, ``values()``,
         ``pop()``, ``popitem()``, ``setdefault()``, ``update()`` are bound to the attribute ``dictionary``,
         so executing:
 
