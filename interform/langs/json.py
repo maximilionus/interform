@@ -18,6 +18,10 @@ class JSON_Format(BaseLang):
     :type default_dictionary: Union[str, dict], optional
     :param force_overwrite_file: Whether the file needs to be overwritten if it already exists, defaults to False
     :type force_overwrite_file: bool, optional
+    :param parser_write_kwargs: Pass custom arguments to parser's write to local file action, defaults to {}
+    :type parser_write_kwargs: dict, optional
+    :param parser_read_kwargs: Pass custom arguments to parser's read from local file action, defaults to {}
+    :type parser_read_kwargs: dict, optional
     :raises ValueError: If provided data type in argument ``default_dictionary`` is not
         the path ``str`` or ``dict``, this exception will be raised
 
