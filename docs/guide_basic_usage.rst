@@ -37,6 +37,8 @@ Quickstart
 
 3. Let's also prepare some options for parser
 
+.. versionadded:: 1.1.0
+
 .. code-block:: python
     :linenos:
     :lineno-start: 6

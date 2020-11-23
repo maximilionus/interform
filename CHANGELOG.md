@@ -3,6 +3,24 @@
 ## Stable Releases
 
 
+### **1.1.0** : 2020.11.23
+
+#### Added
+- Support for `TOML` language
+- Feature to pass custom arguments to parser on read and write actions with `parser_write_kwargs` and `parser_read_kwargs`
+
+#### Fixed
+- Fixed new key creation from main object issue
+
+#### Changed
+- Method of handling import requests in init script
+- `_core__write_dict_to_file` and `_core__read_file_to_dict` are no more static methods in `.core.BaseLang` and inherited classes
+- Enhanced documentation
+
+#### Removed
+- Advanced `JSON_Format` parser arguments removed
+
+
 ### **1.0.0** : 2020.11.18
 
 > First public release of this package
@@ -11,7 +29,7 @@
 ## Development Releases
 
 
-### **1.1.0a2** : wip
+### **1.1.0a2** : unreleased
 
 #### Added
 - Feature to pass custom arguments to parser on read and write actions with `parser_write_kwargs` and `parser_read_kwargs`
