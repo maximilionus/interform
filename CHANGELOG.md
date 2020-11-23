@@ -3,6 +3,12 @@
 ## Stable Releases
 
 
+### **1.1.1** : 2020.11.24
+
+#### Fixed
+- `.reload()` method return now works properly in all `*_Format` classes
+
+
 ### **1.1.0** : 2020.11.23
 
 #### Added
@@ -27,12 +33,6 @@
 
 
 ## Development Releases
-
-
-### **1.1.1a1** : unreleased
-
-#### Fixed
-- `.core.reload()` method return now works properly
 
 
 ### **1.1.0a2** : unreleased
