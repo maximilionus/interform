@@ -133,7 +133,7 @@ Now our ``settings.json`` file will look like this:
         }
     }
 
-9. Now let's consider the situation that our local file (``settings.json``) was modified by some other programm. ``interform`` will never automatically refresh values of object, so you have to do it yourself.
+9. Now let's consider the situation that our local file (``settings.json``) was modified by some other application. ``interform`` will never automatically refresh values of object, so you have to do it yourself.
 
 Let's modify the ``settings.json`` file with any text editor and add the new key ``"custom_key"`` with value ``"hello?"``. Now our local file will look like this:
 
