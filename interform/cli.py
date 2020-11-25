@@ -1,7 +1,9 @@
 from os import path
+from sys import argv
 from argparse import ArgumentParser, Namespace
 
 from . import JSON_Format
+from .core import BaseLang
 
 try:
     from . import YAML_Format
@@ -32,6 +34,10 @@ def convert(from_path: str, from_format: str, dest_path: str, dest_format: str):
     dest_object = __generate_interform_object(dest_path, dest_format)
 
     if from_object is not None and dest_object is not None:
+        if not from_object.is_file_exist():
+            return 'local file on path "{}" does not exist, nothing to convert'\
+                   .format(from_object.local_file_path)
+
         dest_object.dictionary = from_object.dictionary
         dest_object.commit()
 
@@ -42,27 +48,28 @@ def convert(from_path: str, from_format: str, dest_path: str, dest_format: str):
             dest_path
         )
 
-    else:
-        return 'conversion failed, check the output above'
 
-
-def parse_args() -> Namespace:
+def __parse_args() -> Namespace:
     parser_main = ArgumentParser(
-        description='command line interface tool for "interform"'
+        description='command line interface toolset for "interform"'
     )
     subparsers = parser_main.add_subparsers(dest='command')
 
-    parser_converter = subparsers.add_parser('convert', help='tool to convert files of supported languages')
+    parser_converter = subparsers.add_parser('convert', help='tool for conversion between supported languages')
     parser_converter.add_argument('from_path', action='store', type=str, help='path to the file to be converted')
     parser_converter.add_argument('from_format', action='store', type=str, help='format of the file to be converted')
     parser_converter.add_argument('dest_path', action='store', type=str, help='desired path to converted file')
     parser_converter.add_argument('dest_format', action='store', type=str, help='desired file format')
 
+    if len(argv) <= 1:
+        parser_main.print_help()
+        exit()
+
     return parser_main.parse_args()
 
 
 def start():
-    args = parse_args()
+    args = __parse_args()
 
     if args.command == 'convert':
         print(convert(
@@ -71,7 +78,7 @@ def start():
         ))
 
 
-def __generate_interform_object(file_path: str, file_lang: str) -> object:
+def __generate_interform_object(file_path: str, file_lang: str) -> BaseLang:
     obj = None
 
     # TODO: Check for file existance
