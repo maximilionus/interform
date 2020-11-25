@@ -53,7 +53,7 @@
 - Keyword argument `auto_file_creation` to all `*_Format` classes which will allow to disable the automatic local file creation on `*_Format` object initialization
 
 #### Changed
-- `.create_file()` method in all `*_Format` classes will now automatically create all detected dirs in path to local file
+- ~~`.create_file()` method in all `*_Format` classes will now automatically create all detected dirs in path to local file~~
 
 
 ### **1.1.0a2** : unreleased
