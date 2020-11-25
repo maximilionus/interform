@@ -1,3 +1,4 @@
+""" Command Line Interface (CLI) module """
 from os import path
 from sys import argv
 from argparse import ArgumentParser, Namespace
@@ -35,18 +36,20 @@ def convert(from_path: str, from_format: str, dest_path: str, dest_format: str):
 
     if from_object is not None and dest_object is not None:
         if not from_object.is_file_exist():
-            return 'local file on path "{}" does not exist, nothing to convert'\
-                   .format(from_object.local_file_path)
+            print('local file on path "{}" does not exist, nothing to convert'
+                  .format(from_object.local_file_path)
+                  )
+            exit()
 
         dest_object.dictionary = from_object.dictionary
         dest_object.commit()
 
-        return 'successfully converted "{}" from "{}" to "{}" and saved the result to "{}"'.format(
+        print('successfully converted "{}" from "{}" to "{}" and saved the result to "{}"'.format(
             path.basename(from_path),
             from_format,
             dest_format,
             dest_path
-        )
+        ))
 
 
 def __parse_args() -> Namespace:
@@ -68,20 +71,9 @@ def __parse_args() -> Namespace:
     return parser_main.parse_args()
 
 
-def start():
-    args = __parse_args()
-
-    if args.command == 'convert':
-        print(convert(
-            args.from_path, args.from_format,
-            args.dest_path, args.dest_format
-        ))
-
-
 def __generate_interform_object(file_path: str, file_lang: str) -> BaseLang:
     obj = None
 
-    # TODO: Check for file existance
     if file_lang == 'json':
         obj = JSON_Format(file_path, auto_file_creation=False)
     elif file_lang == 'yaml' and yaml_imported:
@@ -92,6 +84,16 @@ def __generate_interform_object(file_path: str, file_lang: str) -> BaseLang:
         print('language "{}" for file "{}" is not supported'.format(file_lang, file_path))
 
     return obj
+
+
+def start():
+    args = __parse_args()
+
+    if args.command == 'convert':
+        convert(
+            args.from_path, args.from_format,
+            args.dest_path, args.dest_format
+        )
 
 
 if __name__ == "__main__":
