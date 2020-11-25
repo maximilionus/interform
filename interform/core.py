@@ -56,10 +56,9 @@ class BaseLang:
 
         if auto_file_creation:
             if not self.is_file_exist() or force_overwrite_file:
-                create_directories(self.local_file_path)
                 self.create_file()
 
-            self.reload()
+        self.reload()
 
     def __getitem__(self, key):
         return self.__parsed_dict[key]
@@ -271,6 +270,7 @@ class BaseLang:
         :return: Was the file created successfully
         :rtype: bool
         """
+        create_directories(self.local_file_path)
         self.write_dict_to_file(self.__default_dict)
 
         return True

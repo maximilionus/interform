@@ -35,6 +35,15 @@
 ## Development Releases
 
 
+### **1.2.0a1** : unreleased
+
+#### Added
+- Keyword argument `auto_file_creation` to all `*_Format` classes which will allow to disable the automatic local file creation on object initialization
+
+#### Changed
+- `.create_file()` method in all `*_Format` classes will now automatically create all detected dirs in path to local file
+
+
 ### **1.1.0a2** : unreleased
 
 #### Added
