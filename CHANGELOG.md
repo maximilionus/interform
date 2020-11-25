@@ -3,6 +3,15 @@
 ## Stable Releases
 
 
+### **1.2.0** : 2020.11.26
+
+#### Added
+- Keyword argument `auto_file_creation` to all `*_Format` classes which will allow to disable the automatic local file creation on `*_Format` object initialization
+
+#### Changed
+- In `*_Format` classes, instead of only `.create_file()` method, all directories generation now placed in `write_dict_to_file()` method. This change will affect all 'write to file' actions and prevent all path related issues.
+
+
 ### **1.1.2** : 2020.11.25
 
 #### Fixed
