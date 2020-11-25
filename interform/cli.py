@@ -76,11 +76,11 @@ def __generate_interform_object(file_path: str, file_lang: str) -> object:
 
     # TODO: Check for file existance
     if file_lang == 'json':
-        obj = JSON_Format(file_path)
+        obj = JSON_Format(file_path, auto_file_creation=False)
     elif file_lang == 'yaml' and yaml_imported:
-        obj = YAML_Format(file_path)
+        obj = YAML_Format(file_path, auto_file_creation=False)
     elif file_lang == 'toml' and toml_imported:
-        obj = TOML_Format(file_path)
+        obj = TOML_Format(file_path, auto_file_creation=False)
     else:
         print('language "{}" for file "{}" is not supported'.format(file_lang, file_path))
 
