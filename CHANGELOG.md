@@ -3,6 +3,12 @@
 ## Stable Releases
 
 
+### **1.1.2** : 2020.11.25
+
+#### Fixed
+- `.values` method in all `*_Format` classes will now return expected value. Before the fix, this method returned the values of bound to object default dictionary.
+
+
 ### **1.1.1** : 2020.11.24
 
 #### Fixed

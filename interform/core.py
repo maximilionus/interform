@@ -132,7 +132,7 @@ class BaseLang:
         :return: Values of the ``dictionary`` (, value)
         :rtype: list
         """
-        return self.__default_dict.values()
+        return self.__parsed_dict.values()
 
     def pop(self, key: Any, default=None) -> Any:
         """Pop key from ``dictionary``

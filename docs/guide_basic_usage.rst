@@ -47,7 +47,7 @@ Quickstart
         "indent": 4
     }
 
-``parser_write_kwargs`` variable is dictionary with keyword arguments that will be further passed to arguments of ``JSON_Format`` object to specify the additional params for DIF language parser on write action. At this moment we will only specify the `indent <parser_write_kwargs>`__ argument for ``json`` parser, that will enable the pretty printing.
+``parser_write_kwargs`` variable is dictionary with keyword arguments that will be further passed to arguments of ``JSON_Format`` object to specify the additional params for DIF language parser on write action. At this moment we will only specify the ``indent`` argument for `json parser <https://docs.python.org/3/library/json.html>`__, that will enable the pretty printing.
 
 4. Now we're moving to the main part - creation of the object that will be used for further interaction with local file.
 
@@ -133,7 +133,7 @@ Now our ``settings.json`` file will look like this:
         }
     }
 
-9. Now let's consider the situation that our local file (``settings.json``) was modified by some other programm. ``interform`` will never automatically refresh values of object, so you have to do it yourself.
+9. Now let's consider the situation that our local file (``settings.json``) was modified by some other application. ``interform`` will never automatically refresh values of object, so you have to do it yourself.
 
 Let's modify the ``settings.json`` file with any text editor and add the new key ``"custom_key"`` with value ``"hello?"``. Now our local file will look like this:
 
