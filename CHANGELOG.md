@@ -35,6 +35,12 @@
 ## Development Releases
 
 
+### **1.2.0a2** : unreleased
+
+#### Changed
+- In `*_Format` classes, instead of only `.create_file()` method, all directories generation now placed in `write_dict_to_file()` method. This change will affect all 'write to file' actions and prevent all path related issues.
+
+
 ### **1.2.0a1** : 2020.11.25
 
 #### Added

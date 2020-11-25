@@ -270,7 +270,6 @@ class BaseLang:
         :return: Was the file created successfully
         :rtype: bool
         """
-        create_directories(self.local_file_path)
         self.write_dict_to_file(self.__default_dict)
 
         return True
@@ -302,6 +301,7 @@ class BaseLang:
         :param dictionary: Dictionary that should be written to file
         :type dictionary: dict
         """
+        create_directories(self.local_file_path)
         self._core__write_dict_to_file(self.local_file_path, dictionary)
 
     def read_file_as_dict(self) -> dict:
