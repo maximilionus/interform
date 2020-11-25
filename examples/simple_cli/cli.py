@@ -64,7 +64,7 @@ if __name__ == '__main__':
         if result is not None:
             # If key exists in configuration dictionary -> commit the changes to local file
             cfg.commit()
-            print('successfully removed option '{}' from configuration file'.format(args.option))
+            print('successfully removed option "{}" from configuration file'.format(args.option))
         else:
             print('no such option in configuration file!')
 
