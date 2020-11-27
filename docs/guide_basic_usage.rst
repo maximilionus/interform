@@ -1,6 +1,9 @@
 Basic Usage
 ======================
 
+.. contents::
+    :local:
+
 About
 ----------------------
 In this section you can find a quickstart guide to ``interform`` package, that will show you the basics of how this tool can be used. For more code examples you can see `the examples directory on Github <https://github.com/maximilionus/interform/tree/master/examples>`_.
@@ -10,7 +13,9 @@ Quickstart
 ----------------------
 ``interform`` supports various data interchange languages (`full list <general.html#supported-languages>`__). This quickstart guide will be based on ``json`` language.
 
-1. Let's import the json language class from ``interform`` package
+Imports
+~~~~~~~~~~~~~~~~~~~~~~
+Let's import the json language class from ``interform`` package
 
 .. code-block:: python
     :linenos:
@@ -20,7 +25,12 @@ Quickstart
 .. note::
     Detailed ``JSON_Format`` documentation `can be found here <interform.langs.html#module-interform.langs.json>`__
 
-2. Next step we will define the default dictionary, that will be used later. Keys and values in it are absolutely random and meaningless 🙂.
+Preparation
+~~~~~~~~~~~~~~~~~~~~~~
+
+Default values
+""""""""""""""""""""""
+Next step we will define the default dictionary, that will be used later. Keys and values in it are absolutely random and meaningless 🙂.
 
 .. code-block:: python
     :linenos:
@@ -33,11 +43,13 @@ Quickstart
 
 
 .. note::
-    Specifying the default dictionary **is an optional step** and not required in your code, but this will allow us to specify the values, that will be written in local file on creation and may be used for "factory reset" feature.
+    Specifying the default dictionary **is optional** and not required in your code, but this will allow us to specify values that will be written to a local file on creation and can be used for a "factory reset" feature later.
 
-3. Let's also prepare some options for parser
-
+Parser Settings
+""""""""""""""""""""""
 .. versionadded:: 1.1.0
+
+Let's also prepare some options for ``json`` parser
 
 .. code-block:: python
     :linenos:
@@ -47,9 +59,11 @@ Quickstart
         "indent": 4
     }
 
-``parser_write_kwargs`` variable is dictionary with keyword arguments that will be further passed to arguments of ``JSON_Format`` object to specify the additional params for DIF language parser on write action. At this moment we will only specify the ``indent`` argument for `json parser <https://docs.python.org/3/library/json.html>`__, that will enable the pretty printing.
+``parser_write_kwargs`` variable is dictionary with keyword arguments that will be further passed to arguments of ``JSON_Format`` object to specify the additional params for DIF language parser on write action. At this moment we will only include the ``indent`` argument for `json parser <https://docs.python.org/3/library/json.html>`__, that will enable the pretty printing for output.
 
-4. Now we're moving to the main part - creation of the object that will be used for further interaction with local file.
+Creating Object
+~~~~~~~~~~~~~~~~~~~~~~
+Now we're moving to the main part - creating an object that will be used for further interaction with the local file.
 
 .. code-block:: python
     :linenos:
@@ -62,7 +76,7 @@ Quickstart
         parser_write_kwargs = parser_write_kwargs # Arguments, that will be passed to parser on write action
     )
 
-5. If no exceptions were raised then everything is ready. Now, if you check the file on the path, that we specified in line ``3`` of step ``2``, you can see there's a json format values parsed from our ``def_dict``.
+If no exceptions were raised then everything is ready. Now, if you check the file on the path, that we specified in line ``3`` of step `Default values`_, you can see there's a ``json`` format dictionary built from our ``def_dict``.
 
 .. code:: json
 
@@ -71,7 +85,20 @@ Quickstart
         "app_name": "Test"
     }
 
-6. The local file and object are ready. Now we can access any value from this file. Let's try this out:
+.. note::
+    If ``default_dictionary`` argument wasn't specified on object initialization then the local file still will be created. Its content will depend on how each language handles storing an empty dictionary. In our case, local file will look like this:
+
+    .. code-block:: json
+
+        {
+        }
+
+    .. versionadded:: 1.2.0
+        You can also disable the automatic local file creation on object initialization by passing the keyword argument ``auto_file_creation=False`` to ``JSON_Format`` object.
+
+Reading
+~~~~~~~~~~~~~~~~~~~~~~
+The local file and object are ready. Now we can access any value from this file. Let's try this out:
 
 .. code-block:: python
     :linenos:
@@ -84,7 +111,9 @@ Quickstart
     print("Application version: {}".format(app_version))  # Output should be:
                                                           # 'Application version: 5'
 
-7. Accessing the values is a good thing, but we're here not only for this, right? Next step we'll modify the value of one exising key and add the new key to object.
+Creating and modifying
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Accessing the values is a good thing, but we're here not only for this, right? Next step we'll modify the value of one exising key and add the new key to object.
 
 .. code-block:: python
     :linenos:
@@ -110,7 +139,20 @@ Quickstart
          'app_name': 'Super Secret Tool',
          'our_new_key': {'type': 'msg', 'id': 34724889325, 'text': 'wassup?'}}
 
-8. New key added, existing changed... but the local file still contains only the default values. This is not a bug, this is a feature. ``interform`` will never automatically save any user-made changes to a local file without a direct command to do so. So let's do it.
+Removing
+~~~~~~~~~~~~~~~~~~~~~~
+Now lets try to remove one key from dictionary. To remove any key you can use the python's `del() <https://docs.python.org/3/tutorial/datastructures.html#the-del-statement>`__ statement.
+
+.. code-block:: python
+    :linenos:
+    :lineno-start: 33
+
+    # Let's delete the "text" key from our nested dictionary "our_new_key"
+    del(config["our_new_key"]["text"])
+
+Saving changes
+~~~~~~~~~~~~~~~~~~~~~~
+New key added, existing changed and even removed - but the local file still contains only the default values. It's not a bug, it's a feature. ``interform`` will never automatically save any user-made changes to a local file without a direct command to do so. So let's send it.
 
 .. code-block:: python
     :linenos:
@@ -128,12 +170,13 @@ Now our ``settings.json`` file will look like this:
         "app_name": "Super Secret Tool",
         "our_new_key": {
             "type": "msg",
-            "id": 34724889325,
-            "text": "wassup?"
+            "id": 34724889325
         }
     }
 
-9. Now let's consider the situation that our local file (``settings.json``) was modified by some other application. ``interform`` will never automatically refresh values of object, so you have to do it yourself.
+Refreshing from file
+~~~~~~~~~~~~~~~~~~~~~~
+Now let's consider the situation that our local file (``settings.json``) was modified by some other application. ``interform`` will never automatically refresh values of object, so you have to do it yourself.
 
 Let's modify the ``settings.json`` file with any text editor and add the new key ``"custom_key"`` with value ``"hello?"``. Now our local file will look like this:
 
@@ -144,8 +187,7 @@ Let's modify the ``settings.json`` file with any text editor and add the new key
         "app_name": "Super Secret Tool",
         "our_new_key": {
             "type": "msg",
-            "id": 34724889325,
-            "text": "wassup?"
+            "id": 34724889325
         },
         "custom_key": "hello?"
     }
@@ -162,36 +204,12 @@ To get this key inside of our ``config`` object we'll have to refresh it with sp
     # After refreshing, "custom_key" key will be added to object and can be accessed
     print(config["custom_key"])  # Output: 'hello?'
 
-10. Now lets try to remove one key from dictionary. To remove any key you can use the python's `del() <https://docs.python.org/3/tutorial/datastructures.html#the-del-statement>`__
+.. note::
+    In some cases you should better use the ``.reload()`` method instead. Refreshing with ``.refresh()`` will save the changes that already made to object and add the new one from local file, but this feature is much slower than simply reloading the file. Therefore, if you are sure that no uncommitted changes have been made to the object, it is better to use the ``.reload()``.
 
-.. code-block:: python
-    :linenos:
-    :lineno-start: 33
-
-    # Let's delete the "text" key from our nested dictionary "our_new_key"
-    del(config["our_new_key"]["text"])
-
-
-    # Key was successfully removed from dictionary and now the only thing is left
-    # is to commit this change to local file with .commit() method
-    config.commit()
-
-After commiting the changes, ``settings.json`` will look like this
-
-.. code:: json
-
-    {
-        "version": 5,
-        "app_name": "Super Secret Tool",
-        "our_new_key": {
-            "type": "msg",
-            "id": 34724889325
-        },
-        "custom_key": "hello?"
-    }
-
-
-11. If you are not happy with all the changes made and want to return everything to the default state, here is a special method ``.reset_to_defaults()``` specially for you. This method will reset bound dictionary to values from ``def_dict`` variable that we specified at the beginning of this guide.
+Factory Reset
+~~~~~~~~~~~~~~~~~~~~~~
+If you are not happy with all the changes made and want to return everything to the default state, here's a method ``.reset_to_defaults()``` specially for you. This method will reset bound dictionary to values from ``def_dict`` variable that we specified at the beginning of this guide.
 
 .. code-block:: python
     :linenos:
@@ -207,4 +225,4 @@ After commiting the changes, ``settings.json`` will look like this
 Conclusion
 ---------------------
 
-That's it, now you're ready for basic usage of ``interform``. This package is fully documented with `docstrings <https://www.python.org/dev/peps/pep-0257/>`__, so you can get detailed information about any method, function, class, module or subpackage `here <interform.html>`__
+That's it, now you're ready for basic usage of ``interform``. Public API of this package is fully documented with `docstrings <https://www.python.org/dev/peps/pep-0257/>`__, so you can get detailed information about any method, function, class, module or anything `here <interform.html>`__

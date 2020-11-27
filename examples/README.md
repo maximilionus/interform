@@ -1,3 +1,2 @@
 # `interform` usage examples
-
-In this directory you can find the examples of package usage
+In this directory you can find examples of using this package.
