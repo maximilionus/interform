@@ -50,6 +50,13 @@
 ## Development Releases
 
 
+### **1.3.0a1** : unreleased
+
+#### Added
+- Command Line Interface *(CLI)*
+  - Format converter
+
+
 ### **1.2.0a2** : 2020.11.25
 
 #### Changed
