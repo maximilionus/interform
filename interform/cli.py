@@ -53,6 +53,11 @@ def convert(from_path: str, from_format: str, dest_path: str, dest_format: str):
 
 
 def __parse_args() -> Namespace:
+    """Parse all input cli arguments with ``argparse`` module
+
+    :return: Namespace with all arguments
+    :rtype: Namespace
+    """
     parser_main = ArgumentParser(
         description='command line interface toolset for "interform"'
     )
@@ -72,6 +77,15 @@ def __parse_args() -> Namespace:
 
 
 def __generate_interform_object(file_path: str, file_lang: str) -> BaseLang:
+    """Automatic generation of ``interform`` object
+
+    :param file_path: Path to file that will be used in object
+    :type file_path: str
+    :param file_lang: Language of this file
+    :type file_lang: str
+    :return: ``*_Format`` class object
+    :rtype: BaseLang
+    """
     obj = None
 
     if file_lang == 'json':
@@ -86,14 +100,25 @@ def __generate_interform_object(file_path: str, file_lang: str) -> BaseLang:
     return obj
 
 
-def start():
-    args = __parse_args()
+def main_cli(args: Namespace):
+    """Main cli handler that processes the input arguments
 
+    :param args: Arguments to be parsed
+    :type args: Namespace
+    """
     if args.command == 'convert':
         convert(
             args.from_path, args.from_format,
             args.dest_path, args.dest_format
         )
+
+
+def start():
+    """
+    Startup function that will read the input arguments and pass them
+    to main cli handler. Used by module and entry point calls.
+    """
+    main_cli(__parse_args())
 
 
 if __name__ == "__main__":
