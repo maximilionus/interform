@@ -53,8 +53,8 @@
 ### **1.3.0a1** : unreleased
 
 #### Added
-- Command Line Interface *(CLI)*
-  - Format converter
+- Command Line Interface *(CLI)* toolset
+  - Format converter tool
 
 
 ### **1.2.0a2** : 2020.11.25
