@@ -50,10 +50,10 @@
 ## Development Releases
 
 
-### **1.3.0a1** : unreleased
+### **1.3.0a1** : 2020.11.27
 
 #### Added
-- Command Line Interface *(CLI)* toolset
+- Command Line Interface *(CLI)* toolset with documentation
   - Format converter tool
 
 
