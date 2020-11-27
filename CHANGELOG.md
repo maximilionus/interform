@@ -3,6 +3,21 @@
 ## Stable Releases
 
 
+### **1.2.0** : 2020.11.26
+
+#### Added
+- Keyword argument `auto_file_creation` to all `*_Format` classes which will allow to disable the automatic local file creation on `*_Format` object initialization
+
+#### Changed
+- In `*_Format` classes, instead of only `.create_file()` method, all directories generation now placed in `write_dict_to_file()` method. This change will affect all 'write to file' actions and prevent all path related issues.
+
+
+### **1.1.2** : 2020.11.25
+
+#### Fixed
+- `.values` method in all `*_Format` classes will now return expected value. Before the fix, this method returned the values of bound to object default dictionary.
+
+
 ### **1.1.1** : 2020.11.24
 
 #### Fixed
@@ -35,13 +50,19 @@
 ## Development Releases
 
 
-### **1.2.0a1** : unreleased
-
-#### Added
-- Keyword argument `auto_file_creation` to all `*_Format` classes which will allow to disable the automatic local file creation on object initialization
+### **1.2.0a2** : 2020.11.25
 
 #### Changed
-- `.create_file()` method in all `*_Format` classes will now automatically create all detected dirs in path to local file
+- In `*_Format` classes, instead of only `.create_file()` method, all directories generation now placed in `write_dict_to_file()` method. This change will affect all 'write to file' actions and prevent all path related issues.
+
+
+### **1.2.0a1** : 2020.11.25
+
+#### Added
+- Keyword argument `auto_file_creation` to all `*_Format` classes which will allow to disable the automatic local file creation on `*_Format` object initialization
+
+#### Changed
+- ~~`.create_file()` method in all `*_Format` classes will now automatically create all detected dirs in path to local file~~
 
 
 ### **1.1.0a2** : unreleased
