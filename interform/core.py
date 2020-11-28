@@ -329,7 +329,6 @@ class BaseLang:
         :type file_path: str
         :param dictionary: Dictionary which will be written in ``file_path``
         :type dictionary: dict
-        :param kwargs: Any additional keyword arguments that can be used to pass advanced options to parser
         """
         pass
 
