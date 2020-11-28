@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Basic Usage &mdash; interform 1.3.2 documentation</title>
+  <title>Basic Usage &mdash; serialix 2.0.0 documentation</title>
   
 
   
@@ -51,7 +51,7 @@
           
 
           
-            <a href="index.html" class="icon icon-home" alt="Documentation Home"> interform
+            <a href="index.html" class="icon icon-home" alt="Documentation Home"> serialix
           
 
           
@@ -109,7 +109,6 @@
 </li>
 <li class="toctree-l1"><a class="reference internal" href="guide_cli.html">CLI Toolset</a></li>
 <li class="toctree-l1"><a class="reference internal" href="guide_advanced_features.html">Advanced Features</a></li>
-<li class="toctree-l1"><a class="reference internal" href="interform.html">interform</a></li>
 </ul>
 
             
@@ -125,7 +124,7 @@
       <nav class="wy-nav-top" aria-label="top navigation">
         
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-          <a href="index.html">interform</a>
+          <a href="index.html">serialix</a>
         
       </nav>
 
@@ -203,20 +202,20 @@
 </div>
 <div class="section" id="about">
 <h2><a class="toc-backref" href="#id1">About</a><a class="headerlink" href="#about" title="Permalink to this headline">¶</a></h2>
-<p>In this section you can find a quickstart guide to <code class="docutils literal notranslate"><span class="pre">interform</span></code> package, that will show you the basics of how this tool can be used. For more code examples you can see <a class="reference external" href="https://github.com/maximilionus/interform/tree/master/examples">the examples directory on Github</a>.</p>
+<p>In this section you can find a quickstart guide to <code class="docutils literal notranslate"><span class="pre">serialix</span></code> package, that will show you the basics of how this tool can be used. For more code examples you can see <a class="reference external" href="https://github.com/maximilionus/serialix/tree/master/examples">the examples directory on Github</a>.</p>
 </div>
 <div class="section" id="quickstart">
 <h2><a class="toc-backref" href="#id2">Quickstart</a><a class="headerlink" href="#quickstart" title="Permalink to this headline">¶</a></h2>
-<p><code class="docutils literal notranslate"><span class="pre">interform</span></code> supports various data interchange languages (<a class="reference external" href="general.html#supported-languages">full list</a>). This quickstart guide will be based on <code class="docutils literal notranslate"><span class="pre">json</span></code> language.</p>
+<p><code class="docutils literal notranslate"><span class="pre">serialix</span></code> supports various data interchange languages (<a class="reference external" href="general.html#supported-languages">full list</a>). This quickstart guide will be based on <code class="docutils literal notranslate"><span class="pre">json</span></code> language.</p>
 <div class="section" id="imports">
 <h3><a class="toc-backref" href="#id3">Imports</a><a class="headerlink" href="#imports" title="Permalink to this headline">¶</a></h3>
-<p>Let’s import the json language class from <code class="docutils literal notranslate"><span class="pre">interform</span></code> package</p>
-<div class="highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">interform</span> <span class="kn">import</span> <span class="n">JSON_Format</span>
+<p>Let’s import the json language class from <code class="docutils literal notranslate"><span class="pre">serialix</span></code> package</p>
+<div class="highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">serialix</span> <span class="kn">import</span> <span class="n">JSON_Format</span>
 </pre></div>
 </td></tr></table></div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>Detailed <code class="docutils literal notranslate"><span class="pre">JSON_Format</span></code> documentation <a class="reference external" href="interform.langs.html#module-interform.langs.json">can be found here</a></p>
+<p>Detailed <code class="docutils literal notranslate"><span class="pre">JSON_Format</span></code> documentation <a class="reference external" href="serialix.langs.html#module-serialix.langs.json">can be found here</a></p>
 </div>
 </div>
 <div class="section" id="preparation">
@@ -330,7 +329,7 @@
 </td></tr></table></div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>As you may already noticed, the way of interacting with <code class="docutils literal notranslate"><span class="pre">interform</span></code> objects is quite same to dictionaries. That’s right, <code class="docutils literal notranslate"><span class="pre">interform</span></code> provides quick access to the bound dictionary keys and methods. This dictionary contains the parsed from local file keys and values and can be directly accessed through <code class="docutils literal notranslate"><span class="pre">.dictionary</span></code> object property:</p>
+<p>As you may already noticed, the way of interacting with <code class="docutils literal notranslate"><span class="pre">serialix</span></code> objects is quite same to dictionaries. That’s right, <code class="docutils literal notranslate"><span class="pre">serialix</span></code> provides quick access to the bound dictionary keys and methods. This dictionary contains the parsed from local file keys and values and can be directly accessed through <code class="docutils literal notranslate"><span class="pre">.dictionary</span></code> object property:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">config</span><span class="o">.</span><span class="n">dictionary</span>
 <span class="go">{&#39;version&#39;: 5,</span>
 <span class="go"> &#39;app_name&#39;: &#39;Super Secret Tool&#39;,</span>
@@ -350,7 +349,7 @@
 </div>
 <div class="section" id="saving-changes">
 <h3><a class="toc-backref" href="#id11">Saving changes</a><a class="headerlink" href="#saving-changes" title="Permalink to this headline">¶</a></h3>
-<p>New key added, existing changed and even removed - but the local file still contains only the default values. It’s not a bug, it’s a feature. <code class="docutils literal notranslate"><span class="pre">interform</span></code> will never automatically save any user-made changes to a local file without a direct command to do so. So let’s send it.</p>
+<p>New key added, existing changed and even removed - but the local file still contains only the default values. It’s not a bug, it’s a feature. <code class="docutils literal notranslate"><span class="pre">serialix</span></code> will never automatically save any user-made changes to a local file without a direct command to do so. So let’s send it.</p>
 <div class="highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>26
 27</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="c1"># This method will commit all changes from object to local file</span>
 <span class="n">config</span><span class="o">.</span><span class="n">commit</span><span class="p">()</span>
@@ -370,7 +369,7 @@
 </div>
 <div class="section" id="refreshing-from-file">
 <h3><a class="toc-backref" href="#id12">Refreshing from file</a><a class="headerlink" href="#refreshing-from-file" title="Permalink to this headline">¶</a></h3>
-<p>Now let’s consider the situation that our local file (<code class="docutils literal notranslate"><span class="pre">settings.json</span></code>) was modified by some other application. <code class="docutils literal notranslate"><span class="pre">interform</span></code> will never automatically refresh values of object, so you have to do it yourself.</p>
+<p>Now let’s consider the situation that our local file (<code class="docutils literal notranslate"><span class="pre">settings.json</span></code>) was modified by some other application. <code class="docutils literal notranslate"><span class="pre">serialix</span></code> will never automatically refresh values of object, so you have to do it yourself.</p>
 <p>Let’s modify the <code class="docutils literal notranslate"><span class="pre">settings.json</span></code> file with any text editor and add the new key <code class="docutils literal notranslate"><span class="pre">&quot;custom_key&quot;</span></code> with value <code class="docutils literal notranslate"><span class="pre">&quot;hello?&quot;</span></code>. Now our local file will look like this:</p>
 <div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
     <span class="nt">&quot;version&quot;</span><span class="p">:</span> <span class="mi">5</span><span class="p">,</span>
@@ -418,7 +417,7 @@
 </div>
 <div class="section" id="conclusion">
 <h2><a class="toc-backref" href="#id14">Conclusion</a><a class="headerlink" href="#conclusion" title="Permalink to this headline">¶</a></h2>
-<p>That’s it, now you’re ready for basic usage of <code class="docutils literal notranslate"><span class="pre">interform</span></code>. Public API of this package is fully documented with <a class="reference external" href="https://www.python.org/dev/peps/pep-0257/">docstrings</a>, so you can get detailed information about any method, function, class, module or anything <a class="reference external" href="interform.html">here</a></p>
+<p>That’s it, now you’re ready for basic usage of <code class="docutils literal notranslate"><span class="pre">serialix</span></code>. Public API of this package is fully documented with <a class="reference external" href="https://www.python.org/dev/peps/pep-0257/">docstrings</a>, so you can get detailed information about any method, function, class, module or anything <a class="reference external" href="serialix.html">here</a></p>
 </div>
 </div>
 

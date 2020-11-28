@@ -1,7 +1,7 @@
-interform
+serialix
 ==========
 
 .. toctree::
    :maxdepth: 4
 
-   interform
+   serialix

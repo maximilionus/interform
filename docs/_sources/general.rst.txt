@@ -7,7 +7,7 @@ General Information
 
 About
 --------------------------------
-``interform`` is a powerful and easy-to-use tool that provides a unified interaction layer for various data interchange formats *(DIF)* like json, yaml, etc. Due to the how this tool designed, all the supported languages share the identical base between each other, meaning that process of working with those languages will be almost the same. Tool can also be extended for your purposes or even your own DIF language parser support.
+``serialix`` is a powerful and easy-to-use tool that provides a unified interaction layer for various data interchange formats *(DIF)* like json, yaml, etc. Due to the how this tool designed, all the supported languages share the identical base between each other, meaning that process of working with those languages will be almost the same. Tool can also be extended for your purposes or even your own DIF language parser support.
 
 
 Supported Languages
@@ -41,11 +41,11 @@ List of classes for supported DIF languages, that can be used:
     Support for TOML language
 
 
-All ``interform``'s supported languages are easy to access and can be imported straight from main package without stating any subpackage or submodule:
+All ``serialix``'s supported languages are easy to access and can be imported straight from main package without stating any subpackage or submodule:
 
 .. code:: python
 
-    from interform import <lang_class_here>
+    from serialix import <lang_class_here>
 
     # <lang_class_here> should be replaced
     # with any class name listed above
@@ -53,7 +53,7 @@ All ``interform``'s supported languages are easy to access and can be imported s
 
 Module Hierarchy
 --------------------------------
-- ``interform`` - Contains main language parsers and module meta information imports for easy access.
+- ``serialix`` - Contains main language parsers and module meta information imports for easy access.
     - ``core`` - Realisation of basic features, that will be inherited and used in other modules.
     - ``meta`` - Meta information, like version, author, etc.
     - ``cli`` - CLI realisation module. No public API available.

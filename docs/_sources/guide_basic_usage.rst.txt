@@ -6,24 +6,24 @@ Basic Usage
 
 About
 ----------------------
-In this section you can find a quickstart guide to ``interform`` package, that will show you the basics of how this tool can be used. For more code examples you can see `the examples directory on Github <https://github.com/maximilionus/interform/tree/master/examples>`_.
+In this section you can find a quickstart guide to ``serialix`` package, that will show you the basics of how this tool can be used. For more code examples you can see `the examples directory on Github <https://github.com/maximilionus/serialix/tree/master/examples>`_.
 
 
 Quickstart
 ----------------------
-``interform`` supports various data interchange languages (`full list <general.html#supported-languages>`__). This quickstart guide will be based on ``json`` language.
+``serialix`` supports various data interchange languages (`full list <general.html#supported-languages>`__). This quickstart guide will be based on ``json`` language.
 
 Imports
 ~~~~~~~~~~~~~~~~~~~~~~
-Let's import the json language class from ``interform`` package
+Let's import the json language class from ``serialix`` package
 
 .. code-block:: python
     :linenos:
 
-    from interform import JSON_Format
+    from serialix import JSON_Format
 
 .. note::
-    Detailed ``JSON_Format`` documentation `can be found here <interform.langs.html#module-interform.langs.json>`__
+    Detailed ``JSON_Format`` documentation `can be found here <serialix.langs.html#module-serialix.langs.json>`__
 
 Preparation
 ~~~~~~~~~~~~~~~~~~~~~~
@@ -130,7 +130,7 @@ Accessing the values is a good thing, but we're here not only for this, right? N
     }
 
 .. note::
-    As you may already noticed, the way of interacting with ``interform`` objects is quite same to dictionaries. That's right, ``interform`` provides quick access to the bound dictionary keys and methods. This dictionary contains the parsed from local file keys and values and can be directly accessed through ``.dictionary`` object property:
+    As you may already noticed, the way of interacting with ``serialix`` objects is quite same to dictionaries. That's right, ``serialix`` provides quick access to the bound dictionary keys and methods. This dictionary contains the parsed from local file keys and values and can be directly accessed through ``.dictionary`` object property:
 
     .. code:: python
 
@@ -152,7 +152,7 @@ Now lets try to remove one key from dictionary. To remove any key you can use th
 
 Saving changes
 ~~~~~~~~~~~~~~~~~~~~~~
-New key added, existing changed and even removed - but the local file still contains only the default values. It's not a bug, it's a feature. ``interform`` will never automatically save any user-made changes to a local file without a direct command to do so. So let's send it.
+New key added, existing changed and even removed - but the local file still contains only the default values. It's not a bug, it's a feature. ``serialix`` will never automatically save any user-made changes to a local file without a direct command to do so. So let's send it.
 
 .. code-block:: python
     :linenos:
@@ -176,7 +176,7 @@ Now our ``settings.json`` file will look like this:
 
 Refreshing from file
 ~~~~~~~~~~~~~~~~~~~~~~
-Now let's consider the situation that our local file (``settings.json``) was modified by some other application. ``interform`` will never automatically refresh values of object, so you have to do it yourself.
+Now let's consider the situation that our local file (``settings.json``) was modified by some other application. ``serialix`` will never automatically refresh values of object, so you have to do it yourself.
 
 Let's modify the ``settings.json`` file with any text editor and add the new key ``"custom_key"`` with value ``"hello?"``. Now our local file will look like this:
 
@@ -225,4 +225,4 @@ If you are not happy with all the changes made and want to return everything to 
 Conclusion
 ---------------------
 
-That's it, now you're ready for basic usage of ``interform``. Public API of this package is fully documented with `docstrings <https://www.python.org/dev/peps/pep-0257/>`__, so you can get detailed information about any method, function, class, module or anything `here <interform.html>`__
+That's it, now you're ready for basic usage of ``serialix``. Public API of this package is fully documented with `docstrings <https://www.python.org/dev/peps/pep-0257/>`__, so you can get detailed information about any method, function, class, module or anything `here <serialix.html>`__
