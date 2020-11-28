@@ -1,4 +1,4 @@
-interform
+serialix
 ==================
 
 Subpackages
@@ -7,35 +7,35 @@ Subpackages
 .. toctree::
    :maxdepth: 4
 
-   interform.langs
-   interform.tests
+   serialix.langs
+   serialix.tests
 
 
 Submodules
 ----------
 
-interform.__init\__
+serialix.__init\__
 ----------------------
 
-.. automodule:: interform.__init__
+.. automodule:: serialix.__init__
    :members:
    :undoc-members:
    :private-members:
    :show-inheritance:
 
-interform.core module
+serialix.core module
 ----------------------
 
-.. automodule:: interform.core
+.. automodule:: serialix.core
    :members:
    :undoc-members:
    :private-members:
    :show-inheritance:
 
-interform.meta module
+serialix.meta module
 ----------------------
 
-.. automodule:: interform.meta
+.. automodule:: serialix.meta
    :members:
    :undoc-members:
    :show-inheritance:

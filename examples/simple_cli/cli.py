@@ -1,6 +1,6 @@
 from argparse import ArgumentParser, Namespace
 
-from interform import JSON_Format
+from serialix import JSON_Format
 
 
 # Default dictionary, that will be used later
@@ -11,7 +11,7 @@ prog_default_dict = {
 
 def parse_input_args() -> Namespace:
     """Parse script input arguments with argparse module"""
-    arg_parser = ArgumentParser(description='Simple CLI example with interform package')
+    arg_parser = ArgumentParser(description='Simple CLI example with serialix package')
 
     subparsers = arg_parser.add_subparsers(dest='command')
 

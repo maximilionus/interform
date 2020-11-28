@@ -1,4 +1,4 @@
-Welcome to interform documentation!
+Welcome to serialix documentation!
 ======================================
 
 | For version: |release|
@@ -13,7 +13,7 @@ Welcome to interform documentation!
    guide_basic_usage
    guide_cli
    guide_advanced_features
-   interform
+   serialix
 
 
 

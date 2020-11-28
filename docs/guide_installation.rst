@@ -6,11 +6,11 @@ Before Installation
 
 About Structure
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-``interform`` module comes with support for various languages parsers. Yet, not all of this parsers are natively available in python. By default, ``interform`` will not install any external packages, so if your language is not in `Supported Languages <general.html#supported-languages>`__ -> **Native Support**, you will have to specify the installation mode for ``interform`` with this command:
+``serialix`` module comes with support for various languages parsers. Yet, not all of this parsers are natively available in python. By default, ``serialix`` will not install any external packages, so if your language is not in `Supported Languages <general.html#supported-languages>`__ -> **Native Support**, you will have to specify the installation mode for ``serialix`` with this command:
 
 .. code-block:: bash
 
-    pip install interform[mode]
+    pip install serialix[mode]
 
 Where ``mode`` is one of the listed in `Installation Modes`_ options:
 
@@ -26,29 +26,29 @@ Installation Modes
     Support for ``TOML`` language with `toml parser <https://pypi.org/project/toml/>`__
 
 :``full``:
-    Install ``interform`` with support for all external parsers listed above
+    Install ``serialix`` with support for all external parsers listed above
 
 :``test``:
     Full installation with unit testing support (via `pytest <https://pypi.org/project/pytest/>`_ package)
 
 Example
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-For example, to install the ``interform`` with ``ujson`` parser:
+For example, to install the ``serialix`` with ``ujson`` parser:
 
 .. code-block:: bash
 
-    pip install interform[ujson]
+    pip install serialix[ujson]
 
 Install with pip
 --------------------------------------
 
-How to install the ``interform`` from **PyPI**:
+How to install the ``serialix`` from **PyPI**:
 
 #. Run
 
     .. code-block:: bash
 
-        pip install interform
+        pip install serialix
 
 Install from Github
 --------------------------------------
@@ -58,21 +58,21 @@ To do this, run:
 
 .. code-block:: bash
 
-    pip install git+https://github.com/maximilionus/interform.git
+    pip install git+https://github.com/maximilionus/serialix.git
 
 .. note::
 
-    Installing via this link will download and install the latest available version of ``interform`` package. To install the specific version of package you should add ``@vX.X.X`` to the end of git repo link. So, for example, you can install version *1.0.0* like this:
+    Installing via this link will download and install the latest available version of ``serialix`` package. To install the specific version of package you should add ``@vX.X.X`` to the end of git repo link. So, for example, you can install version *1.0.0* like this:
 
     .. code-block:: bash
 
-        pip install git+https://github.com/maximilionus/interform.git@v1.0.0
+        pip install git+https://github.com/maximilionus/serialix.git@v1.0.0
 
 Install from source
 --------------------------------------
-How to install ``interform`` from source files:
+How to install ``serialix`` from source files:
 
-#. Download source files from `github releases <https://github.com/maximilionus/interform/releases>`__
+#. Download source files from `github releases <https://github.com/maximilionus/serialix/releases>`__
 
 For usage
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -91,7 +91,7 @@ For usage
         pip install .
 
 .. note::
-    If you want to install ``interform`` with support for any external package(-s), you can also specify it like this:
+    If you want to install ``serialix`` with support for any external package(-s), you can also specify it like this:
 
     .. code-block:: bash
 

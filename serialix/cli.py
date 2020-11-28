@@ -31,8 +31,8 @@ def convert(from_path: str, from_format: str, dest_path: str, dest_format: str):
     :param dest_format: desired file format
     :type dest_format: str
     """
-    from_object = __generate_interform_object(from_path, from_format)
-    dest_object = __generate_interform_object(dest_path, dest_format)
+    from_object = __generate_serialix_object(from_path, from_format)
+    dest_object = __generate_serialix_object(dest_path, dest_format)
 
     if from_object is not None and dest_object is not None:
         if not from_object.is_file_exist():
@@ -59,7 +59,7 @@ def __parse_args() -> Namespace:
     :rtype: Namespace
     """
     parser_main = ArgumentParser(
-        description='command line interface toolset for "interform"'
+        description='command line interface toolset for "serialix"'
     )
     subparsers = parser_main.add_subparsers(dest='command')
 
@@ -76,8 +76,8 @@ def __parse_args() -> Namespace:
     return parser_main.parse_args()
 
 
-def __generate_interform_object(file_path: str, file_lang: str) -> BaseLang:
-    """Automatic generation of ``interform`` object
+def __generate_serialix_object(file_path: str, file_lang: str) -> BaseLang:
+    """Automatic generation of ``serialix`` object
 
     :param file_path: Path to file that will be used in object
     :type file_path: str
