@@ -56,6 +56,7 @@ Module Hierarchy
 - ``interform`` - Contains main language parsers and module meta information imports for easy access.
     - ``core`` - Realisation of basic features, that will be inherited and used in other modules.
     - ``meta`` - Meta information, like version, author, etc.
+    - ``cli`` - CLI realisation module. No public API available.
     - ``langs`` - Subpackage with realisation of main features for various DIF languages
         - ``json``
         - ``toml``
