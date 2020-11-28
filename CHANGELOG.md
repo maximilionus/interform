@@ -3,6 +3,13 @@
 ## Stable Releases
 
 
+### **1.3.0** : 2020.11.28
+
+#### Added
+- Command Line Interface *(CLI)* toolset with documentation
+  - Format converter tool
+
+
 ### **1.2.0** : 2020.11.26
 
 #### Added
