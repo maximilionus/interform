@@ -11,6 +11,7 @@ Welcome to interform documentation!
    general
    guide_installation
    guide_basic_usage
+   guide_cli
    guide_advanced_features
    interform
 
