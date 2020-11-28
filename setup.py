@@ -4,13 +4,13 @@ from setuptools import setup, find_packages
 def get_package_version() -> str:
     nspace = {}
 
-    with open('./interform/meta.py', 'r') as f:
+    with open('./serialix/meta.py', 'r') as f:
         exec(f.read(), nspace)
 
     return nspace['__version__']
 
 
-package_name = 'interform'
+package_name = 'serialix'
 package_version = get_package_version()
 
 # Form extras
@@ -47,14 +47,14 @@ setup(
     extras_require=extras_require,
     entry_points={
         'console_scripts': [
-            'interformcli = interform.cli:start'
+            'serialixcli = serialix.cli:start'
         ]
     },
     license='MIT',
-    url='https://github.com/maximilionus/interform',
+    url='https://github.com/maximilionus/serialix',
     project_urls={
-        'Documentation': 'https://maximilionus.github.io/interform',
-        'Tracker': 'https://github.com/maximilionus/interform/issues'
+        'Documentation': 'https://maximilionus.github.io/serialix',
+        'Tracker': 'https://github.com/maximilionus/serialix/issues'
     },
     classifiers=[
         'Development Status :: 5 - Production/Stable',

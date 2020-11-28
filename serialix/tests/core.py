@@ -1,7 +1,7 @@
 from shutil import rmtree
 from os import path, chdir
 
-from interform.core import BaseLang
+from serialix.core import BaseLang
 
 
 temp_dir_path = './temp/'

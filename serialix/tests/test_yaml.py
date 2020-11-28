@@ -1,27 +1,29 @@
-import json
-
 import pytest
+from ruamel.yaml import YAML
 
-from interform import JSON_Format
+from serialix import YAML_Format
 
 from .core import BaseLangTest, local_file_path,\
     default_local_file_dict, default_cfg_path
 
 
-@pytest.mark.json
+yaml = YAML()
+
+
+@pytest.mark.yaml
 class Test_Create_DefDict(BaseLangTest):
     """
     Create local file on `local_file_path`
     and get default config values from `default_local_file_dict`
     """
     def setup(self):
-        self.language_object = JSON_Format(
+        self.language_object = YAML_Format(
             local_file_path,
             default_local_file_dict
         )
 
 
-@pytest.mark.json
+@pytest.mark.yaml
 class Test_Create_DefPath(BaseLangTest):
     """
     Read existing file on `local_file_path`
@@ -29,9 +31,9 @@ class Test_Create_DefPath(BaseLangTest):
     """
     def setup(self):
         with open(default_cfg_path, 'w') as f:
-            json.dump(default_local_file_dict, f)
+            yaml.dump(default_local_file_dict, f)
 
-        self.language_object = JSON_Format(
+        self.language_object = YAML_Format(
             local_file_path,
             default_cfg_path
         )

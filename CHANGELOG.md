@@ -1,4 +1,4 @@
-# Interform Changelog
+# serialix Changelog
 
 ## Stable Releases
 
@@ -6,7 +6,7 @@
 ### **1.3.1** : 2020.11.28
 
 #### Fixed
-- Docstrings for `interform.core.BaseLang`
+- Docstrings for `serialix.core.BaseLang`
 
 
 ### **1.3.0** : 2020.11.28
@@ -140,7 +140,7 @@
 ### Fixed
 - `.core.*`
   - `BaseLang.copy()` and `recursive_dicts_merge()` copy was fixed with `copy.deepcopy()` module to remove all references to original dictionary
-- `ModuleNotFoundError` exception on importing `interform` without external package installed
+- `ModuleNotFoundError` exception on importing `serialix` without external package installed
 
 ### Changed
 - Version changed to `1.0.0dev1` for test release purpose

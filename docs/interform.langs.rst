@@ -1,41 +1,41 @@
-interform.langs package
+serialix.langs package
 ==========================
 
 Module contents
 ---------------
 
-.. automodule:: interform.langs
+.. automodule:: serialix.langs
 
 
 Submodules
 ----------
 
 
-interform.langs.json module
+serialix.langs.json module
 ------------------------------
 
-.. automodule:: interform.langs.json
+.. automodule:: serialix.langs.json
    :members:
    :inherited-members:
    :undoc-members:
    :show-inheritance:
 
 
-.. _interform_langs_yaml:
+.. _serialix_langs_yaml:
 
-interform.langs.yaml module
+serialix.langs.yaml module
 ------------------------------
 
-.. automodule:: interform.langs.yaml
+.. automodule:: serialix.langs.yaml
    :members:
    :inherited-members:
    :undoc-members:
    :show-inheritance:
 
-interform.langs.toml module
+serialix.langs.toml module
 ------------------------------
 
-.. automodule:: interform.langs.toml
+.. automodule:: serialix.langs.toml
    :members:
    :inherited-members:
    :undoc-members:

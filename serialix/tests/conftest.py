@@ -1,6 +1,6 @@
 import pytest
 
-from interform.core import create_directories
+from serialix.core import create_directories
 
 from . import core
 

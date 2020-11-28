@@ -1,7 +1,7 @@
 # CLI Example
 
 ## About
-Example of the `interform` package usage in simple command line interface tool that can store the data in local file `settings.json`, built with help of the python built-in module `argparse` and using the `JSON_Format` configuration file.
+Example of the `serialix` package usage in simple command line interface tool that can store the data in local file `settings.json`, built with help of the python built-in module `argparse` and using the `JSON_Format` configuration file.
 
 ## Commands
 | Command            | Description                               |

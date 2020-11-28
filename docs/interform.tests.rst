@@ -1,43 +1,43 @@
-interform.tests package
+serialix.tests package
 ========================
 
 Module contents
 ---------------
 
-.. automodule:: interform.tests
+.. automodule:: serialix.tests
 
 Submodules
 ----------
 
-interform.tests.conftest module
+serialix.tests.conftest module
 --------------------------------
 
-.. automodule:: interform.tests.conftest
+.. automodule:: serialix.tests.conftest
    :members:
    :undoc-members:
    :show-inheritance:
 
-interform.tests.core module
+serialix.tests.core module
 ----------------------------
 
-.. automodule:: interform.tests.core
+.. automodule:: serialix.tests.core
    :members:
    :undoc-members:
    :show-inheritance:
 
-interform.tests.test\_json module
+serialix.tests.test\_json module
 ----------------------------------
 
-.. automodule:: interform.tests.test_json
+.. automodule:: serialix.tests.test_json
    :inherited-members:
    :members:
    :undoc-members:
    :show-inheritance:
 
-interform.tests.test\_yaml module
+serialix.tests.test\_yaml module
 ----------------------------------
 
-.. automodule:: interform.tests.test_yaml
+.. automodule:: serialix.tests.test_yaml
    :inherited-members:
    :members:
    :undoc-members:

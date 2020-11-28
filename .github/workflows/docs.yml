@@ -7,7 +7,7 @@ on:
     paths:
       - '.github/workflows/docs.yml'
       - 'docs/**'
-      - 'interform/**'
+      - 'serialix/**'
 
 
 jobs:
