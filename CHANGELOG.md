@@ -3,6 +3,12 @@
 ## Stable Releases
 
 
+### **1.3.2** : 2020.11.29
+
+#### Notification
+⚠ `interform` will be renamed to `serialix` from version **2.0.0**
+
+
 ### **1.3.1** : 2020.11.28
 
 #### Fixed

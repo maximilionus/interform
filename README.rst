@@ -1,3 +1,5 @@
+    ⚠ ``interform`` will be renamed to ``serialix`` from version **2.0.0**. New package will be located `on this url <https://pypi.org/project/serialix/>`__
+
 interform
 =======================================
 
