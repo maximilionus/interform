@@ -17,7 +17,3 @@ ruamel.yaml<=0.17.20
 
 # TOML parser
 toml<=0.10.2
-
-# Documentation
-Sphinx~=4.3.2
-furo==2022.1.2
