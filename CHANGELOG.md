@@ -3,6 +3,15 @@
 ## Stable Releases
 
 
+### **2.0.1** : dunno man, when its ready
+
+> This QOL *(Quality Of Life)* update is focused on updating the external packages version locks and enhancing the overall package quality with documentation, unit-testing and other features updated.
+
+#### Changed
+- Updated the YAML language parser ([`ruamel.yaml`](https://pypi.org/project/ruamel.yaml/)) support to the latest version *(0.17.20)*
+- Updated the [`ujson`](https://pypi.org/project/ujson/) supported version up to the latest `5.1.0`
+
+
 ### **2.0.0** : 2020.11.28
 
 #### Changed
