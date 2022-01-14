@@ -1,4 +1,4 @@
-from datetime import datetime
+from datetime import datetime, date
 
 from serialix.meta import __version__ as serialix_version
 
@@ -23,7 +23,7 @@ sys.path.insert(0, os.path.abspath('..'))
 # -- Project information -----------------------------------------------------
 
 project = 'serialix'
-copyright = '2020, maximilionus'
+copyright = '{}, maximilionus'.format(date.today().year)
 author = 'maximilionus'
 
 # The full version, including alpha/beta/rc tags
@@ -57,4 +57,4 @@ html_static_path = ['_static']
 exclude_patterns = ['_build', 'Thumbs.db', '.DS_Store']
 
 
-html_theme = 'sphinx_rtd_theme'
+html_theme = 'furo'

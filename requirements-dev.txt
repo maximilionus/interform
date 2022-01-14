@@ -20,4 +20,4 @@ toml<=0.10.2
 
 # Documentation
 Sphinx~=4.3.2
-sphinx-rtd-theme~=1.0.0
+furo==2022.1.2

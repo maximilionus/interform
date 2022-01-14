@@ -1,9 +1,6 @@
 Basic Usage
 ======================
 
-.. contents::
-    :local:
-
 About
 ----------------------
 In this section you can find a quickstart guide to ``serialix`` package, that will show you the basics of how this tool can be used. For more code examples you can see `the examples directory on Github <https://github.com/maximilionus/serialix/tree/master/examples>`_.

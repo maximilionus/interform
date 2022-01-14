@@ -1,10 +1,6 @@
 serialix
 =======================================
 
-.. contents:: Table of Contents
-    :depth: 2
-    :local:
-
 About
 --------------------------------------
 ``serialix`` is a powerful and easy-to-use tool that provides a unified interaction layer for various data interchange formats *(DIF)* like json, yaml, etc. Due to the how this tool designed, all the supported languages share the identical base between each other, meaning that process of working with those languages will be almost the same. Tool can also be extended for your purposes or even your own DIF language parser support.
