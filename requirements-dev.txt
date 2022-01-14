@@ -10,14 +10,14 @@ pytest<7
 -e .
 
 # JSON custom parser
-ujson<=4.0.1
+ujson<=5.1.0
 
 # Yaml parser
-ruamel.yaml<=0.16.12
+ruamel.yaml<=0.17.20
 
 # TOML parser
 toml<=0.10.2
 
 # Documentation
-Sphinx~=3.3
-sphinx-rtd-theme~=0.5
+Sphinx~=4.3.2
+sphinx-rtd-theme~=1.0.0

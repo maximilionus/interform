@@ -75,6 +75,13 @@
 ## Development Releases
 
 
+### **2.0.1a1** : 2022.01.14
+
+#### Changed
+- Updated the YAML language parser ([`ruamel.yaml`](https://pypi.org/project/ruamel.yaml/)) support to the latest version *(0.17.20)*
+- Updated the [`ujson`](https://pypi.org/project/ujson/) supported version up to the latest `5.1.0`
+
+
 ### **1.3.0a1** : 2020.11.27
 
 #### Added
