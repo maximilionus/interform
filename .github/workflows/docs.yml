@@ -25,12 +25,13 @@ jobs:
       - uses: actions/checkout@v2
         with:
           ref: 'docs_source'
+          fetch-depth: 0
 
       - name: Prepare the docs repository
         uses: actions/checkout@v2
         with:
+          ref: docs
           path: temp_repo
-          fetch-depth: 0
           run: |
             cd temp_repo
             git checkout docs
@@ -49,7 +50,7 @@ jobs:
 
       - name: Build documentation from master branch
         run: |
-          make build branch="origin/master"
+          make build branch=master
           mv docs/_build/html ./temp_repo/docs
 
       - name: Deploy the documentation
