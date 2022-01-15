@@ -1,0 +1,23 @@
+# Ignore python cache dirs
+__pycache__/
+
+# Ignore virtual env dir
+.venv/
+
+# Ignore VSCode cache
+.vscode/
+
+# Ignore all temporary directories
+temp/
+
+# Built documentation
+docs/_build
+
+# serialix source files
+/serialix/
+/setup.py
+/README.rst
+/requirements-dev.txt
+*.egg-info/
+/build/
+/dist/
