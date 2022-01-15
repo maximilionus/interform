@@ -45,6 +45,7 @@ jobs:
       - name: Build documentation from master branch
         run: |
           make build branch="origin/master"
+          rm -rf ./temp_repo/docs
           mv docs/_build/html/* ./temp_repo/docs
 
       - name: Deploy the documentation
@@ -52,7 +53,6 @@ jobs:
           cd temp_repo
           git config --global user.name "github-actions"
           git config --global user.email "github-actions@github.com"
-          rm -rf ./docs
           git add --all
           git commit -m"Documentation build"
           git push
