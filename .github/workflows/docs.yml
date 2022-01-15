@@ -48,7 +48,7 @@ jobs:
       - name: Build documentation from master branch
         run: |
           make build branch="origin/master"
-          mv docs/_build/html ./temp_repo/docs
+          mv docs/_build/html/* ./temp_repo/docs
 
       - name: Deploy the documentation
         run: |
