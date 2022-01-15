@@ -6,11 +6,11 @@
 > Initial release of standalone documentation
 
 ### Added
-- New `makefile` to build documentation
 - Custom docs deploy workflow
 
 ### Changed
 - Documentation now is a standalone branch that can be modified at any time without any releases on main project branch
+- Docs theme changed to `furo`
 - Adjusted `.gitignore` for standalone version
 
 ### Removed
