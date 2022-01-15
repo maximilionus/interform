@@ -1,12 +1,9 @@
 # serialix docs changelog
 
 
-## **1.0.0** : null
+## **1.0.0** : 2022.01.15
 
 > Initial release of standalone documentation
-
-### Added
-- Custom docs deploy workflow
 
 ### Changed
 - Documentation now is a standalone branch that can be modified at any time without any releases on main project branch

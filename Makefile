@@ -36,8 +36,10 @@ clean: clean_required_files
 
 help:
 	@printf "\
-	Main project makefile\n\n\
+	Documentation makefile\n\n\
 	Commands:\n\
-		build Sphinx documentation in html format\n\
-		help        - display this help message\n\
+		build                - build Sphinx documentation in html format\n\
+		clean                - clean all temporary and cache files\n\
+		clean_required_files - clean files required for the documentation build\n\
+		help                 - display this help message\n\
 	"
