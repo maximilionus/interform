@@ -26,18 +26,17 @@ jobs:
         with:
           ref: 'docs_source'
 
-      - uses: actions/checkout@v2
+      - name: Prepare the docs repository
+        uses: actions/checkout@v2
         with:
-          ref: 'docs'
           path: temp_repo
           fetch-depth: 0
-
-      - name: Prepare docs git repository
-        run: |
-          cd temp_repo
-          rm -rf docs
-          git config user.name 'github-actions'
-          git config user.email 'github-actions@github.com'
+          run: |
+            cd temp_repo
+            git checkout docs
+            git config user.name 'github-actions'
+            git config user.email 'github-actions@github.com'
+            rm -rf docs
 
       - name: Set up Python ${{ matrix.python-version }}
         uses: actions/setup-python@v2
