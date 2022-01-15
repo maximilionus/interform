@@ -34,8 +34,6 @@ jobs:
           path: temp_repo
           run: |
             cd temp_repo
-            git config --global user.name 'github-actions'
-            git config --global user.email 'github-actions@github.com'
             rm -rf docs
 
       - name: Set up Python ${{ matrix.python-version }}
@@ -55,6 +53,8 @@ jobs:
       - name: Deploy the documentation
         run: |
           cd temp_repo
+          git config --global user.name "github-actions"
+          git config --global user.email "github-actions@github.com"
           git add --all
           git commit -m"Documentation build"
           git push
