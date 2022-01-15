@@ -3,11 +3,12 @@ name: Build Documentation
 on:
   push:
     branches:
-      - 'master'
+      - 'docs_source'
     paths:
-      - '.github/workflows/docs.yml'
       - 'docs/**'
-      - 'serialix/**'
+  release:
+    types:
+      - published
 
 
 jobs:
@@ -16,36 +17,40 @@ jobs:
     continue-on-error: false
     strategy:
       matrix:
-        python-version: [3.9]
+        python-version: ["3.10"]
 
     steps:
       - uses: actions/checkout@v2
+        with:
+          ref: 'docs_source'
+
+      - uses: actions/checkout@v2
+        with:
+          ref: 'docs'
+          path: temp_repo
 
       - name: Prepare docs git repository
         run: |
-          git clone --single-branch --branch docs https://${{ secrets.GH_PAT }}@github.com/${{ github.repository }}.git temp_repo
           cd temp_repo
           rm -rf docs
-          git config user.name 'Github Actions'
-          git config user.email 'action@github.com'
+          git config user.name 'github-actions'
+          git config user.email 'github-actions@github.com'
 
       - name: Set up Python ${{ matrix.python-version }}
         uses: actions/setup-python@v2
         with:
           python-version: ${{ matrix.python-version }}
 
-      - name: Install dependencies and project
+      - name: Update pip
         run: |
           python -m pip install -U pip
-          pip install -r requirements-dev.txt
 
-      - name: Build documentation
+      - name: Build documentation from master branch
         run: |
-          make docs
+          make build branch="origin/master"
           mv docs/_build/html ./temp_repo/docs
 
-
-      - name: Push changes to remote
+      - name: Deploy the documentation
         run: |
           cd temp_repo
           git add --all
