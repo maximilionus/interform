@@ -30,6 +30,7 @@ jobs:
         with:
           ref: 'docs'
           path: temp_repo
+          fetch-depth: 0
 
       - name: Prepare docs git repository
         run: |
