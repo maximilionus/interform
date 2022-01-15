@@ -1,4 +1,4 @@
-.PHONY: build build_dist build_wheel help
+.PHONY: build build_dist build_wheel publish help
 
 PYTHON = python
 

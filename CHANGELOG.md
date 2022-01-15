@@ -3,7 +3,7 @@
 ## Stable Releases
 
 
-### **2.0.1** : 2022.01.14
+### **2.0.1** : 2022.01.15
 
 > This QOL *(Quality Of Life)* update is focused on updating the external packages version locks and enhancing the overall package quality with documentation, unit-testing and other features updated.
 
