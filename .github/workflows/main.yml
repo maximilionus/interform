@@ -9,7 +9,6 @@ on:
       - 'LICENSE'
       - 'README.md'
       - 'CHANGELOG.md'
-      - 'docs/**'
       - '.github/workflows/docs.yml'
       - 'examples/**'
   pull_request:
