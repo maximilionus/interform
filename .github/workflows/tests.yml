@@ -2,9 +2,8 @@ name: Unit Testing
 
 on:
   push:
-    branches:
-      - master
-      - 'dev/**'
+    branches-ignore:
+      - 'docs**'
     paths-ignore:
       - 'LICENSE'
       - 'README.md'
