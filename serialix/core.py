@@ -319,8 +319,9 @@ class BaseLang:
         :type file_path: str
         :return: Parsed local file dictionary
         :rtype: dict
+        :raises NotImplementedError: If method was not implemented directly in inherited class
         """
-        pass
+        raise NotImplementedError("This core method should be implemented directly in {}".format(self.__class__.__name__))
 
     def _core__write_dict_to_file(self, file_path: str, dictionary: dict):
         """Template for writing dictionaries into custom local path ``str``
@@ -329,8 +330,9 @@ class BaseLang:
         :type file_path: str
         :param dictionary: Dictionary which will be written in ``file_path``
         :type dictionary: dict
+        :raises NotImplementedError: If method was not implemented directly in inherited class
         """
-        pass
+        raise NotImplementedError("This core method should be implemented directly in {}".format(self.__class__.__name__))
 
 
 def create_directories(path_to_use: str, path_is_dir=False):
