@@ -1,5 +1,8 @@
 # serialix Changelog
 
+This project uses a [semantic versioning](https://semver.org/) scheme as the basis for naming all releases
+
+
 ## Stable Releases
 
 
@@ -82,6 +85,15 @@
 
 
 ## Development Releases
+
+
+### **2.1.0a1** : 2020
+
+#### Added
+- `NotImplementedError` exception will now be raised when trying to execute any R/W-related action in class, inherited from `serialix.core.BaseLang` without defined `_core__read_file_to_dict` and `_core__write_dict_to_file` methods
+
+#### Changed
+- Extended the range of dependencies versions lock
 
 
 ### **2.0.1a1** : 2022.01.14

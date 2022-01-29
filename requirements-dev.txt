@@ -10,10 +10,10 @@ pytest<7
 -e .
 
 # JSON custom parser
-ujson<=5.1.0
+ujson~=5
 
 # Yaml parser
-ruamel.yaml<=0.17.20
+ruamel.yaml~=0.17.2
 
 # TOML parser
-toml<=0.10.2
+toml~=0.10
