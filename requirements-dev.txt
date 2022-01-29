@@ -10,7 +10,7 @@ pytest<7
 -e .
 
 # JSON custom parser
-ujson~=5
+ujson~=5.0
 
 # Yaml parser
 ruamel.yaml~=0.17.2
