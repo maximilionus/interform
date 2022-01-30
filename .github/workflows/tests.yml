@@ -16,7 +16,7 @@ on:
 
 jobs:
   src_test:
-    name: "source code tests"
+    name: source code tests
     runs-on: ${{ matrix.os }}
     strategy:
       matrix:
@@ -40,7 +40,7 @@ jobs:
         run: python -m pytest -v
 
   built_tests:
-    name: "build package tests"
+    name: built package tests
     runs-on: ${{ matrix.os }}
     strategy:
       matrix:
@@ -66,4 +66,6 @@ jobs:
           cd dist
           python -c "from os import rename; from glob import glob; rename(glob('serialix*.tar.gz')[0], 'serialix.tar.gz')"
           python -m pip install serialix.tar.gz[test]
-          python -m pytest --pyargs serialix.tests
+
+      - name: Run tests
+        run: python -m pytest --pyargs serialix.tests
