@@ -65,4 +65,5 @@ jobs:
         run: |
           cd dist
           python -c "from os import rename; from glob import glob; rename(glob('serialix*.tar.gz')[0], 'serialix.tar.gz')"
-          python -m pip install serialix.tar.gz[full]
+          python -m pip install serialix.tar.gz[test]
+          python -m pytest --pyargs serialix.tests
