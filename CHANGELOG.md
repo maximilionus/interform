@@ -90,6 +90,7 @@ This project uses a [semantic versioning](https://semver.org/) scheme as the bas
 ### **2.1.0a1** : 2020
 
 #### Added
+- New class `Serialix` can be imported straight from package root and now will be a preferred way of creating instance of `serialix` for any supported language instead of using `*_Language` classes directly
 - `NotImplementedError` exception will now be raised when trying to execute any R/W-related action in class, inherited from `serialix.core.BaseLang` without defined `_core__read_file_to_dict` and `_core__write_dict_to_file` methods
 
 #### Changed
