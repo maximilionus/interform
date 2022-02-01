@@ -15,9 +15,9 @@ package_version = get_package_version()
 
 # Form extras
 extras_require = {
-    'ujson': ['ujson>=5.0, ==5.*'],
-    'yaml': ['ruamel.yaml>=0.17.2, ==0.17.*'],
-    'toml': ['toml>=0.10.0, ==0.10.*']
+    'ujson': ['ujson>=5.*'],
+    'yaml': ['ruamel.yaml>=0.17.*'],
+    'toml': ['toml>=0.10.*']
 }
 
 all_base_requirements = [dep for v in extras_require.values() for dep in v]
@@ -68,6 +68,7 @@ setup(
         'Operating System :: OS Independent',
         'License :: OSI Approved :: MIT License',
         'Topic :: Software Development :: Libraries',
-        'Topic :: Software Development :: User Interfaces'
+        'Topic :: Software Development :: User Interfaces',
+        'Topic :: Text Processing'
     ]
 )
