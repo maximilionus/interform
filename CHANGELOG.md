@@ -87,7 +87,7 @@ This project uses a [semantic versioning](https://semver.org/) scheme as the bas
 ## Development Releases
 
 
-### **2.1.0a1** : 2020
+### **2.1.0a1** : 2022.02.01
 
 #### Added
 - New class `Serialix` can be imported straight from package root and now will be a preferred way of creating instance of `serialix` for any supported language instead of using `*_Language` classes directly
