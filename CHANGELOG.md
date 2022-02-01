@@ -1,6 +1,6 @@
 # serialix Changelog
 
-This project uses a [semantic versioning](https://semver.org/) scheme as the basis for naming all releases
+This project uses a [semantic versioning](https://semver.org/) scheme as the base for naming all the releases
 
 
 ## Stable Releases
