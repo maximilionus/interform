@@ -27,7 +27,7 @@ class BaseLang:
     :param parser_read_kwargs: Pass custom arguments to parser's read from local file action, defaults to {}
     :type parser_read_kwargs: dict, optional
     :raises ValueError: If provided data type in argument ``default_dictionary`` is not
-        the path ``str`` or ``dict``, this exception will be raised
+        the path ``str`` or ``dict``
 
     .. note::
         Methods ``.clear()``, ``.fromkeys()``, ``.get()``, ``.items()``, ``.keys()``, ``values()``,

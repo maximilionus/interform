@@ -4,6 +4,7 @@ it easier to access the main features of the
 other submodules and subpackages
 """
 from .meta import *
+from .serialix import Serialix
 from .langs.json import JSON_Format
 
 try:
