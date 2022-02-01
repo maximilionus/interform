@@ -12,15 +12,15 @@ Quickstart
 
 Imports
 ~~~~~~~~~~~~~~~~~~~~~~
-Let's import the json language class from ``serialix`` package
+Let's import the main ``Serialix`` class from ``serialix`` package. This class should be used to create instance for any officially supported language.
 
 .. code-block:: python
     :linenos:
 
-    from serialix import JSON_Format
+    from serialix import Serialix
 
 .. note::
-    Detailed ``JSON_Format`` documentation `can be found here <serialix.langs.html#module-serialix.langs.json>`__
+    Detailed ``Serialix`` documentation `can be found here <serialix.html#serialix.serialix.Serialix>`__
 
 Preparation
 ~~~~~~~~~~~~~~~~~~~~~~
@@ -56,7 +56,7 @@ Let's also prepare some options for ``json`` parser
         "indent": 4
     }
 
-``parser_write_kwargs`` variable is dictionary with keyword arguments that will be further passed to arguments of ``JSON_Format`` object to specify the additional params for DIF language parser on write action. At this moment we will only include the ``indent`` argument for `json parser <https://docs.python.org/3/library/json.html>`__, that will enable the pretty printing for output.
+``parser_write_kwargs`` variable is dictionary with keyword arguments that will be further passed to arguments of ``Serialix`` object to specify the additional params for DIF language parser on write action. At this moment we will only include the ``indent`` argument for `json parser <https://docs.python.org/3/library/json.html>`__, that will enable the pretty printing for output.
 
 Creating Object
 ~~~~~~~~~~~~~~~~~~~~~~
@@ -66,7 +66,8 @@ Now we're moving to the main part - creating an object that will be used for fur
     :linenos:
     :lineno-start: 6
 
-    config = JSON_Format(
+    config = Serialix(
+        'json',                                   # Name of the used language
         'settings.json',                          # Path to preferred local file location.
         def_dict,                                 # Default configuration dictionary that will
                                                   # be parsed into the local file on creation.
@@ -91,7 +92,7 @@ If no exceptions were raised then everything is ready. Now, if you check the fil
         }
 
     .. versionadded:: 1.2.0
-        You can also disable the automatic local file creation on object initialization by passing the keyword argument ``auto_file_creation=False`` to ``JSON_Format`` object.
+        You can also disable the automatic local file creation on object initialization by passing the keyword argument ``auto_file_creation=False`` to ``Serialix`` object.
 
 Reading
 ~~~~~~~~~~~~~~~~~~~~~~
@@ -99,7 +100,7 @@ The local file and object are ready. Now we can access any value from this file.
 
 .. code-block:: python
     :linenos:
-    :lineno-start: 11
+    :lineno-start: 13
 
     # Lets print the value of the key "version".
     # All keys can be directly accessed right from the object
@@ -114,7 +115,7 @@ Accessing the values is a good thing, but we're here not only for this, right? N
 
 .. code-block:: python
     :linenos:
-    :lineno-start: 17
+    :lineno-start: 19
 
     # Let's change the value of the key "app_name" to something new
     config["app_name"] = "Super Secret Tool"
@@ -142,7 +143,7 @@ Now lets try to remove one key from dictionary. To remove any key you can use th
 
 .. code-block:: python
     :linenos:
-    :lineno-start: 33
+    :lineno-start: 28
 
     # Let's delete the "text" key from our nested dictionary "our_new_key"
     del(config["our_new_key"]["text"])
@@ -153,7 +154,7 @@ New key added, existing changed and even removed - but the local file still cont
 
 .. code-block:: python
     :linenos:
-    :lineno-start: 26
+    :lineno-start: 30
 
     # This method will commit all changes from object to local file
     config.commit()
@@ -193,7 +194,7 @@ To get this key inside of our ``config`` object we'll have to refresh it with sp
 
 .. code-block:: python
     :linenos:
-    :lineno-start: 28
+    :lineno-start: 32
 
     # This method will refresh object's dictionary with dictionary parsed from the local file.
     config.refresh()
@@ -210,7 +211,7 @@ If you are not happy with all the changes made and want to return everything to 
 
 .. code-block:: python
     :linenos:
-    :lineno-start: 40
+    :lineno-start: 37
 
     # Reset to bound dictionary to defaults
     config.reset_to_defaults()

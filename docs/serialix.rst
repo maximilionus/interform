@@ -13,10 +13,10 @@ Subpackages
 Submodules
 ----------
 
-serialix.__init\__
+serialix.serialix module
 ----------------------
 
-.. automodule:: serialix.__init__
+.. automodule:: serialix.serialix
    :members:
    :undoc-members:
    :private-members:
@@ -26,6 +26,15 @@ serialix.core module
 ----------------------
 
 .. automodule:: serialix.core
+   :members:
+   :undoc-members:
+   :private-members:
+   :show-inheritance:
+
+serialix.__init\__
+----------------------
+
+.. automodule:: serialix.__init__
    :members:
    :undoc-members:
    :private-members:
