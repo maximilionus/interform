@@ -7,9 +7,10 @@ from .meta import *
 from .serialix import Serialix
 from .langs.json import JSON_Format
 
+
 try:
     from .langs.yaml import YAML_Format
-except ImportError as e:
+except ImportError:
     pass
 
 try:
