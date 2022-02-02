@@ -87,6 +87,12 @@ This project uses a [semantic versioning](https://semver.org/) scheme as the bas
 ## Development Releases
 
 
+### **2.1.0a2** : 2022
+
+### Removed
+- `serialix.core.parse_dict_values()` function were cut due to uselessness and security reasons
+
+
 ### **2.1.0a1** : 2022.02.01
 
 #### Added
