@@ -87,7 +87,7 @@ This project uses a [semantic versioning](https://semver.org/) scheme as the bas
 ## Development Releases
 
 
-### **2.1.0a2** : 2022
+### **2.1.0a2** : 2022.02.02
 
 ### Added
 - New 'get version' feature in built-in CLI toolset. Can be accessed with `--version` or `-V` argument passed to cli.
