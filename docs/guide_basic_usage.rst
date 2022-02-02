@@ -12,7 +12,7 @@ Quickstart
 
 Imports
 ~~~~~~~~~~~~~~~~~~~~~~
-Let's import the main ``Serialix`` class from ``serialix`` package. This class should be used to create instance for any officially supported language.
+Let's import the main ``Serialix`` class from ``serialix`` package. This class was implemented in version ``2.1.0`` and should be used to create instance for any officially supported language.
 
 .. code-block:: python
     :linenos:
