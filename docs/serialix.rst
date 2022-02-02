@@ -14,7 +14,7 @@ Submodules
 ----------
 
 serialix.serialix module
-----------------------
+------------------------
 
 .. automodule:: serialix.serialix
    :members:
@@ -23,7 +23,7 @@ serialix.serialix module
    :show-inheritance:
 
 serialix.core module
-----------------------
+------------------------
 
 .. automodule:: serialix.core
    :members:
@@ -32,7 +32,7 @@ serialix.core module
    :show-inheritance:
 
 serialix.__init\__
-----------------------
+------------------------
 
 .. automodule:: serialix.__init__
    :members:
@@ -41,7 +41,7 @@ serialix.__init\__
    :show-inheritance:
 
 serialix.meta module
-----------------------
+------------------------
 
 .. automodule:: serialix.meta
    :members:
