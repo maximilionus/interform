@@ -6,6 +6,9 @@
 ### Changed
 - Massive changes made to `guide_basic_usage` and `general` to reflect the `serialix 2.1.0` update
 
+### Removed
+- Hid the `guide_advanced_features` page until it is ready.
+
 
 ## **1** : 2022.01.15
 

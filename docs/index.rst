@@ -12,7 +12,7 @@ Welcome to serialix documentation!
    guide_installation
    guide_basic_usage
    guide_cli
-   guide_advanced_features
+   ..guide_advanced_features
    serialix
 
 
