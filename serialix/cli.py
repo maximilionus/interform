@@ -5,6 +5,7 @@ from argparse import ArgumentParser, Namespace
 
 from . import JSON_Format
 from .core import BaseLang
+from .meta import __version__ as serialix_version
 
 try:
     from . import YAML_Format
@@ -63,6 +64,8 @@ def __parse_args() -> Namespace:
     )
     subparsers = parser_main.add_subparsers(dest='command')
 
+    parser_main.add_argument('--version', '-V', help='get serialix version', action='store_true', dest='get_version')
+
     parser_converter = subparsers.add_parser('convert', help='tool for conversion between supported languages')
     parser_converter.add_argument('from_path', action='store', type=str, help='path to the file to be converted')
     parser_converter.add_argument('from_format', action='store', type=str, help='format of the file to be converted')
@@ -106,7 +109,9 @@ def main_cli(args: Namespace):
     :param args: Arguments to be parsed
     :type args: Namespace
     """
-    if args.command == 'convert':
+    if args.get_version:
+        print('serialix {}'.format(serialix_version))
+    elif args.command == 'convert':
         convert(
             args.from_path, args.from_format,
             args.dest_path, args.dest_format
