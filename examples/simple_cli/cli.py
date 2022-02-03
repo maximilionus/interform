@@ -1,6 +1,6 @@
 from argparse import ArgumentParser, Namespace
 
-from serialix import JSON_Format
+from serialix import Serialix
 
 
 # Default dictionary, that will be used later
@@ -34,7 +34,8 @@ if __name__ == '__main__':
     args = parse_input_args()  # Parse input arguments
 
     # Prepare the configuration object
-    cfg = JSON_Format(
+    cfg = Serialix(
+        'json',            # Format of the used language
         'settings.json',   # Path to where local file will be located
         prog_default_dict  # Default dictionary, that will be used to
     )                      # fill the file on first creation

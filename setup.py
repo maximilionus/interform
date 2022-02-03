@@ -15,9 +15,9 @@ package_version = get_package_version()
 
 # Form extras
 extras_require = {
-    'ujson': ['ujson<=5.1.0'],
-    'yaml': ['ruamel.yaml<=0.17.20'],
-    'toml': ['toml<=0.10.2']
+    'ujson': ['ujson<=6.0.0'],
+    'yaml': ['ruamel.yaml<=0.18.0'],
+    'toml': ['toml<=0.11.0']
 }
 
 all_base_requirements = [dep for v in extras_require.values() for dep in v]
@@ -67,6 +67,8 @@ setup(
         'Programming Language :: Python :: 3.9',
         'Operating System :: OS Independent',
         'License :: OSI Approved :: MIT License',
-        'Topic :: Software Development :: Libraries'
+        'Topic :: Software Development :: Libraries',
+        'Topic :: Software Development :: User Interfaces',
+        'Topic :: Text Processing'
     ]
 )

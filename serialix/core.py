@@ -1,6 +1,5 @@
 from typing import Any
 from copy import deepcopy
-from ast import literal_eval
 from os import path, makedirs, remove
 
 
@@ -27,7 +26,7 @@ class BaseLang:
     :param parser_read_kwargs: Pass custom arguments to parser's read from local file action, defaults to {}
     :type parser_read_kwargs: dict, optional
     :raises ValueError: If provided data type in argument ``default_dictionary`` is not
-        the path ``str`` or ``dict``, this exception will be raised
+        the path ``str`` or ``dict``
 
     .. note::
         Methods ``.clear()``, ``.fromkeys()``, ``.get()``, ``.items()``, ``.keys()``, ``values()``,
@@ -319,8 +318,9 @@ class BaseLang:
         :type file_path: str
         :return: Parsed local file dictionary
         :rtype: dict
+        :raises NotImplementedError: If method was not implemented directly in inherited class
         """
-        pass
+        raise NotImplementedError("This core method should be implemented directly in {}".format(self.__class__.__name__))
 
     def _core__write_dict_to_file(self, file_path: str, dictionary: dict):
         """Template for writing dictionaries into custom local path ``str``
@@ -329,8 +329,9 @@ class BaseLang:
         :type file_path: str
         :param dictionary: Dictionary which will be written in ``file_path``
         :type dictionary: dict
+        :raises NotImplementedError: If method was not implemented directly in inherited class
         """
-        pass
+        raise NotImplementedError("This core method should be implemented directly in {}".format(self.__class__.__name__))
 
 
 def create_directories(path_to_use: str, path_is_dir=False):
@@ -377,36 +378,3 @@ def recursive_dicts_merge(merge_from: dict, merge_to: dict) -> dict:
     __merge(merge_from, result_dict)
 
     return result_dict
-
-
-def parse_dict_values(input_dict: dict) -> dict:
-    """
-    This function is written for DIF parsers and languages, that doesn't support
-    storing values in their original types, converting them all to ``str`` type.
-    Function will recursively scan the input dictionary and will try to convert all
-    keys with values which type is ``str``
-
-    :param input_dict: [description]
-    :type input_dict: dict
-    :return: [description]
-    :rtype: dict
-    """
-    def __recursive_safe_eval(inputd: dict, outputd: dict):
-        # TODO
-        for k, v in inputd.items():
-            if not isinstance(v, str): continue
-
-            try:
-                evaled_v = literal_eval(v)
-            except ValueError:
-                continue
-            else:
-                if isinstance(evaled_v, dict):
-                    __recursive_safe_eval(v, outputd.setdefault(k, {}))
-                else:
-                    outputd[k] = evaled_v
-
-    result = {}
-    __recursive_safe_eval(input_dict, result)
-
-    return result

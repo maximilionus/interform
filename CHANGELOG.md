@@ -1,6 +1,23 @@
 # serialix Changelog
 
+This project uses a [semantic versioning](https://semver.org/) scheme as the base for naming all the releases
+
+
 ## Stable Releases
+
+
+### **2.1.0** : 2022.02.03
+
+#### Added
+- New class `Serialix` can be imported straight from package root and now will be a preferred way of creating instance of `serialix` for any supported language instead of using `*_Language` classes directly.
+- `NotImplementedError` exception will now be raised when trying to execute any R/W-related action in class, inherited from `serialix.core.BaseLang` without defined `_core__read_file_to_dict` and `_core__write_dict_to_file` methods.
+- New 'get version' feature in built-in CLI toolset. Can be accessed with `--version` or `-V` argument passed to cli.
+
+#### Changed
+- Extended the range of dependencies versions lock.
+
+### Removed
+- `serialix.core.parse_dict_values()` function were cut due to uselessness and security reasons.
 
 
 ### **2.0.1** : 2022.01.15
@@ -82,6 +99,25 @@
 
 
 ## Development Releases
+
+
+### **2.1.0a2** : 2022.02.02
+
+### Added
+- New 'get version' feature in built-in CLI toolset. Can be accessed with `--version` or `-V` argument passed to cli.
+
+### Removed
+- `serialix.core.parse_dict_values()` function were cut due to uselessness and security reasons
+
+
+### **2.1.0a1** : 2022.02.01
+
+#### Added
+- New class `Serialix` can be imported straight from package root and now will be a preferred way of creating instance of `serialix` for any supported language instead of using `*_Language` classes directly
+- `NotImplementedError` exception will now be raised when trying to execute any R/W-related action in class, inherited from `serialix.core.BaseLang` without defined `_core__read_file_to_dict` and `_core__write_dict_to_file` methods
+
+#### Changed
+- Extended the range of dependencies versions lock
 
 
 ### **2.0.1a1** : 2022.01.14
