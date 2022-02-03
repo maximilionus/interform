@@ -160,7 +160,6 @@
 <li class="toctree-l1"><a class="reference internal" href="guide_installation.html">Installation Guide</a></li>
 <li class="toctree-l1 current current-page"><a class="current reference internal" href="#">Basic Usage</a></li>
 <li class="toctree-l1"><a class="reference internal" href="guide_cli.html">CLI Toolset</a></li>
-<li class="toctree-l1"><a class="reference internal" href="guide_advanced_features.html">Advanced Features</a></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="serialix.html">serialix</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="serialix.langs.html">serialix.langs package</a></li>
 </ul>
@@ -202,13 +201,13 @@
 <p><code class="docutils literal notranslate"><span class="pre">serialix</span></code> supports various data interchange languages (<a class="reference external" href="general.html#supported-languages">full list</a>). This quickstart guide will be based on <code class="docutils literal notranslate"><span class="pre">json</span></code> language.</p>
 <section id="imports">
 <h3>Imports<a class="headerlink" href="#imports" title="Permalink to this headline">¶</a></h3>
-<p>Let’s import the json language class from <code class="docutils literal notranslate"><span class="pre">serialix</span></code> package</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="kn">from</span> <span class="nn">serialix</span> <span class="kn">import</span> <span class="n">JSON_Format</span>
+<p>Let’s import the main <code class="docutils literal notranslate"><span class="pre">Serialix</span></code> class from <code class="docutils literal notranslate"><span class="pre">serialix</span></code> package. This class was implemented in version <code class="docutils literal notranslate"><span class="pre">2.1.0</span></code> and should be used to create instance for any officially supported language.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="kn">from</span> <span class="nn">serialix</span> <span class="kn">import</span> <span class="n">Serialix</span>
 </pre></div>
 </div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>Detailed <code class="docutils literal notranslate"><span class="pre">JSON_Format</span></code> documentation <a class="reference external" href="serialix.langs.html#module-serialix.langs.json">can be found here</a></p>
+<p>Detailed <code class="docutils literal notranslate"><span class="pre">Serialix</span></code> documentation <a class="reference external" href="serialix.html#serialix.serialix.Serialix">can be found here</a></p>
 </div>
 </section>
 <section id="preparation">
@@ -238,18 +237,19 @@
 <span class="linenos">8</span><span class="p">}</span>
 </pre></div>
 </div>
-<p><code class="docutils literal notranslate"><span class="pre">parser_write_kwargs</span></code> variable is dictionary with keyword arguments that will be further passed to arguments of <code class="docutils literal notranslate"><span class="pre">JSON_Format</span></code> object to specify the additional params for DIF language parser on write action. At this moment we will only include the <code class="docutils literal notranslate"><span class="pre">indent</span></code> argument for <a class="reference external" href="https://docs.python.org/3/library/json.html">json parser</a>, that will enable the pretty printing for output.</p>
+<p><code class="docutils literal notranslate"><span class="pre">parser_write_kwargs</span></code> variable is dictionary with keyword arguments that will be further passed to arguments of <code class="docutils literal notranslate"><span class="pre">Serialix</span></code> object to specify the additional params for DIF language parser on write action. At this moment we will only include the <code class="docutils literal notranslate"><span class="pre">indent</span></code> argument for <a class="reference external" href="https://docs.python.org/3/library/json.html">json parser</a>, that will enable the pretty printing for output.</p>
 </section>
 </section>
 <section id="creating-object">
 <h3>Creating Object<a class="headerlink" href="#creating-object" title="Permalink to this headline">¶</a></h3>
 <p>Now we’re moving to the main part - creating an object that will be used for further interaction with the local file.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 6</span><span class="n">config</span> <span class="o">=</span> <span class="n">JSON_Format</span><span class="p">(</span>
-<span class="linenos"> 7</span>    <span class="s1">'settings.json'</span><span class="p">,</span>                          <span class="c1"># Path to preferred local file location.</span>
-<span class="linenos"> 8</span>    <span class="n">def_dict</span><span class="p">,</span>                                 <span class="c1"># Default configuration dictionary that will</span>
-<span class="linenos"> 9</span>                                              <span class="c1"># be parsed into the local file on creation.</span>
-<span class="linenos">10</span>    <span class="n">parser_write_kwargs</span> <span class="o">=</span> <span class="n">parser_write_kwargs</span> <span class="c1"># Arguments, that will be passed to parser on write action</span>
-<span class="linenos">11</span><span class="p">)</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 6</span><span class="n">config</span> <span class="o">=</span> <span class="n">Serialix</span><span class="p">(</span>
+<span class="linenos"> 7</span>    <span class="s1">'json'</span><span class="p">,</span>                                   <span class="c1"># Name of the used language</span>
+<span class="linenos"> 8</span>    <span class="s1">'settings.json'</span><span class="p">,</span>                          <span class="c1"># Path to preferred local file location.</span>
+<span class="linenos"> 9</span>    <span class="n">def_dict</span><span class="p">,</span>                                 <span class="c1"># Default configuration dictionary that will</span>
+<span class="linenos">10</span>                                              <span class="c1"># be parsed into the local file on creation.</span>
+<span class="linenos">11</span>    <span class="n">parser_write_kwargs</span> <span class="o">=</span> <span class="n">parser_write_kwargs</span> <span class="c1"># Arguments, that will be passed to parser on write action</span>
+<span class="linenos">12</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>If no exceptions were raised then everything is ready. Now, if you check the file on the path, that we specified in line <code class="docutils literal notranslate"><span class="pre">3</span></code> of step <a class="reference internal" href="#default-values">Default values</a>, you can see there’s a <code class="docutils literal notranslate"><span class="pre">json</span></code> format dictionary built from our <code class="docutils literal notranslate"><span class="pre">def_dict</span></code>.</p>
@@ -267,34 +267,34 @@
 </pre></div>
 </div>
 <div class="versionadded">
-<p><span class="versionmodified added">New in version 1.2.0: </span>You can also disable the automatic local file creation on object initialization by passing the keyword argument <code class="docutils literal notranslate"><span class="pre">auto_file_creation=False</span></code> to <code class="docutils literal notranslate"><span class="pre">JSON_Format</span></code> object.</p>
+<p><span class="versionmodified added">New in version 1.2.0: </span>You can also disable the automatic local file creation on object initialization by passing the keyword argument <code class="docutils literal notranslate"><span class="pre">auto_file_creation=False</span></code> to <code class="docutils literal notranslate"><span class="pre">Serialix</span></code> object.</p>
 </div>
 </div>
 </section>
 <section id="reading">
 <h3>Reading<a class="headerlink" href="#reading" title="Permalink to this headline">¶</a></h3>
 <p>The local file and object are ready. Now we can access any value from this file. Let’s try this out:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="linenos">11</span><span class="c1"># Lets print the value of the key "version".</span>
-<span class="linenos">12</span><span class="c1"># All keys can be directly accessed right from the object</span>
-<span class="linenos">13</span>
-<span class="linenos">14</span><span class="n">app_version</span> <span class="o">=</span> <span class="n">config</span><span class="p">[</span><span class="s2">"version"</span><span class="p">]</span>                       <span class="c1"># Getting the key 'version' from dictionary</span>
-<span class="linenos">15</span><span class="nb">print</span><span class="p">(</span><span class="s2">"Application version: </span><span class="si">{}</span><span class="s2">"</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">app_version</span><span class="p">))</span>  <span class="c1"># Output should be:</span>
-<span class="linenos">16</span>                                                      <span class="c1"># 'Application version: 5'</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="linenos">13</span><span class="c1"># Lets print the value of the key "version".</span>
+<span class="linenos">14</span><span class="c1"># All keys can be directly accessed right from the object</span>
+<span class="linenos">15</span>
+<span class="linenos">16</span><span class="n">app_version</span> <span class="o">=</span> <span class="n">config</span><span class="p">[</span><span class="s2">"version"</span><span class="p">]</span>                       <span class="c1"># Getting the key 'version' from dictionary</span>
+<span class="linenos">17</span><span class="nb">print</span><span class="p">(</span><span class="s2">"Application version: </span><span class="si">{}</span><span class="s2">"</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">app_version</span><span class="p">))</span>  <span class="c1"># Output should be:</span>
+<span class="linenos">18</span>                                                      <span class="c1"># 'Application version: 5'</span>
 </pre></div>
 </div>
 </section>
 <section id="creating-and-modifying">
 <h3>Creating and modifying<a class="headerlink" href="#creating-and-modifying" title="Permalink to this headline">¶</a></h3>
 <p>Accessing the values is a good thing, but we’re here not only for this, right? Next step we’ll modify the value of one exising key and add the new key to object.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="linenos">17</span><span class="c1"># Let's change the value of the key "app_name" to something new</span>
-<span class="linenos">18</span><span class="n">config</span><span class="p">[</span><span class="s2">"app_name"</span><span class="p">]</span> <span class="o">=</span> <span class="s2">"Super Secret Tool"</span>
-<span class="linenos">19</span>
-<span class="linenos">20</span><span class="c1"># And we'll also add the new key with dictionary value</span>
-<span class="linenos">21</span><span class="n">config</span><span class="p">[</span><span class="s2">"our_new_key"</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span>
-<span class="linenos">22</span>    <span class="s2">"type"</span><span class="p">:</span> <span class="s2">"msg"</span><span class="p">,</span>
-<span class="linenos">23</span>    <span class="s2">"id"</span><span class="p">:</span> <span class="mi">34724889325</span><span class="p">,</span>
-<span class="linenos">24</span>    <span class="s2">"text"</span><span class="p">:</span> <span class="s2">"wassup?"</span>
-<span class="linenos">25</span><span class="p">}</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="linenos">19</span><span class="c1"># Let's change the value of the key "app_name" to something new</span>
+<span class="linenos">20</span><span class="n">config</span><span class="p">[</span><span class="s2">"app_name"</span><span class="p">]</span> <span class="o">=</span> <span class="s2">"Super Secret Tool"</span>
+<span class="linenos">21</span>
+<span class="linenos">22</span><span class="c1"># And we'll also add the new key with dictionary value</span>
+<span class="linenos">23</span><span class="n">config</span><span class="p">[</span><span class="s2">"our_new_key"</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span>
+<span class="linenos">24</span>    <span class="s2">"type"</span><span class="p">:</span> <span class="s2">"msg"</span><span class="p">,</span>
+<span class="linenos">25</span>    <span class="s2">"id"</span><span class="p">:</span> <span class="mi">34724889325</span><span class="p">,</span>
+<span class="linenos">26</span>    <span class="s2">"text"</span><span class="p">:</span> <span class="s2">"wassup?"</span>
+<span class="linenos">27</span><span class="p">}</span>
 </pre></div>
 </div>
 <div class="admonition note">
@@ -311,16 +311,16 @@
 <section id="removing">
 <h3>Removing<a class="headerlink" href="#removing" title="Permalink to this headline">¶</a></h3>
 <p>Now lets try to remove one key from dictionary. To remove any key you can use the python’s <a class="reference external" href="https://docs.python.org/3/tutorial/datastructures.html#the-del-statement">del()</a> statement.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="linenos">33</span><span class="c1"># Let's delete the "text" key from our nested dictionary "our_new_key"</span>
-<span class="linenos">34</span><span class="k">del</span><span class="p">(</span><span class="n">config</span><span class="p">[</span><span class="s2">"our_new_key"</span><span class="p">][</span><span class="s2">"text"</span><span class="p">])</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="linenos">28</span><span class="c1"># Let's delete the "text" key from our nested dictionary "our_new_key"</span>
+<span class="linenos">29</span><span class="k">del</span><span class="p">(</span><span class="n">config</span><span class="p">[</span><span class="s2">"our_new_key"</span><span class="p">][</span><span class="s2">"text"</span><span class="p">])</span>
 </pre></div>
 </div>
 </section>
 <section id="saving-changes">
 <h3>Saving changes<a class="headerlink" href="#saving-changes" title="Permalink to this headline">¶</a></h3>
 <p>New key added, existing changed and even removed - but the local file still contains only the default values. It’s not a bug, it’s a feature. <code class="docutils literal notranslate"><span class="pre">serialix</span></code> will never automatically save any user-made changes to a local file without a direct command to do so. So let’s send it.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="linenos">26</span><span class="c1"># This method will commit all changes from object to local file</span>
-<span class="linenos">27</span><span class="n">config</span><span class="o">.</span><span class="n">commit</span><span class="p">()</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="linenos">30</span><span class="c1"># This method will commit all changes from object to local file</span>
+<span class="linenos">31</span><span class="n">config</span><span class="o">.</span><span class="n">commit</span><span class="p">()</span>
 </pre></div>
 </div>
 <p>Now our <code class="docutils literal notranslate"><span class="pre">settings.json</span></code> file will look like this:</p>
@@ -351,11 +351,11 @@
 </pre></div>
 </div>
 <p>To get this key inside of our <code class="docutils literal notranslate"><span class="pre">config</span></code> object we’ll have to refresh it with special method:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="linenos">28</span><span class="c1"># This method will refresh object's dictionary with dictionary parsed from the local file.</span>
-<span class="linenos">29</span><span class="n">config</span><span class="o">.</span><span class="n">refresh</span><span class="p">()</span>
-<span class="linenos">30</span>
-<span class="linenos">31</span><span class="c1"># After refreshing, "custom_key" key will be added to object and can be accessed</span>
-<span class="linenos">32</span><span class="nb">print</span><span class="p">(</span><span class="n">config</span><span class="p">[</span><span class="s2">"custom_key"</span><span class="p">])</span>  <span class="c1"># Output: 'hello?'</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="linenos">32</span><span class="c1"># This method will refresh object's dictionary with dictionary parsed from the local file.</span>
+<span class="linenos">33</span><span class="n">config</span><span class="o">.</span><span class="n">refresh</span><span class="p">()</span>
+<span class="linenos">34</span>
+<span class="linenos">35</span><span class="c1"># After refreshing, "custom_key" key will be added to object and can be accessed</span>
+<span class="linenos">36</span><span class="nb">print</span><span class="p">(</span><span class="n">config</span><span class="p">[</span><span class="s2">"custom_key"</span><span class="p">])</span>  <span class="c1"># Output: 'hello?'</span>
 </pre></div>
 </div>
 <div class="admonition note">
@@ -366,11 +366,11 @@
 <section id="factory-reset">
 <h3>Factory Reset<a class="headerlink" href="#factory-reset" title="Permalink to this headline">¶</a></h3>
 <p>If you are not happy with all the changes made and want to return everything to the default state, here’s a method <code class="docutils literal notranslate"><span class="pre">.reset_to_defaults()`</span></code> specially for you. This method will reset bound dictionary to values from <code class="docutils literal notranslate"><span class="pre">def_dict</span></code> variable that we specified at the beginning of this guide.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="linenos">40</span><span class="c1"># Reset to bound dictionary to defaults</span>
-<span class="linenos">41</span><span class="n">config</span><span class="o">.</span><span class="n">reset_to_defaults</span><span class="p">()</span>
-<span class="linenos">42</span>
-<span class="linenos">43</span><span class="c1"># And again, don't forget to commit the changes to local file</span>
-<span class="linenos">44</span><span class="n">config</span><span class="o">.</span><span class="n">commit</span><span class="p">()</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="linenos">37</span><span class="c1"># Reset to bound dictionary to defaults</span>
+<span class="linenos">38</span><span class="n">config</span><span class="o">.</span><span class="n">reset_to_defaults</span><span class="p">()</span>
+<span class="linenos">39</span>
+<span class="linenos">40</span><span class="c1"># And again, don't forget to commit the changes to local file</span>
+<span class="linenos">41</span><span class="n">config</span><span class="o">.</span><span class="n">commit</span><span class="p">()</span>
 </pre></div>
 </div>
 </section>

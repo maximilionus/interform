@@ -3,7 +3,7 @@
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
     <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-<link rel="index" title="Index" href="genindex.html" /><link rel="search" title="Search" href="search.html" /><link rel="next" title="serialix.langs package" href="serialix.langs.html" /><link rel="prev" title="Advanced Features" href="guide_advanced_features.html" />
+<link rel="index" title="Index" href="genindex.html" /><link rel="search" title="Search" href="search.html" /><link rel="next" title="serialix.langs package" href="serialix.langs.html" /><link rel="prev" title="CLI Toolset" href="guide_cli.html" />
 
     <meta name="generator" content="sphinx-4.3.2, furo 2022.01.02"/>
         <title>serialix - serialix 2.1.0 documentation</title>
@@ -160,7 +160,6 @@
 <li class="toctree-l1"><a class="reference internal" href="guide_installation.html">Installation Guide</a></li>
 <li class="toctree-l1"><a class="reference internal" href="guide_basic_usage.html">Basic Usage</a></li>
 <li class="toctree-l1"><a class="reference internal" href="guide_cli.html">CLI Toolset</a></li>
-<li class="toctree-l1"><a class="reference internal" href="guide_advanced_features.html">Advanced Features</a></li>
 <li class="toctree-l1 current has-children current-page"><a class="current reference internal" href="#">serialix</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="serialix.langs.html">serialix.langs package</a></li>
 </ul>
@@ -211,11 +210,40 @@
 <section id="submodules">
 <h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this headline">¶</a></h2>
 </section>
-<section id="module-serialix.__init__">
-<span id="serialix-init"></span><h2>serialix.__init__<a class="headerlink" href="#module-serialix.__init__" title="Permalink to this headline">¶</a></h2>
-<p>Here is the main initialization code that makes
-it easier to access the main features of the
-other submodules and subpackages</p>
+<section id="module-serialix.serialix">
+<span id="serialix-serialix-module"></span><h2>serialix.serialix module<a class="headerlink" href="#module-serialix.serialix" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="serialix.serialix.Serialix">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">serialix.serialix.</span></span><span class="sig-name descname"><span class="pre">Serialix</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">file_format</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">file_path</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">default_dictionary</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">{}</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">auto_file_creation</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">force_overwrite_file</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">parser_write_kwargs</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">{}</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">parser_read_kwargs</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">{}</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#serialix.serialix.Serialix" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p><code class="docutils literal notranslate"><span class="pre">serialix</span></code> unified instance generator for any officially supported language.</p>
+<p>This class should be used for creation of the basic <code class="docutils literal notranslate"><span class="pre">serialix</span></code> object for one of the officially supported languages. Currently supported languages: <code class="docutils literal notranslate"><span class="pre">json</span></code>, <code class="docutils literal notranslate"><span class="pre">yaml</span></code>, <code class="docutils literal notranslate"><span class="pre">toml</span></code></p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>file_format</strong> (<em>str</em>) – Format of language to be used. Currently supported languages: <code class="docutils literal notranslate"><span class="pre">json</span></code>, <code class="docutils literal notranslate"><span class="pre">yaml</span></code> (or <code class="docutils literal notranslate"><span class="pre">yml</span></code>), <code class="docutils literal notranslate"><span class="pre">toml</span></code> (or <code class="docutils literal notranslate"><span class="pre">tml</span></code>)</p></li>
+<li><p><strong>file_path</strong> (<em>str</em>) – Path to preferred local file destination
+If the file does not exist at the specified path, it will be created</p></li>
+<li><p><strong>default_dictionary</strong> (<em>Union</em><em>[</em><em>str</em><em>, </em><em>dict</em><em>]</em><em>, </em><em>optional</em>) – Default local file path <code class="docutils literal notranslate"><span class="pre">str</span></code> or <code class="docutils literal notranslate"><span class="pre">dict</span></code>
+that will be used for local file start values and , defaults to {}</p></li>
+<li><p><strong>auto_file_creation</strong> (<em>bool</em><em>, </em><em>optional</em>) – Automatic local file creation on object initialization, defaults to True</p></li>
+<li><p><strong>force_overwrite_file</strong> (<em>bool</em><em>, </em><em>optional</em>) – Whether the file needs to be overwritten if it already exists, defaults to False</p></li>
+<li><p><strong>parser_write_kwargs</strong> (<em>dict</em><em>, </em><em>optional</em>) – Pass custom arguments to parser’s write to local file action, defaults to {}</p></li>
+<li><p><strong>parser_read_kwargs</strong> (<em>dict</em><em>, </em><em>optional</em>) – Pass custom arguments to parser’s read from local file action, defaults to {}</p></li>
+</ul>
+</dd>
+<dt class="field-even">Raises</dt>
+<dd class="field-even"><ul class="simple">
+<li><p><strong>ValueError</strong> – If provided data type in argument <code class="docutils literal notranslate"><span class="pre">default_dictionary</span></code> is not
+the path <code class="docutils literal notranslate"><span class="pre">str</span></code> or <code class="docutils literal notranslate"><span class="pre">dict</span></code></p></li>
+<li><p><strong>ValueError</strong> – If provided data in argument <code class="docutils literal notranslate"><span class="pre">file_format</span></code> is not one of the supported languages</p></li>
+</ul>
+</dd>
+</dl>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 2.1.0.</span></p>
+</div>
+</dd></dl>
 </section>
 <section id="module-serialix.core">
 <span id="serialix-core-module"></span><h2>serialix.core module<a class="headerlink" href="#module-serialix.core" title="Permalink to this headline">¶</a></h2>
@@ -632,6 +660,12 @@ Function will get their copies and work with them.</p>
 </div>
 </dd></dl>
 </section>
+<section id="module-serialix.__init__">
+<span id="serialix-init"></span><h2>serialix.__init__<a class="headerlink" href="#module-serialix.__init__" title="Permalink to this headline">¶</a></h2>
+<p>Here is the main initialization code that makes
+it easier to access the main features of the
+other submodules and subpackages</p>
+</section>
 <section id="module-serialix.meta">
 <span id="serialix-meta-module"></span><h2>serialix.meta module<a class="headerlink" href="#module-serialix.meta" title="Permalink to this headline">¶</a></h2>
 </section>
@@ -651,14 +685,14 @@ Function will get their copies and work with them.</p>
               </div>
               <svg><use href="#svg-arrow-right"></use></svg>
             </a>
-          <a class="prev-page" href="guide_advanced_features.html">
+          <a class="prev-page" href="guide_cli.html">
               <svg><use href="#svg-arrow-right"></use></svg>
               <div class="page-info">
                 <div class="context">
                   <span>Previous</span>
                 </div>
                 
-                <div class="title">Advanced Features</div>
+                <div class="title">CLI Toolset</div>
                 
               </div>
             </a>
@@ -691,8 +725,9 @@ Function will get their copies and work with them.</p>
 <li><a class="reference internal" href="#">serialix</a><ul>
 <li><a class="reference internal" href="#subpackages">Subpackages</a></li>
 <li><a class="reference internal" href="#submodules">Submodules</a></li>
-<li><a class="reference internal" href="#module-serialix.__init__">serialix.__init__</a></li>
+<li><a class="reference internal" href="#module-serialix.serialix">serialix.serialix module</a></li>
 <li><a class="reference internal" href="#module-serialix.core">serialix.core module</a></li>
+<li><a class="reference internal" href="#module-serialix.__init__">serialix.__init__</a></li>
 <li><a class="reference internal" href="#module-serialix.meta">serialix.meta module</a></li>
 </ul>
 </li>

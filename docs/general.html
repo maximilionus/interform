@@ -160,7 +160,6 @@
 <li class="toctree-l1"><a class="reference internal" href="guide_installation.html">Installation Guide</a></li>
 <li class="toctree-l1"><a class="reference internal" href="guide_basic_usage.html">Basic Usage</a></li>
 <li class="toctree-l1"><a class="reference internal" href="guide_cli.html">CLI Toolset</a></li>
-<li class="toctree-l1"><a class="reference internal" href="guide_advanced_features.html">Advanced Features</a></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="serialix.html">serialix</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="serialix.langs.html">serialix.langs package</a></li>
 </ul>
@@ -197,10 +196,26 @@
 <h2>About<a class="headerlink" href="#about" title="Permalink to this headline">¶</a></h2>
 <p><code class="docutils literal notranslate"><span class="pre">serialix</span></code> is a powerful and easy-to-use tool that provides a unified interaction layer for various data interchange formats <em>(DIF)</em> like json, yaml, etc. Due to the how this tool designed, all the supported languages share the identical base between each other, meaning that process of working with those languages will be almost the same. Tool can also be extended for your purposes or even your own DIF language parser support.</p>
 </section>
+<section id="usage-example">
+<h2>Usage example<a class="headerlink" href="#usage-example" title="Permalink to this headline">¶</a></h2>
+<p><code class="docutils literal notranslate"><span class="pre">serialix</span></code> is very easy to use:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">serialix</span> <span class="kn">import</span> <span class="n">Serialix</span>                                <span class="c1"># Import `Serialix` main class</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">default_settings</span> <span class="o">=</span> <span class="p">{</span> <span class="s1">'version'</span><span class="p">:</span> <span class="s1">'1.23.2'</span> <span class="p">}</span>                   <span class="c1"># Specify the default values for our file</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">cfg</span> <span class="o">=</span> <span class="n">Serialix</span><span class="p">(</span><span class="s1">'json'</span><span class="p">,</span> <span class="s1">'./settings.json'</span><span class="p">,</span> <span class="n">default_settings</span><span class="p">)</span>  <span class="c1"># Create serialix object for `json` format.</span>
+<span class="go">                                                                 # Local file will be automatically created.</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">cfg</span><span class="p">[</span><span class="s1">'version'</span><span class="p">]</span>                                               <span class="c1"># Read the `version` key</span>
+<span class="go">'1.23.2'</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">cfg</span><span class="p">[</span><span class="s1">'version'</span><span class="p">]</span> <span class="o">=</span> <span class="s1">'2.0.0'</span>                                     <span class="c1"># Change the `version` key value</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">cfg</span><span class="p">[</span><span class="s1">'version'</span><span class="p">]</span>                                               <span class="c1"># Read the values of `version` key again</span>
+<span class="go">'2.0.0'</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">cfg</span><span class="o">.</span><span class="n">commit</span><span class="p">()</span>                                                 <span class="c1"># Commit the changes to local `settings.json` file</span>
+</pre></div>
+</div>
+</section>
 <section id="supported-languages">
 <h2>Supported Languages<a class="headerlink" href="#supported-languages" title="Permalink to this headline">¶</a></h2>
-<section id="names">
-<h3>Names<a class="headerlink" href="#names" title="Permalink to this headline">¶</a></h3>
+<section id="list">
+<h3>List<a class="headerlink" href="#list" title="Permalink to this headline">¶</a></h3>
 <p>List of currently supported languages.</p>
 <ul class="simple">
 <li><dl class="simple">
@@ -225,27 +240,23 @@
 <p>Languages, listed in <strong>Native Support</strong> are supported by python without any external packages, while <strong>External Support</strong> requires external packages to be installed. For more detailed information go here: <a class="reference internal" href="guide_installation.html"><span class="doc">Installation Guide</span></a></p>
 </div>
 </section>
-<section id="classes">
-<h3>Classes<a class="headerlink" href="#classes" title="Permalink to this headline">¶</a></h3>
+<section id="public-classes">
+<h3>Public Classes<a class="headerlink" href="#public-classes" title="Permalink to this headline">¶</a></h3>
 <p>List of classes for supported DIF languages, that can be used:</p>
 <dl class="field-list simple">
-<dt class="field-odd"><code class="docutils literal notranslate"><span class="pre">JSON_Format</span></code></dt>
-<dd class="field-odd"><p>Support for JSON language. Absolutely the same for built-in and external (ujson) <code class="docutils literal notranslate"><span class="pre">json</span></code> parsers.</p>
+<dt class="field-odd"><code class="docutils literal notranslate"><span class="pre">Serialix</span></code></dt>
+<dd class="field-odd"><p>Unified instance generator for any supported language. Implemented in version <code class="docutils literal notranslate"><span class="pre">2.1.0</span></code> and should be preferred as the main entry point for any interaction with this package.</p>
 </dd>
-<dt class="field-even"><code class="docutils literal notranslate"><span class="pre">YAML_Format</span></code></dt>
-<dd class="field-even"><p>Support for YAML language</p>
+<dt class="field-even"><code class="docutils literal notranslate"><span class="pre">JSON_Format</span></code></dt>
+<dd class="field-even"><p>Support for JSON language. Absolutely the same for built-in and external (ujson) <code class="docutils literal notranslate"><span class="pre">json</span></code> parsers.</p>
 </dd>
-<dt class="field-odd"><code class="docutils literal notranslate"><span class="pre">TOML_Format</span></code></dt>
-<dd class="field-odd"><p>Support for TOML language</p>
+<dt class="field-odd"><code class="docutils literal notranslate"><span class="pre">YAML_Format</span></code></dt>
+<dd class="field-odd"><p>Support for YAML language</p>
+</dd>
+<dt class="field-even"><code class="docutils literal notranslate"><span class="pre">TOML_Format</span></code></dt>
+<dd class="field-even"><p>Support for TOML language</p>
 </dd>
 </dl>
-<p>All <code class="docutils literal notranslate"><span class="pre">serialix</span></code>’s supported languages are easy to access and can be imported straight from main package without stating any subpackage or submodule:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">serialix</span> <span class="kn">import</span> <span class="o">&lt;</span><span class="n">lang_class_here</span><span class="o">&gt;</span>
-
-<span class="c1"># &lt;lang_class_here&gt; should be replaced</span>
-<span class="c1"># with any class name listed above</span>
-</pre></div>
-</div>
 </section>
 </section>
 <section id="module-hierarchy">
@@ -255,6 +266,7 @@
 <dt><code class="docutils literal notranslate"><span class="pre">serialix</span></code> - Contains main language parsers and module meta information imports for easy access.</dt><dd><ul>
 <li><p><code class="docutils literal notranslate"><span class="pre">core</span></code> - Realisation of basic features, that will be inherited and used in other modules.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">meta</span></code> - Meta information, like version, author, etc.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">serialix</span></code> - Instance generator implementation</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">cli</span></code> - CLI realisation module. No public API available.</p></li>
 <li><dl class="simple">
 <dt><code class="docutils literal notranslate"><span class="pre">langs</span></code> - Subpackage with realisation of main features for various DIF languages</dt><dd><ul>
@@ -265,7 +277,7 @@
 </dd>
 </dl>
 </li>
-<li><p><code class="docutils literal notranslate"><span class="pre">tests</span></code> - PyTest unit testing suite subpackage</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">tests</span></code> - PyTest unit testing suite</p></li>
 </ul>
 </dd>
 </dl>
@@ -327,9 +339,10 @@
             <ul>
 <li><a class="reference internal" href="#">General Information</a><ul>
 <li><a class="reference internal" href="#about">About</a></li>
+<li><a class="reference internal" href="#usage-example">Usage example</a></li>
 <li><a class="reference internal" href="#supported-languages">Supported Languages</a><ul>
-<li><a class="reference internal" href="#names">Names</a></li>
-<li><a class="reference internal" href="#classes">Classes</a></li>
+<li><a class="reference internal" href="#list">List</a></li>
+<li><a class="reference internal" href="#public-classes">Public Classes</a></li>
 </ul>
 </li>
 <li><a class="reference internal" href="#module-hierarchy">Module Hierarchy</a></li>
