@@ -6,7 +6,7 @@
 <link rel="index" title="Index" href="genindex.html" /><link rel="search" title="Search" href="search.html" /><link rel="next" title="serialix.langs package" href="serialix.langs.html" /><link rel="prev" title="Advanced Features" href="guide_advanced_features.html" />
 
     <meta name="generator" content="sphinx-4.3.2, furo 2022.01.02"/>
-        <title>serialix - serialix 2.0.1 documentation</title>
+        <title>serialix - serialix 2.1.0 documentation</title>
       <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="_static/styles/furo.css?digest=df49af52631e7917044a9c21a57f7b83170a6dd0" />
     <link rel="stylesheet" type="text/css" href="_static/styles/furo-extensions.css?digest=fade93df149f7c5fedb3ff897f799dc7d283b420" />
@@ -123,7 +123,7 @@
       </label>
     </div>
     <div class="header-center">
-      <a href="index.html"><div class="brand">serialix 2.0.1 documentation</div></a>
+      <a href="index.html"><div class="brand">serialix 2.1.0 documentation</div></a>
     </div>
     <div class="header-right">
       <div class="theme-toggle-container theme-toggle-header">
@@ -146,7 +146,7 @@
       <div class="sidebar-sticky"><a class="sidebar-brand" href="index.html">
   
   
-  <span class="sidebar-brand-text">serialix 2.0.1 documentation</span>
+  <span class="sidebar-brand-text">serialix 2.1.0 documentation</span>
   
 </a><form class="sidebar-search-container" method="get" action="search.html" role="search">
   <input class="sidebar-search" placeholder=Search name="q" aria-label="Search">
@@ -242,7 +242,7 @@ that will be used for local file start values and , defaults to {}</p></li>
 </dd>
 <dt class="field-even">Raises</dt>
 <dd class="field-even"><p><strong>ValueError</strong> – If provided data type in argument <code class="docutils literal notranslate"><span class="pre">default_dictionary</span></code> is not
-the path <code class="docutils literal notranslate"><span class="pre">str</span></code> or <code class="docutils literal notranslate"><span class="pre">dict</span></code>, this exception will be raised</p>
+the path <code class="docutils literal notranslate"><span class="pre">str</span></code> or <code class="docutils literal notranslate"><span class="pre">dict</span></code></p>
 </dd>
 </dl>
 <div class="admonition note">
@@ -272,6 +272,9 @@ so executing:</p>
 <dt class="field-odd">Return type</dt>
 <dd class="field-odd"><p>dict</p>
 </dd>
+<dt class="field-even">Raises</dt>
+<dd class="field-even"><p><strong>NotImplementedError</strong> – If method was not implemented directly in inherited class</p>
+</dd>
 </dl>
 </dd></dl>
 <dl class="py method">
@@ -284,6 +287,9 @@ so executing:</p>
 <li><p><strong>file_path</strong> (<em>str</em>) – Path to local file</p></li>
 <li><p><strong>dictionary</strong> (<em>dict</em>) – Dictionary which will be written in <code class="docutils literal notranslate"><span class="pre">file_path</span></code></p></li>
 </ul>
+</dd>
+<dt class="field-even">Raises</dt>
+<dd class="field-even"><p><strong>NotImplementedError</strong> – If method was not implemented directly in inherited class</p>
 </dd>
 </dl>
 </dd></dl>
@@ -596,25 +602,6 @@ returns <code class="docutils literal notranslate"><span class="pre">defalut</sp
 <li><p><strong>path_to_use</strong> (<em>str</em>) – The path to be created</p></li>
 <li><p><strong>path_is_dir</strong> (<em>bool</em><em>, </em><em>optional</em>) – Is <code class="docutils literal notranslate"><span class="pre">path_to_use</span></code> ends with directory, defaults to False</p></li>
 </ul>
-</dd>
-</dl>
-</dd></dl>
-<dl class="py function">
-<dt class="sig sig-object py" id="serialix.core.parse_dict_values">
-<span class="sig-prename descclassname"><span class="pre">serialix.core.</span></span><span class="sig-name descname"><span class="pre">parse_dict_values</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">input_dict</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">dict</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">→</span> <span class="sig-return-typehint"><span class="pre">dict</span></span></span><a class="headerlink" href="#serialix.core.parse_dict_values" title="Permalink to this definition">¶</a></dt>
-<dd><p>This function is written for DIF parsers and languages, that doesn’t support
-storing values in their original types, converting them all to <code class="docutils literal notranslate"><span class="pre">str</span></code> type.
-Function will recursively scan the input dictionary and will try to convert all
-keys with values which type is <code class="docutils literal notranslate"><span class="pre">str</span></code></p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>input_dict</strong> (<em>dict</em>) – [description]</p>
-</dd>
-<dt class="field-even">Returns</dt>
-<dd class="field-even"><p>[description]</p>
-</dd>
-<dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p>dict</p>
 </dd>
 </dl>
 </dd></dl>
