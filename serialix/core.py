@@ -39,8 +39,12 @@ class BaseLang:
 
         >>> this_object.dictionary.update({'check': True})
     """
+
+    __parsed_dict = {}
+    __parser_write_kwargs = {}
+    __parser_read_kwargs = {}
+
     def __init__(self, file_path: str, default_dictionary={}, auto_file_creation=True, force_overwrite_file=False, parser_write_kwargs={}, parser_read_kwargs={}):
-        self.__parsed_dict = {}
         self.local_file_path = file_path
         self.parser_write_kwargs = parser_write_kwargs
         self.parser_read_kwargs = parser_read_kwargs
@@ -184,6 +188,28 @@ class BaseLang:
         self.__parsed_dict.update(dictionary)
 
     @property
+    def parser_write_kwargs(self) -> dict:
+        return self.__parser_write_kwargs
+
+    @property
+    def parser_read_kwargs(self) -> dict:
+        return self.__parser_read_kwargs
+
+    @parser_read_kwargs.setter
+    def parser_read_kwargs(self, value: dict):
+        if isinstance(value, dict):
+            self.__parser_read_kwargs = value
+        else:
+            raise ValueError("Input type should be `dict`, not `{}`".format(type(value).__name__))
+
+    @parser_write_kwargs.setter
+    def parser_write_kwargs(self, value: dict):
+        if isinstance(value, dict):
+            self.__parser_write_kwargs = value
+        else:
+            raise ValueError("Input type should be `dict`, not `{}`".format(type(value).__name__))
+
+    @property
     def dictionary(self) -> dict:
         """Full access to the dictionary attribute.
         Contains local file data parsed to dictionary
@@ -195,7 +221,10 @@ class BaseLang:
 
     @dictionary.setter
     def dictionary(self, dictionary: dict):
-        self.__parsed_dict = dictionary
+        if isinstance(dictionary, dict):
+            self.__parsed_dict = dictionary
+        else:
+            raise ValueError("Input type should be `dict`, not `{}`".format(type(dictionary).__name__))
 
     @property
     def dictionary_default(self) -> dict:
