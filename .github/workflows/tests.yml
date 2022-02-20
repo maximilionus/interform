@@ -11,6 +11,8 @@ on:
       - ".github/workflows/docs.yml"
       - "examples/**"
   pull_request:
+    types:
+      - ready_for_review
     branches-ignore:
       - "docs**"
 
