@@ -6,6 +6,12 @@ This project uses a [semantic versioning](https://semver.org/) scheme as the bas
 ## Stable Releases
 
 
+### **2.1.1** : 2022.02.24
+
+#### Changed
+- `serialix.core.BaseLang`: `parser_write_kwargs`, `parser_read_kwargs`, `dictionary` properties are now secured from wrong data type assignment
+
+
 ### **2.1.0** : 2022.02.03
 
 #### Added
