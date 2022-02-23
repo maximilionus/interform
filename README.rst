@@ -39,4 +39,4 @@ List of currently supported languages.
 
 Documentation
 --------------------------------------
-All information about this module installation and usage is located in documentation `on this link <https://maximilionus.github.io/serialix/index.html>`__
+All information about this package installation and usage is located in documentation `on this link <https://maximilionus.github.io/serialix/index.html>`__
