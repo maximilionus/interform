@@ -1,4 +1,4 @@
-name: release actions
+name: Release Actions
 
 on:
   release:
@@ -7,7 +7,7 @@ on:
 
 jobs:
   publish_release:
-    name: publish release
+    name: Publish Release
     runs-on: ubuntu-18.04
     continue-on-error: false
     env:
@@ -15,7 +15,7 @@ jobs:
 
     steps:
       - uses: actions/checkout@v2
-      - name: Set up Python
+      - name: set up Python
         uses: actions/setup-python@v2
         with:
           python-version: "3.10"
@@ -34,7 +34,7 @@ jobs:
       - name: upload to github release
         uses: AButler/upload-release-assets@v2.0
         with:
-          files: "${{ env.built_package_dir }}/serialix*.whl); ${{ env.built_package_dir }}/serialix*.tar.gz)"
+          files: "${{ env.built_package_dir }}/serialix*.whl;${{ env.built_package_dir }}/serialix*.tar.gz"
           repo-token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: upload to PyPi
