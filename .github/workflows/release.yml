@@ -35,7 +35,7 @@ jobs:
         uses: AButler/upload-release-assets@v2.0
         with:
           files: "${{ env.built_package_dir }}/serialix*.whl); ${{ env.built_package_dir }}/serialix*.tar.gz)"
-          repo-token: ${{ github.GITHUB_TOKEN }}
+          repo-token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: upload to PyPi
         env:
