@@ -8,9 +8,12 @@ on:
     paths:
       - 'docs/**'
       - '.github/workflows/docs.yml'
+
   release:
     types:
       - released
+
+  workflow_dispatch:
 
 
 jobs:
