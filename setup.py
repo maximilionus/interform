@@ -39,7 +39,7 @@ setup(
     python_requires='~=3.5',
     author='maximilionus',
     author_email='maximilionuss@gmail.com',
-    description='Powerful and easy to use tool for working with various data interchange formats (json, yaml, etc.)',
+    description='Powerful and easy to use tool for working with various human-readable data serialization languages (like json, yaml, etc)',
     long_description_content_type='text/x-rst',
     long_description=readme_text,
     keywords='data interchange format files parse json yaml toml',
