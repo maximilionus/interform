@@ -1,7 +1,12 @@
 # serialix docs changelog
 
+## **3** : 2022.02.25
 
-## **2** : 2022
+### Changed
+- Updated the `general > about` text with more accurate information
+
+
+## **2** : 2022.02.02
 
 ### Changed
 - Massive changes made to `guide_basic_usage` and `general` to reflect the `serialix 2.1.0` update
