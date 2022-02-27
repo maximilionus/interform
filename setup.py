@@ -1,16 +1,15 @@
 import setuptools
-from os import path
-from platform import python_version
+import importlib.util
 
 
-if python_version()[:3] == '3.6':
-    # Workaround for `python 3.6` ModuleNotFoundError error on project import
-    __path__ = [path.dirname(path.abspath(__file__))]
-    from .serialix.meta import __version__ as package_version
-else:
-    from serialix.meta import __version__ as package_version
+# Workaround for `python 3.6` ModuleNotFoundError error on project
+serialix_meta_spec = importlib.util.spec_from_file_location('serialix.meta', './serialix/meta.py')
+serialix_meta_module = importlib.util.module_from_spec(serialix_meta_spec)
+serialix_meta_spec.loader.exec_module(serialix_meta_module)
+
 
 package_name = 'serialix'
+package_version = serialix_meta_module.__version__
 
 # Form extras
 extras_require = {
