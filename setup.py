@@ -4,7 +4,7 @@ from platform import python_version
 
 
 def get_package_version() -> str:
-    from .serialix.meta import __version__
+    from serialix.meta import __version__
     return __version__
 
 
