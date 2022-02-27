@@ -2,7 +2,7 @@ import setuptools
 import importlib.util
 
 
-# Workaround for `python 3.6` ModuleNotFoundError error on project
+# Workaround for `python 3.6` ModuleNotFoundError error on project import
 serialix_meta_spec = importlib.util.spec_from_file_location('serialix.meta', './serialix/meta.py')
 serialix_meta_module = importlib.util.module_from_spec(serialix_meta_spec)
 serialix_meta_spec.loader.exec_module(serialix_meta_module)

@@ -12,7 +12,7 @@ This project uses a [semantic versioning](https://semver.org/) scheme as the bas
 - Enhanced package description text
 
 ### Fixed
-- Solved security issues with setup script
+- Solved not critical security issues with setup script
 
 
 ### **2.1.1** : 2022.02.24
