@@ -1,13 +1,9 @@
-from setuptools import setup, find_packages
+import setuptools
 
 
 def get_package_version() -> str:
-    nspace = {}
-
-    with open('./serialix/meta.py', 'r') as f:
-        exec(f.read(), nspace)
-
-    return nspace['__version__']
+    from serialix.meta import __version__
+    return __version__
 
 
 package_name = 'serialix'
@@ -33,7 +29,7 @@ extras_require.setdefault('test', all_base_requirements.copy()).append('pytest<7
 with open('README.rst', 'r') as f:
     readme_text = f.read()
 
-setup(
+setuptools.setup(
     name=package_name,
     version=package_version,
     python_requires='~=3.5',
@@ -43,7 +39,7 @@ setup(
     long_description_content_type='text/x-rst',
     long_description=readme_text,
     keywords='data interchange format files parse json yaml toml',
-    packages=find_packages(),
+    packages=setuptools.find_packages(),
     extras_require=extras_require,
     entry_points={
         'console_scripts': [
