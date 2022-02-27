@@ -1,4 +1,6 @@
 import setuptools
+from os import path
+from platform import python_version
 
 
 def get_package_version() -> str:
@@ -8,6 +10,10 @@ def get_package_version() -> str:
 
 package_name = 'serialix'
 package_version = get_package_version()
+
+if python_version()[:3] == '3.6':
+    # Workaround for `python 3.6` ModuleNotFoundError error on `get_package_version()` execution
+    __path__ = [path.dirname(path.abspath(__file__))]
 
 # Form extras
 extras_require = {
