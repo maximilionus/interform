@@ -3,17 +3,14 @@ from os import path
 from platform import python_version
 
 
-def get_package_version() -> str:
-    from serialix.meta import __version__
-    return __version__
-
-
 if python_version()[:3] == '3.6':
-    # Workaround for `python 3.6` ModuleNotFoundError error on `get_package_version()` execution
+    # Workaround for `python 3.6` ModuleNotFoundError error on project import
     __path__ = [path.dirname(path.abspath(__file__))]
+    from .serialix.meta import __version__ as package_version
+else:
+    from serialix.meta import __version__ as package_version
 
 package_name = 'serialix'
-package_version = get_package_version()
 
 # Form extras
 extras_require = {
