@@ -6,6 +6,15 @@ This project uses a [semantic versioning](https://semver.org/) scheme as the bas
 ## Stable Releases
 
 
+### **2.1.2** : 2022.02.28
+
+### Changed
+- Enhanced package description text
+
+### Fixed
+- Solved not critical security issues with setup script
+
+
 ### **2.1.1** : 2022.02.24
 
 #### Changed

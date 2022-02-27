@@ -1,17 +1,15 @@
-from setuptools import setup, find_packages
+import setuptools
+import importlib.util
 
 
-def get_package_version() -> str:
-    nspace = {}
-
-    with open('./serialix/meta.py', 'r') as f:
-        exec(f.read(), nspace)
-
-    return nspace['__version__']
+# Workaround for `python 3.6` ModuleNotFoundError error on project import
+serialix_meta_spec = importlib.util.spec_from_file_location('serialix.meta', './serialix/meta.py')
+serialix_meta_module = importlib.util.module_from_spec(serialix_meta_spec)
+serialix_meta_spec.loader.exec_module(serialix_meta_module)
 
 
 package_name = 'serialix'
-package_version = get_package_version()
+package_version = serialix_meta_module.__version__
 
 # Form extras
 extras_require = {
@@ -33,17 +31,17 @@ extras_require.setdefault('test', all_base_requirements.copy()).append('pytest<7
 with open('README.rst', 'r') as f:
     readme_text = f.read()
 
-setup(
+setuptools.setup(
     name=package_name,
     version=package_version,
     python_requires='~=3.5',
     author='maximilionus',
     author_email='maximilionuss@gmail.com',
-    description='Powerful and easy to use tool for working with various data interchange formats (json, yaml, etc.)',
+    description='Powerful and easy to use tool for working with various human-readable data serialization languages (like json, yaml, etc)',
     long_description_content_type='text/x-rst',
     long_description=readme_text,
     keywords='data interchange format files parse json yaml toml',
-    packages=find_packages(),
+    packages=setuptools.find_packages(),
     extras_require=extras_require,
     entry_points={
         'console_scripts': [
