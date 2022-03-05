@@ -5,7 +5,7 @@ from argparse import ArgumentParser, Namespace
 
 from . import JSON_Format
 from .core import BaseLang
-from .meta import __version__ as serialix_version
+from .meta import version as serialix_version
 
 try:
     from . import YAML_Format

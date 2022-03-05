@@ -9,7 +9,7 @@ serialix_meta_spec.loader.exec_module(serialix_meta_module)
 
 
 package_name = 'serialix'
-package_version = serialix_meta_module.__version__
+package_version = serialix_meta_module.version
 
 # Form extras
 extras_require = {
