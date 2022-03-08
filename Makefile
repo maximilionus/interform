@@ -12,7 +12,6 @@ build: prepare_vars
 
 	@echo "Installing all project dependencies"
 	@$(PYTHON) -m pip install -U -r ./requirements-dev.txt -r ./requirements.txt
-	@$(PYTHON) ./setup.py install
 
 	@echo "Documentation build begin"
 	@make -C ./docs html

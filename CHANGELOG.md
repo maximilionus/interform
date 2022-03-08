@@ -1,5 +1,12 @@
 # serialix docs changelog
 
+## **4** : 2022.03.08
+
+### Changed
+- Optimized the `Makefile` script
+- Docs engine and theme upgraded to latest version
+
+
 ## **3** : 2022.02.25
 
 ### Changed
