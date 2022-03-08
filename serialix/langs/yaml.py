@@ -14,7 +14,7 @@ class YAML_Format(BaseLang):
         If the file does not exist at the specified path, it will be created
     :type file_path: str
     :param default_dictionary: Default local file path ``str`` or ``dict``
-        that will be used for local file start values and , defaults to {}
+        that will be used for local file start values, defaults to ``{}``
     :type default_dictionary: Union[str, dict], optional
     :param auto_file_creation: Automatic local file creation on object initialization, defaults to True
     :type auto_file_creation: bool, optional

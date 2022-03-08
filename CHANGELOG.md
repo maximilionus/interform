@@ -115,6 +115,14 @@ This project uses a [semantic versioning](https://semver.org/) scheme as the bas
 
 ## Development Releases
 
+### **2.1.3a1** : `X`
+
+#### Fixed
+- Docstrings for `serialix.serialix.Serialix` class and all the parents
+
+#### Changed
+- All variables in `serialix.meta` now public. Changes will not affect the `serialix.__init__`, I.e. - project version and author can still be accessed like `serialix.__version__` and `serialix.__author__` respectively
+
 
 ### **2.1.1a1** : 2022.02.13
 
