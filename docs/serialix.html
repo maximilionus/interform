@@ -5,11 +5,11 @@
     <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 <link rel="index" title="Index" href="genindex.html" /><link rel="search" title="Search" href="search.html" /><link rel="next" title="serialix.langs package" href="serialix.langs.html" /><link rel="prev" title="CLI Toolset" href="guide_cli.html" />
 
-    <meta name="generator" content="sphinx-4.3.2, furo 2022.01.02"/>
+    <meta name="generator" content="sphinx-4.4.0, furo 2022.03.04"/>
         <title>serialix - serialix 2.1.2 documentation</title>
       <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="_static/styles/furo.css?digest=df49af52631e7917044a9c21a57f7b83170a6dd0" />
-    <link rel="stylesheet" type="text/css" href="_static/styles/furo-extensions.css?digest=fade93df149f7c5fedb3ff897f799dc7d283b420" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/furo.css?digest=935aa2abcc5c1da4283d1dc201fb1f0add16d23a" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/furo-extensions.css?digest=25ceb02ed1c46dc30f2321ff83e92799f69dfdb9" />
     
     
 
@@ -20,16 +20,18 @@
   --color-code-foreground: black;
   
   }
-  body[data-theme="dark"] {
-    --color-code-background: #202020;
-  --color-code-foreground: #d0d0d0;
-  
-  }
-  @media (prefers-color-scheme: dark) {
-    body:not([data-theme="light"]) {
+  @media not print {
+    body[data-theme="dark"] {
       --color-code-background: #202020;
   --color-code-foreground: #d0d0d0;
   
+    }
+    @media (prefers-color-scheme: dark) {
+      body:not([data-theme="light"]) {
+        --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  
+      }
     }
   }
 </style></head>
@@ -41,17 +43,13 @@
 <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
   <symbol id="svg-toc" viewBox="0 0 24 24">
     <title>Contents</title>
-    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-      <path stroke="none" d="M0 0h24v24H0z" />
-      <line x1="4" y1="6" x2="20" y2="6" />
-      <line x1="10" y1="12" x2="20" y2="12" />
-      <line x1="6" y1="18" x2="20" y2="18" />
+    <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 1024 1024">
+      <path d="M408 442h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8zm-8 204c0 4.4 3.6 8 8 8h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56zm504-486H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zm0 632H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zM115.4 518.9L271.7 642c5.8 4.6 14.4.5 14.4-6.9V388.9c0-7.4-8.5-11.5-14.4-6.9L115.4 505.1a8.74 8.74 0 0 0 0 13.8z"/>
     </svg>
   </symbol>
   <symbol id="svg-menu" viewBox="0 0 24 24">
     <title>Menu</title>
-    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
       stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-menu">
       <line x1="3" y1="12" x2="21" y2="12"></line>
       <line x1="3" y1="6" x2="21" y2="6"></line>
@@ -60,14 +58,14 @@
   </symbol>
   <symbol id="svg-arrow-right" viewBox="0 0 24 24">
     <title>Expand</title>
-    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
       stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-chevron-right">
       <polyline points="9 18 15 12 9 6"></polyline>
     </svg>
   </symbol>
   <symbol id="svg-sun" viewBox="0 0 24 24">
     <title>Light mode</title>
-    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
       stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="feather-sun">
       <circle cx="12" cy="12" r="5"></circle>
       <line x1="12" y1="1" x2="12" y2="3"></line>
@@ -82,7 +80,7 @@
   </symbol>
   <symbol id="svg-moon" viewBox="0 0 24 24">
     <title>Dark mode</title>
-    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
       stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-moon">
       <path stroke="none" d="M0 0h24v24H0z" fill="none" />
       <path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z" />
@@ -90,7 +88,7 @@
   </symbol>
   <symbol id="svg-sun-half" viewBox="0 0 24 24">
     <title>Auto light/dark mode</title>
-    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
       stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-shadow">
       <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
       <circle cx="12" cy="12" r="9" />
@@ -168,6 +166,7 @@
 
 </div>
 </div>
+
       </div>
       
     </div>
@@ -175,8 +174,13 @@
   <div class="main">
     <div class="content">
       <div class="article-container">
-        <div class="content-icon-container">
-          <div class="theme-toggle-container theme-toggle-content">
+        <a href="#" class="back-to-top muted-link">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12z"></path>
+          </svg>
+          <span>Back to top</span>
+        </a>
+        <div class="content-icon-container"><div class="theme-toggle-container theme-toggle-content">
             <button class="theme-toggle">
               <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
               <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
@@ -191,9 +195,9 @@
         </div>
         <article role="main">
           <section id="serialix">
-<h1>serialix<a class="headerlink" href="#serialix" title="Permalink to this headline">¶</a></h1>
+<h1>serialix<a class="headerlink" href="#serialix" title="Permalink to this headline">#</a></h1>
 <section id="subpackages">
-<h2>Subpackages<a class="headerlink" href="#subpackages" title="Permalink to this headline">¶</a></h2>
+<h2>Subpackages<a class="headerlink" href="#subpackages" title="Permalink to this headline">#</a></h2>
 <div class="toctree-wrapper compound">
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="serialix.langs.html">serialix.langs package</a><ul>
@@ -208,13 +212,13 @@
 </div>
 </section>
 <section id="submodules">
-<h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this headline">¶</a></h2>
+<h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this headline">#</a></h2>
 </section>
 <section id="module-serialix.serialix">
-<span id="serialix-serialix-module"></span><h2>serialix.serialix module<a class="headerlink" href="#module-serialix.serialix" title="Permalink to this headline">¶</a></h2>
+<span id="serialix-serialix-module"></span><h2>serialix.serialix module<a class="headerlink" href="#module-serialix.serialix" title="Permalink to this headline">#</a></h2>
 <dl class="py class">
 <dt class="sig sig-object py" id="serialix.serialix.Serialix">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">serialix.serialix.</span></span><span class="sig-name descname"><span class="pre">Serialix</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">file_format</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">file_path</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">default_dictionary</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">{}</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">auto_file_creation</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">force_overwrite_file</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">parser_write_kwargs</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">{}</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">parser_read_kwargs</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">{}</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#serialix.serialix.Serialix" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">serialix.serialix.</span></span><span class="sig-name descname"><span class="pre">Serialix</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">file_format</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">file_path</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">default_dictionary</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">{}</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">auto_file_creation</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">force_overwrite_file</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">parser_write_kwargs</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">{}</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">parser_read_kwargs</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">{}</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#serialix.serialix.Serialix" title="Permalink to this definition">#</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
 <p><code class="docutils literal notranslate"><span class="pre">serialix</span></code> unified instance generator for any officially supported language.</p>
 <p>This class should be used for creation of the basic <code class="docutils literal notranslate"><span class="pre">serialix</span></code> object for one of the officially supported languages. Currently supported languages: <code class="docutils literal notranslate"><span class="pre">json</span></code>, <code class="docutils literal notranslate"><span class="pre">yaml</span></code>, <code class="docutils literal notranslate"><span class="pre">toml</span></code></p>
@@ -246,10 +250,10 @@ the path <code class="docutils literal notranslate"><span class="pre">str</span>
 </dd></dl>
 </section>
 <section id="module-serialix.core">
-<span id="serialix-core-module"></span><h2>serialix.core module<a class="headerlink" href="#module-serialix.core" title="Permalink to this headline">¶</a></h2>
+<span id="serialix-core-module"></span><h2>serialix.core module<a class="headerlink" href="#module-serialix.core" title="Permalink to this headline">#</a></h2>
 <dl class="py class">
 <dt class="sig sig-object py" id="serialix.core.BaseLang">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">serialix.core.</span></span><span class="sig-name descname"><span class="pre">BaseLang</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">file_path</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">default_dictionary</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">{}</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">auto_file_creation</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">force_overwrite_file</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">parser_write_kwargs</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">{}</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">parser_read_kwargs</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">{}</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#serialix.core.BaseLang" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">serialix.core.</span></span><span class="sig-name descname"><span class="pre">BaseLang</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">file_path</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">default_dictionary</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">{}</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">auto_file_creation</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">force_overwrite_file</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">parser_write_kwargs</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">{}</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">parser_read_kwargs</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">{}</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#serialix.core.BaseLang" title="Permalink to this definition">#</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
 <p>Base Data Interchange Format (DIF) realisation.</p>
 <p>This class is not intended to be used directly. Instead, it should be inherited by a class, that provides the support
@@ -288,19 +292,19 @@ so executing:</p>
 </div>
 <dl class="py attribute">
 <dt class="sig sig-object py" id="serialix.core.BaseLang.__parsed_dict">
-<span class="sig-name descname"><span class="pre">__parsed_dict</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">{}</span></em><a class="headerlink" href="#serialix.core.BaseLang.__parsed_dict" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">__parsed_dict</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">{}</span></em><a class="headerlink" href="#serialix.core.BaseLang.__parsed_dict" title="Permalink to this definition">#</a></dt>
 <dd></dd></dl>
 <dl class="py attribute">
 <dt class="sig sig-object py" id="serialix.core.BaseLang.__parser_read_kwargs">
-<span class="sig-name descname"><span class="pre">__parser_read_kwargs</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">{}</span></em><a class="headerlink" href="#serialix.core.BaseLang.__parser_read_kwargs" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">__parser_read_kwargs</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">{}</span></em><a class="headerlink" href="#serialix.core.BaseLang.__parser_read_kwargs" title="Permalink to this definition">#</a></dt>
 <dd></dd></dl>
 <dl class="py attribute">
 <dt class="sig sig-object py" id="serialix.core.BaseLang.__parser_write_kwargs">
-<span class="sig-name descname"><span class="pre">__parser_write_kwargs</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">{}</span></em><a class="headerlink" href="#serialix.core.BaseLang.__parser_write_kwargs" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">__parser_write_kwargs</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">{}</span></em><a class="headerlink" href="#serialix.core.BaseLang.__parser_write_kwargs" title="Permalink to this definition">#</a></dt>
 <dd></dd></dl>
 <dl class="py method">
 <dt class="sig sig-object py" id="serialix.core.BaseLang._core__read_file_to_dict">
-<span class="sig-name descname"><span class="pre">_core__read_file_to_dict</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">file_path</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">→</span> <span class="sig-return-typehint"><span class="pre">dict</span></span></span><a class="headerlink" href="#serialix.core.BaseLang._core__read_file_to_dict" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">_core__read_file_to_dict</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">file_path</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">→</span> <span class="sig-return-typehint"><span class="pre">dict</span></span></span><a class="headerlink" href="#serialix.core.BaseLang._core__read_file_to_dict" title="Permalink to this definition">#</a></dt>
 <dd><p>Template for reading custom local files from path <code class="docutils literal notranslate"><span class="pre">str</span></code> as dictionary</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -319,7 +323,7 @@ so executing:</p>
 </dd></dl>
 <dl class="py method">
 <dt class="sig sig-object py" id="serialix.core.BaseLang._core__write_dict_to_file">
-<span class="sig-name descname"><span class="pre">_core__write_dict_to_file</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">file_path</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dictionary</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">dict</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#serialix.core.BaseLang._core__write_dict_to_file" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">_core__write_dict_to_file</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">file_path</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dictionary</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">dict</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#serialix.core.BaseLang._core__write_dict_to_file" title="Permalink to this definition">#</a></dt>
 <dd><p>Template for writing dictionaries into custom local path <code class="docutils literal notranslate"><span class="pre">str</span></code></p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -335,17 +339,17 @@ so executing:</p>
 </dd></dl>
 <dl class="py method">
 <dt class="sig sig-object py" id="serialix.core.BaseLang.clear">
-<span class="sig-name descname"><span class="pre">clear</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#serialix.core.BaseLang.clear" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">clear</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#serialix.core.BaseLang.clear" title="Permalink to this definition">#</a></dt>
 <dd><p>Clear the bound <code class="docutils literal notranslate"><span class="pre">dictionary</span></code></p>
 </dd></dl>
 <dl class="py method">
 <dt class="sig sig-object py" id="serialix.core.BaseLang.commit">
-<span class="sig-name descname"><span class="pre">commit</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#serialix.core.BaseLang.commit" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">commit</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#serialix.core.BaseLang.commit" title="Permalink to this definition">#</a></dt>
 <dd><p>Commit all changes from <code class="docutils literal notranslate"><span class="pre">dictionary</span></code> to local file</p>
 </dd></dl>
 <dl class="py method">
 <dt class="sig sig-object py" id="serialix.core.BaseLang.copy">
-<span class="sig-name descname"><span class="pre">copy</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">deep_mode</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">→</span> <span class="sig-return-typehint"><span class="pre">dict</span></span></span><a class="headerlink" href="#serialix.core.BaseLang.copy" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">copy</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">deep_mode</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">→</span> <span class="sig-return-typehint"><span class="pre">dict</span></span></span><a class="headerlink" href="#serialix.core.BaseLang.copy" title="Permalink to this definition">#</a></dt>
 <dd><p>Get the copy of <code class="docutils literal notranslate"><span class="pre">dictionary</span></code>.
 This method uses the recursive copy function that will remove
 all references to original dictionary.</p>
@@ -366,7 +370,7 @@ defaults to True.</p>
 </dd></dl>
 <dl class="py method">
 <dt class="sig sig-object py" id="serialix.core.BaseLang.create_file">
-<span class="sig-name descname"><span class="pre">create_file</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">→</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="headerlink" href="#serialix.core.BaseLang.create_file" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">create_file</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">→</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="headerlink" href="#serialix.core.BaseLang.create_file" title="Permalink to this definition">#</a></dt>
 <dd><p>Create new local file from default dictionary</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
@@ -379,7 +383,7 @@ defaults to True.</p>
 </dd></dl>
 <dl class="py method">
 <dt class="sig sig-object py" id="serialix.core.BaseLang.delete_file">
-<span class="sig-name descname"><span class="pre">delete_file</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">→</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="headerlink" href="#serialix.core.BaseLang.delete_file" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">delete_file</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">→</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="headerlink" href="#serialix.core.BaseLang.delete_file" title="Permalink to this definition">#</a></dt>
 <dd><p>Delete local file</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
@@ -393,7 +397,7 @@ False will be returned only if the local file does not exist at the time of dele
 </dd></dl>
 <dl class="py property">
 <dt class="sig sig-object py" id="serialix.core.BaseLang.dictionary">
-<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">dictionary</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">dict</span></em><a class="headerlink" href="#serialix.core.BaseLang.dictionary" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">dictionary</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">dict</span></em><a class="headerlink" href="#serialix.core.BaseLang.dictionary" title="Permalink to this definition">#</a></dt>
 <dd><p>Full access to the dictionary attribute.
 Contains local file data parsed to dictionary</p>
 <dl class="field-list simple">
@@ -407,7 +411,7 @@ Contains local file data parsed to dictionary</p>
 </dd></dl>
 <dl class="py property">
 <dt class="sig sig-object py" id="serialix.core.BaseLang.dictionary_default">
-<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">dictionary_default</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">dict</span></em><a class="headerlink" href="#serialix.core.BaseLang.dictionary_default" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">dictionary_default</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">dict</span></em><a class="headerlink" href="#serialix.core.BaseLang.dictionary_default" title="Permalink to this definition">#</a></dt>
 <dd><p>Full access to the default dictionary.
 Contains dictionary with default keys that was
 specified in <code class="docutils literal notranslate"><span class="pre">default_dictionary</span></code> argument.</p>
@@ -422,7 +426,7 @@ specified in <code class="docutils literal notranslate"><span class="pre">defaul
 </dd></dl>
 <dl class="py method">
 <dt class="sig sig-object py" id="serialix.core.BaseLang.get">
-<span class="sig-name descname"><span class="pre">get</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">key</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">default</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">→</span> <span class="sig-return-typehint"><span class="pre">Any</span></span></span><a class="headerlink" href="#serialix.core.BaseLang.get" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">get</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">key</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">default</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">→</span> <span class="sig-return-typehint"><span class="pre">Any</span></span></span><a class="headerlink" href="#serialix.core.BaseLang.get" title="Permalink to this definition">#</a></dt>
 <dd><p>Get key from <code class="docutils literal notranslate"><span class="pre">dictionary</span></code></p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -442,7 +446,7 @@ if key wasn’t found.</p>
 </dd></dl>
 <dl class="py method">
 <dt class="sig sig-object py" id="serialix.core.BaseLang.is_file_exist">
-<span class="sig-name descname"><span class="pre">is_file_exist</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">→</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="headerlink" href="#serialix.core.BaseLang.is_file_exist" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">is_file_exist</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">→</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="headerlink" href="#serialix.core.BaseLang.is_file_exist" title="Permalink to this definition">#</a></dt>
 <dd><p>Check local file existence</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
@@ -455,7 +459,7 @@ if key wasn’t found.</p>
 </dd></dl>
 <dl class="py method">
 <dt class="sig sig-object py" id="serialix.core.BaseLang.items">
-<span class="sig-name descname"><span class="pre">items</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">→</span> <span class="sig-return-typehint"><span class="pre">list</span></span></span><a class="headerlink" href="#serialix.core.BaseLang.items" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">items</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">→</span> <span class="sig-return-typehint"><span class="pre">list</span></span></span><a class="headerlink" href="#serialix.core.BaseLang.items" title="Permalink to this definition">#</a></dt>
 <dd><p>Get items of the <code class="docutils literal notranslate"><span class="pre">dictionary</span></code></p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
@@ -468,7 +472,7 @@ if key wasn’t found.</p>
 </dd></dl>
 <dl class="py method">
 <dt class="sig sig-object py" id="serialix.core.BaseLang.keys">
-<span class="sig-name descname"><span class="pre">keys</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">→</span> <span class="sig-return-typehint"><span class="pre">list</span></span></span><a class="headerlink" href="#serialix.core.BaseLang.keys" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">keys</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">→</span> <span class="sig-return-typehint"><span class="pre">list</span></span></span><a class="headerlink" href="#serialix.core.BaseLang.keys" title="Permalink to this definition">#</a></dt>
 <dd><p>Get keys of the <code class="docutils literal notranslate"><span class="pre">dictionary</span></code></p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
@@ -481,15 +485,15 @@ if key wasn’t found.</p>
 </dd></dl>
 <dl class="py property">
 <dt class="sig sig-object py" id="serialix.core.BaseLang.parser_read_kwargs">
-<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">parser_read_kwargs</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">dict</span></em><a class="headerlink" href="#serialix.core.BaseLang.parser_read_kwargs" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">parser_read_kwargs</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">dict</span></em><a class="headerlink" href="#serialix.core.BaseLang.parser_read_kwargs" title="Permalink to this definition">#</a></dt>
 <dd></dd></dl>
 <dl class="py property">
 <dt class="sig sig-object py" id="serialix.core.BaseLang.parser_write_kwargs">
-<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">parser_write_kwargs</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">dict</span></em><a class="headerlink" href="#serialix.core.BaseLang.parser_write_kwargs" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">parser_write_kwargs</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">dict</span></em><a class="headerlink" href="#serialix.core.BaseLang.parser_write_kwargs" title="Permalink to this definition">#</a></dt>
 <dd></dd></dl>
 <dl class="py method">
 <dt class="sig sig-object py" id="serialix.core.BaseLang.pop">
-<span class="sig-name descname"><span class="pre">pop</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">key</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Any</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">default</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">→</span> <span class="sig-return-typehint"><span class="pre">Any</span></span></span><a class="headerlink" href="#serialix.core.BaseLang.pop" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">pop</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">key</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Any</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">default</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">→</span> <span class="sig-return-typehint"><span class="pre">Any</span></span></span><a class="headerlink" href="#serialix.core.BaseLang.pop" title="Permalink to this definition">#</a></dt>
 <dd><p>Pop key from <code class="docutils literal notranslate"><span class="pre">dictionary</span></code></p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -509,7 +513,7 @@ if key wasn’t found, defaults to None.</p>
 </dd></dl>
 <dl class="py method">
 <dt class="sig sig-object py" id="serialix.core.BaseLang.popitem">
-<span class="sig-name descname"><span class="pre">popitem</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">→</span> <span class="sig-return-typehint"><span class="pre">Any</span></span></span><a class="headerlink" href="#serialix.core.BaseLang.popitem" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">popitem</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">→</span> <span class="sig-return-typehint"><span class="pre">Any</span></span></span><a class="headerlink" href="#serialix.core.BaseLang.popitem" title="Permalink to this definition">#</a></dt>
 <dd><p>Pop item from <code class="docutils literal notranslate"><span class="pre">dictionary</span></code> in LIFO order.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -529,7 +533,7 @@ if key wasn’t found, defaults to None.</p>
 </dd></dl>
 <dl class="py method">
 <dt class="sig sig-object py" id="serialix.core.BaseLang.read_file_as_dict">
-<span class="sig-name descname"><span class="pre">read_file_as_dict</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">→</span> <span class="sig-return-typehint"><span class="pre">dict</span></span></span><a class="headerlink" href="#serialix.core.BaseLang.read_file_as_dict" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">read_file_as_dict</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">→</span> <span class="sig-return-typehint"><span class="pre">dict</span></span></span><a class="headerlink" href="#serialix.core.BaseLang.read_file_as_dict" title="Permalink to this definition">#</a></dt>
 <dd><p>Read local file bound to this object as dictionary</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
@@ -542,7 +546,7 @@ if key wasn’t found, defaults to None.</p>
 </dd></dl>
 <dl class="py method">
 <dt class="sig sig-object py" id="serialix.core.BaseLang.refresh">
-<span class="sig-name descname"><span class="pre">refresh</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">safe_mode</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">→</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="headerlink" href="#serialix.core.BaseLang.refresh" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">refresh</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">safe_mode</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">→</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="headerlink" href="#serialix.core.BaseLang.refresh" title="Permalink to this definition">#</a></dt>
 <dd><p>Refresh <code class="docutils literal notranslate"><span class="pre">dictionary</span></code> values from local file.
 Note that this method does not remove user-added keys,
 it will only add non existent keys and modify the already existing keys.</p>
@@ -566,7 +570,7 @@ execution speed</p>
 </dd></dl>
 <dl class="py method">
 <dt class="sig sig-object py" id="serialix.core.BaseLang.reload">
-<span class="sig-name descname"><span class="pre">reload</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">→</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="headerlink" href="#serialix.core.BaseLang.reload" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">reload</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">→</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="headerlink" href="#serialix.core.BaseLang.reload" title="Permalink to this definition">#</a></dt>
 <dd><p>Reset the <code class="docutils literal notranslate"><span class="pre">dictionary</span></code> attribute to values from local file</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
@@ -580,13 +584,13 @@ execution speed</p>
 </dd></dl>
 <dl class="py method">
 <dt class="sig sig-object py" id="serialix.core.BaseLang.reset_to_defaults">
-<span class="sig-name descname"><span class="pre">reset_to_defaults</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#serialix.core.BaseLang.reset_to_defaults" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">reset_to_defaults</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#serialix.core.BaseLang.reset_to_defaults" title="Permalink to this definition">#</a></dt>
 <dd><p>Reset the <code class="docutils literal notranslate"><span class="pre">dictionary</span></code> attribute to values from <code class="docutils literal notranslate"><span class="pre">dictionary_default</span></code> attribute.
 Note that local file will stay untouched.</p>
 </dd></dl>
 <dl class="py method">
 <dt class="sig sig-object py" id="serialix.core.BaseLang.setdefault">
-<span class="sig-name descname"><span class="pre">setdefault</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">key</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Any</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">default</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">→</span> <span class="sig-return-typehint"><span class="pre">Any</span></span></span><a class="headerlink" href="#serialix.core.BaseLang.setdefault" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">setdefault</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">key</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Any</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">default</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">→</span> <span class="sig-return-typehint"><span class="pre">Any</span></span></span><a class="headerlink" href="#serialix.core.BaseLang.setdefault" title="Permalink to this definition">#</a></dt>
 <dd><p>If key is in the <code class="docutils literal notranslate"><span class="pre">dictionary</span></code>, return its value.
 If not, insert key with a value of <code class="docutils literal notranslate"><span class="pre">default</span></code> and return <code class="docutils literal notranslate"><span class="pre">default</span></code></p>
 <dl class="field-list simple">
@@ -607,7 +611,7 @@ returns <code class="docutils literal notranslate"><span class="pre">defalut</sp
 </dd></dl>
 <dl class="py method">
 <dt class="sig sig-object py" id="serialix.core.BaseLang.update">
-<span class="sig-name descname"><span class="pre">update</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dictionary</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">dict</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#serialix.core.BaseLang.update" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">update</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dictionary</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">dict</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#serialix.core.BaseLang.update" title="Permalink to this definition">#</a></dt>
 <dd><p>Update <code class="docutils literal notranslate"><span class="pre">dictionary</span></code> with another dictionary</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -618,7 +622,7 @@ returns <code class="docutils literal notranslate"><span class="pre">defalut</sp
 </dd></dl>
 <dl class="py method">
 <dt class="sig sig-object py" id="serialix.core.BaseLang.values">
-<span class="sig-name descname"><span class="pre">values</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">→</span> <span class="sig-return-typehint"><span class="pre">list</span></span></span><a class="headerlink" href="#serialix.core.BaseLang.values" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">values</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">→</span> <span class="sig-return-typehint"><span class="pre">list</span></span></span><a class="headerlink" href="#serialix.core.BaseLang.values" title="Permalink to this definition">#</a></dt>
 <dd><p>Get values of the <code class="docutils literal notranslate"><span class="pre">dictionary</span></code></p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
@@ -631,7 +635,7 @@ returns <code class="docutils literal notranslate"><span class="pre">defalut</sp
 </dd></dl>
 <dl class="py method">
 <dt class="sig sig-object py" id="serialix.core.BaseLang.write_dict_to_file">
-<span class="sig-name descname"><span class="pre">write_dict_to_file</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dictionary</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">dict</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#serialix.core.BaseLang.write_dict_to_file" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">write_dict_to_file</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dictionary</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">dict</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#serialix.core.BaseLang.write_dict_to_file" title="Permalink to this definition">#</a></dt>
 <dd><p>Write dict from <code class="docutils literal notranslate"><span class="pre">dictionary</span></code> argument to local file bound to this object</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -642,7 +646,7 @@ returns <code class="docutils literal notranslate"><span class="pre">defalut</sp
 </dd></dl>
 <dl class="py function">
 <dt class="sig sig-object py" id="serialix.core.create_directories">
-<span class="sig-prename descclassname"><span class="pre">serialix.core.</span></span><span class="sig-name descname"><span class="pre">create_directories</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">path_to_use</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">path_is_dir</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#serialix.core.create_directories" title="Permalink to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">serialix.core.</span></span><span class="sig-name descname"><span class="pre">create_directories</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">path_to_use</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">path_is_dir</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#serialix.core.create_directories" title="Permalink to this definition">#</a></dt>
 <dd><p>Create all directories from path</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -655,7 +659,7 @@ returns <code class="docutils literal notranslate"><span class="pre">defalut</sp
 </dd></dl>
 <dl class="py function">
 <dt class="sig sig-object py" id="serialix.core.recursive_dicts_merge">
-<span class="sig-prename descclassname"><span class="pre">serialix.core.</span></span><span class="sig-name descname"><span class="pre">recursive_dicts_merge</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">merge_from</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">dict</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">merge_to</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">dict</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">→</span> <span class="sig-return-typehint"><span class="pre">dict</span></span></span><a class="headerlink" href="#serialix.core.recursive_dicts_merge" title="Permalink to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">serialix.core.</span></span><span class="sig-name descname"><span class="pre">recursive_dicts_merge</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">merge_from</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">dict</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">merge_to</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">dict</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">→</span> <span class="sig-return-typehint"><span class="pre">dict</span></span></span><a class="headerlink" href="#serialix.core.recursive_dicts_merge" title="Permalink to this definition">#</a></dt>
 <dd><p>This function will recursively merge <code class="docutils literal notranslate"><span class="pre">merge_from</span></code> dictionary to <code class="docutils literal notranslate"><span class="pre">merge_to</span></code>.
 Merging with this function, instead of the <code class="docutils literal notranslate"><span class="pre">dict.update()</span></code> method prevents from
 keys removal of nested dictionaries.</p>
@@ -681,13 +685,13 @@ Function will get their copies and work with them.</p>
 </dd></dl>
 </section>
 <section id="module-serialix.__init__">
-<span id="serialix-init"></span><h2>serialix.__init__<a class="headerlink" href="#module-serialix.__init__" title="Permalink to this headline">¶</a></h2>
+<span id="serialix-init"></span><h2>serialix.__init__<a class="headerlink" href="#module-serialix.__init__" title="Permalink to this headline">#</a></h2>
 <p>Here is the main initialization code that makes
 it easier to access the main features of the
 other submodules and subpackages</p>
 </section>
 <section id="module-serialix.meta">
-<span id="serialix-meta-module"></span><h2>serialix.meta module<a class="headerlink" href="#module-serialix.meta" title="Permalink to this headline">¶</a></h2>
+<span id="serialix-meta-module"></span><h2>serialix.meta module<a class="headerlink" href="#module-serialix.meta" title="Permalink to this headline">#</a></h2>
 </section>
 </section>
 
@@ -717,15 +721,21 @@ other submodules and subpackages</p>
               </div>
             </a>
         </div>
-
-        <div class="related-information">
-              Copyright &#169; 2022, maximilionus |
-          Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> and <a class="muted-link" href="https://pradyunsg.me">@pradyunsg</a>'s
-          <a href="https://github.com/pradyunsg/furo">Furo theme</a>.
-            | <a class="muted-link" href="_sources/serialix.rst.txt"
-               rel="nofollow">
-              Show Source
-            </a>
+        <div class="bottom-of-page">
+          <div class="left-details">
+            <div class="copyright">
+                Copyright &#169; 2022, maximilionus
+            </div>
+            Made with <a href="https://www.sphinx-doc.org/">Sphinx</a> and <a class="muted-link" href="https://pradyunsg.me">@pradyunsg</a>'s
+            
+            <a href="https://github.com/pradyunsg/furo">Furo</a>
+            
+          </div>
+          <div class="right-details">
+            <div class="icons">
+              
+            </div>
+          </div>
         </div>
         
       </footer>
