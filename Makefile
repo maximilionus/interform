@@ -7,8 +7,8 @@ REQUIRED_PROJECT_FILES = "serialix setup.py README.rst requirements-dev.txt"
 build: prepare_vars
 	@echo "Building the documentation with Sphinx"
 
-	@echo "Obtaining project from $(branch) branch"
-	@git restore --source "$(branch)" "$(REQUIRED_PROJECT_FILES)"
+	@echo "Obtaining project from '$(from_branch)' branch"
+	@git restore --source "$(from_branch)" "$(REQUIRED_PROJECT_FILES)"
 
 	@echo "Installing all project dependencies"
 	@$(PYTHON) -m pip install -U -r ./requirements-dev.txt -r ./requirements.txt
@@ -18,9 +18,10 @@ build: prepare_vars
 
 
 prepare_vars:
-	@if [ -z ${branch} ]; then\
-		branch="master";\
-	fi
+# TODO: doc how to use this
+ifndef from_branch
+	$(eval from_branch="master")
+endif
 
 
 clean_required_files:
