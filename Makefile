@@ -1,18 +1,18 @@
-.PHONY: build build_dist build_wheel publish help
+.PHONY: build build_sdist build_wheel publish help
 
-PYTHON = python
-
-
-build: build_dist build_wheel
+PYTHON ?= python
 
 
-build_dist:
-	@echo "Building project source distribution"
+build: build_sdist build_wheel
+
+
+build_sdist:
+	@echo "[ Building project sdist ]"
 	@$(PYTHON) setup.py build sdist
 
 
 build_wheel:
-	@echo "Building project wheel distribution"
+	@echo "[ Building project wheel ]"
 	@$(PYTHON) setup.py build bdist_wheel
 
 
