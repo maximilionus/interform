@@ -25,7 +25,10 @@ ifndef from_dir
 	@echo "[ Obtaining project from '$(from_branch)' branch ]"
 	@git restore --source "$(from_branch)" "$(REQUIRED_PROJECT_FILES)"
 else
-	@echo "not implemented yet"
+	@echo "[ Obtaining project from '$(from_dir)' directory ]"
+	$(eval PROJ_DIR := $(shell pwd))
+	@cd $(from_dir); \
+		cp -ruv --target-directory="$(PROJ_DIR)" "$(REQUIRED_PROJECT_FILES)"
 endif
 
 
@@ -47,4 +50,12 @@ help:
 	    pull  - clone main project files that required for documentation build\n\
 	    clean - clean all temporary and cache files\n\
 	    help  - display this help message\n\
+	\n\
+	Optional arguments:\n\
+	    from_branch=<STR> - build documentation from specified git branch\n\
+	                        defaults to \"master\"\n\
+	    from_dir=<STR>    - build documentation from specified directory\n\
+	\n\
+	    - usage example:\n\
+	        make <command> opt_arg_name=\"value\"\n\
 	"
