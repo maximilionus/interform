@@ -1,1 +1,1 @@
-""" Subpackage with realisation of main features for various DIF languages """
+""" Subpackage with implementation of main features for various serialization languages """

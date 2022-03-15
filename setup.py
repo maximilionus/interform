@@ -40,7 +40,7 @@ setuptools.setup(
     description='Powerful and easy to use tool for working with various human-readable data serialization languages (like json, yaml, etc)',
     long_description_content_type='text/x-rst',
     long_description=readme_text,
-    keywords='data interchange format files parse json yaml toml',
+    keywords='data serialization format files parse json yaml toml',
     packages=setuptools.find_packages(),
     extras_require=extras_require,
     entry_points={

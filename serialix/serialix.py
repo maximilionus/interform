@@ -7,24 +7,24 @@ class Serialix:
 
     This class should be used for creation of the basic ``serialix`` object for one of the officially supported languages. Currently supported languages: ``json``, ``yaml``, ``toml``
 
-    :param file_format: Format of language to be used. Currently supported languages: ``json``, ``yaml`` (or ``yml``), ``toml`` (or ``tml``)
+    :param file_format: Format of data serialization language to be used. Currently supported languages: ``json``, ``yaml`` (or ``yml``), ``toml`` (or ``tml``)
     :type file_format: str
-    :param file_path: Path to preferred local file destination
+    :param file_path: Path to preferred local file destination.
         If the file does not exist at the specified path, it will be created
     :type file_path: str
     :param default_dictionary: Default local file path ``str`` or ``dict``
-        that will be used for local file start values, defaults to ``{}``
+        that will be used for local file start values, defaults to ``{}`` *(empty dict)*
     :type default_dictionary: Union[str, dict], optional
     :param auto_file_creation: Automatic local file creation on object initialization, defaults to True
     :type auto_file_creation: bool, optional
     :param force_overwrite_file: Whether the file needs to be overwritten if it already exists, defaults to False
     :type force_overwrite_file: bool, optional
-    :param parser_write_kwargs: Pass custom arguments to parser's write to local file action, defaults to {}
+    :param parser_write_kwargs: Pass custom arguments to parser's *write to local file* action, defaults to ``{}`` *(empty dict)*
     :type parser_write_kwargs: dict, optional
-    :param parser_read_kwargs: Pass custom arguments to parser's read from local file action, defaults to {}
+    :param parser_read_kwargs: Pass custom arguments to parser's *read from local file* action, defaults to ``{}`` *(empty dict)*
     :type parser_read_kwargs: dict, optional
-    :raises ValueError: If provided data type in argument ``default_dictionary`` is not
-        the path ``str`` or ``dict``
+    :raises ValueError: If provided data type in argument ``default_dictionary`` can't
+        be represented as path ``str`` or ``dict``
     :raises ValueError: If provided data in argument ``file_format`` is not one of the supported languages
 
     .. versionadded:: 2.1.0

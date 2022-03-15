@@ -5,28 +5,28 @@ from os import path, makedirs, remove
 
 class BaseLang:
     """
-    Base Data Interchange Format (DIF) realisation.
+    Base data serialization API implementation.
 
     This class is not intended to be used directly. Instead, it should be inherited by a class, that provides the support
-    for DIF language. Inherited class must overwrite the ``_core__read_file_to_dict()`` and ``_core__write_dict_to_file()``
+    for serialization language. Inherited class must overwrite the ``_core__read_file_to_dict()`` and ``_core__write_dict_to_file()``
     static methods with real implementation of their functionality that described in the docstring of each method.
 
-    :param file_path: Path to preferred local file destination
+    :param file_path: Path to preferred local file destination.
         If the file does not exist at the specified path, it will be created
     :type file_path: str
     :param default_dictionary: Default local file path ``str`` or ``dict``
-        that will be used for local file start values, defaults to ``{}``
+        that will be used for local file start values, defaults to ``{}`` *(empty dict)*
     :type default_dictionary: Union[str, dict], optional
     :param auto_file_creation: Automatic local file creation on object initialization, defaults to True
     :type auto_file_creation: bool, optional
     :param force_overwrite_file: Whether the file needs to be overwritten if it already exists, defaults to False
     :type force_overwrite_file: bool, optional
-    :param parser_write_kwargs: Pass custom arguments to parser's write to local file action, defaults to {}
+    :param parser_write_kwargs: Pass custom arguments to parser's *write to local file* action, defaults to ``{}`` *(empty dict)*
     :type parser_write_kwargs: dict, optional
-    :param parser_read_kwargs: Pass custom arguments to parser's read from local file action, defaults to {}
+    :param parser_read_kwargs: Pass custom arguments to parser's *read from local file* action, defaults to ``{}`` *(empty dict)*
     :type parser_read_kwargs: dict, optional
-    :raises ValueError: If provided data type in argument ``default_dictionary`` is not
-        the path ``str`` or ``dict``
+    :raises ValueError: If provided data type in argument ``default_dictionary`` can't
+        be represented as path ``str`` or ``dict``
 
     .. note::
         Methods ``.clear()``, ``.fromkeys()``, ``.get()``, ``.items()``, ``.keys()``, ``values()``,
@@ -79,12 +79,14 @@ class BaseLang:
         return self.__parsed_dict.__iter__()
 
     def clear(self):
-        """ Clear the bound ``dictionary`` """
+        """Remove all keys from this object's ``dictionary``.
+        No changes will be commited to local file without manual ``.commit()`` call
+        """
         self.__parsed_dict.clear()
 
     def copy(self, deep_mode=True) -> dict:
-        """Get the copy of ``dictionary``.
-        This method uses the recursive copy function that will remove
+        """Get the copy of this object keys and values.
+        This method uses the recursive copy function by default that will remove
         all references to original dictionary.
 
         :param deep_mode: Use the recursive copy function to remove
@@ -101,7 +103,7 @@ class BaseLang:
             return self.__parsed_dict.copy()
 
     def get(self, key, default=None) -> Any:
-        """Get key from ``dictionary``
+        """Get key from object's ``dictionary``
 
         :param key: Key name
         :type key: str
@@ -114,7 +116,7 @@ class BaseLang:
         return self.__parsed_dict.get(key, default)
 
     def items(self) -> list:
-        """Get items of the ``dictionary``
+        """Get items of the object's ``dictionary``
 
         :return: Items of the ``dictionary`` ((key, value) pairs)
         :rtype: list
@@ -122,7 +124,7 @@ class BaseLang:
         return self.__parsed_dict.items()
 
     def keys(self) -> list:
-        """Get keys of the ``dictionary``
+        """Get keys of the object's ``dictionary``
 
         :return: Keys of the ``dictionary`` (, key)
         :rtype: list
@@ -130,7 +132,7 @@ class BaseLang:
         return self.__parsed_dict.keys()
 
     def values(self) -> list:
-        """Get values of the ``dictionary``
+        """Get values of the object's ``dictionary``
 
         :return: Values of the ``dictionary`` (, value)
         :rtype: list
@@ -138,7 +140,7 @@ class BaseLang:
         return self.__parsed_dict.values()
 
     def pop(self, key: Any, default=None) -> Any:
-        """Pop key from ``dictionary``
+        """Pop key from object's ``dictionary``
 
         :param key: Key name
         :type key: Any
@@ -151,7 +153,7 @@ class BaseLang:
         return self.__parsed_dict.pop(key, default)
 
     def popitem(self) -> Any:
-        """Pop item from ``dictionary`` in LIFO order.
+        """Pop item from object's ``dictionary`` in LIFO order.
 
         :param key: Key name
         :type key: Any
@@ -165,7 +167,7 @@ class BaseLang:
 
     def setdefault(self, key: Any, default=None) -> Any:
         """
-        If key is in the ``dictionary``, return its value.
+        If key is in the object's ``dictionary``, return its value.
         If not, insert key with a value of ``default`` and return ``default``
 
         :param key: Name of the key
@@ -179,7 +181,7 @@ class BaseLang:
         return self.__parsed_dict.setdefault(key, default)
 
     def update(self, dictionary: dict):
-        """Update ``dictionary`` with another dictionary
+        """Update object's ``dictionary`` with another dictionary
 
         :param dictionary: Dictionary, that will be merged to
             ``dictionary``
@@ -211,7 +213,7 @@ class BaseLang:
 
     @property
     def dictionary(self) -> dict:
-        """Full access to the dictionary attribute.
+        """Full access to the object's dictionary attribute.
         Contains local file data parsed to dictionary
 
         :return: ``dictionary`` attribute
@@ -228,7 +230,7 @@ class BaseLang:
 
     @property
     def dictionary_default(self) -> dict:
-        """Full access to the default dictionary.
+        """Full access to the object's default dictionary.
         Contains dictionary with default keys that was
         specified in ``default_dictionary`` argument.
 
@@ -242,12 +244,12 @@ class BaseLang:
         self.__default_dict = dictionary
 
     def commit(self):
-        """Commit all changes from ``dictionary`` to local file"""
+        """Commit all changes from object to local file"""
         self.write_dict_to_file(self.__parsed_dict)
 
     def refresh(self, safe_mode=True) -> bool:
         """
-        Refresh ``dictionary`` values from local file.
+        Refresh object's ``dictionary`` values from local file.
         Note that this method does not remove user-added keys,
         it will only add non existent keys and modify the already existing keys.
 
@@ -273,7 +275,8 @@ class BaseLang:
         return True
 
     def reload(self) -> bool:
-        """Reset the ``dictionary`` attribute to values from local file
+        """Reset all not commited changes made
+        to object's ``dictionary`` to values from local file
 
         :return: Status of local file read action. If file does not exist -
             ``False`` will be returned.
@@ -287,7 +290,7 @@ class BaseLang:
 
     def reset_to_defaults(self):
         """
-        Reset the ``dictionary`` attribute to values from ``dictionary_default`` attribute.
+        Reset the object's ``dictionary`` to values from ``dictionary_default`` attribute.
         Note that local file will stay untouched.
         """
         self.__parsed_dict = deepcopy(self.__default_dict)
