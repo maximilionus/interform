@@ -1,6 +1,6 @@
 from datetime import datetime, date
 
-from serialix.meta import __version__ as serialix_version
+from serialix import __version__ as serialix_version
 
 
 # Configuration file for the Sphinx documentation builder.
