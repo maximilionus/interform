@@ -47,7 +47,7 @@ jobs:
 
       - name: Build documentation from master branch
         run: |
-          make build branch="origin/master"
+          make build from_branch="origin/master" 
           rm -rf ./temp_repo/docs/*
           mv docs/_build/html/* ./temp_repo/docs
 
