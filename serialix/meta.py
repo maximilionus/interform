@@ -1,2 +1,2 @@
-version = '2.1.3a1'
+version = '2.2.0a1'
 author = 'maximilionus'

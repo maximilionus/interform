@@ -191,23 +191,37 @@ class BaseLang:
 
     @property
     def parser_write_kwargs(self) -> dict:
+        """Arguments that will be passed to parser on *write to file* action.
+        This property can be modified. Note that only ``dict`` type is allowed.
+
+        :type: dict
+        :return: already specified arguments
+        :rtype: dict
+        """
         return self.__parser_write_kwargs
+
+    @parser_write_kwargs.setter
+    def parser_write_kwargs(self, value: dict):
+        if isinstance(value, dict):
+            self.__parser_write_kwargs = value
+        else:
+            raise ValueError("Input type should be `dict`, not `{}`".format(type(value).__name__))
 
     @property
     def parser_read_kwargs(self) -> dict:
+        """Arguments that will be passed to parser on *read from file* action.
+        This property can be modified. Note that only ``dict`` type is allowed.
+
+        :type: dict
+        :return: already specified arguments
+        :rtype: dict
+        """
         return self.__parser_read_kwargs
 
     @parser_read_kwargs.setter
     def parser_read_kwargs(self, value: dict):
         if isinstance(value, dict):
             self.__parser_read_kwargs = value
-        else:
-            raise ValueError("Input type should be `dict`, not `{}`".format(type(value).__name__))
-
-    @parser_write_kwargs.setter
-    def parser_write_kwargs(self, value: dict):
-        if isinstance(value, dict):
-            self.__parser_write_kwargs = value
         else:
             raise ValueError("Input type should be `dict`, not `{}`".format(type(value).__name__))
 
@@ -344,7 +358,7 @@ class BaseLang:
         return self._core__read_file_to_dict(self.local_file_path)
 
     def _core__read_file_to_dict(self, file_path: str) -> dict:
-        """Template for reading custom local files from path ``str`` as dictionary
+        """Template for reading local file as dictionary
 
         :param file_path: Path to local file
         :type file_path: str
@@ -355,7 +369,7 @@ class BaseLang:
         raise NotImplementedError("This core method should be implemented directly in {}".format(self.__class__.__name__))
 
     def _core__write_dict_to_file(self, file_path: str, dictionary: dict):
-        """Template for writing dictionaries into custom local path ``str``
+        """Template for dumping dictionary to local file
 
         :param file_path: Path to local file
         :type file_path: str
