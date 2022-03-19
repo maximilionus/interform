@@ -115,6 +115,11 @@ This project uses a [semantic versioning](https://semver.org/) scheme as the bas
 
 ## Development Releases
 
+### **2.2.0dev**: nightly
+#### Changed
+- Deps versions range now locked to the last available versions *(`<=x.y.z`)* instead of full *MAJOR* range *(`<=x`)*
+
+
 ### **2.2.0a1** : 2022.03.16
 
 #### Fixed

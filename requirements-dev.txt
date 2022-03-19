@@ -1,19 +1,17 @@
 # Dist tools
-setuptools
-wheel
-twine<4
+twine<=3.8.0
 
 # Testing
-pytest<8
+pytest<=7.1.1
 
 # Project
 -e .
 
 # JSON custom parser
-ujson<=6.0.0
+ujson <=5.1.0
 
 # Yaml parser
-ruamel.yaml<=0.18.0
+ruamel.yaml <=0.17.21
 
 # TOML parser
 toml<=0.11.0
