@@ -28,7 +28,7 @@ else
 	@echo "[ Obtaining project from '$(from_dir)' directory ]"
 	$(eval PROJ_DIR := $(shell pwd))
 	@cd $(from_dir); \
-		cp -ruv --target-directory="$(PROJ_DIR)" "$(REQUIRED_PROJECT_FILES)"
+		cp -rv --target-directory="$(PROJ_DIR)" "$(REQUIRED_PROJECT_FILES)"
 endif
 
 
