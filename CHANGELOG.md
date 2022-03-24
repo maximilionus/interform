@@ -1,20 +1,22 @@
 # serialix docs changelog
 
-## **4** : 2022.03.08
+## **5** : 2022.03.24
+### Added
+- Meta tags for search engines in `index` page head
 
+
+## **4** : 2022.03.08
 ### Changed
 - Optimized the `Makefile` script
 - Docs engine and theme upgraded to latest version
 
 
 ## **3** : 2022.02.25
-
 ### Changed
 - Updated the `general > about` text with more accurate information
 
 
 ## **2** : 2022.02.02
-
 ### Changed
 - Massive changes made to `guide_basic_usage` and `general` to reflect the `serialix 2.1.0` update
 
@@ -23,7 +25,6 @@
 
 
 ## **1** : 2022.01.15
-
 > Initial release of standalone documentation
 
 ### Changed
