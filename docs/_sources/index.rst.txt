@@ -23,3 +23,8 @@ Indices and tables
 * :ref:`genindex`
 * :ref:`modindex`
 * :ref:`search`
+
+
+.. meta::
+   :description: Documentation for python powerful and easy to use tool for working with various human-readable data serialization languages (like json, yaml, etc)
+   :keywords: data interchange format files parse json yaml toml
