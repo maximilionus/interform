@@ -6,8 +6,20 @@ This project uses a [semantic versioning](https://semver.org/) scheme as the bas
 ## Stable Releases
 
 
-### **2.1.2** : 2022.02.28
+### **2.2.0** : 2022.03.25
+#### Fixed
+- Docstrings for `serialix.serialix.Serialix` class and all the parents
 
+#### Changed
+- All variables in `serialix.meta` now public. Changes will not affect the `serialix.__init__`, I.e. - project version and author can still be accessed like `serialix.__version__` and `serialix.__author__` respectively
+- Enhanced docstrings for the entire project
+- Deps versions range now locked to the last available versions *(`<=x.y.z`)* instead of full *MAJOR* releases range *(`<=x`)*
+
+#### Deprecated
+- `__version__` and `__author__` variables in `serialix.meta` now **deprecated** and will be removed in `3.0.0` release. Mentioned variables was replaced with public variants *(Read `#Changed` for this version for more information)*
+
+
+### **2.1.2** : 2022.02.28
 ### Changed
 - Enhanced package description text
 
@@ -16,13 +28,11 @@ This project uses a [semantic versioning](https://semver.org/) scheme as the bas
 
 
 ### **2.1.1** : 2022.02.24
-
 #### Changed
 - `serialix.core.BaseLang`: `parser_write_kwargs`, `parser_read_kwargs`, `dictionary` properties are now secured from wrong data type assignment
 
 
 ### **2.1.0** : 2022.02.03
-
 #### Added
 - New class `Serialix` can be imported straight from package root and now will be a preferred way of creating instance of `serialix` for any supported language instead of using `*_Language` classes directly.
 - `NotImplementedError` exception will now be raised when trying to execute any R/W-related action in class, inherited from `serialix.core.BaseLang` without defined `_core__read_file_to_dict` and `_core__write_dict_to_file` methods.
@@ -36,7 +46,6 @@ This project uses a [semantic versioning](https://semver.org/) scheme as the bas
 
 
 ### **2.0.1** : 2022.01.15
-
 > This QOL *(Quality Of Life)* update is focused on updating the external packages version locks and enhancing the overall package quality with documentation, unit-testing and other features updated.
 
 #### Changed
@@ -45,32 +54,27 @@ This project uses a [semantic versioning](https://semver.org/) scheme as the bas
 
 
 ### **2.0.0** : 2020.11.28
-
 #### Changed
 - Project renamed to ``serialix``
 
 
 ### **1.3.2** : 2020.11.29
-
 #### Notification
 ⚠ `interform` will be renamed to `serialix` from version **2.0.0**
 
 
 ### **1.3.1** : 2020.11.28
-
 #### Fixed
 - Docstrings for `serialix.core.BaseLang`
 
 
 ### **1.3.0** : 2020.11.28
-
 #### Added
 - Command Line Interface *(CLI)* toolset with documentation
   - Format converter tool
 
 
 ### **1.2.0** : 2020.11.26
-
 #### Added
 - Keyword argument `auto_file_creation` to all `*_Format` classes which will allow to disable the automatic local file creation on `*_Format` object initialization
 
@@ -79,19 +83,16 @@ This project uses a [semantic versioning](https://semver.org/) scheme as the bas
 
 
 ### **1.1.2** : 2020.11.25
-
 #### Fixed
 - `.values` method in all `*_Format` classes will now return expected value. Before the fix, this method returned the values of bound to object default dictionary.
 
 
 ### **1.1.1** : 2020.11.24
-
 #### Fixed
 - `.reload()` method return now works properly in all `*_Format` classes
 
 
 ### **1.1.0** : 2020.11.23
-
 #### Added
 - Support for `TOML` language
 - Feature to pass custom arguments to parser on read and write actions with `parser_write_kwargs` and `parser_read_kwargs`
@@ -109,7 +110,6 @@ This project uses a [semantic versioning](https://semver.org/) scheme as the bas
 
 
 ### **1.0.0** : 2020.11.18
-
 > First public release of this package
 
 
@@ -117,14 +117,13 @@ This project uses a [semantic versioning](https://semver.org/) scheme as the bas
 
 ### **2.2.0dev**: nightly
 #### Changed
-- Deps versions range now locked to the last available versions *(`<=x.y.z`)* instead of full *MAJOR* range *(`<=x`)*
+- Deps versions range now locked to the last available versions *(`<=x.y.z`)* instead of full *MAJOR* releases range *(`<=x`)*
 
 #### Deprecated
 - `__version__` and `__author__` variables in `serialix.meta` now **deprecated** and will be removed in `3.0.0` release. Mentioned variables was replaced with public variants *(Read `#Changed` for this version for more information)*
 
 
 ### **2.2.0a1** : 2022.03.16
-
 #### Fixed
 - Docstrings for `serialix.serialix.Serialix` class and all the parents
 
@@ -134,13 +133,11 @@ This project uses a [semantic versioning](https://semver.org/) scheme as the bas
 
 
 ### **2.1.1a1** : 2022.02.13
-
 #### Changed
 - `serialix.core.BaseLang`: `parser_write_kwargs`, `parser_read_kwargs`, `dictionary` properties are now secured from wrong data type assignment
 
 
 ### **2.1.0a2** : 2022.02.02
-
 ### Added
 - New 'get version' feature in built-in CLI toolset. Can be accessed with `--version` or `-V` argument passed to cli.
 
@@ -149,7 +146,6 @@ This project uses a [semantic versioning](https://semver.org/) scheme as the bas
 
 
 ### **2.1.0a1** : 2022.02.01
-
 #### Added
 - New class `Serialix` can be imported straight from package root and now will be a preferred way of creating instance of `serialix` for any supported language instead of using `*_Language` classes directly
 - `NotImplementedError` exception will now be raised when trying to execute any R/W-related action in class, inherited from `serialix.core.BaseLang` without defined `_core__read_file_to_dict` and `_core__write_dict_to_file` methods
@@ -159,27 +155,23 @@ This project uses a [semantic versioning](https://semver.org/) scheme as the bas
 
 
 ### **2.0.1a1** : 2022.01.14
-
 #### Changed
 - Updated the YAML language parser ([`ruamel.yaml`](https://pypi.org/project/ruamel.yaml/)) support to the latest version *(0.17.20)*
 - Updated the [`ujson`](https://pypi.org/project/ujson/) supported version up to the latest `5.1.0`
 
 
 ### **1.3.0a1** : 2020.11.27
-
 #### Added
 - Command Line Interface *(CLI)* toolset with documentation
   - Format converter tool
 
 
 ### **1.2.0a2** : 2020.11.25
-
 #### Changed
 - In `*_Format` classes, instead of only `.create_file()` method, all directories generation now placed in `write_dict_to_file()` method. This change will affect all 'write to file' actions and prevent all path related issues.
 
 
 ### **1.2.0a1** : 2020.11.25
-
 #### Added
 - Keyword argument `auto_file_creation` to all `*_Format` classes which will allow to disable the automatic local file creation on `*_Format` object initialization
 
@@ -188,7 +180,6 @@ This project uses a [semantic versioning](https://semver.org/) scheme as the bas
 
 
 ### **1.1.0a2** : unreleased
-
 #### Added
 - Feature to pass custom arguments to parser on read and write actions with `parser_write_kwargs` and `parser_read_kwargs`
 
@@ -198,7 +189,6 @@ This project uses a [semantic versioning](https://semver.org/) scheme as the bas
 
 
 ### **1.1.0a1** : 2020.11.22
-
 #### Added
 - Support for `TOML` language
 
