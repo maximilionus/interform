@@ -1,5 +1,7 @@
 # Dist tools
 twine<=3.8.0
+setuptools
+wheel
 
 # Testing
 pytest<=7.1.1
