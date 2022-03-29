@@ -48,7 +48,7 @@ setuptools.setup(
             'serialixcli = serialix.cli:start'
         ]
     },
-    license='MIT',
+    license='Apache-2.0',
     url='https://github.com/maximilionus/serialix',
     project_urls={
         'Documentation': 'https://maximilionus.github.io/serialix',
@@ -64,7 +64,7 @@ setuptools.setup(
         'Programming Language :: Python :: 3.8',
         'Programming Language :: Python :: 3.9',
         'Operating System :: OS Independent',
-        'License :: OSI Approved :: MIT License',
+        'License :: OSI Approved :: Apache Software License',
         'Topic :: Software Development :: Libraries',
         'Topic :: Software Development :: User Interfaces',
         'Topic :: Text Processing'
