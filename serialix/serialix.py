@@ -9,8 +9,8 @@ class Serialix:
 
     This class should be used for creation of the basic ``serialix`` object for one of the officially supported languages. Currently supported languages: ``json``, ``yaml``, ``toml``
 
-    :param file_format: Format of data serialization language to be used. Currently supported languages: ``json``, ``yaml`` (or ``yml``), ``toml`` (or ``tml``)
-    :type file_format: str
+    :param file_format: Format of data serialization language to be used. Can be class of language parser with ``serialix`` implementation via ``.core.BaseLang`` inheritance or string  - ``json``, ``yaml`` (or ``yml``), ``toml`` (or ``tml``)
+    :type file_format: str, object
     :param file_path: Path to preferred local file destination.
         If the file does not exist at the specified path, it will be created
     :type file_path: str
