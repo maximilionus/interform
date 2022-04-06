@@ -1,3 +1,5 @@
+from typing import Union
+
 from .core import BaseLang
 
 
@@ -29,19 +31,30 @@ class Serialix:
 
     .. versionadded:: 2.1.0
     """
-    def __new__(self, file_format: str, file_path: str, default_dictionary={}, auto_file_creation=True, force_overwrite_file=False, parser_write_kwargs={}, parser_read_kwargs={}) -> BaseLang:
-        file_format = file_format.lower()
-        if file_format == 'json':
-            from .langs.json import JSON_Format
+    def __new__(self, file_format: Union[str, BaseLang], file_path: str, default_dictionary={}, auto_file_creation=True, force_overwrite_file=False, parser_write_kwargs={}, parser_read_kwargs={}) -> BaseLang:
+        if isinstance(file_format, str):
+            file_format = file_format.lower()
 
-            return JSON_Format(file_path=file_path, default_dictionary=default_dictionary, auto_file_creation=auto_file_creation, force_overwrite_file=force_overwrite_file, parser_write_kwargs=parser_write_kwargs, parser_read_kwargs=parser_read_kwargs)
-        elif file_format in ('yaml', 'yml'):
-            from .langs.yaml import YAML_Format
+            if file_format == 'json':
+                from .langs.json import JSON_Format
 
-            return YAML_Format(file_path=file_path, default_dictionary=default_dictionary, auto_file_creation=auto_file_creation, force_overwrite_file=force_overwrite_file, parser_write_kwargs=parser_write_kwargs, parser_read_kwargs=parser_read_kwargs)
-        elif file_format in ('toml', 'tml'):
-            from .langs.toml import TOML_Format
+                return JSON_Format(file_path=file_path, default_dictionary=default_dictionary, auto_file_creation=auto_file_creation, force_overwrite_file=force_overwrite_file, parser_write_kwargs=parser_write_kwargs, parser_read_kwargs=parser_read_kwargs)
+            elif file_format in ('yaml', 'yml'):
+                from .langs.yaml import YAML_Format
 
-            return TOML_Format(file_path=file_path, default_dictionary=default_dictionary, auto_file_creation=auto_file_creation, force_overwrite_file=force_overwrite_file, parser_write_kwargs=parser_write_kwargs, parser_read_kwargs=parser_read_kwargs)
+                return YAML_Format(file_path=file_path, default_dictionary=default_dictionary, auto_file_creation=auto_file_creation, force_overwrite_file=force_overwrite_file, parser_write_kwargs=parser_write_kwargs, parser_read_kwargs=parser_read_kwargs)
+            elif file_format in ('toml', 'tml'):
+                from .langs.toml import TOML_Format
+
+                return TOML_Format(file_path=file_path, default_dictionary=default_dictionary, auto_file_creation=auto_file_creation, force_overwrite_file=force_overwrite_file, parser_write_kwargs=parser_write_kwargs, parser_read_kwargs=parser_read_kwargs)
+            else:
+                raise ValueError("'file_format' should be one of the supported languages name, not '{}'".format(file_format))
+
+        if isinstance(file_format, object):
+            if issubclass(file_format, BaseLang):
+                return file_format(file_path=file_path, default_dictionary=default_dictionary, auto_file_creation=auto_file_creation, force_overwrite_file=force_overwrite_file, parser_write_kwargs=parser_write_kwargs, parser_read_kwargs=parser_read_kwargs)
+            else:
+                raise ValueError("'file_format' class should be inherited from 'serialix.core.BaseLangs'")
+
         else:
-            raise ValueError("'file_format' should be one of the supported languages name, not '{}'".format(file_format))
+            raise ValueError("Wrong 'file_format' data type provided, should be 'class' or 'str'")
