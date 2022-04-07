@@ -115,7 +115,19 @@ This project uses a [semantic versioning](https://semver.org/) scheme as the bas
 
 ## Development Releases
 
-### **2.2.0dev**: nightly
+### 2.3.0dev : nightly (in progress)
+#### Added
+- New feature to pass the language parser class to `Serialix` `file_format` argument. By default it should be inherited from `serialix.core.BaseLang` class, this check can be ignored by passing the `ignore_inheritance_check=False` argument to `Serialix` class. This feature allows to use custom written parsers for `serialix`.
+
+  Usage example:
+  ```python
+  from serialix import Serialix, JSON_Format
+
+  cfg = Serialix(JSON_Format, "test.json")
+  ```
+
+
+### **2.2.0dev** : nightly
 #### Changed
 - Deps versions range now locked to the last available versions *(`<=x.y.z`)* instead of full *MAJOR* releases range *(`<=x`)*
 
