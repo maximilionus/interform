@@ -126,6 +126,9 @@ This project uses a [semantic versioning](https://semver.org/) scheme as the bas
   cfg = Serialix(JSON_Format, "test.json")
   ```
 
+#### Deprecated
+- `CLI` toolset marked as deprecated and will be removed from package in version `3.0.0` release. Deprecation notification will be displayed on each `cli` call.
+
 
 ### **2.2.0dev** : nightly
 #### Changed
