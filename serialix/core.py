@@ -1,4 +1,5 @@
 from typing import Any
+from warnings import warn
 from copy import deepcopy
 from os import path, makedirs, remove
 
@@ -58,7 +59,7 @@ class BaseLang:
                              .format(default_dictionary))
 
         if auto_file_creation:
-            if not self.is_file_exist() or force_overwrite_file:
+            if not self.file_exists() or force_overwrite_file:
                 self.create_file()
 
         self.reload()
@@ -278,7 +279,7 @@ class BaseLang:
             ``False`` will be returned.
         :rtype: bool
         """
-        if not self.is_file_exist():
+        if not self.file_exists():
             return False
 
         if safe_mode:
@@ -296,7 +297,7 @@ class BaseLang:
             ``False`` will be returned.
         :rtype: bool
         """
-        if self.is_file_exist():
+        if self.file_exists():
             self.__parsed_dict = self.read_file_as_dict()
             return True
         else:
@@ -326,13 +327,29 @@ class BaseLang:
             False will be returned only if the local file does not exist at the time of deletion.
         :rtype: bool
         """
-        if self.is_file_exist():
+        if self.file_exists():
             remove(self.local_file_path)
             return True
         else:
             return False
 
     def is_file_exist(self) -> bool:
+        """Check local file existence
+
+        :return: Does the file exist
+        :rtype: bool
+
+        .. deprecated:: 2.3.0
+           This method will be removed in ``3.0.0`` release.
+           Use ``.file_exists()`` method instead
+        """
+        deprecation_mark(
+            'Method was deprecated in version "2.3.0" and will be '
+            'removed in version "3.0.0". Use ".file_exists()" method instead'
+        )
+        return self.file_exists()
+
+    def file_exists(self) -> bool:
         """Check local file existence
 
         :return: Does the file exist
@@ -424,3 +441,14 @@ def recursive_dicts_merge(merge_from: dict, merge_to: dict) -> dict:
     __merge(merge_from, result_dict)
 
     return result_dict
+
+
+def deprecation_mark(deprecation_note: str) -> None:
+    """
+    Function used to mark something deprecated in this package
+
+    :param deprecation_note: What and when was deprecated message,
+                             that will be collected by loggers
+    :type deprecation_note: str
+    """
+    warn(deprecation_note, DeprecationWarning)
