@@ -131,6 +131,9 @@ This project uses a [semantic versioning](https://semver.org/) scheme as the bas
 - `.core.BaseLang.is_file_exist()` marked as deprecated and replaced with `.file_exists()` method. Will be removed in version `3.0.0`.
   > Note that changes to `.core.BaseLang` will be reflected on all inherited from it classes *(`JSON_Format`, `YAML_Format`, ...)*.
 
+#### Fixed
+- `.core.BaseLang` Loading file with `auto_file_creation=False` if local file doesn't exist now will be proper. Before the fix, object's dictionary will be empty if `auto_file_creation=False` argument passed and local file does not exist at the time of initialization.
+
 
 ### **2.2.0dev** : nightly
 #### Changed
