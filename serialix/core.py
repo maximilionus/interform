@@ -62,10 +62,10 @@ class BaseLang:
             if not self.file_exists() or force_overwrite_file:
                 self.create_file()
                 self.reset_to_defaults()
+            else:
+                self.reload()
         elif not self.file_exists():
             self.reset_to_defaults()
-        else:
-            self.reload()
 
     def __getitem__(self, key):
         return self.__parsed_dict[key]
