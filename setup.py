@@ -13,9 +13,9 @@ package_version = serialix_meta_module.version
 
 # Form extras
 extras_require = {
-    'ujson': ['ujson<=5.1.0'],
-    'yaml': ['ruamel.yaml<=0.17.21'],
-    'toml': ['toml<=0.11.0']
+    'ujson': ['ujson<=6.0.0'],
+    'yaml': ['ruamel.yaml<=1.0.0'],
+    'toml': ['toml<=1.0.0']
 }
 
 all_base_requirements = [dep for v in extras_require.values() for dep in v]

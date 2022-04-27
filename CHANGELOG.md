@@ -134,6 +134,9 @@ This project uses a [semantic versioning](https://semver.org/) scheme as the bas
 #### Fixed
 - `.core.BaseLang` Loading file with `auto_file_creation=False` if local file doesn't exist now will be proper. Before the fix, object's dictionary will be empty if `auto_file_creation=False` argument passed and local file does not exist at the time of initialization.
 
+#### Removed
+- Version lock for package dependencies removed. User now has complete freedom in configuration but also is responsible for matching the versions of the dependency packages himself.
+
 
 ### **2.2.0dev** : nightly
 #### Changed
