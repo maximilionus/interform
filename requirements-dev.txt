@@ -10,7 +10,7 @@ pytest<=8
 -e .
 
 # JSON custom parser
-ujson <=6
+ujson<=6
 
 # Yaml parser
 ruamel.yaml<=1

@@ -6,6 +6,29 @@ This project uses a [semantic versioning](https://semver.org/) scheme as the bas
 ## Stable Releases
 
 
+### 2.3.0 : 2022.04.30
+#### Added
+- New feature to pass the language parser class to `Serialix` `file_format` argument. By default it should be inherited from `serialix.core.BaseLang` class, this check can be ignored by passing the `ignore_inheritance_check=False` argument to `Serialix` class. This feature allows to use custom written parsers for `serialix`.
+
+  Usage example:
+  ```python
+  from serialix import Serialix, JSON_Format
+
+  cfg = Serialix(JSON_Format, "test.json")
+  ```
+
+#### Deprecated
+- `CLI` toolset marked as deprecated and will be removed from package in version `3.0.0` release. Deprecation notification will be displayed on each `cli` call.
+- `.core.BaseLang.is_file_exist()` marked as deprecated and replaced with `.file_exists()` method. Will be removed in version `3.0.0`.
+  > Note that changes to `.core.BaseLang` will be reflected on all inherited from it classes *(`JSON_Format`, `YAML_Format`, ...)*.
+
+#### Fixed
+- `.core.BaseLang` Loading file with `auto_file_creation=False` if local file doesn't exist now will be proper. Before the fix, object's dictionary will be empty if `auto_file_creation=False` argument passed and local file does not exist at the time of initialization.
+
+#### Removed
+- Version lock for package dependencies removed. User now has complete freedom in configuration but also is responsible for matching the versions of the dependency packages himself.
+
+
 ### **2.2.0** : 2022.03.25
 #### Fixed
 - Docstrings for `serialix.serialix.Serialix` class and all the parents
@@ -114,28 +137,6 @@ This project uses a [semantic versioning](https://semver.org/) scheme as the bas
 
 
 ## Development Releases
-
-### 2.3.0dev : nightly (in progress)
-#### Added
-- New feature to pass the language parser class to `Serialix` `file_format` argument. By default it should be inherited from `serialix.core.BaseLang` class, this check can be ignored by passing the `ignore_inheritance_check=False` argument to `Serialix` class. This feature allows to use custom written parsers for `serialix`.
-
-  Usage example:
-  ```python
-  from serialix import Serialix, JSON_Format
-
-  cfg = Serialix(JSON_Format, "test.json")
-  ```
-
-#### Deprecated
-- `CLI` toolset marked as deprecated and will be removed from package in version `3.0.0` release. Deprecation notification will be displayed on each `cli` call.
-- `.core.BaseLang.is_file_exist()` marked as deprecated and replaced with `.file_exists()` method. Will be removed in version `3.0.0`.
-  > Note that changes to `.core.BaseLang` will be reflected on all inherited from it classes *(`JSON_Format`, `YAML_Format`, ...)*.
-
-#### Fixed
-- `.core.BaseLang` Loading file with `auto_file_creation=False` if local file doesn't exist now will be proper. Before the fix, object's dictionary will be empty if `auto_file_creation=False` argument passed and local file does not exist at the time of initialization.
-
-#### Removed
-- Version lock for package dependencies removed. User now has complete freedom in configuration but also is responsible for matching the versions of the dependency packages himself.
 
 
 ### **2.2.0dev** : nightly

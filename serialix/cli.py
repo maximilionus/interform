@@ -1,8 +1,8 @@
 """
 Command Line Interface (CLI) module
 
-Deprecated in version `2.3.0`
-Will be removed in `3.0.0` release.
+Deprecated in version ``2.3.0``
+Will be removed in ``3.0.0`` release.
 """
 import textwrap
 from os import path
@@ -129,7 +129,7 @@ def start():
     Startup function that will read the input arguments and pass them
     to main cli handler. Used by module and entry point calls.
     """
-    print(textwrap.fill("This tool was deprecated in version '2.3.0' and will be removed in version '3.0.0' release. Toolset will be split to standalone package and released on PyPi when it's done. Stay tuned."), "\n")
+    print(textwrap.fill("This tool was deprecated in version '2.3.0' and will be removed in version '3.0.0'. Toolset will be split to standalone package and released on PyPi when it's done. Stay tuned."), "\n")
     main_cli(__parse_args())
 
 
