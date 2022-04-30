@@ -62,7 +62,7 @@ class BaseLangTest():
         """ Create local file """
         self.language_object.create_file()
 
-        assert self.language_object.is_file_exist()
+        assert self.language_object.file_exists()
 
     def test_file_read(self):
         assert self.language_object.read_file_as_dict()['root']['Person_1']['name'] == default_local_file_dict['root']['Person_1']['name']

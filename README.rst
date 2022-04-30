@@ -11,20 +11,20 @@ Usage example
 
 .. code:: python
 
-    >>> from serialix import Serialix                                # Import `Serialix` main class
-    >>> default_settings = { 'version': '1.23.2' }                   # Specify the default values for our file
-    >>> cfg = Serialix('json', './settings.json', default_settings)  # Create serialix object for `json` format.
-                                                                     # Local file will be automatically created.
-    >>> cfg['version']                                               # Read the `version` key
+    >>> from serialix import Serialix, JSON_Format                        # Import `Serialix` main class
+    >>> default_settings = { 'version': '1.23.2' }                        # Specify the default values for our file
+    >>> cfg = Serialix(JSON_Format, './settings.json', default_settings)  # Create serialix object for `json` format.
+                                                                          # Local file will be automatically created.
+    >>> cfg['version']                                                    # Read the `version` key
     '1.23.2'
-    >>> cfg['version'] = '2.0.0'                                     # Change the `version` key value
-    >>> cfg['version']                                               # Read the values of `version` key again
+    >>> cfg['version'] = '2.0.0'                                          # Change the `version` key value
+    >>> cfg['version']                                                    # Read the values of `version` key again
     '2.0.0'
-    >>> cfg.commit()                                                 # Commit the changes to local `settings.json` file
+    >>> cfg.commit()                                                      # Commit the changes to local `settings.json` file
 
 Supported Languages
 --------------------------------------
-List of currently supported languages.
+List of currently supported languages parsers.
 
 - Native Support
     - ``json``
