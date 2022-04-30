@@ -6,7 +6,7 @@
 <link rel="index" title="Index" href="genindex.html" /><link rel="search" title="Search" href="search.html" /><link rel="prev" title="serialix" href="serialix.html" />
 
     <meta name="generator" content="sphinx-4.4.0, furo 2022.03.04"/>
-        <title>serialix.langs package - serialix 2.2.0 documentation</title>
+        <title>serialix.langs package - serialix 2.3.0 documentation</title>
       <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="_static/styles/furo.css?digest=935aa2abcc5c1da4283d1dc201fb1f0add16d23a" />
     <link rel="stylesheet" type="text/css" href="_static/styles/furo-extensions.css?digest=25ceb02ed1c46dc30f2321ff83e92799f69dfdb9" />
@@ -121,7 +121,7 @@
       </label>
     </div>
     <div class="header-center">
-      <a href="index.html"><div class="brand">serialix 2.2.0 documentation</div></a>
+      <a href="index.html"><div class="brand">serialix 2.3.0 documentation</div></a>
     </div>
     <div class="header-right">
       <div class="theme-toggle-container theme-toggle-header">
@@ -144,7 +144,7 @@
       <div class="sidebar-sticky"><a class="sidebar-brand" href="index.html">
   
   
-  <span class="sidebar-brand-text">serialix 2.2.0 documentation</span>
+  <span class="sidebar-brand-text">serialix 2.3.0 documentation</span>
   
 </a><form class="sidebar-search-container" method="get" action="search.html" role="search">
   <input class="sidebar-search" placeholder=Search name="q" aria-label="Search">
@@ -331,6 +331,19 @@ specified in <code class="docutils literal notranslate"><span class="pre">defaul
 </dl>
 </dd></dl>
 <dl class="py method">
+<dt class="sig sig-object py" id="serialix.langs.json.JSON_Format.file_exists">
+<span class="sig-name descname"><span class="pre">file_exists</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">→</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="headerlink" href="#serialix.langs.json.JSON_Format.file_exists" title="Permalink to this definition">#</a></dt>
+<dd><p>Check local file existence</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>Does the file exist</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>bool</p>
+</dd>
+</dl>
+</dd></dl>
+<dl class="py method">
 <dt class="sig sig-object py" id="serialix.langs.json.JSON_Format.get">
 <span class="sig-name descname"><span class="pre">get</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">key</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">default</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">→</span> <span class="sig-return-typehint"><span class="pre">Any</span></span></span><a class="headerlink" href="#serialix.langs.json.JSON_Format.get" title="Permalink to this definition">#</a></dt>
 <dd><p>Get key from object’s <code class="docutils literal notranslate"><span class="pre">dictionary</span></code></p>
@@ -362,6 +375,10 @@ if key wasn’t found.</p>
 <dd class="field-even"><p>bool</p>
 </dd>
 </dl>
+<div class="deprecated">
+<p><span class="versionmodified deprecated">Deprecated since version 2.3.0: </span>This method will be removed in <code class="docutils literal notranslate"><span class="pre">3.0.0</span></code> release.
+Use <code class="docutils literal notranslate"><span class="pre">.file_exists()</span></code> method instead</p>
+</div>
 </dd></dl>
 <dl class="py method">
 <dt class="sig sig-object py" id="serialix.langs.json.JSON_Format.items">
@@ -706,6 +723,19 @@ specified in <code class="docutils literal notranslate"><span class="pre">defaul
 </dl>
 </dd></dl>
 <dl class="py method">
+<dt class="sig sig-object py" id="serialix.langs.yaml.YAML_Format.file_exists">
+<span class="sig-name descname"><span class="pre">file_exists</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">→</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="headerlink" href="#serialix.langs.yaml.YAML_Format.file_exists" title="Permalink to this definition">#</a></dt>
+<dd><p>Check local file existence</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>Does the file exist</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>bool</p>
+</dd>
+</dl>
+</dd></dl>
+<dl class="py method">
 <dt class="sig sig-object py" id="serialix.langs.yaml.YAML_Format.get">
 <span class="sig-name descname"><span class="pre">get</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">key</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">default</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">→</span> <span class="sig-return-typehint"><span class="pre">Any</span></span></span><a class="headerlink" href="#serialix.langs.yaml.YAML_Format.get" title="Permalink to this definition">#</a></dt>
 <dd><p>Get key from object’s <code class="docutils literal notranslate"><span class="pre">dictionary</span></code></p>
@@ -737,6 +767,10 @@ if key wasn’t found.</p>
 <dd class="field-even"><p>bool</p>
 </dd>
 </dl>
+<div class="deprecated">
+<p><span class="versionmodified deprecated">Deprecated since version 2.3.0: </span>This method will be removed in <code class="docutils literal notranslate"><span class="pre">3.0.0</span></code> release.
+Use <code class="docutils literal notranslate"><span class="pre">.file_exists()</span></code> method instead</p>
+</div>
 </dd></dl>
 <dl class="py method">
 <dt class="sig sig-object py" id="serialix.langs.yaml.YAML_Format.items">
@@ -1081,6 +1115,19 @@ specified in <code class="docutils literal notranslate"><span class="pre">defaul
 </dl>
 </dd></dl>
 <dl class="py method">
+<dt class="sig sig-object py" id="serialix.langs.toml.TOML_Format.file_exists">
+<span class="sig-name descname"><span class="pre">file_exists</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">→</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="headerlink" href="#serialix.langs.toml.TOML_Format.file_exists" title="Permalink to this definition">#</a></dt>
+<dd><p>Check local file existence</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>Does the file exist</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>bool</p>
+</dd>
+</dl>
+</dd></dl>
+<dl class="py method">
 <dt class="sig sig-object py" id="serialix.langs.toml.TOML_Format.get">
 <span class="sig-name descname"><span class="pre">get</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">key</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">default</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">→</span> <span class="sig-return-typehint"><span class="pre">Any</span></span></span><a class="headerlink" href="#serialix.langs.toml.TOML_Format.get" title="Permalink to this definition">#</a></dt>
 <dd><p>Get key from object’s <code class="docutils literal notranslate"><span class="pre">dictionary</span></code></p>
@@ -1112,6 +1159,10 @@ if key wasn’t found.</p>
 <dd class="field-even"><p>bool</p>
 </dd>
 </dl>
+<div class="deprecated">
+<p><span class="versionmodified deprecated">Deprecated since version 2.3.0: </span>This method will be removed in <code class="docutils literal notranslate"><span class="pre">3.0.0</span></code> release.
+Use <code class="docutils literal notranslate"><span class="pre">.file_exists()</span></code> method instead</p>
+</div>
 </dd></dl>
 <dl class="py method">
 <dt class="sig sig-object py" id="serialix.langs.toml.TOML_Format.items">
