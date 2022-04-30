@@ -1,0 +1,61 @@
+name: Build Documentation
+
+on:
+  push:
+    branches:
+      - 'docs_source'
+      - 'master'
+    paths:
+      - 'docs/**'
+      - '.github/workflows/docs.yml'
+
+  release:
+    types:
+      - released
+
+  workflow_dispatch:
+
+
+jobs:
+  docs_build:
+    runs-on: 'ubuntu-18.04'
+    continue-on-error: false
+    strategy:
+      matrix:
+        python-version: ["3.10"]
+
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          ref: 'docs_source'
+          fetch-depth: 0
+
+      - name: Prepare the docs repository
+        uses: actions/checkout@v2
+        with:
+          ref: docs
+          path: temp_repo
+
+      - name: Set up Python ${{ matrix.python-version }}
+        uses: actions/setup-python@v2
+        with:
+          python-version: ${{ matrix.python-version }}
+
+      - name: Update pip
+        run: |
+          python -m pip install -U pip
+
+      - name: Build documentation from master branch
+        run: |
+          from_branch="origin/master" ./make.sh build
+          rm -rf ./temp_repo/docs/*
+          mv docs/_build/html/* ./temp_repo/docs
+
+      - name: Deploy the documentation
+        run: |
+          cd temp_repo
+          git config --global user.name "github-actions"
+          git config --global user.email "github-actions@github.com"
+          git add --all
+          git commit -m"Documentation build"
+          git push
