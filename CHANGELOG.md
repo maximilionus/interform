@@ -6,6 +6,11 @@ This project uses a [semantic versioning](https://semver.org/) scheme as the bas
 ## Stable Releases
 
 
+### 2.3.1 : 2022.05.03
+#### Fixed
+- `.core.BaseLang.__init__` logics of handling the local file refactored. Loading file with `auto_file_creation=False` now will work properly.
+
+
 ### 2.3.0 : 2022.04.30
 #### Added
 - New feature to pass the language parser class to `Serialix` `file_format` argument. By default it should be inherited from `serialix.core.BaseLang` class, this check can be ignored by passing the `ignore_inheritance_check=False` argument to `Serialix` class. This feature allows to use custom written parsers for `serialix`.

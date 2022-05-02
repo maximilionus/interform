@@ -58,14 +58,12 @@ class BaseLang:
             raise ValueError('"default_dictionary" argument should be a dictionary or a path to file string. Provided value is {0}'
                              .format(default_dictionary))
 
-        if auto_file_creation:
-            if not self.file_exists() or force_overwrite_file:
+        if not self.file_exists() or force_overwrite_file:
+            if auto_file_creation:
                 self.create_file()
-                self.reset_to_defaults()
-            else:
-                self.reload()
-        elif not self.file_exists():
-            self.reset_to_defaults()
+            self.reset_to_defaults
+        else:
+            self.reload()
 
     def __getitem__(self, key):
         return self.__parsed_dict[key]
