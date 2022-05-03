@@ -335,7 +335,10 @@ class BaseLang:
             return False
 
     def is_file_exist(self) -> bool:
-        """Check local file existence
+        """
+        Deprecated in ``2.3.0``, use ``.file_exists()`` method instead
+
+        Check local file existence.
 
         :return: Does the file exist
         :rtype: bool
