@@ -6,6 +6,11 @@ This project uses a [semantic versioning](https://semver.org/) scheme as the bas
 ## Stable Releases
 
 
+### 2.3.2 : 2022.05.03
+#### Fixed
+- Deprecation notice in docstrings now will be displayed properly
+
+
 ### 2.3.1 : 2022.05.03
 #### Fixed
 - `.core.BaseLang.__init__` logics of handling the local file refactored. Loading file with `auto_file_creation=False` now will work properly.
