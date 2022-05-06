@@ -9,3 +9,10 @@ updates:
     directory: "/"
     schedule:
       interval: "daily"
+
+  # Check branch with docs source
+  - package-ecosystem: "pip"
+    target-branch: 'docs_source'
+    directory: "/"
+    schedule:
+      interval: "daily"
