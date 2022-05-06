@@ -45,7 +45,13 @@ class BaseLang:
     __parser_write_kwargs = {}
     __parser_read_kwargs = {}
 
-    def __init__(self, file_path: str, default_dictionary={}, auto_file_creation=True, force_overwrite_file=False, parser_write_kwargs={}, parser_read_kwargs={}):
+    def __init__(
+        self,
+        file_path: str,
+        default_dictionary: dict = {},
+        auto_file_creation: bool = True, force_overwrite_file: bool = False,
+        parser_write_kwargs: dict = {}, parser_read_kwargs: dict = {}
+    ):
         self.local_file_path = file_path
         self.parser_write_kwargs = parser_write_kwargs
         self.parser_read_kwargs = parser_read_kwargs
@@ -141,11 +147,11 @@ class BaseLang:
         """
         return self.__parsed_dict.values()
 
-    def pop(self, key: Any, default=None) -> Any:
+    def pop(self, key: str, default=None) -> Any:
         """Pop key from object's ``dictionary``
 
         :param key: Key name
-        :type key: Any
+        :type key: str
         :param default: Default value, if key was not found, defaults to None
         :type default: Any, optional
         :return: Value of requested ``key``, or ``default`` value
@@ -167,13 +173,13 @@ class BaseLang:
         """
         return self.__parsed_dict.popitem()
 
-    def setdefault(self, key: Any, default=None) -> Any:
+    def setdefault(self, key: str, default=None) -> Any:
         """
         If key is in the object's ``dictionary``, return its value.
         If not, insert key with a value of ``default`` and return ``default``
 
         :param key: Name of the key
-        :type key: Any
+        :type key: str
         :param default: Default value, defaults to None
         :type default: Any, optional
         :return: If key is in the dictionary, return its value, else:

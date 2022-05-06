@@ -1,4 +1,4 @@
-from typing import Union
+from typing import Union, Type
 
 from .core import BaseLang
 
@@ -33,7 +33,14 @@ class Serialix:
 
     .. versionadded:: 2.1.0
     """
-    def __new__(self, file_format: Union[str, BaseLang, object], file_path: str, default_dictionary={}, auto_file_creation=True, force_overwrite_file=False, parser_write_kwargs={}, parser_read_kwargs={}, ignore_inheritance_check=False) -> BaseLang:
+    def __new__(
+        self,
+        file_format: Union[str, Type[BaseLang], object], file_path: str,
+        default_dictionary: dict = {},
+        auto_file_creation: bool = True, force_overwrite_file: bool = False,
+        parser_write_kwargs: dict = {}, parser_read_kwargs: dict = {},
+        ignore_inheritance_check=False
+    ) -> Type[BaseLang]:
         if isinstance(file_format, str):
             file_format = file_format.lower()
 
