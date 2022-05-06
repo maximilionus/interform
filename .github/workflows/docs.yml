@@ -25,13 +25,13 @@ jobs:
         python-version: ["3.10"]
 
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
         with:
           ref: 'docs_source'
           fetch-depth: 0
 
       - name: Prepare the docs repository
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
         with:
           ref: docs
           path: temp_repo
