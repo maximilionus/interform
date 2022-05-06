@@ -30,13 +30,9 @@ def convert(from_path: str, from_format: str, dest_path: str, dest_format: str):
     """Convert files between any supported languages
 
     :param from_path: Path to the file to be converted
-    :type from_path: str
     :param from_format: format of the file to be converted
-    :type from_format: str
     :param dest_path: desired path to converted file
-    :type dest_path: str
     :param dest_format: desired file format
-    :type dest_format: str
     """
     from_object = __generate_serialix_object(from_path, from_format)
     dest_object = __generate_serialix_object(dest_path, dest_format)
@@ -63,7 +59,6 @@ def __parse_args() -> Namespace:
     """Parse all input cli arguments with ``argparse`` module
 
     :return: Namespace with all arguments
-    :rtype: Namespace
     """
     parser_main = ArgumentParser(
         description='command line interface toolset for "serialix"'
@@ -89,11 +84,8 @@ def __generate_serialix_object(file_path: str, file_lang: str) -> BaseLang:
     """Automatic generation of ``serialix`` object
 
     :param file_path: Path to file that will be used in object
-    :type file_path: str
     :param file_lang: Language of this file
-    :type file_lang: str
     :return: ``*_Format`` class object
-    :rtype: BaseLang
     """
     obj = None
 
@@ -113,7 +105,6 @@ def main_cli(args: Namespace):
     """Main cli handler that processes the input arguments
 
     :param args: Arguments to be parsed
-    :type args: Namespace
     """
     if args.get_version:
         print('serialix {}'.format(serialix_version))
