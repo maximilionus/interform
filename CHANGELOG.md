@@ -149,17 +149,9 @@ This project uses a [semantic versioning](https://semver.org/) scheme as the bas
 ## Development Releases
 
 
-### 2.4.0 : nightly
+### 2.3.3 : nightly
 #### Changed
 - Improved docstrings and type-hinting
-
-
-### **2.2.0dev** : nightly
-#### Changed
-- Deps versions range now locked to the last available versions *(`<=x.y.z`)* instead of full *MAJOR* releases range *(`<=x`)*
-
-#### Deprecated
-- `__version__` and `__author__` variables in `serialix.meta` now **deprecated** and will be removed in `3.0.0` release. Mentioned variables was replaced with public variants *(Read `#Changed` for this version for more information)*
 
 
 ### **2.2.0a1** : 2022.03.16
