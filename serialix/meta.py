@@ -1,4 +1,4 @@
-version = '2.3.2'
+version = '2.3.3'
 author = 'maximilionus'
 
 # Deprecated in 2.2.0

@@ -1,19 +1,10 @@
 # Ignore python cache dirs
 __pycache__/
 
-# Ignore PyTest module cache
-.pytest_cache/
-
 # Ignore build dirs
 build/
 dist/
 *.egg-info
-
-# Ignore virtual env dir
-.venv/
-
-# Ignore VSCode cache
-.vscode/
 
 # Ignore all temporary directories
 temp/
