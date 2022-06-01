@@ -1,5 +1,5 @@
 # Dist tools
-twine<=4
+twine<5
 setuptools
 wheel
 
