@@ -1,14 +1,14 @@
 <!doctype html>
-<html class="no-js">
+<html class="no-js" lang="en">
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
-    <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+    <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 <link rel="index" title="Index" href="genindex.html" /><link rel="search" title="Search" href="search.html" /><link rel="next" title="Basic Usage" href="guide_basic_usage.html" /><link rel="prev" title="General Information" href="general.html" />
 
-    <meta name="generator" content="sphinx-4.5.0, furo 2022.04.07"/>
+    <meta name="generator" content="sphinx-5.0.1, furo 2022.06.04.1"/>
         <title>Installation Guide - serialix 2.3.3 documentation</title>
       <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="_static/styles/furo.css?digest=68f4518137b9aefe99b631505a2064c3c42c9852" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/furo.css?digest=40978830699223671f4072448e654b5958f38b89" />
     <link rel="stylesheet" type="text/css" href="_static/styles/furo-extensions.css?digest=30d1aed668e5c3a91c3e3bf6a60b675221979f0e" />
     
     
@@ -182,7 +182,8 @@
           </svg>
           <span>Back to top</span>
         </a>
-        <div class="content-icon-container"><div class="theme-toggle-container theme-toggle-content">
+        <div class="content-icon-container">
+          <div class="theme-toggle-container theme-toggle-content">
             <button class="theme-toggle">
               <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
               <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
@@ -197,11 +198,11 @@
         </div>
         <article role="main">
           <section id="installation-guide">
-<h1>Installation Guide<a class="headerlink" href="#installation-guide" title="Permalink to this headline">#</a></h1>
+<h1>Installation Guide<a class="headerlink" href="#installation-guide" title="Permalink to this heading">#</a></h1>
 <section id="before-installation">
-<h2>Before Installation<a class="headerlink" href="#before-installation" title="Permalink to this headline">#</a></h2>
+<h2>Before Installation<a class="headerlink" href="#before-installation" title="Permalink to this heading">#</a></h2>
 <section id="about-structure">
-<h3>About Structure<a class="headerlink" href="#about-structure" title="Permalink to this headline">#</a></h3>
+<h3>About Structure<a class="headerlink" href="#about-structure" title="Permalink to this heading">#</a></h3>
 <p><code class="docutils literal notranslate"><span class="pre">serialix</span></code> module comes with support for various languages parsers. Yet, not all of this parsers are natively available in python. By default, <code class="docutils literal notranslate"><span class="pre">serialix</span></code> will not install any external packages, so if your language is not in <a class="reference external" href="general.html#supported-languages">Supported Languages</a> -&gt; <strong>Native Support</strong>, you will have to specify the installation mode for <code class="docutils literal notranslate"><span class="pre">serialix</span></code> with this command:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pip install serialix<span class="o">[</span>mode<span class="o">]</span>
 </pre></div>
@@ -209,27 +210,27 @@
 <p>Where <code class="docutils literal notranslate"><span class="pre">mode</span></code> is one of the listed in <a class="reference internal" href="#installation-modes">Installation Modes</a> options:</p>
 </section>
 <section id="installation-modes">
-<h3>Installation Modes<a class="headerlink" href="#installation-modes" title="Permalink to this headline">#</a></h3>
+<h3>Installation Modes<a class="headerlink" href="#installation-modes" title="Permalink to this heading">#</a></h3>
 <dl class="field-list simple">
-<dt class="field-odd"><code class="docutils literal notranslate"><span class="pre">ujson</span></code></dt>
+<dt class="field-odd"><code class="docutils literal notranslate"><span class="pre">ujson</span></code><span class="colon">:</span></dt>
 <dd class="field-odd"><p>Will automatically replace the built-in <code class="docutils literal notranslate"><span class="pre">json</span></code> parser with <a class="reference external" href="https://pypi.org/project/ujson/">ujson parser</a></p>
 </dd>
-<dt class="field-even"><code class="docutils literal notranslate"><span class="pre">yaml</span></code></dt>
+<dt class="field-even"><code class="docutils literal notranslate"><span class="pre">yaml</span></code><span class="colon">:</span></dt>
 <dd class="field-even"><p>Support for <code class="docutils literal notranslate"><span class="pre">YAML</span></code> language <em>(version &lt;= 1.2)</em> with <a class="reference external" href="https://pypi.org/project/ruamel.yaml/">ruamel.yaml parser</a></p>
 </dd>
-<dt class="field-odd"><code class="docutils literal notranslate"><span class="pre">toml</span></code></dt>
+<dt class="field-odd"><code class="docutils literal notranslate"><span class="pre">toml</span></code><span class="colon">:</span></dt>
 <dd class="field-odd"><p>Support for <code class="docutils literal notranslate"><span class="pre">TOML</span></code> language with <a class="reference external" href="https://pypi.org/project/toml/">toml parser</a></p>
 </dd>
-<dt class="field-even"><code class="docutils literal notranslate"><span class="pre">full</span></code></dt>
+<dt class="field-even"><code class="docutils literal notranslate"><span class="pre">full</span></code><span class="colon">:</span></dt>
 <dd class="field-even"><p>Install <code class="docutils literal notranslate"><span class="pre">serialix</span></code> with support for all external parsers listed above</p>
 </dd>
-<dt class="field-odd"><code class="docutils literal notranslate"><span class="pre">test</span></code></dt>
+<dt class="field-odd"><code class="docutils literal notranslate"><span class="pre">test</span></code><span class="colon">:</span></dt>
 <dd class="field-odd"><p>Full installation with unit testing support (via <a class="reference external" href="https://pypi.org/project/pytest/">pytest</a> package)</p>
 </dd>
 </dl>
 </section>
 <section id="example">
-<h3>Example<a class="headerlink" href="#example" title="Permalink to this headline">#</a></h3>
+<h3>Example<a class="headerlink" href="#example" title="Permalink to this heading">#</a></h3>
 <p>For example, to install the <code class="docutils literal notranslate"><span class="pre">serialix</span></code> with <code class="docutils literal notranslate"><span class="pre">ujson</span></code> parser:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pip install serialix<span class="o">[</span>ujson<span class="o">]</span>
 </pre></div>
@@ -237,7 +238,7 @@
 </section>
 </section>
 <section id="install-with-pip">
-<h2>Install with pip<a class="headerlink" href="#install-with-pip" title="Permalink to this headline">#</a></h2>
+<h2>Install with pip<a class="headerlink" href="#install-with-pip" title="Permalink to this heading">#</a></h2>
 <p>How to install the <code class="docutils literal notranslate"><span class="pre">serialix</span></code> from <strong>PyPI</strong>:</p>
 <ol class="arabic">
 <li><p>Run</p>
@@ -250,7 +251,7 @@
 </ol>
 </section>
 <section id="install-from-github">
-<h2>Install from Github<a class="headerlink" href="#install-from-github" title="Permalink to this headline">#</a></h2>
+<h2>Install from Github<a class="headerlink" href="#install-from-github" title="Permalink to this heading">#</a></h2>
 <p><code class="docutils literal notranslate"><span class="pre">pip</span></code> also supports installs from git repositories, so you can install this package directly from github.</p>
 <p>To do this, run:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pip install git+https://github.com/maximilionus/serialix.git
@@ -258,20 +259,20 @@
 </div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>Installing via this link will download and install the latest available version of <code class="docutils literal notranslate"><span class="pre">serialix</span></code> package. To install the specific version of package you should add <code class="docutils literal notranslate"><span class="pre">@vX.X.X</span></code> to the end of git repo link. So, for example, you can install version <em>1.0.0</em> like this:</p>
+<p>Installing via this link will download and install the latest available version of <code class="docutils literal notranslate"><span class="pre">serialix</span></code> package. To install the specific version of package you should add <code class="docutils literal notranslate"><span class="pre">&#64;vX.X.X</span></code> to the end of git repo link. So, for example, you can install version <em>1.0.0</em> like this:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pip install git+https://github.com/maximilionus/serialix.git@v1.0.0
 </pre></div>
 </div>
 </div>
 </section>
 <section id="install-from-source">
-<h2>Install from source<a class="headerlink" href="#install-from-source" title="Permalink to this headline">#</a></h2>
+<h2>Install from source<a class="headerlink" href="#install-from-source" title="Permalink to this heading">#</a></h2>
 <p>How to install <code class="docutils literal notranslate"><span class="pre">serialix</span></code> from source files:</p>
 <ol class="arabic simple">
 <li><p>Download source files from <a class="reference external" href="https://github.com/maximilionus/serialix/releases">github releases</a></p></li>
 </ol>
 <section id="for-usage">
-<h3>For usage<a class="headerlink" href="#for-usage" title="Permalink to this headline">#</a></h3>
+<h3>For usage<a class="headerlink" href="#for-usage" title="Permalink to this heading">#</a></h3>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
 <p>Due to how the <code class="docutils literal notranslate"><span class="pre">setup.py</span></code> deals with external dependencies, you can’t install this package properly by running setup directly from file:</p>
@@ -297,7 +298,7 @@
 </div>
 </section>
 <section id="for-development">
-<h3>For development<a class="headerlink" href="#for-development" title="Permalink to this headline">#</a></h3>
+<h3>For development<a class="headerlink" href="#for-development" title="Permalink to this heading">#</a></h3>
 <ol class="arabic" start="2">
 <li><p><em>(Optional)</em> Inside of the project folder prepare the virtual environment and activate it</p></li>
 <li><p>Install all dev dependencies with this command</p>
@@ -398,6 +399,7 @@
 </div><script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
     <script src="_static/jquery.js"></script>
     <script src="_static/underscore.js"></script>
+    <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="_static/doctools.js"></script>
     <script src="_static/scripts/furo.js"></script>
     </body>

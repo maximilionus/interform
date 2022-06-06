@@ -1,14 +1,14 @@
 <!doctype html>
-<html class="no-js">
+<html class="no-js" lang="en">
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
-    <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+    <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 <link rel="index" title="Index" href="genindex.html" /><link rel="search" title="Search" href="search.html" /><link rel="prev" title="serialix" href="serialix.html" />
 
-    <meta name="generator" content="sphinx-4.5.0, furo 2022.04.07"/>
+    <meta name="generator" content="sphinx-5.0.1, furo 2022.06.04.1"/>
         <title>serialix.langs package - serialix 2.3.3 documentation</title>
       <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="_static/styles/furo.css?digest=68f4518137b9aefe99b631505a2064c3c42c9852" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/furo.css?digest=40978830699223671f4072448e654b5958f38b89" />
     <link rel="stylesheet" type="text/css" href="_static/styles/furo-extensions.css?digest=30d1aed668e5c3a91c3e3bf6a60b675221979f0e" />
     
     
@@ -182,7 +182,8 @@
           </svg>
           <span>Back to top</span>
         </a>
-        <div class="content-icon-container"><div class="theme-toggle-container theme-toggle-content">
+        <div class="content-icon-container">
+          <div class="theme-toggle-container theme-toggle-content">
             <button class="theme-toggle">
               <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
               <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
@@ -197,24 +198,24 @@
         </div>
         <article role="main">
           <section id="serialix-langs-package">
-<h1>serialix.langs package<a class="headerlink" href="#serialix-langs-package" title="Permalink to this headline">#</a></h1>
+<h1>serialix.langs package<a class="headerlink" href="#serialix-langs-package" title="Permalink to this heading">#</a></h1>
 <section id="module-serialix.langs">
-<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-serialix.langs" title="Permalink to this headline">#</a></h2>
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-serialix.langs" title="Permalink to this heading">#</a></h2>
 <p>Subpackage with implementation of main features for various serialization languages</p>
 </section>
 <section id="submodules">
-<h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this headline">#</a></h2>
+<h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this heading">#</a></h2>
 </section>
 <section id="module-serialix.langs.json">
-<span id="serialix-langs-json-module"></span><h2>serialix.langs.json module<a class="headerlink" href="#module-serialix.langs.json" title="Permalink to this headline">#</a></h2>
+<span id="serialix-langs-json-module"></span><h2>serialix.langs.json module<a class="headerlink" href="#module-serialix.langs.json" title="Permalink to this heading">#</a></h2>
 <p><code class="docutils literal notranslate"><span class="pre">JSON</span></code> language support</p>
 <dl class="py class">
 <dt class="sig sig-object py" id="serialix.langs.json.JSON_Format">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">serialix.langs.json.</span></span><span class="sig-name descname"><span class="pre">JSON_Format</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">file_path</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">default_dictionary</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">dict</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">{}</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">auto_file_creation</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">force_overwrite_file</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">parser_write_kwargs</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">dict</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">{}</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">parser_read_kwargs</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">dict</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">{}</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#serialix.langs.json.JSON_Format" title="Permalink to this definition">#</a></dt>
-<dd><p>Bases: <a class="reference internal" href="serialix.html#serialix.core.BaseLang" title="serialix.core.BaseLang"><code class="xref py py-class docutils literal notranslate"><span class="pre">serialix.core.BaseLang</span></code></a></p>
+<dd><p>Bases: <a class="reference internal" href="serialix.html#serialix.core.BaseLang" title="serialix.core.BaseLang"><code class="xref py py-class docutils literal notranslate"><span class="pre">BaseLang</span></code></a></p>
 <p>JSON data serialization format implementation</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>file_path</strong> – Path to preferred local file destination.
 If the file does not exist at the specified path, it will be created</p></li>
@@ -226,7 +227,7 @@ that will be used for local file start values, defaults to <code class="docutils
 <li><p><strong>parser_read_kwargs</strong> – Pass custom arguments to parser’s <em>read from local file</em> action, defaults to <code class="docutils literal notranslate"><span class="pre">{}</span></code> <em>(empty dict)</em></p></li>
 </ul>
 </dd>
-<dt class="field-even">Raises</dt>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
 <dd class="field-even"><p><strong>ValueError</strong> – If provided data type in argument <code class="docutils literal notranslate"><span class="pre">default_dictionary</span></code> can’t
 be represented as path <code class="docutils literal notranslate"><span class="pre">str</span></code> or <code class="docutils literal notranslate"><span class="pre">dict</span></code></p>
 </dd>
@@ -236,11 +237,11 @@ be represented as path <code class="docutils literal notranslate"><span class="p
 <p>Methods <code class="docutils literal notranslate"><span class="pre">.clear()</span></code>, <code class="docutils literal notranslate"><span class="pre">.fromkeys()</span></code>, <code class="docutils literal notranslate"><span class="pre">.get()</span></code>, <code class="docutils literal notranslate"><span class="pre">.items()</span></code>, <code class="docutils literal notranslate"><span class="pre">.keys()</span></code>, <code class="docutils literal notranslate"><span class="pre">values()</span></code>,
 <code class="docutils literal notranslate"><span class="pre">pop()</span></code>, <code class="docutils literal notranslate"><span class="pre">popitem()</span></code>, <code class="docutils literal notranslate"><span class="pre">setdefault()</span></code>, <code class="docutils literal notranslate"><span class="pre">update()</span></code> are bound to the attribute <code class="docutils literal notranslate"><span class="pre">dictionary</span></code>,
 so executing:</p>
-<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">this_object</span><span class="o">.</span><span class="n">update</span><span class="p">({</span><span class="s1">'check'</span><span class="p">:</span> <span class="kc">True</span><span class="p">})</span>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">this_object</span><span class="o">.</span><span class="n">update</span><span class="p">({</span><span class="s1">&#39;check&#39;</span><span class="p">:</span> <span class="kc">True</span><span class="p">})</span>
 </pre></div>
 </div>
 <p>Is equal to:</p>
-<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">this_object</span><span class="o">.</span><span class="n">dictionary</span><span class="o">.</span><span class="n">update</span><span class="p">({</span><span class="s1">'check'</span><span class="p">:</span> <span class="kc">True</span><span class="p">})</span>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">this_object</span><span class="o">.</span><span class="n">dictionary</span><span class="o">.</span><span class="n">update</span><span class="p">({</span><span class="s1">&#39;check&#39;</span><span class="p">:</span> <span class="kc">True</span><span class="p">})</span>
 </pre></div>
 </div>
 </div>
@@ -250,61 +251,67 @@ so executing:</p>
 <dd><p>Remove all keys from this object’s <code class="docutils literal notranslate"><span class="pre">dictionary</span></code>.
 No changes will be commited to local file without manual <code class="docutils literal notranslate"><span class="pre">.commit()</span></code> call</p>
 </dd></dl>
+
 <dl class="py method">
 <dt class="sig sig-object py" id="serialix.langs.json.JSON_Format.commit">
 <span class="sig-name descname"><span class="pre">commit</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#serialix.langs.json.JSON_Format.commit" title="Permalink to this definition">#</a></dt>
 <dd><p>Commit all changes from object to local file</p>
 </dd></dl>
+
 <dl class="py method">
 <dt class="sig sig-object py" id="serialix.langs.json.JSON_Format.copy">
-<span class="sig-name descname"><span class="pre">copy</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">deep_mode</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">→</span> <span class="sig-return-typehint"><span class="pre">dict</span></span></span><a class="headerlink" href="#serialix.langs.json.JSON_Format.copy" title="Permalink to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">copy</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">deep_mode</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">dict</span></span></span><a class="headerlink" href="#serialix.langs.json.JSON_Format.copy" title="Permalink to this definition">#</a></dt>
 <dd><p>Get the copy of this object keys and values.
 This method uses the recursive copy function by default that will remove
 all references to original dictionary.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>deep_mode</strong> – Use the recursive copy function to remove
 all references to original dictionary. Disabling this will lead
 to saving the references of the nested dictionaries to the copy object,
 defaults to True.</p>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p><code class="docutils literal notranslate"><span class="pre">dictionary</span></code> copy</p>
 </dd>
 </dl>
 </dd></dl>
+
 <dl class="py method">
 <dt class="sig sig-object py" id="serialix.langs.json.JSON_Format.create_file">
-<span class="sig-name descname"><span class="pre">create_file</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">→</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="headerlink" href="#serialix.langs.json.JSON_Format.create_file" title="Permalink to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">create_file</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="headerlink" href="#serialix.langs.json.JSON_Format.create_file" title="Permalink to this definition">#</a></dt>
 <dd><p>Create new local file from default dictionary</p>
 <dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
 <dd class="field-odd"><p>Was the file created successfully</p>
 </dd>
 </dl>
 </dd></dl>
+
 <dl class="py method">
 <dt class="sig sig-object py" id="serialix.langs.json.JSON_Format.delete_file">
-<span class="sig-name descname"><span class="pre">delete_file</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">→</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="headerlink" href="#serialix.langs.json.JSON_Format.delete_file" title="Permalink to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">delete_file</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="headerlink" href="#serialix.langs.json.JSON_Format.delete_file" title="Permalink to this definition">#</a></dt>
 <dd><p>Delete local file</p>
 <dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
 <dd class="field-odd"><p>Was the file removed.
 False will be returned only if the local file does not exist at the time of deletion.</p>
 </dd>
 </dl>
 </dd></dl>
+
 <dl class="py property">
 <dt class="sig sig-object py" id="serialix.langs.json.JSON_Format.dictionary">
 <em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">dictionary</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">dict</span></em><a class="headerlink" href="#serialix.langs.json.JSON_Format.dictionary" title="Permalink to this definition">#</a></dt>
 <dd><p>Full access to the object’s dictionary attribute.
 Contains local file data parsed to dictionary</p>
 <dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
 <dd class="field-odd"><p><code class="docutils literal notranslate"><span class="pre">dictionary</span></code> attribute</p>
 </dd>
 </dl>
 </dd></dl>
+
 <dl class="py property">
 <dt class="sig sig-object py" id="serialix.langs.json.JSON_Format.dictionary_default">
 <em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">dictionary_default</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">dict</span></em><a class="headerlink" href="#serialix.langs.json.JSON_Format.dictionary_default" title="Permalink to this definition">#</a></dt>
@@ -312,144 +319,155 @@ Contains local file data parsed to dictionary</p>
 Contains dictionary with default keys that was
 specified in <code class="docutils literal notranslate"><span class="pre">default_dictionary</span></code> argument.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
 <dd class="field-odd"><p>default dictionary</p>
 </dd>
 </dl>
 </dd></dl>
+
 <dl class="py method">
 <dt class="sig sig-object py" id="serialix.langs.json.JSON_Format.file_exists">
-<span class="sig-name descname"><span class="pre">file_exists</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">→</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="headerlink" href="#serialix.langs.json.JSON_Format.file_exists" title="Permalink to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">file_exists</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="headerlink" href="#serialix.langs.json.JSON_Format.file_exists" title="Permalink to this definition">#</a></dt>
 <dd><p>Check local file existence</p>
 <dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
 <dd class="field-odd"><p>Does the file exist</p>
 </dd>
 </dl>
 </dd></dl>
+
 <dl class="py method">
 <dt class="sig sig-object py" id="serialix.langs.json.JSON_Format.get">
-<span class="sig-name descname"><span class="pre">get</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">key</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">default</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">→</span> <span class="sig-return-typehint"><span class="pre">Any</span></span></span><a class="headerlink" href="#serialix.langs.json.JSON_Format.get" title="Permalink to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">get</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">key</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">default</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Any</span></span></span><a class="headerlink" href="#serialix.langs.json.JSON_Format.get" title="Permalink to this definition">#</a></dt>
 <dd><p>Get key from object’s <code class="docutils literal notranslate"><span class="pre">dictionary</span></code></p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>key</strong> – Key name</p></li>
 <li><p><strong>default</strong> – Default value, if key was not found, defaults to None</p></li>
 </ul>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p>Value of requested <code class="docutils literal notranslate"><span class="pre">key</span></code>, or <code class="docutils literal notranslate"><span class="pre">default</span></code> value
 if key wasn’t found.</p>
 </dd>
 </dl>
 </dd></dl>
+
 <dl class="py method">
 <dt class="sig sig-object py" id="serialix.langs.json.JSON_Format.is_file_exist">
-<span class="sig-name descname"><span class="pre">is_file_exist</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">→</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="headerlink" href="#serialix.langs.json.JSON_Format.is_file_exist" title="Permalink to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">is_file_exist</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="headerlink" href="#serialix.langs.json.JSON_Format.is_file_exist" title="Permalink to this definition">#</a></dt>
 <dd><p>Deprecated in <code class="docutils literal notranslate"><span class="pre">2.3.0</span></code>, use <code class="docutils literal notranslate"><span class="pre">.file_exists()</span></code> method instead.
 This method will be removed in <code class="docutils literal notranslate"><span class="pre">3.0.0</span></code> release.</p>
 <p>Check local file existence.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
 <dd class="field-odd"><p>Does the file exist</p>
 </dd>
 </dl>
 </dd></dl>
+
 <dl class="py method">
 <dt class="sig sig-object py" id="serialix.langs.json.JSON_Format.items">
-<span class="sig-name descname"><span class="pre">items</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">→</span> <span class="sig-return-typehint"><span class="pre">list</span></span></span><a class="headerlink" href="#serialix.langs.json.JSON_Format.items" title="Permalink to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">items</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">list</span></span></span><a class="headerlink" href="#serialix.langs.json.JSON_Format.items" title="Permalink to this definition">#</a></dt>
 <dd><p>Get items of the object’s <code class="docutils literal notranslate"><span class="pre">dictionary</span></code></p>
 <dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
 <dd class="field-odd"><p>Items of the <code class="docutils literal notranslate"><span class="pre">dictionary</span></code> ((key, value) pairs)</p>
 </dd>
 </dl>
 </dd></dl>
+
 <dl class="py method">
 <dt class="sig sig-object py" id="serialix.langs.json.JSON_Format.keys">
-<span class="sig-name descname"><span class="pre">keys</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">→</span> <span class="sig-return-typehint"><span class="pre">list</span></span></span><a class="headerlink" href="#serialix.langs.json.JSON_Format.keys" title="Permalink to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">keys</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">list</span></span></span><a class="headerlink" href="#serialix.langs.json.JSON_Format.keys" title="Permalink to this definition">#</a></dt>
 <dd><p>Get keys of the object’s <code class="docutils literal notranslate"><span class="pre">dictionary</span></code></p>
 <dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
 <dd class="field-odd"><p>Keys of the <code class="docutils literal notranslate"><span class="pre">dictionary</span></code> (, key)</p>
 </dd>
 </dl>
 </dd></dl>
+
 <dl class="py property">
 <dt class="sig sig-object py" id="serialix.langs.json.JSON_Format.parser_read_kwargs">
 <em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">parser_read_kwargs</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">dict</span></em><a class="headerlink" href="#serialix.langs.json.JSON_Format.parser_read_kwargs" title="Permalink to this definition">#</a></dt>
 <dd><p>Arguments that will be passed to parser on <em>read from file</em> action.
 This property can be modified. Note that only <code class="docutils literal notranslate"><span class="pre">dict</span></code> type is allowed.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
 <dd class="field-odd"><p>already specified arguments</p>
 </dd>
 </dl>
 </dd></dl>
+
 <dl class="py property">
 <dt class="sig sig-object py" id="serialix.langs.json.JSON_Format.parser_write_kwargs">
 <em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">parser_write_kwargs</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">dict</span></em><a class="headerlink" href="#serialix.langs.json.JSON_Format.parser_write_kwargs" title="Permalink to this definition">#</a></dt>
 <dd><p>Arguments that will be passed to parser on <em>write to file</em> action.
 This property can be modified. Note that only <code class="docutils literal notranslate"><span class="pre">dict</span></code> type is allowed.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
 <dd class="field-odd"><p>already specified arguments</p>
 </dd>
 </dl>
 </dd></dl>
+
 <dl class="py method">
 <dt class="sig sig-object py" id="serialix.langs.json.JSON_Format.pop">
-<span class="sig-name descname"><span class="pre">pop</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">key</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">default</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">→</span> <span class="sig-return-typehint"><span class="pre">Any</span></span></span><a class="headerlink" href="#serialix.langs.json.JSON_Format.pop" title="Permalink to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">pop</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">key</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">default</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Any</span></span></span><a class="headerlink" href="#serialix.langs.json.JSON_Format.pop" title="Permalink to this definition">#</a></dt>
 <dd><p>Pop key from object’s <code class="docutils literal notranslate"><span class="pre">dictionary</span></code></p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>key</strong> – Key name</p></li>
 <li><p><strong>default</strong> – Default value, if key was not found, defaults to None</p></li>
 </ul>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p>Value of requested <code class="docutils literal notranslate"><span class="pre">key</span></code>, or <code class="docutils literal notranslate"><span class="pre">default</span></code> value
 if key wasn’t found, defaults to None.</p>
 </dd>
 </dl>
 </dd></dl>
+
 <dl class="py method">
 <dt class="sig sig-object py" id="serialix.langs.json.JSON_Format.popitem">
-<span class="sig-name descname"><span class="pre">popitem</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">→</span> <span class="sig-return-typehint"><span class="pre">Any</span></span></span><a class="headerlink" href="#serialix.langs.json.JSON_Format.popitem" title="Permalink to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">popitem</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Any</span></span></span><a class="headerlink" href="#serialix.langs.json.JSON_Format.popitem" title="Permalink to this definition">#</a></dt>
 <dd><p>Pop item from object’s <code class="docutils literal notranslate"><span class="pre">dictionary</span></code> in LIFO order.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>key</strong> – Key name</p></li>
 <li><p><strong>default</strong> – Default value, if key was not found, defaults to None</p></li>
 </ul>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p>Value of requested <code class="docutils literal notranslate"><span class="pre">key</span></code>, or <code class="docutils literal notranslate"><span class="pre">default</span></code> value
 if key wasn’t found, defaults to None.</p>
 </dd>
 </dl>
 </dd></dl>
+
 <dl class="py method">
 <dt class="sig sig-object py" id="serialix.langs.json.JSON_Format.read_file_as_dict">
-<span class="sig-name descname"><span class="pre">read_file_as_dict</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">→</span> <span class="sig-return-typehint"><span class="pre">dict</span></span></span><a class="headerlink" href="#serialix.langs.json.JSON_Format.read_file_as_dict" title="Permalink to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">read_file_as_dict</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">dict</span></span></span><a class="headerlink" href="#serialix.langs.json.JSON_Format.read_file_as_dict" title="Permalink to this definition">#</a></dt>
 <dd><p>Read local file bound to this object as dictionary</p>
 <dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
 <dd class="field-odd"><p>Parsed to dictionary local file</p>
 </dd>
 </dl>
 </dd></dl>
+
 <dl class="py method">
 <dt class="sig sig-object py" id="serialix.langs.json.JSON_Format.refresh">
-<span class="sig-name descname"><span class="pre">refresh</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">safe_mode</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">→</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="headerlink" href="#serialix.langs.json.JSON_Format.refresh" title="Permalink to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">refresh</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">safe_mode</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="headerlink" href="#serialix.langs.json.JSON_Format.refresh" title="Permalink to this definition">#</a></dt>
 <dd><p>Refresh object’s <code class="docutils literal notranslate"><span class="pre">dictionary</span></code> values from local file.
 Note that this method does not remove user-added keys,
 it will only add non existent keys and modify the already existing keys.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>safe_mode</strong> – Provides the recursive merge of dictionary from local
 file to object’s <code class="docutils literal notranslate"><span class="pre">dictionary</span></code>. This option prevents object’s nested
 dictionaries to be overwritten by local files, but is much slower than
@@ -457,91 +475,99 @@ simple <code class="docutils literal notranslate"><span class="pre">dict.update(
 dictionaries be overwritten, you can disable this feature to boost the
 execution speed</p>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p>Status of local file read action. If file does not exist -
 <code class="docutils literal notranslate"><span class="pre">False</span></code> will be returned.</p>
 </dd>
 </dl>
 </dd></dl>
+
 <dl class="py method">
 <dt class="sig sig-object py" id="serialix.langs.json.JSON_Format.reload">
-<span class="sig-name descname"><span class="pre">reload</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">→</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="headerlink" href="#serialix.langs.json.JSON_Format.reload" title="Permalink to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">reload</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="headerlink" href="#serialix.langs.json.JSON_Format.reload" title="Permalink to this definition">#</a></dt>
 <dd><p>Reset all not commited changes made
 to object’s <code class="docutils literal notranslate"><span class="pre">dictionary</span></code> to values from local file</p>
 <dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
 <dd class="field-odd"><p>Status of local file read action. If file does not exist -
 <code class="docutils literal notranslate"><span class="pre">False</span></code> will be returned.</p>
 </dd>
 </dl>
 </dd></dl>
+
 <dl class="py method">
 <dt class="sig sig-object py" id="serialix.langs.json.JSON_Format.reset_to_defaults">
 <span class="sig-name descname"><span class="pre">reset_to_defaults</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#serialix.langs.json.JSON_Format.reset_to_defaults" title="Permalink to this definition">#</a></dt>
 <dd><p>Reset the object’s <code class="docutils literal notranslate"><span class="pre">dictionary</span></code> to values from <code class="docutils literal notranslate"><span class="pre">dictionary_default</span></code> attribute.
 Note that local file will stay untouched.</p>
 </dd></dl>
+
 <dl class="py method">
 <dt class="sig sig-object py" id="serialix.langs.json.JSON_Format.setdefault">
-<span class="sig-name descname"><span class="pre">setdefault</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">key</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">default</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">→</span> <span class="sig-return-typehint"><span class="pre">Any</span></span></span><a class="headerlink" href="#serialix.langs.json.JSON_Format.setdefault" title="Permalink to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">setdefault</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">key</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">default</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Any</span></span></span><a class="headerlink" href="#serialix.langs.json.JSON_Format.setdefault" title="Permalink to this definition">#</a></dt>
 <dd><p>If key is in the object’s <code class="docutils literal notranslate"><span class="pre">dictionary</span></code>, return its value.
 If not, insert key with a value of <code class="docutils literal notranslate"><span class="pre">default</span></code> and return <code class="docutils literal notranslate"><span class="pre">default</span></code></p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>key</strong> – Name of the key</p></li>
 <li><p><strong>default</strong> – Default value, defaults to None</p></li>
 </ul>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p>If key is in the dictionary, return its value, else:
 returns <code class="docutils literal notranslate"><span class="pre">defalut</span></code></p>
 </dd>
 </dl>
 </dd></dl>
+
 <dl class="py method">
 <dt class="sig sig-object py" id="serialix.langs.json.JSON_Format.update">
 <span class="sig-name descname"><span class="pre">update</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dictionary</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">dict</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#serialix.langs.json.JSON_Format.update" title="Permalink to this definition">#</a></dt>
 <dd><p>Update object’s <code class="docutils literal notranslate"><span class="pre">dictionary</span></code> with another dictionary</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>dictionary</strong> – Dictionary, that will be merged to
 <code class="docutils literal notranslate"><span class="pre">dictionary</span></code></p>
 </dd>
 </dl>
 </dd></dl>
+
 <dl class="py method">
 <dt class="sig sig-object py" id="serialix.langs.json.JSON_Format.values">
-<span class="sig-name descname"><span class="pre">values</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">→</span> <span class="sig-return-typehint"><span class="pre">list</span></span></span><a class="headerlink" href="#serialix.langs.json.JSON_Format.values" title="Permalink to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">values</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">list</span></span></span><a class="headerlink" href="#serialix.langs.json.JSON_Format.values" title="Permalink to this definition">#</a></dt>
 <dd><p>Get values of the object’s <code class="docutils literal notranslate"><span class="pre">dictionary</span></code></p>
 <dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
 <dd class="field-odd"><p>Values of the <code class="docutils literal notranslate"><span class="pre">dictionary</span></code> (, value)</p>
 </dd>
 </dl>
 </dd></dl>
+
 <dl class="py method">
 <dt class="sig sig-object py" id="serialix.langs.json.JSON_Format.write_dict_to_file">
 <span class="sig-name descname"><span class="pre">write_dict_to_file</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dictionary</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">dict</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#serialix.langs.json.JSON_Format.write_dict_to_file" title="Permalink to this definition">#</a></dt>
 <dd><p>Write dict from <code class="docutils literal notranslate"><span class="pre">dictionary</span></code> argument to local file bound to this object</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>dictionary</strong> – Dictionary that should be written to file</p>
 </dd>
 </dl>
 </dd></dl>
+
 </dd></dl>
+
 </section>
 <section id="module-serialix.langs.yaml">
-<span id="serialix-langs-yaml-module"></span><span id="serialix-langs-yaml"></span><h2>serialix.langs.yaml module<a class="headerlink" href="#module-serialix.langs.yaml" title="Permalink to this headline">#</a></h2>
+<span id="serialix-langs-yaml-module"></span><span id="serialix-langs-yaml"></span><h2>serialix.langs.yaml module<a class="headerlink" href="#module-serialix.langs.yaml" title="Permalink to this heading">#</a></h2>
 <p><code class="docutils literal notranslate"><span class="pre">YAML</span></code> language support</p>
 <dl class="py class">
 <dt class="sig sig-object py" id="serialix.langs.yaml.YAML_Format">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">serialix.langs.yaml.</span></span><span class="sig-name descname"><span class="pre">YAML_Format</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">file_path</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">default_dictionary</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">dict</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">{}</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">auto_file_creation</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">force_overwrite_file</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">parser_write_kwargs</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">dict</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">{}</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">parser_read_kwargs</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">dict</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">{}</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#serialix.langs.yaml.YAML_Format" title="Permalink to this definition">#</a></dt>
-<dd><p>Bases: <a class="reference internal" href="serialix.html#serialix.core.BaseLang" title="serialix.core.BaseLang"><code class="xref py py-class docutils literal notranslate"><span class="pre">serialix.core.BaseLang</span></code></a></p>
+<dd><p>Bases: <a class="reference internal" href="serialix.html#serialix.core.BaseLang" title="serialix.core.BaseLang"><code class="xref py py-class docutils literal notranslate"><span class="pre">BaseLang</span></code></a></p>
 <p>YAML data serialization format implementation</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>file_path</strong> – Path to preferred local file destination.
 If the file does not exist at the specified path, it will be created</p></li>
@@ -553,7 +579,7 @@ that will be used for local file start values, defaults to <code class="docutils
 <li><p><strong>parser_read_kwargs</strong> – Pass custom arguments to parser’s <em>read from local file</em> action, defaults to <code class="docutils literal notranslate"><span class="pre">{}</span></code> <em>(empty dict)</em></p></li>
 </ul>
 </dd>
-<dt class="field-even">Raises</dt>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
 <dd class="field-even"><p><strong>ValueError</strong> – If provided data type in argument <code class="docutils literal notranslate"><span class="pre">default_dictionary</span></code> can’t
 be represented as path <code class="docutils literal notranslate"><span class="pre">str</span></code> or <code class="docutils literal notranslate"><span class="pre">dict</span></code></p>
 </dd>
@@ -563,11 +589,11 @@ be represented as path <code class="docutils literal notranslate"><span class="p
 <p>Methods <code class="docutils literal notranslate"><span class="pre">.clear()</span></code>, <code class="docutils literal notranslate"><span class="pre">.fromkeys()</span></code>, <code class="docutils literal notranslate"><span class="pre">.get()</span></code>, <code class="docutils literal notranslate"><span class="pre">.items()</span></code>, <code class="docutils literal notranslate"><span class="pre">.keys()</span></code>, <code class="docutils literal notranslate"><span class="pre">values()</span></code>,
 <code class="docutils literal notranslate"><span class="pre">pop()</span></code>, <code class="docutils literal notranslate"><span class="pre">popitem()</span></code>, <code class="docutils literal notranslate"><span class="pre">setdefault()</span></code>, <code class="docutils literal notranslate"><span class="pre">update()</span></code> are bound to the attribute <code class="docutils literal notranslate"><span class="pre">dictionary</span></code>,
 so executing:</p>
-<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">this_object</span><span class="o">.</span><span class="n">update</span><span class="p">({</span><span class="s1">'check'</span><span class="p">:</span> <span class="kc">True</span><span class="p">})</span>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">this_object</span><span class="o">.</span><span class="n">update</span><span class="p">({</span><span class="s1">&#39;check&#39;</span><span class="p">:</span> <span class="kc">True</span><span class="p">})</span>
 </pre></div>
 </div>
 <p>Is equal to:</p>
-<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">this_object</span><span class="o">.</span><span class="n">dictionary</span><span class="o">.</span><span class="n">update</span><span class="p">({</span><span class="s1">'check'</span><span class="p">:</span> <span class="kc">True</span><span class="p">})</span>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">this_object</span><span class="o">.</span><span class="n">dictionary</span><span class="o">.</span><span class="n">update</span><span class="p">({</span><span class="s1">&#39;check&#39;</span><span class="p">:</span> <span class="kc">True</span><span class="p">})</span>
 </pre></div>
 </div>
 </div>
@@ -577,61 +603,67 @@ so executing:</p>
 <dd><p>Remove all keys from this object’s <code class="docutils literal notranslate"><span class="pre">dictionary</span></code>.
 No changes will be commited to local file without manual <code class="docutils literal notranslate"><span class="pre">.commit()</span></code> call</p>
 </dd></dl>
+
 <dl class="py method">
 <dt class="sig sig-object py" id="serialix.langs.yaml.YAML_Format.commit">
 <span class="sig-name descname"><span class="pre">commit</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#serialix.langs.yaml.YAML_Format.commit" title="Permalink to this definition">#</a></dt>
 <dd><p>Commit all changes from object to local file</p>
 </dd></dl>
+
 <dl class="py method">
 <dt class="sig sig-object py" id="serialix.langs.yaml.YAML_Format.copy">
-<span class="sig-name descname"><span class="pre">copy</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">deep_mode</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">→</span> <span class="sig-return-typehint"><span class="pre">dict</span></span></span><a class="headerlink" href="#serialix.langs.yaml.YAML_Format.copy" title="Permalink to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">copy</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">deep_mode</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">dict</span></span></span><a class="headerlink" href="#serialix.langs.yaml.YAML_Format.copy" title="Permalink to this definition">#</a></dt>
 <dd><p>Get the copy of this object keys and values.
 This method uses the recursive copy function by default that will remove
 all references to original dictionary.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>deep_mode</strong> – Use the recursive copy function to remove
 all references to original dictionary. Disabling this will lead
 to saving the references of the nested dictionaries to the copy object,
 defaults to True.</p>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p><code class="docutils literal notranslate"><span class="pre">dictionary</span></code> copy</p>
 </dd>
 </dl>
 </dd></dl>
+
 <dl class="py method">
 <dt class="sig sig-object py" id="serialix.langs.yaml.YAML_Format.create_file">
-<span class="sig-name descname"><span class="pre">create_file</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">→</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="headerlink" href="#serialix.langs.yaml.YAML_Format.create_file" title="Permalink to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">create_file</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="headerlink" href="#serialix.langs.yaml.YAML_Format.create_file" title="Permalink to this definition">#</a></dt>
 <dd><p>Create new local file from default dictionary</p>
 <dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
 <dd class="field-odd"><p>Was the file created successfully</p>
 </dd>
 </dl>
 </dd></dl>
+
 <dl class="py method">
 <dt class="sig sig-object py" id="serialix.langs.yaml.YAML_Format.delete_file">
-<span class="sig-name descname"><span class="pre">delete_file</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">→</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="headerlink" href="#serialix.langs.yaml.YAML_Format.delete_file" title="Permalink to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">delete_file</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="headerlink" href="#serialix.langs.yaml.YAML_Format.delete_file" title="Permalink to this definition">#</a></dt>
 <dd><p>Delete local file</p>
 <dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
 <dd class="field-odd"><p>Was the file removed.
 False will be returned only if the local file does not exist at the time of deletion.</p>
 </dd>
 </dl>
 </dd></dl>
+
 <dl class="py property">
 <dt class="sig sig-object py" id="serialix.langs.yaml.YAML_Format.dictionary">
 <em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">dictionary</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">dict</span></em><a class="headerlink" href="#serialix.langs.yaml.YAML_Format.dictionary" title="Permalink to this definition">#</a></dt>
 <dd><p>Full access to the object’s dictionary attribute.
 Contains local file data parsed to dictionary</p>
 <dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
 <dd class="field-odd"><p><code class="docutils literal notranslate"><span class="pre">dictionary</span></code> attribute</p>
 </dd>
 </dl>
 </dd></dl>
+
 <dl class="py property">
 <dt class="sig sig-object py" id="serialix.langs.yaml.YAML_Format.dictionary_default">
 <em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">dictionary_default</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">dict</span></em><a class="headerlink" href="#serialix.langs.yaml.YAML_Format.dictionary_default" title="Permalink to this definition">#</a></dt>
@@ -639,144 +671,155 @@ Contains local file data parsed to dictionary</p>
 Contains dictionary with default keys that was
 specified in <code class="docutils literal notranslate"><span class="pre">default_dictionary</span></code> argument.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
 <dd class="field-odd"><p>default dictionary</p>
 </dd>
 </dl>
 </dd></dl>
+
 <dl class="py method">
 <dt class="sig sig-object py" id="serialix.langs.yaml.YAML_Format.file_exists">
-<span class="sig-name descname"><span class="pre">file_exists</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">→</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="headerlink" href="#serialix.langs.yaml.YAML_Format.file_exists" title="Permalink to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">file_exists</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="headerlink" href="#serialix.langs.yaml.YAML_Format.file_exists" title="Permalink to this definition">#</a></dt>
 <dd><p>Check local file existence</p>
 <dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
 <dd class="field-odd"><p>Does the file exist</p>
 </dd>
 </dl>
 </dd></dl>
+
 <dl class="py method">
 <dt class="sig sig-object py" id="serialix.langs.yaml.YAML_Format.get">
-<span class="sig-name descname"><span class="pre">get</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">key</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">default</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">→</span> <span class="sig-return-typehint"><span class="pre">Any</span></span></span><a class="headerlink" href="#serialix.langs.yaml.YAML_Format.get" title="Permalink to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">get</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">key</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">default</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Any</span></span></span><a class="headerlink" href="#serialix.langs.yaml.YAML_Format.get" title="Permalink to this definition">#</a></dt>
 <dd><p>Get key from object’s <code class="docutils literal notranslate"><span class="pre">dictionary</span></code></p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>key</strong> – Key name</p></li>
 <li><p><strong>default</strong> – Default value, if key was not found, defaults to None</p></li>
 </ul>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p>Value of requested <code class="docutils literal notranslate"><span class="pre">key</span></code>, or <code class="docutils literal notranslate"><span class="pre">default</span></code> value
 if key wasn’t found.</p>
 </dd>
 </dl>
 </dd></dl>
+
 <dl class="py method">
 <dt class="sig sig-object py" id="serialix.langs.yaml.YAML_Format.is_file_exist">
-<span class="sig-name descname"><span class="pre">is_file_exist</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">→</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="headerlink" href="#serialix.langs.yaml.YAML_Format.is_file_exist" title="Permalink to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">is_file_exist</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="headerlink" href="#serialix.langs.yaml.YAML_Format.is_file_exist" title="Permalink to this definition">#</a></dt>
 <dd><p>Deprecated in <code class="docutils literal notranslate"><span class="pre">2.3.0</span></code>, use <code class="docutils literal notranslate"><span class="pre">.file_exists()</span></code> method instead.
 This method will be removed in <code class="docutils literal notranslate"><span class="pre">3.0.0</span></code> release.</p>
 <p>Check local file existence.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
 <dd class="field-odd"><p>Does the file exist</p>
 </dd>
 </dl>
 </dd></dl>
+
 <dl class="py method">
 <dt class="sig sig-object py" id="serialix.langs.yaml.YAML_Format.items">
-<span class="sig-name descname"><span class="pre">items</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">→</span> <span class="sig-return-typehint"><span class="pre">list</span></span></span><a class="headerlink" href="#serialix.langs.yaml.YAML_Format.items" title="Permalink to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">items</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">list</span></span></span><a class="headerlink" href="#serialix.langs.yaml.YAML_Format.items" title="Permalink to this definition">#</a></dt>
 <dd><p>Get items of the object’s <code class="docutils literal notranslate"><span class="pre">dictionary</span></code></p>
 <dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
 <dd class="field-odd"><p>Items of the <code class="docutils literal notranslate"><span class="pre">dictionary</span></code> ((key, value) pairs)</p>
 </dd>
 </dl>
 </dd></dl>
+
 <dl class="py method">
 <dt class="sig sig-object py" id="serialix.langs.yaml.YAML_Format.keys">
-<span class="sig-name descname"><span class="pre">keys</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">→</span> <span class="sig-return-typehint"><span class="pre">list</span></span></span><a class="headerlink" href="#serialix.langs.yaml.YAML_Format.keys" title="Permalink to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">keys</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">list</span></span></span><a class="headerlink" href="#serialix.langs.yaml.YAML_Format.keys" title="Permalink to this definition">#</a></dt>
 <dd><p>Get keys of the object’s <code class="docutils literal notranslate"><span class="pre">dictionary</span></code></p>
 <dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
 <dd class="field-odd"><p>Keys of the <code class="docutils literal notranslate"><span class="pre">dictionary</span></code> (, key)</p>
 </dd>
 </dl>
 </dd></dl>
+
 <dl class="py property">
 <dt class="sig sig-object py" id="serialix.langs.yaml.YAML_Format.parser_read_kwargs">
 <em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">parser_read_kwargs</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">dict</span></em><a class="headerlink" href="#serialix.langs.yaml.YAML_Format.parser_read_kwargs" title="Permalink to this definition">#</a></dt>
 <dd><p>Arguments that will be passed to parser on <em>read from file</em> action.
 This property can be modified. Note that only <code class="docutils literal notranslate"><span class="pre">dict</span></code> type is allowed.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
 <dd class="field-odd"><p>already specified arguments</p>
 </dd>
 </dl>
 </dd></dl>
+
 <dl class="py property">
 <dt class="sig sig-object py" id="serialix.langs.yaml.YAML_Format.parser_write_kwargs">
 <em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">parser_write_kwargs</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">dict</span></em><a class="headerlink" href="#serialix.langs.yaml.YAML_Format.parser_write_kwargs" title="Permalink to this definition">#</a></dt>
 <dd><p>Arguments that will be passed to parser on <em>write to file</em> action.
 This property can be modified. Note that only <code class="docutils literal notranslate"><span class="pre">dict</span></code> type is allowed.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
 <dd class="field-odd"><p>already specified arguments</p>
 </dd>
 </dl>
 </dd></dl>
+
 <dl class="py method">
 <dt class="sig sig-object py" id="serialix.langs.yaml.YAML_Format.pop">
-<span class="sig-name descname"><span class="pre">pop</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">key</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">default</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">→</span> <span class="sig-return-typehint"><span class="pre">Any</span></span></span><a class="headerlink" href="#serialix.langs.yaml.YAML_Format.pop" title="Permalink to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">pop</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">key</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">default</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Any</span></span></span><a class="headerlink" href="#serialix.langs.yaml.YAML_Format.pop" title="Permalink to this definition">#</a></dt>
 <dd><p>Pop key from object’s <code class="docutils literal notranslate"><span class="pre">dictionary</span></code></p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>key</strong> – Key name</p></li>
 <li><p><strong>default</strong> – Default value, if key was not found, defaults to None</p></li>
 </ul>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p>Value of requested <code class="docutils literal notranslate"><span class="pre">key</span></code>, or <code class="docutils literal notranslate"><span class="pre">default</span></code> value
 if key wasn’t found, defaults to None.</p>
 </dd>
 </dl>
 </dd></dl>
+
 <dl class="py method">
 <dt class="sig sig-object py" id="serialix.langs.yaml.YAML_Format.popitem">
-<span class="sig-name descname"><span class="pre">popitem</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">→</span> <span class="sig-return-typehint"><span class="pre">Any</span></span></span><a class="headerlink" href="#serialix.langs.yaml.YAML_Format.popitem" title="Permalink to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">popitem</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Any</span></span></span><a class="headerlink" href="#serialix.langs.yaml.YAML_Format.popitem" title="Permalink to this definition">#</a></dt>
 <dd><p>Pop item from object’s <code class="docutils literal notranslate"><span class="pre">dictionary</span></code> in LIFO order.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>key</strong> – Key name</p></li>
 <li><p><strong>default</strong> – Default value, if key was not found, defaults to None</p></li>
 </ul>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p>Value of requested <code class="docutils literal notranslate"><span class="pre">key</span></code>, or <code class="docutils literal notranslate"><span class="pre">default</span></code> value
 if key wasn’t found, defaults to None.</p>
 </dd>
 </dl>
 </dd></dl>
+
 <dl class="py method">
 <dt class="sig sig-object py" id="serialix.langs.yaml.YAML_Format.read_file_as_dict">
-<span class="sig-name descname"><span class="pre">read_file_as_dict</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">→</span> <span class="sig-return-typehint"><span class="pre">dict</span></span></span><a class="headerlink" href="#serialix.langs.yaml.YAML_Format.read_file_as_dict" title="Permalink to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">read_file_as_dict</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">dict</span></span></span><a class="headerlink" href="#serialix.langs.yaml.YAML_Format.read_file_as_dict" title="Permalink to this definition">#</a></dt>
 <dd><p>Read local file bound to this object as dictionary</p>
 <dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
 <dd class="field-odd"><p>Parsed to dictionary local file</p>
 </dd>
 </dl>
 </dd></dl>
+
 <dl class="py method">
 <dt class="sig sig-object py" id="serialix.langs.yaml.YAML_Format.refresh">
-<span class="sig-name descname"><span class="pre">refresh</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">safe_mode</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">→</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="headerlink" href="#serialix.langs.yaml.YAML_Format.refresh" title="Permalink to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">refresh</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">safe_mode</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="headerlink" href="#serialix.langs.yaml.YAML_Format.refresh" title="Permalink to this definition">#</a></dt>
 <dd><p>Refresh object’s <code class="docutils literal notranslate"><span class="pre">dictionary</span></code> values from local file.
 Note that this method does not remove user-added keys,
 it will only add non existent keys and modify the already existing keys.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>safe_mode</strong> – Provides the recursive merge of dictionary from local
 file to object’s <code class="docutils literal notranslate"><span class="pre">dictionary</span></code>. This option prevents object’s nested
 dictionaries to be overwritten by local files, but is much slower than
@@ -784,91 +827,99 @@ simple <code class="docutils literal notranslate"><span class="pre">dict.update(
 dictionaries be overwritten, you can disable this feature to boost the
 execution speed</p>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p>Status of local file read action. If file does not exist -
 <code class="docutils literal notranslate"><span class="pre">False</span></code> will be returned.</p>
 </dd>
 </dl>
 </dd></dl>
+
 <dl class="py method">
 <dt class="sig sig-object py" id="serialix.langs.yaml.YAML_Format.reload">
-<span class="sig-name descname"><span class="pre">reload</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">→</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="headerlink" href="#serialix.langs.yaml.YAML_Format.reload" title="Permalink to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">reload</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="headerlink" href="#serialix.langs.yaml.YAML_Format.reload" title="Permalink to this definition">#</a></dt>
 <dd><p>Reset all not commited changes made
 to object’s <code class="docutils literal notranslate"><span class="pre">dictionary</span></code> to values from local file</p>
 <dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
 <dd class="field-odd"><p>Status of local file read action. If file does not exist -
 <code class="docutils literal notranslate"><span class="pre">False</span></code> will be returned.</p>
 </dd>
 </dl>
 </dd></dl>
+
 <dl class="py method">
 <dt class="sig sig-object py" id="serialix.langs.yaml.YAML_Format.reset_to_defaults">
 <span class="sig-name descname"><span class="pre">reset_to_defaults</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#serialix.langs.yaml.YAML_Format.reset_to_defaults" title="Permalink to this definition">#</a></dt>
 <dd><p>Reset the object’s <code class="docutils literal notranslate"><span class="pre">dictionary</span></code> to values from <code class="docutils literal notranslate"><span class="pre">dictionary_default</span></code> attribute.
 Note that local file will stay untouched.</p>
 </dd></dl>
+
 <dl class="py method">
 <dt class="sig sig-object py" id="serialix.langs.yaml.YAML_Format.setdefault">
-<span class="sig-name descname"><span class="pre">setdefault</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">key</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">default</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">→</span> <span class="sig-return-typehint"><span class="pre">Any</span></span></span><a class="headerlink" href="#serialix.langs.yaml.YAML_Format.setdefault" title="Permalink to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">setdefault</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">key</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">default</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Any</span></span></span><a class="headerlink" href="#serialix.langs.yaml.YAML_Format.setdefault" title="Permalink to this definition">#</a></dt>
 <dd><p>If key is in the object’s <code class="docutils literal notranslate"><span class="pre">dictionary</span></code>, return its value.
 If not, insert key with a value of <code class="docutils literal notranslate"><span class="pre">default</span></code> and return <code class="docutils literal notranslate"><span class="pre">default</span></code></p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>key</strong> – Name of the key</p></li>
 <li><p><strong>default</strong> – Default value, defaults to None</p></li>
 </ul>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p>If key is in the dictionary, return its value, else:
 returns <code class="docutils literal notranslate"><span class="pre">defalut</span></code></p>
 </dd>
 </dl>
 </dd></dl>
+
 <dl class="py method">
 <dt class="sig sig-object py" id="serialix.langs.yaml.YAML_Format.update">
 <span class="sig-name descname"><span class="pre">update</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dictionary</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">dict</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#serialix.langs.yaml.YAML_Format.update" title="Permalink to this definition">#</a></dt>
 <dd><p>Update object’s <code class="docutils literal notranslate"><span class="pre">dictionary</span></code> with another dictionary</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>dictionary</strong> – Dictionary, that will be merged to
 <code class="docutils literal notranslate"><span class="pre">dictionary</span></code></p>
 </dd>
 </dl>
 </dd></dl>
+
 <dl class="py method">
 <dt class="sig sig-object py" id="serialix.langs.yaml.YAML_Format.values">
-<span class="sig-name descname"><span class="pre">values</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">→</span> <span class="sig-return-typehint"><span class="pre">list</span></span></span><a class="headerlink" href="#serialix.langs.yaml.YAML_Format.values" title="Permalink to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">values</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">list</span></span></span><a class="headerlink" href="#serialix.langs.yaml.YAML_Format.values" title="Permalink to this definition">#</a></dt>
 <dd><p>Get values of the object’s <code class="docutils literal notranslate"><span class="pre">dictionary</span></code></p>
 <dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
 <dd class="field-odd"><p>Values of the <code class="docutils literal notranslate"><span class="pre">dictionary</span></code> (, value)</p>
 </dd>
 </dl>
 </dd></dl>
+
 <dl class="py method">
 <dt class="sig sig-object py" id="serialix.langs.yaml.YAML_Format.write_dict_to_file">
 <span class="sig-name descname"><span class="pre">write_dict_to_file</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dictionary</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">dict</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#serialix.langs.yaml.YAML_Format.write_dict_to_file" title="Permalink to this definition">#</a></dt>
 <dd><p>Write dict from <code class="docutils literal notranslate"><span class="pre">dictionary</span></code> argument to local file bound to this object</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>dictionary</strong> – Dictionary that should be written to file</p>
 </dd>
 </dl>
 </dd></dl>
+
 </dd></dl>
+
 </section>
 <section id="module-serialix.langs.toml">
-<span id="serialix-langs-toml-module"></span><h2>serialix.langs.toml module<a class="headerlink" href="#module-serialix.langs.toml" title="Permalink to this headline">#</a></h2>
+<span id="serialix-langs-toml-module"></span><h2>serialix.langs.toml module<a class="headerlink" href="#module-serialix.langs.toml" title="Permalink to this heading">#</a></h2>
 <p><code class="docutils literal notranslate"><span class="pre">TOML</span></code> language support</p>
 <dl class="py class">
 <dt class="sig sig-object py" id="serialix.langs.toml.TOML_Format">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">serialix.langs.toml.</span></span><span class="sig-name descname"><span class="pre">TOML_Format</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">file_path</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">default_dictionary</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">dict</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">{}</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">auto_file_creation</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">force_overwrite_file</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">parser_write_kwargs</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">dict</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">{}</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">parser_read_kwargs</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">dict</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">{}</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#serialix.langs.toml.TOML_Format" title="Permalink to this definition">#</a></dt>
-<dd><p>Bases: <a class="reference internal" href="serialix.html#serialix.core.BaseLang" title="serialix.core.BaseLang"><code class="xref py py-class docutils literal notranslate"><span class="pre">serialix.core.BaseLang</span></code></a></p>
+<dd><p>Bases: <a class="reference internal" href="serialix.html#serialix.core.BaseLang" title="serialix.core.BaseLang"><code class="xref py py-class docutils literal notranslate"><span class="pre">BaseLang</span></code></a></p>
 <p>TOML data serialization format implementation</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>file_path</strong> – Path to preferred local file destination.
 If the file does not exist at the specified path, it will be created</p></li>
@@ -880,7 +931,7 @@ that will be used for local file start values, defaults to <code class="docutils
 <li><p><strong>parser_read_kwargs</strong> – Pass custom arguments to parser’s <em>read from local file</em> action, defaults to <code class="docutils literal notranslate"><span class="pre">{}</span></code> <em>(empty dict)</em></p></li>
 </ul>
 </dd>
-<dt class="field-even">Raises</dt>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
 <dd class="field-even"><p><strong>ValueError</strong> – If provided data type in argument <code class="docutils literal notranslate"><span class="pre">default_dictionary</span></code> can’t
 be represented as path <code class="docutils literal notranslate"><span class="pre">str</span></code> or <code class="docutils literal notranslate"><span class="pre">dict</span></code></p>
 </dd>
@@ -890,11 +941,11 @@ be represented as path <code class="docutils literal notranslate"><span class="p
 <p>Methods <code class="docutils literal notranslate"><span class="pre">.clear()</span></code>, <code class="docutils literal notranslate"><span class="pre">.fromkeys()</span></code>, <code class="docutils literal notranslate"><span class="pre">.get()</span></code>, <code class="docutils literal notranslate"><span class="pre">.items()</span></code>, <code class="docutils literal notranslate"><span class="pre">.keys()</span></code>, <code class="docutils literal notranslate"><span class="pre">values()</span></code>,
 <code class="docutils literal notranslate"><span class="pre">pop()</span></code>, <code class="docutils literal notranslate"><span class="pre">popitem()</span></code>, <code class="docutils literal notranslate"><span class="pre">setdefault()</span></code>, <code class="docutils literal notranslate"><span class="pre">update()</span></code> are bound to the attribute <code class="docutils literal notranslate"><span class="pre">dictionary</span></code>,
 so executing:</p>
-<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">this_object</span><span class="o">.</span><span class="n">update</span><span class="p">({</span><span class="s1">'check'</span><span class="p">:</span> <span class="kc">True</span><span class="p">})</span>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">this_object</span><span class="o">.</span><span class="n">update</span><span class="p">({</span><span class="s1">&#39;check&#39;</span><span class="p">:</span> <span class="kc">True</span><span class="p">})</span>
 </pre></div>
 </div>
 <p>Is equal to:</p>
-<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">this_object</span><span class="o">.</span><span class="n">dictionary</span><span class="o">.</span><span class="n">update</span><span class="p">({</span><span class="s1">'check'</span><span class="p">:</span> <span class="kc">True</span><span class="p">})</span>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">this_object</span><span class="o">.</span><span class="n">dictionary</span><span class="o">.</span><span class="n">update</span><span class="p">({</span><span class="s1">&#39;check&#39;</span><span class="p">:</span> <span class="kc">True</span><span class="p">})</span>
 </pre></div>
 </div>
 </div>
@@ -904,61 +955,67 @@ so executing:</p>
 <dd><p>Remove all keys from this object’s <code class="docutils literal notranslate"><span class="pre">dictionary</span></code>.
 No changes will be commited to local file without manual <code class="docutils literal notranslate"><span class="pre">.commit()</span></code> call</p>
 </dd></dl>
+
 <dl class="py method">
 <dt class="sig sig-object py" id="serialix.langs.toml.TOML_Format.commit">
 <span class="sig-name descname"><span class="pre">commit</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#serialix.langs.toml.TOML_Format.commit" title="Permalink to this definition">#</a></dt>
 <dd><p>Commit all changes from object to local file</p>
 </dd></dl>
+
 <dl class="py method">
 <dt class="sig sig-object py" id="serialix.langs.toml.TOML_Format.copy">
-<span class="sig-name descname"><span class="pre">copy</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">deep_mode</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">→</span> <span class="sig-return-typehint"><span class="pre">dict</span></span></span><a class="headerlink" href="#serialix.langs.toml.TOML_Format.copy" title="Permalink to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">copy</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">deep_mode</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">dict</span></span></span><a class="headerlink" href="#serialix.langs.toml.TOML_Format.copy" title="Permalink to this definition">#</a></dt>
 <dd><p>Get the copy of this object keys and values.
 This method uses the recursive copy function by default that will remove
 all references to original dictionary.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>deep_mode</strong> – Use the recursive copy function to remove
 all references to original dictionary. Disabling this will lead
 to saving the references of the nested dictionaries to the copy object,
 defaults to True.</p>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p><code class="docutils literal notranslate"><span class="pre">dictionary</span></code> copy</p>
 </dd>
 </dl>
 </dd></dl>
+
 <dl class="py method">
 <dt class="sig sig-object py" id="serialix.langs.toml.TOML_Format.create_file">
-<span class="sig-name descname"><span class="pre">create_file</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">→</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="headerlink" href="#serialix.langs.toml.TOML_Format.create_file" title="Permalink to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">create_file</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="headerlink" href="#serialix.langs.toml.TOML_Format.create_file" title="Permalink to this definition">#</a></dt>
 <dd><p>Create new local file from default dictionary</p>
 <dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
 <dd class="field-odd"><p>Was the file created successfully</p>
 </dd>
 </dl>
 </dd></dl>
+
 <dl class="py method">
 <dt class="sig sig-object py" id="serialix.langs.toml.TOML_Format.delete_file">
-<span class="sig-name descname"><span class="pre">delete_file</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">→</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="headerlink" href="#serialix.langs.toml.TOML_Format.delete_file" title="Permalink to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">delete_file</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="headerlink" href="#serialix.langs.toml.TOML_Format.delete_file" title="Permalink to this definition">#</a></dt>
 <dd><p>Delete local file</p>
 <dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
 <dd class="field-odd"><p>Was the file removed.
 False will be returned only if the local file does not exist at the time of deletion.</p>
 </dd>
 </dl>
 </dd></dl>
+
 <dl class="py property">
 <dt class="sig sig-object py" id="serialix.langs.toml.TOML_Format.dictionary">
 <em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">dictionary</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">dict</span></em><a class="headerlink" href="#serialix.langs.toml.TOML_Format.dictionary" title="Permalink to this definition">#</a></dt>
 <dd><p>Full access to the object’s dictionary attribute.
 Contains local file data parsed to dictionary</p>
 <dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
 <dd class="field-odd"><p><code class="docutils literal notranslate"><span class="pre">dictionary</span></code> attribute</p>
 </dd>
 </dl>
 </dd></dl>
+
 <dl class="py property">
 <dt class="sig sig-object py" id="serialix.langs.toml.TOML_Format.dictionary_default">
 <em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">dictionary_default</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">dict</span></em><a class="headerlink" href="#serialix.langs.toml.TOML_Format.dictionary_default" title="Permalink to this definition">#</a></dt>
@@ -966,144 +1023,155 @@ Contains local file data parsed to dictionary</p>
 Contains dictionary with default keys that was
 specified in <code class="docutils literal notranslate"><span class="pre">default_dictionary</span></code> argument.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
 <dd class="field-odd"><p>default dictionary</p>
 </dd>
 </dl>
 </dd></dl>
+
 <dl class="py method">
 <dt class="sig sig-object py" id="serialix.langs.toml.TOML_Format.file_exists">
-<span class="sig-name descname"><span class="pre">file_exists</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">→</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="headerlink" href="#serialix.langs.toml.TOML_Format.file_exists" title="Permalink to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">file_exists</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="headerlink" href="#serialix.langs.toml.TOML_Format.file_exists" title="Permalink to this definition">#</a></dt>
 <dd><p>Check local file existence</p>
 <dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
 <dd class="field-odd"><p>Does the file exist</p>
 </dd>
 </dl>
 </dd></dl>
+
 <dl class="py method">
 <dt class="sig sig-object py" id="serialix.langs.toml.TOML_Format.get">
-<span class="sig-name descname"><span class="pre">get</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">key</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">default</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">→</span> <span class="sig-return-typehint"><span class="pre">Any</span></span></span><a class="headerlink" href="#serialix.langs.toml.TOML_Format.get" title="Permalink to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">get</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">key</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">default</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Any</span></span></span><a class="headerlink" href="#serialix.langs.toml.TOML_Format.get" title="Permalink to this definition">#</a></dt>
 <dd><p>Get key from object’s <code class="docutils literal notranslate"><span class="pre">dictionary</span></code></p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>key</strong> – Key name</p></li>
 <li><p><strong>default</strong> – Default value, if key was not found, defaults to None</p></li>
 </ul>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p>Value of requested <code class="docutils literal notranslate"><span class="pre">key</span></code>, or <code class="docutils literal notranslate"><span class="pre">default</span></code> value
 if key wasn’t found.</p>
 </dd>
 </dl>
 </dd></dl>
+
 <dl class="py method">
 <dt class="sig sig-object py" id="serialix.langs.toml.TOML_Format.is_file_exist">
-<span class="sig-name descname"><span class="pre">is_file_exist</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">→</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="headerlink" href="#serialix.langs.toml.TOML_Format.is_file_exist" title="Permalink to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">is_file_exist</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="headerlink" href="#serialix.langs.toml.TOML_Format.is_file_exist" title="Permalink to this definition">#</a></dt>
 <dd><p>Deprecated in <code class="docutils literal notranslate"><span class="pre">2.3.0</span></code>, use <code class="docutils literal notranslate"><span class="pre">.file_exists()</span></code> method instead.
 This method will be removed in <code class="docutils literal notranslate"><span class="pre">3.0.0</span></code> release.</p>
 <p>Check local file existence.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
 <dd class="field-odd"><p>Does the file exist</p>
 </dd>
 </dl>
 </dd></dl>
+
 <dl class="py method">
 <dt class="sig sig-object py" id="serialix.langs.toml.TOML_Format.items">
-<span class="sig-name descname"><span class="pre">items</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">→</span> <span class="sig-return-typehint"><span class="pre">list</span></span></span><a class="headerlink" href="#serialix.langs.toml.TOML_Format.items" title="Permalink to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">items</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">list</span></span></span><a class="headerlink" href="#serialix.langs.toml.TOML_Format.items" title="Permalink to this definition">#</a></dt>
 <dd><p>Get items of the object’s <code class="docutils literal notranslate"><span class="pre">dictionary</span></code></p>
 <dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
 <dd class="field-odd"><p>Items of the <code class="docutils literal notranslate"><span class="pre">dictionary</span></code> ((key, value) pairs)</p>
 </dd>
 </dl>
 </dd></dl>
+
 <dl class="py method">
 <dt class="sig sig-object py" id="serialix.langs.toml.TOML_Format.keys">
-<span class="sig-name descname"><span class="pre">keys</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">→</span> <span class="sig-return-typehint"><span class="pre">list</span></span></span><a class="headerlink" href="#serialix.langs.toml.TOML_Format.keys" title="Permalink to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">keys</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">list</span></span></span><a class="headerlink" href="#serialix.langs.toml.TOML_Format.keys" title="Permalink to this definition">#</a></dt>
 <dd><p>Get keys of the object’s <code class="docutils literal notranslate"><span class="pre">dictionary</span></code></p>
 <dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
 <dd class="field-odd"><p>Keys of the <code class="docutils literal notranslate"><span class="pre">dictionary</span></code> (, key)</p>
 </dd>
 </dl>
 </dd></dl>
+
 <dl class="py property">
 <dt class="sig sig-object py" id="serialix.langs.toml.TOML_Format.parser_read_kwargs">
 <em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">parser_read_kwargs</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">dict</span></em><a class="headerlink" href="#serialix.langs.toml.TOML_Format.parser_read_kwargs" title="Permalink to this definition">#</a></dt>
 <dd><p>Arguments that will be passed to parser on <em>read from file</em> action.
 This property can be modified. Note that only <code class="docutils literal notranslate"><span class="pre">dict</span></code> type is allowed.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
 <dd class="field-odd"><p>already specified arguments</p>
 </dd>
 </dl>
 </dd></dl>
+
 <dl class="py property">
 <dt class="sig sig-object py" id="serialix.langs.toml.TOML_Format.parser_write_kwargs">
 <em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">parser_write_kwargs</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">dict</span></em><a class="headerlink" href="#serialix.langs.toml.TOML_Format.parser_write_kwargs" title="Permalink to this definition">#</a></dt>
 <dd><p>Arguments that will be passed to parser on <em>write to file</em> action.
 This property can be modified. Note that only <code class="docutils literal notranslate"><span class="pre">dict</span></code> type is allowed.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
 <dd class="field-odd"><p>already specified arguments</p>
 </dd>
 </dl>
 </dd></dl>
+
 <dl class="py method">
 <dt class="sig sig-object py" id="serialix.langs.toml.TOML_Format.pop">
-<span class="sig-name descname"><span class="pre">pop</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">key</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">default</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">→</span> <span class="sig-return-typehint"><span class="pre">Any</span></span></span><a class="headerlink" href="#serialix.langs.toml.TOML_Format.pop" title="Permalink to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">pop</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">key</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">default</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Any</span></span></span><a class="headerlink" href="#serialix.langs.toml.TOML_Format.pop" title="Permalink to this definition">#</a></dt>
 <dd><p>Pop key from object’s <code class="docutils literal notranslate"><span class="pre">dictionary</span></code></p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>key</strong> – Key name</p></li>
 <li><p><strong>default</strong> – Default value, if key was not found, defaults to None</p></li>
 </ul>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p>Value of requested <code class="docutils literal notranslate"><span class="pre">key</span></code>, or <code class="docutils literal notranslate"><span class="pre">default</span></code> value
 if key wasn’t found, defaults to None.</p>
 </dd>
 </dl>
 </dd></dl>
+
 <dl class="py method">
 <dt class="sig sig-object py" id="serialix.langs.toml.TOML_Format.popitem">
-<span class="sig-name descname"><span class="pre">popitem</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">→</span> <span class="sig-return-typehint"><span class="pre">Any</span></span></span><a class="headerlink" href="#serialix.langs.toml.TOML_Format.popitem" title="Permalink to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">popitem</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Any</span></span></span><a class="headerlink" href="#serialix.langs.toml.TOML_Format.popitem" title="Permalink to this definition">#</a></dt>
 <dd><p>Pop item from object’s <code class="docutils literal notranslate"><span class="pre">dictionary</span></code> in LIFO order.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>key</strong> – Key name</p></li>
 <li><p><strong>default</strong> – Default value, if key was not found, defaults to None</p></li>
 </ul>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p>Value of requested <code class="docutils literal notranslate"><span class="pre">key</span></code>, or <code class="docutils literal notranslate"><span class="pre">default</span></code> value
 if key wasn’t found, defaults to None.</p>
 </dd>
 </dl>
 </dd></dl>
+
 <dl class="py method">
 <dt class="sig sig-object py" id="serialix.langs.toml.TOML_Format.read_file_as_dict">
-<span class="sig-name descname"><span class="pre">read_file_as_dict</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">→</span> <span class="sig-return-typehint"><span class="pre">dict</span></span></span><a class="headerlink" href="#serialix.langs.toml.TOML_Format.read_file_as_dict" title="Permalink to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">read_file_as_dict</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">dict</span></span></span><a class="headerlink" href="#serialix.langs.toml.TOML_Format.read_file_as_dict" title="Permalink to this definition">#</a></dt>
 <dd><p>Read local file bound to this object as dictionary</p>
 <dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
 <dd class="field-odd"><p>Parsed to dictionary local file</p>
 </dd>
 </dl>
 </dd></dl>
+
 <dl class="py method">
 <dt class="sig sig-object py" id="serialix.langs.toml.TOML_Format.refresh">
-<span class="sig-name descname"><span class="pre">refresh</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">safe_mode</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">→</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="headerlink" href="#serialix.langs.toml.TOML_Format.refresh" title="Permalink to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">refresh</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">safe_mode</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="headerlink" href="#serialix.langs.toml.TOML_Format.refresh" title="Permalink to this definition">#</a></dt>
 <dd><p>Refresh object’s <code class="docutils literal notranslate"><span class="pre">dictionary</span></code> values from local file.
 Note that this method does not remove user-added keys,
 it will only add non existent keys and modify the already existing keys.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>safe_mode</strong> – Provides the recursive merge of dictionary from local
 file to object’s <code class="docutils literal notranslate"><span class="pre">dictionary</span></code>. This option prevents object’s nested
 dictionaries to be overwritten by local files, but is much slower than
@@ -1111,80 +1179,88 @@ simple <code class="docutils literal notranslate"><span class="pre">dict.update(
 dictionaries be overwritten, you can disable this feature to boost the
 execution speed</p>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p>Status of local file read action. If file does not exist -
 <code class="docutils literal notranslate"><span class="pre">False</span></code> will be returned.</p>
 </dd>
 </dl>
 </dd></dl>
+
 <dl class="py method">
 <dt class="sig sig-object py" id="serialix.langs.toml.TOML_Format.reload">
-<span class="sig-name descname"><span class="pre">reload</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">→</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="headerlink" href="#serialix.langs.toml.TOML_Format.reload" title="Permalink to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">reload</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="headerlink" href="#serialix.langs.toml.TOML_Format.reload" title="Permalink to this definition">#</a></dt>
 <dd><p>Reset all not commited changes made
 to object’s <code class="docutils literal notranslate"><span class="pre">dictionary</span></code> to values from local file</p>
 <dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
 <dd class="field-odd"><p>Status of local file read action. If file does not exist -
 <code class="docutils literal notranslate"><span class="pre">False</span></code> will be returned.</p>
 </dd>
 </dl>
 </dd></dl>
+
 <dl class="py method">
 <dt class="sig sig-object py" id="serialix.langs.toml.TOML_Format.reset_to_defaults">
 <span class="sig-name descname"><span class="pre">reset_to_defaults</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#serialix.langs.toml.TOML_Format.reset_to_defaults" title="Permalink to this definition">#</a></dt>
 <dd><p>Reset the object’s <code class="docutils literal notranslate"><span class="pre">dictionary</span></code> to values from <code class="docutils literal notranslate"><span class="pre">dictionary_default</span></code> attribute.
 Note that local file will stay untouched.</p>
 </dd></dl>
+
 <dl class="py method">
 <dt class="sig sig-object py" id="serialix.langs.toml.TOML_Format.setdefault">
-<span class="sig-name descname"><span class="pre">setdefault</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">key</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">default</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">→</span> <span class="sig-return-typehint"><span class="pre">Any</span></span></span><a class="headerlink" href="#serialix.langs.toml.TOML_Format.setdefault" title="Permalink to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">setdefault</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">key</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">default</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Any</span></span></span><a class="headerlink" href="#serialix.langs.toml.TOML_Format.setdefault" title="Permalink to this definition">#</a></dt>
 <dd><p>If key is in the object’s <code class="docutils literal notranslate"><span class="pre">dictionary</span></code>, return its value.
 If not, insert key with a value of <code class="docutils literal notranslate"><span class="pre">default</span></code> and return <code class="docutils literal notranslate"><span class="pre">default</span></code></p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>key</strong> – Name of the key</p></li>
 <li><p><strong>default</strong> – Default value, defaults to None</p></li>
 </ul>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p>If key is in the dictionary, return its value, else:
 returns <code class="docutils literal notranslate"><span class="pre">defalut</span></code></p>
 </dd>
 </dl>
 </dd></dl>
+
 <dl class="py method">
 <dt class="sig sig-object py" id="serialix.langs.toml.TOML_Format.update">
 <span class="sig-name descname"><span class="pre">update</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dictionary</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">dict</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#serialix.langs.toml.TOML_Format.update" title="Permalink to this definition">#</a></dt>
 <dd><p>Update object’s <code class="docutils literal notranslate"><span class="pre">dictionary</span></code> with another dictionary</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>dictionary</strong> – Dictionary, that will be merged to
 <code class="docutils literal notranslate"><span class="pre">dictionary</span></code></p>
 </dd>
 </dl>
 </dd></dl>
+
 <dl class="py method">
 <dt class="sig sig-object py" id="serialix.langs.toml.TOML_Format.values">
-<span class="sig-name descname"><span class="pre">values</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">→</span> <span class="sig-return-typehint"><span class="pre">list</span></span></span><a class="headerlink" href="#serialix.langs.toml.TOML_Format.values" title="Permalink to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">values</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">list</span></span></span><a class="headerlink" href="#serialix.langs.toml.TOML_Format.values" title="Permalink to this definition">#</a></dt>
 <dd><p>Get values of the object’s <code class="docutils literal notranslate"><span class="pre">dictionary</span></code></p>
 <dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
 <dd class="field-odd"><p>Values of the <code class="docutils literal notranslate"><span class="pre">dictionary</span></code> (, value)</p>
 </dd>
 </dl>
 </dd></dl>
+
 <dl class="py method">
 <dt class="sig sig-object py" id="serialix.langs.toml.TOML_Format.write_dict_to_file">
 <span class="sig-name descname"><span class="pre">write_dict_to_file</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dictionary</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">dict</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#serialix.langs.toml.TOML_Format.write_dict_to_file" title="Permalink to this definition">#</a></dt>
 <dd><p>Write dict from <code class="docutils literal notranslate"><span class="pre">dictionary</span></code> argument to local file bound to this object</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>dictionary</strong> – Dictionary that should be written to file</p>
 </dd>
 </dl>
 </dd></dl>
+
 </dd></dl>
+
 </section>
 </section>
 
@@ -1257,6 +1333,7 @@ returns <code class="docutils literal notranslate"><span class="pre">defalut</sp
 </div><script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
     <script src="_static/jquery.js"></script>
     <script src="_static/underscore.js"></script>
+    <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="_static/doctools.js"></script>
     <script src="_static/scripts/furo.js"></script>
     </body>

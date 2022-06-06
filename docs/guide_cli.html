@@ -1,14 +1,14 @@
 <!doctype html>
-<html class="no-js">
+<html class="no-js" lang="en">
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
-    <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+    <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 <link rel="index" title="Index" href="genindex.html" /><link rel="search" title="Search" href="search.html" /><link rel="next" title="serialix" href="serialix.html" /><link rel="prev" title="Basic Usage" href="guide_basic_usage.html" />
 
-    <meta name="generator" content="sphinx-4.5.0, furo 2022.04.07"/>
+    <meta name="generator" content="sphinx-5.0.1, furo 2022.06.04.1"/>
         <title>CLI Toolset - serialix 2.3.3 documentation</title>
       <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="_static/styles/furo.css?digest=68f4518137b9aefe99b631505a2064c3c42c9852" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/furo.css?digest=40978830699223671f4072448e654b5958f38b89" />
     <link rel="stylesheet" type="text/css" href="_static/styles/furo-extensions.css?digest=30d1aed668e5c3a91c3e3bf6a60b675221979f0e" />
     
     
@@ -182,7 +182,8 @@
           </svg>
           <span>Back to top</span>
         </a>
-        <div class="content-icon-container"><div class="theme-toggle-container theme-toggle-content">
+        <div class="content-icon-container">
+          <div class="theme-toggle-container theme-toggle-content">
             <button class="theme-toggle">
               <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
               <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
@@ -197,9 +198,9 @@
         </div>
         <article role="main">
           <section id="cli-toolset">
-<h1>CLI Toolset<a class="headerlink" href="#cli-toolset" title="Permalink to this headline">#</a></h1>
+<h1>CLI Toolset<a class="headerlink" href="#cli-toolset" title="Permalink to this heading">#</a></h1>
 <section id="about">
-<h2>About<a class="headerlink" href="#about" title="Permalink to this headline">#</a></h2>
+<h2>About<a class="headerlink" href="#about" title="Permalink to this heading">#</a></h2>
 <p>Since version <strong>1.3.0</strong> <code class="docutils literal notranslate"><span class="pre">serialix</span></code> has a built-in command line interface <em>(CLI)</em> toolset that can be accessed from terminal. It provides various tools for quick work with data interchange format files.</p>
 <p><strong>CLI</strong> module can be accessed with executing any of this commands:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ serialixcli
@@ -211,15 +212,15 @@
 <p>Executing one of the above commands with no arguments or with the <code class="docutils literal notranslate"><span class="pre">--help</span></code> (<code class="docutils literal notranslate"><span class="pre">-h</span></code>) argument will print the <em>help</em> message with information about all available tools.</p>
 </section>
 <section id="tools">
-<h2>Tools<a class="headerlink" href="#tools" title="Permalink to this headline">#</a></h2>
+<h2>Tools<a class="headerlink" href="#tools" title="Permalink to this heading">#</a></h2>
 <section id="convert">
-<h3><code class="docutils literal notranslate"><span class="pre">convert</span></code><a class="headerlink" href="#convert" title="Permalink to this headline">#</a></h3>
+<h3><code class="docutils literal notranslate"><span class="pre">convert</span></code><a class="headerlink" href="#convert" title="Permalink to this heading">#</a></h3>
 <section id="id1">
-<h4>About<a class="headerlink" href="#id1" title="Permalink to this headline">#</a></h4>
+<h4>About<a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h4>
 <p>Tool for conversion between supported languages</p>
 </section>
 <section id="usage">
-<h4>Usage<a class="headerlink" href="#usage" title="Permalink to this headline">#</a></h4>
+<h4>Usage<a class="headerlink" href="#usage" title="Permalink to this heading">#</a></h4>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>serialixcli convert <span class="o">[</span>-h<span class="o">]</span> from_path from_format dest_path dest_format
 
 positional arguments:
@@ -231,10 +232,10 @@ dest_format  desired file format
 </div>
 </section>
 <section id="example">
-<h4>Example<a class="headerlink" href="#example" title="Permalink to this headline">#</a></h4>
+<h4>Example<a class="headerlink" href="#example" title="Permalink to this heading">#</a></h4>
 <p>Convert the existing file with name <code class="docutils literal notranslate"><span class="pre">userlist.json</span></code> in <code class="docutils literal notranslate"><span class="pre">json</span></code> format to new <code class="docutils literal notranslate"><span class="pre">userlist.yaml</span></code> file in <code class="docutils literal notranslate"><span class="pre">yaml</span></code> format</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ serialixcli convert userlist.json json userlist.yaml yaml
-successfully converted <span class="s2">"userlist.json"</span> from <span class="s2">"json"</span> to <span class="s2">"yaml"</span> and saved the result to <span class="s2">"userlist.yaml"</span>
+successfully converted <span class="s2">&quot;userlist.json&quot;</span> from <span class="s2">&quot;json&quot;</span> to <span class="s2">&quot;yaml&quot;</span> and saved the result to <span class="s2">&quot;userlist.yaml&quot;</span>
 </pre></div>
 </div>
 </section>
@@ -324,6 +325,7 @@ successfully converted <span class="s2">"userlist.json"</span> from <span class=
 </div><script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
     <script src="_static/jquery.js"></script>
     <script src="_static/underscore.js"></script>
+    <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="_static/doctools.js"></script>
     <script src="_static/scripts/furo.js"></script>
     </body>
