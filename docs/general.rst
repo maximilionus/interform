@@ -3,7 +3,7 @@ General Information
 
 About
 --------------------------------
-``serialix`` is a powerful and easy-to-use tool that provides a unified interaction layer for various human-readable data serialization languages (like ``json``, ``yaml``, etc). Due to the how this tool designed, all the supported languages share the identical base between each other, meaning that process of working with those languages will be almost the same. This tool can also be extended for your purposes or even your own serialization language parser support.
+``serialix`` is a powerful and easy-to-use tool that provides unified API for various human-readable data serialization formats (like ``json``, ``yaml``, etc). Due to the how this tool designed, all the supported formats share the identical base between each other, meaning that switching between them will be almost the same. This tool can also be extended for your purposes or even your own serialization format support.
 
 Usage example
 --------------------------------
@@ -44,25 +44,25 @@ Public Classes
 List of classes for supported DIF languages, that can be used:
 
 :``Serialix``:
-    Unified instance generator for any supported language. Implemented in version ``2.1.0`` and should be preferred as the main entry point for any interaction with this package.
+    Unified instance generator for any supported format. Implemented in version ``2.1.0`` and should be preferred as the main entry point for any interaction with this package.
 
 :``JSON_Format``:
-    Support for JSON language. Absolutely the same for built-in and external (ujson) ``json`` parsers.
+    Support for JSON format. Absolutely the same for built-in and external (ujson) ``json`` parsers.
 
 :``YAML_Format``:
-    Support for YAML language
+    Support for YAML format
 
 :``TOML_Format``:
-    Support for TOML language
+    Support for TOML format
 
 Module Hierarchy
 --------------------------------
-- ``serialix`` - Contains main language parsers and module meta information imports for easy access.
+- ``serialix`` - Contains main formats parsers and module meta information imports for easy access.
     - ``core`` - Realisation of basic features, that will be inherited and used in other modules.
     - ``meta`` - Meta information, like version, author, etc.
     - ``serialix`` - Instance generator implementation
     - ``cli`` - CLI realisation module. No public API available.
-    - ``langs`` - Subpackage with realisation of main features for various DIF languages
+    - ``langs`` - Subpackage with implementation of main features for various serialization formats
         - ``json``
         - ``toml``
         - ``yaml``
