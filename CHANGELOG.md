@@ -5,9 +5,12 @@ This project uses a [semantic versioning](https://semver.org/) scheme as the bas
 
 ## Stable Releases
 
-### 2.3.4.dev0 - wip
+### 2.4.0.dev0 - wip
 #### Changed
 - Enhanced project documentation
+
+#### Deprecated
+- `serialix.langs` module was deprecated. All implementation moved to `serialix.formats` module. `serialix.langs` will stay in project, inheriting the `serialix.formats` features, until `3.0.0` version release.
 
 
 ### 2.3.3 : 2022.05.14

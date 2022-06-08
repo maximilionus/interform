@@ -20,7 +20,7 @@ class Serialix:
     :param parser_read_kwargs: Pass custom arguments to parser's *read from local file* action, defaults to ``{}`` *(empty dict)*
     :param ignore_inheritance_check: Disable the "inherited from ``BaseLang``" check for passed to ``file_format`` argument class
 
-    :return: Instance of ``.langs.*``, depending on the file format provided
+    :return: Instance of ``.formats.*``, depending on the file format provided
 
     :raises ValueError: If provided data type in argument ``default_dictionary`` can't
         be represented as path ``str`` or ``dict``
@@ -40,15 +40,15 @@ class Serialix:
             file_format = file_format.lower()
 
             if file_format == 'json':
-                from .langs.json import JSON_Format
+                from .formats.json import JSON_Format
 
                 return JSON_Format(file_path=file_path, default_dictionary=default_dictionary, auto_file_creation=auto_file_creation, force_overwrite_file=force_overwrite_file, parser_write_kwargs=parser_write_kwargs, parser_read_kwargs=parser_read_kwargs)
             elif file_format in ('yaml', 'yml'):
-                from .langs.yaml import YAML_Format
+                from .formats.yaml import YAML_Format
 
                 return YAML_Format(file_path=file_path, default_dictionary=default_dictionary, auto_file_creation=auto_file_creation, force_overwrite_file=force_overwrite_file, parser_write_kwargs=parser_write_kwargs, parser_read_kwargs=parser_read_kwargs)
             elif file_format in ('toml', 'tml'):
-                from .langs.toml import TOML_Format
+                from .formats.toml import TOML_Format
 
                 return TOML_Format(file_path=file_path, default_dictionary=default_dictionary, auto_file_creation=auto_file_creation, force_overwrite_file=force_overwrite_file, parser_write_kwargs=parser_write_kwargs, parser_read_kwargs=parser_read_kwargs)
             else:
