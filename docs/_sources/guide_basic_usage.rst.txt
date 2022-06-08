@@ -8,7 +8,7 @@ In this section you can find a quickstart guide to ``serialix`` package, that wi
 
 Quickstart
 ----------------------
-``serialix`` supports various data interchange languages (`full list <general.html#supported-languages>`__). This quickstart guide will be based on ``json`` language.
+``serialix`` supports various data interchange languages (`full list <general.html#supported-languages>`__). This quickstart guide will be based on ``json`` format.
 
 Imports
 ~~~~~~~~~~~~~~~~~~~~~~
@@ -56,7 +56,7 @@ Let's also prepare some options for ``json`` parser
         "indent": 4
     }
 
-``parser_write_kwargs`` variable is dictionary with keyword arguments that will be further passed to arguments of ``Serialix`` object to specify the additional params for DIF language parser on write action. At this moment we will only include the ``indent`` argument for `json parser <https://docs.python.org/3/library/json.html>`__, that will enable the pretty printing for output.
+``parser_write_kwargs`` variable is dictionary with keyword arguments that will be further passed to arguments of ``Serialix`` object to specify the additional params for serialization language parser on write action. At this moment we will only include the ``indent`` argument for `json parser <https://docs.python.org/3/library/json.html>`__, that will enable the pretty printing for output.
 
 Creating Object
 ~~~~~~~~~~~~~~~~~~~~~~
@@ -67,7 +67,7 @@ Now we're moving to the main part - creating an object that will be used for fur
     :lineno-start: 6
 
     config = Serialix(
-        'json',                                   # Name of the used language
+        'json',                                   # Name of the used format
         'settings.json',                          # Path to preferred local file location.
         def_dict,                                 # Default configuration dictionary that will
                                                   # be parsed into the local file on creation.

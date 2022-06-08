@@ -201,7 +201,7 @@
 <h1>General Information<a class="headerlink" href="#general-information" title="Permalink to this heading">#</a></h1>
 <section id="about">
 <h2>About<a class="headerlink" href="#about" title="Permalink to this heading">#</a></h2>
-<p><code class="docutils literal notranslate"><span class="pre">serialix</span></code> is a powerful and easy-to-use tool that provides a unified interaction layer for various human-readable data serialization languages (like <code class="docutils literal notranslate"><span class="pre">json</span></code>, <code class="docutils literal notranslate"><span class="pre">yaml</span></code>, etc). Due to the how this tool designed, all the supported languages share the identical base between each other, meaning that process of working with those languages will be almost the same. This tool can also be extended for your purposes or even your own serialization language parser support.</p>
+<p><code class="docutils literal notranslate"><span class="pre">serialix</span></code> is a powerful and easy-to-use tool that provides unified API for various human-readable data serialization formats (like <code class="docutils literal notranslate"><span class="pre">json</span></code>, <code class="docutils literal notranslate"><span class="pre">yaml</span></code>, etc). Due to the how this tool designed, all the supported formats share the identical base between each other, meaning that switching between them will be almost the same. This tool can also be extended for your purposes or even your own serialization format support.</p>
 </section>
 <section id="usage-example">
 <h2>Usage example<a class="headerlink" href="#usage-example" title="Permalink to this heading">#</a></h2>
@@ -252,16 +252,16 @@
 <p>List of classes for supported DIF languages, that can be used:</p>
 <dl class="field-list simple">
 <dt class="field-odd"><code class="docutils literal notranslate"><span class="pre">Serialix</span></code><span class="colon">:</span></dt>
-<dd class="field-odd"><p>Unified instance generator for any supported language. Implemented in version <code class="docutils literal notranslate"><span class="pre">2.1.0</span></code> and should be preferred as the main entry point for any interaction with this package.</p>
+<dd class="field-odd"><p>Unified instance generator for any supported format. Implemented in version <code class="docutils literal notranslate"><span class="pre">2.1.0</span></code> and should be preferred as the main entry point for any interaction with this package.</p>
 </dd>
 <dt class="field-even"><code class="docutils literal notranslate"><span class="pre">JSON_Format</span></code><span class="colon">:</span></dt>
-<dd class="field-even"><p>Support for JSON language. Absolutely the same for built-in and external (ujson) <code class="docutils literal notranslate"><span class="pre">json</span></code> parsers.</p>
+<dd class="field-even"><p>Support for JSON format. Absolutely the same for built-in and external (ujson) <code class="docutils literal notranslate"><span class="pre">json</span></code> parsers.</p>
 </dd>
 <dt class="field-odd"><code class="docutils literal notranslate"><span class="pre">YAML_Format</span></code><span class="colon">:</span></dt>
-<dd class="field-odd"><p>Support for YAML language</p>
+<dd class="field-odd"><p>Support for YAML format</p>
 </dd>
 <dt class="field-even"><code class="docutils literal notranslate"><span class="pre">TOML_Format</span></code><span class="colon">:</span></dt>
-<dd class="field-even"><p>Support for TOML language</p>
+<dd class="field-even"><p>Support for TOML format</p>
 </dd>
 </dl>
 </section>
@@ -270,13 +270,13 @@
 <h2>Module Hierarchy<a class="headerlink" href="#module-hierarchy" title="Permalink to this heading">#</a></h2>
 <ul class="simple">
 <li><dl class="simple">
-<dt><code class="docutils literal notranslate"><span class="pre">serialix</span></code> - Contains main language parsers and module meta information imports for easy access.</dt><dd><ul>
+<dt><code class="docutils literal notranslate"><span class="pre">serialix</span></code> - Contains main formats parsers and module meta information imports for easy access.</dt><dd><ul>
 <li><p><code class="docutils literal notranslate"><span class="pre">core</span></code> - Realisation of basic features, that will be inherited and used in other modules.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">meta</span></code> - Meta information, like version, author, etc.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">serialix</span></code> - Instance generator implementation</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">cli</span></code> - CLI realisation module. No public API available.</p></li>
 <li><dl class="simple">
-<dt><code class="docutils literal notranslate"><span class="pre">langs</span></code> - Subpackage with realisation of main features for various DIF languages</dt><dd><ul>
+<dt><code class="docutils literal notranslate"><span class="pre">langs</span></code> - Subpackage with implementation of main features for various serialization formats</dt><dd><ul>
 <li><p><code class="docutils literal notranslate"><span class="pre">json</span></code></p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">toml</span></code></p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">yaml</span></code></p></li>

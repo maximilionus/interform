@@ -205,7 +205,7 @@
 </section>
 <section id="quickstart">
 <h2>Quickstart<a class="headerlink" href="#quickstart" title="Permalink to this heading">#</a></h2>
-<p><code class="docutils literal notranslate"><span class="pre">serialix</span></code> supports various data interchange languages (<a class="reference external" href="general.html#supported-languages">full list</a>). This quickstart guide will be based on <code class="docutils literal notranslate"><span class="pre">json</span></code> language.</p>
+<p><code class="docutils literal notranslate"><span class="pre">serialix</span></code> supports various data interchange languages (<a class="reference external" href="general.html#supported-languages">full list</a>). This quickstart guide will be based on <code class="docutils literal notranslate"><span class="pre">json</span></code> format.</p>
 <section id="imports">
 <h3>Imports<a class="headerlink" href="#imports" title="Permalink to this heading">#</a></h3>
 <p>Let’s import the main <code class="docutils literal notranslate"><span class="pre">Serialix</span></code> class from <code class="docutils literal notranslate"><span class="pre">serialix</span></code> package. This class was implemented in version <code class="docutils literal notranslate"><span class="pre">2.1.0</span></code> and should be used to create instance for any officially supported language.</p>
@@ -244,14 +244,14 @@
 <span class="linenos">8</span><span class="p">}</span>
 </pre></div>
 </div>
-<p><code class="docutils literal notranslate"><span class="pre">parser_write_kwargs</span></code> variable is dictionary with keyword arguments that will be further passed to arguments of <code class="docutils literal notranslate"><span class="pre">Serialix</span></code> object to specify the additional params for DIF language parser on write action. At this moment we will only include the <code class="docutils literal notranslate"><span class="pre">indent</span></code> argument for <a class="reference external" href="https://docs.python.org/3/library/json.html">json parser</a>, that will enable the pretty printing for output.</p>
+<p><code class="docutils literal notranslate"><span class="pre">parser_write_kwargs</span></code> variable is dictionary with keyword arguments that will be further passed to arguments of <code class="docutils literal notranslate"><span class="pre">Serialix</span></code> object to specify the additional params for serialization language parser on write action. At this moment we will only include the <code class="docutils literal notranslate"><span class="pre">indent</span></code> argument for <a class="reference external" href="https://docs.python.org/3/library/json.html">json parser</a>, that will enable the pretty printing for output.</p>
 </section>
 </section>
 <section id="creating-object">
 <h3>Creating Object<a class="headerlink" href="#creating-object" title="Permalink to this heading">#</a></h3>
 <p>Now we’re moving to the main part - creating an object that will be used for further interaction with the local file.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 6</span><span class="n">config</span> <span class="o">=</span> <span class="n">Serialix</span><span class="p">(</span>
-<span class="linenos"> 7</span>    <span class="s1">&#39;json&#39;</span><span class="p">,</span>                                   <span class="c1"># Name of the used language</span>
+<span class="linenos"> 7</span>    <span class="s1">&#39;json&#39;</span><span class="p">,</span>                                   <span class="c1"># Name of the used format</span>
 <span class="linenos"> 8</span>    <span class="s1">&#39;settings.json&#39;</span><span class="p">,</span>                          <span class="c1"># Path to preferred local file location.</span>
 <span class="linenos"> 9</span>    <span class="n">def_dict</span><span class="p">,</span>                                 <span class="c1"># Default configuration dictionary that will</span>
 <span class="linenos">10</span>                                              <span class="c1"># be parsed into the local file on creation.</span>
