@@ -5,6 +5,10 @@ This project uses a [semantic versioning](https://semver.org/) scheme as the bas
 
 ## Stable Releases
 
+### 2.3.4.dev0 - wip
+#### Changed
+- Enhanced project documentation
+
 
 ### 2.3.3 : 2022.05.14
 #### Changed
