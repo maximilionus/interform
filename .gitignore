@@ -17,6 +17,7 @@ docs/_build
 /serialix/
 /setup.py
 /README.rst
+/CHANGELOG.md
 /requirements-dev.txt
 *.egg-info/
 /build/

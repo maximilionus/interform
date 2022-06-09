@@ -14,6 +14,7 @@ Welcome to serialix documentation!
    guide_cli
    ..guide_advanced_features
    serialix
+   changelog
 
 
 

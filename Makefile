@@ -2,7 +2,7 @@
 
 PYTHON ?= python
 
-REQUIRED_PROJECT_FILES = "serialix setup.py README.rst requirements-dev.txt"
+REQUIRED_PROJECT_FILES = "serialix setup.py README.rst CHANGELOG.md requirements-dev.txt"
 CACHE_PATHS = "*.egg-info ./dist ./build"
 
 ifndef from_branch
