@@ -1,11 +1,8 @@
 # Ignore python cache dirs
 __pycache__/
 
-# Ignore virtual env dir
-.venv/
-
-# Ignore VSCode cache
-.vscode/
+# Ignore all dot files, dirs
+.*
 
 # Ignore all temporary directories
 temp/
