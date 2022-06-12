@@ -1,7 +1,7 @@
-version = '2.3.3'
+version = '2.4.0'
 author = 'maximilionus'
 
-# Deprecated in 2.2.0
-# will be removed in 3.0.0 release
+# Variables below was deprecated in 2.2.0
+# and will be removed in 3.0.0 release
 __version__ = version
 __author__ = author
