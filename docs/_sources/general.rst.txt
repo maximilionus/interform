@@ -62,7 +62,7 @@ Module Hierarchy
     - ``meta`` - Meta information, like version, author, etc.
     - ``serialix`` - Instance generator implementation
     - ``cli`` - CLI realisation module. No public API available.
-    - ``langs`` - Subpackage with implementation of main features for various serialization formats
+    - ``formats`` - Subpackage with implementation of main features for various serialization formats
         - ``json``
         - ``toml``
         - ``yaml``
