@@ -5,6 +5,11 @@ This project uses a [semantic versioning](https://semver.org/) scheme as the bas
 
 ## Stable Releases
 
+### 2.4.1 - 2022.07.05
+#### Fixed
+- `Serialix` object dictionary will now refresh even if local file does not exist at the moment of call
+
+
 ### 2.4.0 - 2022.06.12
 #### Changed
 - Enhanced project documentation

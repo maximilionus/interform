@@ -62,7 +62,7 @@ class BaseLang:
         if not self.file_exists() or force_overwrite_file:
             if auto_file_creation:
                 self.create_file()
-            self.reset_to_defaults
+            self.reset_to_defaults()
         else:
             self.reload()
 

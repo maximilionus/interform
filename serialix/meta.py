@@ -1,4 +1,4 @@
-version = '2.4.0'
+version = '2.4.1'
 author = 'maximilionus'
 
 # Variables below was deprecated in 2.2.0
