@@ -5,10 +5,10 @@
     <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
 <link rel="index" title="Index" href="genindex.html" /><link rel="search" title="Search" href="search.html" /><link rel="next" title="serialix" href="serialix.html" /><link rel="prev" title="Basic Usage" href="guide_basic_usage.html" />
 
-    <meta name="generator" content="sphinx-5.2.3, furo 2022.09.29"/>
+    <!-- Generated with Sphinx 6.1.3 and Furo 2022.12.07 -->
         <title>CLI Toolset - serialix 2.4.1 documentation</title>
       <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="_static/styles/furo.css?digest=d81277517bee4d6b0349d71bb2661d4890b5617c" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/furo.css?digest=91d0f0d1c444bdcb17a68e833c7a53903343c195" />
     <link rel="stylesheet" type="text/css" href="_static/styles/furo-extensions.css?digest=30d1aed668e5c3a91c3e3bf6a60b675221979f0e" />
     
     
@@ -149,7 +149,7 @@
   <span class="sidebar-brand-text">serialix 2.4.1 documentation</span>
   
 </a><form class="sidebar-search-container" method="get" action="search.html" role="search">
-  <input class="sidebar-search" placeholder=Search name="q" aria-label="Search">
+  <input class="sidebar-search" placeholder="Search" name="q" aria-label="Search">
   <input type="hidden" name="check_keywords" value="yes">
   <input type="hidden" name="area" value="default">
 </form>
@@ -206,10 +206,10 @@
 <h2>About<a class="headerlink" href="#about" title="Permalink to this heading">#</a></h2>
 <p>Since version <strong>1.3.0</strong> <code class="docutils literal notranslate"><span class="pre">serialix</span></code> has a built-in command line interface <em>(CLI)</em> toolset that can be accessed from terminal. It provides various tools for quick work with data interchange format files.</p>
 <p><strong>CLI</strong> module can be accessed with executing any of this commands:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ serialixcli
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>serialixcli
 </pre></div>
 </div>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ python -m serialix.cli
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>python<span class="w"> </span>-m<span class="w"> </span>serialix.cli
 </pre></div>
 </div>
 <p>Executing one of the above commands with no arguments or with the <code class="docutils literal notranslate"><span class="pre">--help</span></code> (<code class="docutils literal notranslate"><span class="pre">-h</span></code>) argument will print the <em>help</em> message with information about all available tools.</p>
@@ -224,21 +224,21 @@
 </section>
 <section id="usage">
 <h4>Usage<a class="headerlink" href="#usage" title="Permalink to this heading">#</a></h4>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>serialixcli convert <span class="o">[</span>-h<span class="o">]</span> from_path from_format dest_path dest_format
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>serialixcli<span class="w"> </span>convert<span class="w"> </span><span class="o">[</span>-h<span class="o">]</span><span class="w"> </span>from_path<span class="w"> </span>from_format<span class="w"> </span>dest_path<span class="w"> </span>dest_format
 
-positional arguments:
-from_path    path to the file to be converted
-from_format  format of the file to be converted
-dest_path    desired path to converted file
-dest_format  desired file format
+positional<span class="w"> </span>arguments:
+from_path<span class="w">    </span>path<span class="w"> </span>to<span class="w"> </span>the<span class="w"> </span>file<span class="w"> </span>to<span class="w"> </span>be<span class="w"> </span>converted
+from_format<span class="w">  </span>format<span class="w"> </span>of<span class="w"> </span>the<span class="w"> </span>file<span class="w"> </span>to<span class="w"> </span>be<span class="w"> </span>converted
+dest_path<span class="w">    </span>desired<span class="w"> </span>path<span class="w"> </span>to<span class="w"> </span>converted<span class="w"> </span>file
+dest_format<span class="w">  </span>desired<span class="w"> </span>file<span class="w"> </span>format
 </pre></div>
 </div>
 </section>
 <section id="example">
 <h4>Example<a class="headerlink" href="#example" title="Permalink to this heading">#</a></h4>
 <p>Convert the existing file with name <code class="docutils literal notranslate"><span class="pre">userlist.json</span></code> in <code class="docutils literal notranslate"><span class="pre">json</span></code> format to new <code class="docutils literal notranslate"><span class="pre">userlist.yaml</span></code> file in <code class="docutils literal notranslate"><span class="pre">yaml</span></code> format</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ serialixcli convert userlist.json json userlist.yaml yaml
-successfully converted <span class="s2">&quot;userlist.json&quot;</span> from <span class="s2">&quot;json&quot;</span> to <span class="s2">&quot;yaml&quot;</span> and saved the result to <span class="s2">&quot;userlist.yaml&quot;</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>serialixcli<span class="w"> </span>convert<span class="w"> </span>userlist.json<span class="w"> </span>json<span class="w"> </span>userlist.yaml<span class="w"> </span>yaml
+successfully<span class="w"> </span>converted<span class="w"> </span><span class="s2">&quot;userlist.json&quot;</span><span class="w"> </span>from<span class="w"> </span><span class="s2">&quot;json&quot;</span><span class="w"> </span>to<span class="w"> </span><span class="s2">&quot;yaml&quot;</span><span class="w"> </span>and<span class="w"> </span>saved<span class="w"> </span>the<span class="w"> </span>result<span class="w"> </span>to<span class="w"> </span><span class="s2">&quot;userlist.yaml&quot;</span>
 </pre></div>
 </div>
 </section>
@@ -275,7 +275,7 @@ successfully converted <span class="s2">&quot;userlist.json&quot;</span> from <s
         <div class="bottom-of-page">
           <div class="left-details">
             <div class="copyright">
-                Copyright &#169; 2022, maximilionus
+                Copyright &#169; 2023, maximilionus
             </div>
             Made with <a href="https://www.sphinx-doc.org/">Sphinx</a> and <a class="muted-link" href="https://pradyunsg.me">@pradyunsg</a>'s
             
@@ -283,9 +283,7 @@ successfully converted <span class="s2">&quot;userlist.json&quot;</span> from <s
             
           </div>
           <div class="right-details">
-            <div class="icons">
-              
-            </div>
+            
           </div>
         </div>
         
@@ -326,9 +324,6 @@ successfully converted <span class="s2">&quot;userlist.json&quot;</span> from <s
     </aside>
   </div>
 </div><script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
-    <script src="_static/jquery.js"></script>
-    <script src="_static/underscore.js"></script>
-    <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="_static/doctools.js"></script>
     <script src="_static/sphinx_highlight.js"></script>
     <script src="_static/scripts/furo.js"></script>
